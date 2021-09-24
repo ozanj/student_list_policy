@@ -1,0 +1,209 @@
+---
+title: "The Student List Business in Higher Education"
+  # "Deconstructing the student list business in higher education"
+author: 
+  - Ozan Jaquette
+  - AUTHOR TWO
+  - Patrica Martin
+bibliography: "./../../../Google Drive/student_list_brief/literature/student_list_policy.bib"
+output: 
+  bookdown::pdf_document2:
+    toc: FALSE
+csl: ./../assets/bib/apa.csl
+  # C:\Users\ozanj\Documents\student_list_policy\assets\bib
+urlcolor: blue
+header-includes:
+      - \usepackage{pdflscape}
+      - \usepackage{geometry}
+      - \usepackage{floatrow}
+      - \usepackage{setspace}
+      #- \doublespacing
+      - \floatsetup{capposition=top}
+fontsize: 11pt
+---
+
+```{r, include = FALSE, eval = FALSE}
+# filepath location of apa.csl file and location of .bib list of references
+getwd()
+list.files(path = file.path('.','..','assets','bib')) # apa.csl file
+list.files(path = file.path('.','..','..','..','Google Drive','student_list_brief','literature')) # .bib reference list on Google Drive
+```
+
+
+```{r setup, include = FALSE}
+library(knitr)
+library(bookdown)
+
+# https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_pdf.pdf
+library(kableExtra)
+library(tidyverse)
+#library(gridExtra)
+#library(scales)
+
+knitr::opts_chunk$set(echo = F, message = F)
+
+knitr::knit_hooks$set(inline = function(x) {   if(!is.numeric(x)){     x   }else{    prettyNum(round(x,2), big.mark=",")    } })
+```
+
+# Executive Summary
+
+# Introduction
+
+make it all vignette; and then put stuff like basics of student list business in next section
+
+# Student List Basics
+
+The student list business is a match-making intermediary that connects colleges and universities (herein C&Us) to prospective students. What problem does the student list business solve for these two groups? From the perspective of C&Us, they must enroll students to survive and to thrive they must enroll "right-fit" (desirable) students. Most C&Us cannot subsist from students that find the C&U on their own (inquiries), so they must find desirable prospects who can be convinced to enroll. The problem is, they don't who these prospects are, where they are, or how to contact them. The student list business overcomes the problem C&Us face by providing the contact information (e.g., mailing address, email address, cell phone) of prospective students, allowing C&Us to filter on geograhpic, demographic, academic, and other characteristics when deciding which prospects to purchase. From the perspective of students who want to attend a C&U, they face the problems of not knowing all their options and not knowing which C&Us are interested in them. In theory, the student list business helps overcome problems by enabling interested C&Us to contact prospective students. In practice, the student list business is largely responsive to the problems faced by C&Us because C&Us buy the lists.
+
+## List-Based Leads and Behavioral-Based Leads
+
+Before providing details about the student list business, we compare how other industries use lists to identify customers -- with a particular focus on politics -- and we differentiate list-based leads from behavioral-based leads (e.g., ads that appear on a Google search results). 
+
+The student list business is based on the same business model as direct mail. When thinking about why certain prospective students receive marketing material from certain C&Us, it is useful to ask, "how did I receive that catalogue from Land's End or Williams-Sonoma, or that student loan refinancing [what is the product?] from Navient? Once you begin purchasing products from a particular company, they know a lot about you -- your contact information, your preferences, etc. -- and can develop campaigns that target to your tastes. Before you make that initial purchase, companies must buy lists that contain your contact information and indicators of your customer preferences. [ONE SENTENCE HISTORICAL ROOTS OF DIRECT MAIL BUSINESS - LIKE STARTED WITH PERSON SELLING ENCYCLOPEDIAS IN 1880S ENGLAND]. Singer (1988) [CITE, NYT ARTICLE] described the U.S. names business in the 1980s. List data are produced from many sources, including company sales records and small businesses that compile original lists. "'A list-management company...is a wholesaler who manages lists for clients and sells lists to brokers who in turn rent the names to mailers. Companies give us the exclusive right to manage their lists, which are a byproduct of main businesses. The revenues they generate by renting out their lists is found money.'" [QUOTE FROM DAVID FLORENCE FOUNDER OF DIRECT MEDIA INC A LIST WHOLESALER]. "List brokers" buy or rent lists from list wholesalers to companies looking for customers. 
+
+The market described by Singer (1988) is similar to the "Chegg Cloud" from the 2010s, in which Chegg "Chegg has partnered with 18 of the top college search websites and mobile apps to aggregate student data and requests for information, and connect those students to the institutions they request information from" and  to "reach 8 out of 10 students actively researching schools online."[pg 5]. Here, college search engines -- where prospects voluntarily enter their data in exchange for information about college choices -- are the producers of list data. Chegg plays the roles of list-wholesaler -- buying names from list produces -- and the role of list broker -- selling lists to individual C&Us looking for customers. By contrast, the student list businesses of College Board and ACT contain fewer intermediaries. The testing agencies produce list data as an intentional byproduct of their assessment products and sell lists directly to C&Us looking for customers.
+
+The names business in political campaigns also offers a useful comparison. Like the student list business, the political names business is based on the direct mail model [CITE]. Richard Viguerie is considered the modern pioneer of political direct mail. He founded the "Richard A. Viguerie Company, Inc" in 1965 after copying the contact information of all 12,500 donors that had given over $50 to Goldwater's 1964 presidential campaign. [maybe a sentence about how Viguerie acquired lists]. @RN4730 credits Viguerie as "the guy who figured out that the bigger the mailing listyou had and the more terrifying the letters you sent to this mailing list about how liberals were going to, you know, end Western civilization as we know it, the better youcould do for politicians." [INTERVIEW QUOTE]. There is a direct link between direct marketing in politics and marketing in higher education. Bill Royall began his career in the 1970s as a republican political operative, serving as a campaign manager and press secretary for Virginia Governor John Dalton and as Executive Director of the Virginia Republican Party [CITE]. In 1983 he founded Royall & Company to provide direct marketing and fundraising for political campaigns. Royall & Company did not sign its first C&U client until 19XX, but buy 1995 C&Us became the primary focus, and Royall & Co. was sold to EAB for \$850 in 2015.
+
+<!-- 
+https://en.wikipedia.org/wiki/Richard_Viguerie#Direct-mail_company
+Though Goldwater lost, Viguerie gained knowledge of the direct-mail strategy and would later become expert in it. In early 1965 he went to the clerk of the U.S. House of Representatives which by law had a record of every donor to a Presidential campaign that gave over $50 which it made available for public inspection. Viguerie copied by longhand 12,500 donors that had given to Goldwater's 1964 campaign. This was the beginning of a grass-roots conservative mailing list that would continue to grow throughout Viguerie's career. Viguerie, holding that the mainstream news media was biased, later stated that this strategy allowed conservatism to bypass two obstacles, "Thanks to direct mail, conservatives — and their candidates — were able to become an independent, vibrant force, free of the fetters imposed by the Republican political hierarchy and the liberal media."[16] With only $4,000 in savings he began his direct-mail company "Richard A. Viguerie Company, Inc."[14] His first client was Young Americans for Freedom but he lost the account within six weeks. According to Viguerie this was due to "one of the frequent upheavals typical of an organization run by a bunch of college kids."[14] The company grew as it found other clients the Conservative Caucus, the Committee for the Survival of a Free Congress, the National Conservative Political Action Committee, the National Right to Work Committee, the American Conservative Union, Sen. Jesse Helms' National Congressional Club and Gun Owners of America."[14] His company also marketed many conservatives seeking elected office including "congressmen Phil Crane and Bob Dornan, Ron Paul, John Ashbrook, Sens. Jesse Helms and Strom Thurmond, California state senator H. L. 'Bill' Richardson, and candidates Max Rafferty, Howard Phillips, Jeff Bell and G. Gordon Liddy."[14]
+
+quote from Perlstein is from an NPR interview, not his book
+https://www.npr.org/2020/08/26/906195845/reaganland-author-revisits-the-roots-of-american-conservatism 
+
+STORIES ON BILL ROYALL
+http://www.thoughtfulcollegesearch.com/ethicalcollegeadmissions/2020/7/10/remembering-bill-royall 
+https://www.styleweekly.com/richmond/remembrance-william-a-bill-royall-jr-1946-2020/Content?oid=16244802 
+
+-->
+@RN4731 depicts how contemporary US political parties create and utilize voter databases, highlighting four sequential steps: national database; layering data; predictive models; data-informed campaigns. A national voter database is analogous to a national database of prospective students. The fundamental inputs are public voter files compiled by state and local governments, which data firms combine to create a national database. Second, firms "layer on data from a wide range of sources onto the national database to create detailed profiles of voters" [@RN4731, para X]. For example, "political data firms buy data from companies like Experian or Acxiom, which can include real estate property records, estimated income levels, consumer purchasing patterns" [@RN4731, para X]. Third, after layering data, predictive models are developed to predict the opinions and behavior of prospective voters. Fourth, the database and predictive models are used to inform campaign decisions, and both the Republican National Committee (RNC) and Democratic National Committee (RNC) have developed processes by which these data can be shared with campaigns and outside political organizations.
+[INCLUDE VISUAL IMAGE FROM REUTERS STORY AS A FIGURE?]
+
+Advances in digital technology have yielded behavioral-based targeting as opposed to list-based targeting. List-based marketing proceeds in two sequential steps, first, obtaining contact information and, second, serving marketing material via this contact information. In behavioral based targeting, users of a platform (e.g., Google Search) are served advertisements while they are on the platform -- or a partner of the platform -- based on their user profile, which includes prior user behavior. In contrast to list-based targeting, lead identification and serving ads occurs simultaneously, and without necessarily knowing the contact information fo prospects. Most advertising we see on web pages, for example display ads on a news website, are based on a behavioral based strategy. Google Ads enables advertisements to target users in particular audience "segments" and based on geographic location. Segments are "groups of people with specific interests, intents, and demographic information, as estimated by Google. When adding an audience to a campaign or ad group, you can select from a wide range of segments. For example, these segments could include fans of sport and travel, people shopping for cars, or specific people that have visited your website or app. Google Ads will show ads to people who are likely in the selected categories" [LINK FOR CITE](https://support.google.com/google-ads/answer/2497941?hl=en#)
+[QUESTIONS: IN PRACTICE, DOES BEHAVIORAL BASED TARGETING INCORPORATE KNOWING YOUR CONTACT INFO?]
+
+To what extent does higher education marketing and recruiting depend on list-based versus behavioral-based identification of leads? The article "Making Your Digital Ads Count" by @RN4728 provides insight about this question. @RN4728, p. 9 states that 
+
+> For industries outside of higher education and for non-freshman recruitment, a primary aim of digital marketing is often that of identifying a pool of potentially interested customers \ldots [By contrast] Where the recruitment of college-bound high school students is concerned, digital channels are less important from a lead-generation perspective, because the vast majority of likely candidates are already readily identifiable via testing and survey services (ACT, College Board, etc.). Digital marketing is, instead, of greatest value in further stages of the recruitment funnel, including inquiry generation and application generation.
+
+In other words, many industries rely on behavioral-based targeting to identify leads because prospect lists are unavailable. For the recruitment of college-bound high school students, prospect lists can be purchased from College Board and ACT. @RN4728 argues it is more efficient to identify leads by purchasing lists and then serve these leads digital (and non-digital) recruiting interventions to solicit inquiries, applications, and enrollment. Our conversations with enrollment management professionals and consultants have corroborated the perspective offered by @RN4728. Thus, behavioral-based targeting is the primary means of identifying leads for degree programs targeting adults -- including graduate degree programs -- and is often the primary source of undergraduate leads for community colleges and for-profit colleges because many target students do not take ACT/College Board assessments. Enrollment management consultants told us that for "traditional" college freshmen, larger and more well-resourced universities often engage in a dual strategy, with the enrollment management office using list-based recruitment and the marketing department engaging in behavioral-based marketing designed to promote the brand. By contrast, smaller institutions often rely solely on list-based advertising because they have small in-house marketing operations.
+
+
+### vignette of list business in politics
+
+ADD MORE DETAILED VIGNETTE OR JUST HAVE CURRENT LEVEL OF DETAIL ON POLITICS THAT IS INCLUDED IN THE MAIN TEXT?
+
+## The Enrollment Funnel
+
+In order to situate the student list business with the process of recruiting students, Figure X depicts the "enrollment funnel." The enrollment funnel is a conceptual heuristic that identifies stages in the student recruitment process -- prospects, inquiries, applicants, accepted applicants, and enrolled students -- and is used by the enrollment management industry to inform interventions that target one or more stages. "Prospects" are "all the potential students you would want to attract to your institution" [@RN4322]. We define "leads" as prospects whose contact information has been purchased. "Inquiries" are prospects that contact your institution and includes two subsets: inquiries who respond to an initial solicitation from the institution (e.g., email); and "student as first contact" inquiries who reach out to the C&U on their own, for example, by sending ACT scores to the institution, filling out an online admissions inquiry form, by visiting campus, or by visiting a "virtual tour" website that records IP addresses. Applicants include the set of inquiries who apply and also "stealth applicants" who did not contact the C&U before applying.
+
+
+INSERT FIGURE ref(fig:em-funnel) ABOUT HERE [HOW TO REVISE FIGURE: MAKE PROSPECTS THE UNKNOWN GROUP OF PEOPLE YOU WANT TO APPLY TO YOUR INSTITUTION; LEADS ARE NAMES YOU PURCHASE; INQUIRIES; SPLIT INQUIRIES INTO TWO COLUMNS; INSTITUTION-AS-FIRST-CONTACT AND STUDENT-AS FIRST CONTACT; SPLIT APPLICANTS INTO TWO COLUMNS; INQUIRIES WHO APPLY VS. APPLICATION AS FIRST CONTACT]
+
+Where does the student list business fit within the enrollment funnel? Institutions identify "leads" by purchasing student lists from College Board, ACT, and other vendors. The sum of leads and student-as-first-contact inquiries is the set of prospects who may receive one or more recruiting interventions (e.g., email, postcard, brochure) from the C&U.
+
+The enrollment funnel has an upside-down pyramid shape -- wide at the top and narrow at the bottom -- in order to convey the assumption of massive "melt" at each stage, for example only a subset of inquiries will apply, a subset of applicants will be accepted, and a subset of admits will enroll. Thus, if the goal is to enroll an incoming class of size X -- and hit targets for academic profile, tuition revenue, and diversity -- the institution must buy a identify a much larger set of leads.
+
+## Buying and Using Student Lists
+
+We describe how C&Us purcahse student lists from vendors and how they utilize student lists. Although many vendors of student list data exist (discussed below), we initially focus on the two largest vendors, College Board and ACT. Having established a near duopoly in the market for high school standardized tests, these organizations capitalized on their unparalleled bank of test-takers to create a near duopoly in the student list business. Prior to completing a College Board or ACT assessment (e.g., SAT), students are 
+
+> asked to complete a questionnaire that collects information about your grades, interests, intended major, college plans, and other things. You don’t have to answer the questions, but we recommend that you do. If you fill out the questionnaire and opt into (Student Search Service)[https://collegereadiness.collegeboard.org/about/benefits/student-search-service], participating colleges and scholarship organizations that are looking for students like you will be better able to find you [LINK FOR CITE](https://collegereadiness.collegeboard.org/sat/register/policies-requirements/questionnaire)
+
+
+How are student lists purchased? Each student list purchased by a C&U is a subset of prospects from the population of test-takers. College Board and ACT student list products utilize filters that enable the C&U to control which prospects are included in a particular list. The set of available prospect search filters includes information about performance on an assessment (e.g., test score range) and information students provided in the pre-test questionnaire (e.g., high school GPA, gender). For the ACT Encoura student list product, for example, commonly specified prospect search filters include high school graduation year, high school GPA, test score range (ACT or PreACT), gender, ethnicity, intended major, and geography (e.g., state, county, zip code)[LINK FOR CITE](https://helpcenter.encoura.org/hc/en-us/articles/360035260452-Prospect-Search-Filters-). College Board student list products offer similar sets of filters, but also enable prospects to filtered based on characteristics of the high school the prospect attends and characteristics of the neighborhood the prospect lives in. As a hypothetical example, a C&U could purchase a student list from College Board that consists of all prospects who scored between 1100 and 1300 on the SAT, AND have a high school GPA greater than 3.5, AND are expected to graduate high school in 2022, AND who lives in zip code "90025" OR "90095" OR "90210."
+zip code "90095" or reside within some set of zip codes. In several off-the-record conversations, enrollment management consultants have stressed that at the name-buying stage, a university cannot afford to buy all prospects, but very little is known about whether the prospect is interested in the institution. Therefore, the institution is forced to make purchase decisions based on crude criteria such as zip-codes. 
+
+What data do purchased student lists contain? Each purchased student list is essentially a spreadsheet that contains one row for each prospect that meets all criteria specified in the purchase. The columns of the student list includes detailed contact information (name, address, email, cell phone) and detailed student characteristics dervied from the pre-test questionnaire (e.g., ethnicity, race, gender, high school GPA, graduation year, high school code, intended major, first-generation status). However, student lists contain very little data about performance on assessments (e.g., SAT score), which creates an incentive -- whether intended or unintended -- for C&Us to purchase many lists, each within a small score range (e.g., 1250-1260) in order to know the test scores of specific prospects they will target.
+
+PARAGRAPHS ON HOW STUDENT LIST DATA ARE USED. [streess that it informs who gets what intervention]
+
+How do C&Us use student lists? Typically, a C&U is trying to maximize some set of enrollment goals (e.g., total enrollment, tuition revenue, academic profile, racial diversity, selectivity) while minimizing the recruiting cost expended to achieve these goals. Enrollment management consulting firms and sophisticated in-house operations use algorithms to inform interventions at different stages of the enrollment funnel stage, for example which names to purchase, which leads to serve with which promotional materials, how much grant aid to offer each admit, etc. Considering the enrollment funnel depicted in Figure X, the sum of "leads" purchased from student lists student-as-first-contact inquiries is the set of all prospects the C&U has contact information for, who are eligible to receive one or more recruiting intervention (e.g., email, text, postcard, brochure). Student lists contain information (e.g., intended major, extracurricular interests) that a C&U can utilize to determine which prospects receive which intervention(s), and some purchased prospects may not receive any interventions.
+
+
+After purchasing student lists, C&Us layer additional data sources, such as  income and consumer data from credit companies, records of inquiries by the prospect (e.g., visiting virtual tour, historical application/enrollment patterns of students who attended the same high school, 
+
+layer on data from a wide range of sources onto the national database to create detailed profiles of voters" [@RN4731, para X]. For example, "political data firms buy data from companies like Experian or Acxiom, which can include real estate property records, estimated income levels, consumer purchasing patterns" 
+
+
+However, different prospects may receive different interventions. 
+
+
+
+Enrollment management consulting firms and sophisticated in-house operations use algorithms to inform interventions at different stages of the enrollment funnel stage of the enrollment funnel, for example which names to purchase, which leads to serve with which promotional materials, how much grant aid to offer each admit, etc. Broadly, these algorithms are attempting to maximize some set of enrollment goals -- for example around tuition revenue, academic profile, or diversity -- at minimum cost. Purchasing a name from College Board costs $.50 [CITE] but a brochure may cost \$7. Thus, a C&U may purchase many names but be choosy about which leads receive a brochure.
+
+
+The enrollment funnel has an upside-down pyramid shape -- wide at the top and narrow at the bottom -- in order to convey the assumption of massive "melt" at each stage, for example only a subset of inquiries will apply, a subset of applicants will be accepted, and a subset of admits will enroll. Thus, if the goal is to enroll an incoming class of size X -- and hit targets for academic profile, tuition revenue, and diversity -- the institution must buy a identify a much larger set of leads.
+
+
+How are student lists used? 
+
+WANT TO SPEND AS LITTLE MONEY ON THE NAMES AS POSSIBLE, BUT THEY WANT THE NAMES THE PURCHASE TO BE AS LIKELY TO APPLY/ENROLL AS POSSIBLE
+VAGUE PREDICTION PROBLEM WHERE YOU MUST SPEND A LOT OF MONEY ON NAMES, BUT YOU NEED TO MINIMIZE THIS AMOUNT OF MONEY, AND YOU DO THIS BY BUYING THE RIGHT SET OF NAMES
+BUT YOU JUST DON’T HAVE MUCH INFORMATION TO INFORM WHICH NAMES YOU PURCHASE; AND 
+AT TOP END, YOU HAVE TO USE VERY CRUDE THINGS AS BASIS FOR WHICH FILTERS TO UTILIZE IN PROSPECTS THAT YOU PURCHASE VS. THOSE THAT YOU DON’T
+ONCE STUDENTS APPLY YOU HAVE MUCH MORE INFO 
+SOMETIMES YOU OVERBY NAMES IN ORDER TO INCREASE APPLICATIONS AND LOWER ACCEPTANCE RATE
+
+
+
+
+PARAGRAPH What data do student lists contain and how are they used? 
+
+
+
+
+
+## DIFFERENTIATING LIST-BASED LEADS VS. BEHAVIORAL-BASED LEADS
+
+[LINK TO LAYOUT]
+
+
+
+
+
+
+
+
+Practically speaking, 
+
+
+Institutions identify undergraduate "prospects" by purchasing "student lists" -- containing contact, demographic, and academic achievement information -- from College Board, ACT, and other vendors. 
+
+Universities control which prospects are contained within a list by filtering on criteria such as zip code, test scores, and high school GPA. Once prospects and inquiries are identified, they are targeted with remote and face-to-face recruiting interventions designed to solicit applications and deepen engagement. Remote recruiting interventions include postcards, brochures, emails, text messages, and targeted social media. Face-to-face recruiting interventions include on-campus visits by prospects and off-campus recruiting visits by admissions representatives to high schools, community colleges, college fairs, etc. Institutions utilize advertising (traditional and digital) and social media to solicit inquiries and to create positive "buzz" amongst prospects [@RN4411]<!--[CITE OTHER]-->. Given the rise in "stealth applicants" who do not inquire before applying (Dupaul & Harris, 2012), advertising and social media enables universities to tell their story to prospects who do not wish to be contacted.
+
+used by the 
+
+Figure X depicts the "enrollment funnel," which helps situate where the student list business 
+In order to situate the student list business, Figure X depitcs the "enrollment funnel," a conceptual heuristic that identifies stages in the student recruitment process 
+
+INTRODUCE ENROLLMENT FUNNEL AND DEFINE FUNNEL TERMS.
+
+INTRODUCE THE DISTINCTION BETWEEN LIST-BASED LEADS AND BEHAVIORAL BASED LEADS [IF THAT IS A VALID DISTINCTION]
+
+- EAB QUOTE ABOUT LEADS. AND ALSO EAB REPORT WOULD BE GOOD PLACE TO FIGURE OUT IF THAT DISTINCTION IS VALID
+
+
+# The Student List Market
+
+# Filtering Prospects
+
+# Beginning a Policy Discussion
+
+
+  The student list business is broadly defined as a business focused on the selling and purchasing of student information. A 2018 report by the Fordham Law School Center on Law and Information Policy titled, _Transparency and the Marketplace for Student Data_ details the purchasing of student lists in the commerical marketplace and the need for student data privacy laws [@russell2018transparency]. Student data is appealing to businesses who want to make a profit from marketing their products to a younger demographic [@russell2018transparency]. Some businesses include clothing retailers, sports and recreation facilities, and to our concern, colleges and universities [^1]. In their study, @russell2018transparency found at least 14 data brokers-- that is businesses who primarily focus on collecting, aggregating, analyzing, and sharing consumer information-- sent marketing solicitations by mail or email to 10 high school students [^2]. While the authors note that it was relatively easy to identify the data brokers sending marketing solicitations to students, it was a lot more challenging to pinpoint where the data brokers obtained students' information [@russell2018transparency].  
+  Through their data collection, @russell2018transparency found that data brokers were able to gather information on students from some of the following sources: student surveys and questionnaires, affiliations and/or coordination with other brokers, and other unknown and less transparent sources [@russell2018transparency]. For example, @russell2018transparency found that the Educational Research Center of America (ERCA) collects student information through surveys they administer at schools. Furthermore, ERCA also shares information with ASl Marketing LLC, a for-profit company that engages in selling student data to commercial entities that market their products and services to that specific demographic [@russell2018transparency]. Businesses interested in marketing their products to a younger student demographic rely on vendors or data brokers to provide them with student data-- colleges and universities also rely on this information.  
+  Recent news articles have shed light on the practice of vendors such as College Board and ACT collecting student information and selling it to buyers (e.g. universities, marketing companies)[@singer2018-studata; @belkin2019-studata]. A New York Times article highlighted the ways that students are targeted for educational and noneducational marketing by companies like MyCollegeOptions-- who was owned by the National Research Center for College and University Admissions (NRCCUA) which is now owned by ACT [@singer2018-studata]. @singer2018-studata also notes how Scholarships.com collects information from students and shared that information with American Student Marketing, a data broker of the "student data collected by Scholarships.com, offering it to marketers of student loans, credit cares and smartphones." Some concerns about the use of student data is in the ways that vendors or "survey services may categorize students in ways that could expose them to predatory marketing or exclude them from important opportunities."  
+
+
+\newpage
+
+# References
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+<div id="refs" custom-style="Bibliography"></div>
+\endgroup
