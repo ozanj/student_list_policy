@@ -18,7 +18,7 @@ header-includes:
       - \usepackage{setspace}
       #- \doublespacing
       - \floatsetup{capposition=top}
-fontsize: 11pt
+fontsize: 12pt
 ---
 
 ```{r, include = FALSE, eval = FALSE}
