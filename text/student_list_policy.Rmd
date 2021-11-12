@@ -489,17 +489,21 @@ Around 2014, Chegg began promoting itself as a student list broker/reseller with
 
 This case study raises the question, why did Chegg's foray into the student list business fail? In the absence of a published autopsy, we relied on background conversations with enrollment management consultants who purchased names on behalf of universities. The consultants we spoke with had little respect names provided by Chegg and similar providers. A principal concern was coverage; universitis are often trying to target particular subsets of prospective students but the names contained by these lists were a sparse, scattered subset of all prospects. Second, consultants criticized the low quality of these data (e.g., many missing fields), a function of names being generated from voluntary online survey responses. Another concern was timeliness. College Board and ACT generate student list data early in the college search process (e.g., PSAT, PreACT). By contrast, names cannot be derived from college search websites until students start searching for college. Finally, we reason that it is difficult to create a foothold in the student list business based on user data from a competitive market -- college search enignes -- that has no barriers to entry.
 
-# Regulating the Student List Business
+# Student List Policy
 
-## Regulating Student List Filters
+## Regulating the Student List Business
 
-## Exclusive ownership of user/student-data?
+### Regulating Student List Filters
 
-# Replacing the Student List Business
+### Exclusive ownership of user/student-data?
+
+## Replacing the Student List Business
 
 Is this the best we can do???? a cartel dominated by racially problematic tests/ap curriculum and looming takeover by a private equity firm 
 
 \newpage
+
+# Recommendations for Admissions Professionals
 
 # References
 
