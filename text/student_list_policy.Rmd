@@ -280,7 +280,8 @@ Across all student markets, achieving enrollment goals requires marketing and re
 
 Enrollment management consulting firms depend on universities as their primary source of revenue. These firms also depend on student list vendors, for a couple different reasons. First, making recommendations about student list purchases is a core service offered by consulting firms. Second, names are an essential input to many of the predictive models and recruiting interventions (e.g., email, mail, text messages) these firms provide. 
 
-At present, the market for enrollment management consulting firms consists of two larger firms -- Ruffalo Noel Levitz and EAB -- and many smaller firms (e.g., [Fire Engine Red](https://www.fire-engine-red.com/), [Capture Higher Ed](https://www.capturehighered.com/), [Whiteboard Higher Education](https://gowhiteboardhighered.net/)). Anecdotally, our sense is that the number of consulting firms increased substantially from 2000 to 2010, following the growth of digital technologies and data science analytics. Beginning in the 2010s, there have been a growing number of horizontal-acquisitions [CITE ROGERS 2014], such that the market for enrollment management consulting firms has become more concentrated. In turn, market concentration makes universities that lack in-house capabilities more dependent on the remaining set of enrollment management consulting firms. 
+Anecdotally, the number of consulting firms increased substantially from 2000 to 2010, following the growth of digital technologies and data science analytics. Beginning in the 2010s, there have been a growing number of horizontal-acquisitions [CITE ROGERS 2014], such that the market for enrollment management consulting firms has become more concentrated. Increasing market concentration makes universities that lack in-house capabilities more dependent on the remaining set of enrollment management consulting firms. At present, the market for enrollment management consulting firms consists of two larger firms -- Ruffalo Noel Levitz and EAB -- and many smaller firms (e.g., [Fire Engine Red](https://www.fire-engine-red.com/), [Capture Higher Ed](https://www.capturehighered.com/), [Whiteboard Higher Education](https://gowhiteboardhighered.net/)). Additionally, as we discuss below, College Board and ACT have leveraged their position in the student list market to entered the enrollment management consulting market market.
+
 <!-- 
 C:\Users\ozanj\Google Drive\student_list_brief\literature\industry\other_em/Are We Seeing an EDU _Vendor Shakeout__rogers_2014.pdf
 -->
@@ -354,38 +355,38 @@ Whereas College Board and ACT use their oligopoly position in the supply of name
 
 Furthermore, we expect that EAB will funnel Naviance users towards client universities. For example, the EAB website states that "80% of high school students who connect with a college through Intersect apply to that institution." These issues raise important questions for policymakers. Should access to a substantial share of college-going high school students be restricted to clients of a private firm? Are we concerned that these students are being funneled towards clients of a private firm and away from other universities?
 
-__EAB Business Model__
-
-OTHER TEXT TO WRITE ABOUT EAB [CHOSEN]
-
-- NEW INVESTMENT BY PRIVATE EQUITY FIRM
-- TALK ABOUT EAB BUSINESS MODEL
-  - HARD TO OBTAIN CREDIBLE INFORMATION ABOUT STRATEGY FROM PRIVATE FIRMS, BUT PERHAPS WE CAN LEARNING SOMETHING BY DRAWING FROM QUOTE ABOUT CROSS-SELLING, SUGGEST THAT EAB BUSINESS MODEL IS TO GET PEOPLE ONE ONE PRODUCT AND THEN SELL THEM OTHERS
-- TALK ABOUT EAB 360 AND USING DIFFERENT PARTS OF PARTS OF THE PLATFORM TO INCREASE THE VALUE OF OTHER PARTS OF THE PLATFORM
-  - QUOTE FROM PRESS RELEASE ANNOUNCING INTERSECT AGREEMENT: “Through YouVisit virtual tours, college research site Cappex, and now Intersect, we offer our partners unparalleled opportunities to engage prospective students—on platforms that facilitate more than 8 million connections each year,” said EAB Enrollment Services President Chris Marett. 
-  - CAN ADD TEXT FROM WEBSITE THAT TALKS ABOUT INTEGRATED APPROACH; SEE NOTES FROM EAB GOOGLE DOC
-  - You could just verbatim quote text from EAB Enroll360, which basically writes this lead for you
-  - https://eab.com/insights/blogs/enrollment/introducing-enroll360-recruitment-ecosystem/ 
-
-
-
-OTHER THINGS TO CONSIDER ADDING TO SUB-SECTION ABOUT EAB [POTENTIAL]
-
-- SOMETHING ABOUT VISTA EQUITY PARTNERS; THEIR APPROACH; HOW THEY VIEW SOFTWARE AS A SOURCE OF PROFIT
+__Future, Business Model__. In May 2021, BC Partners -- a British private equity firm with over \$40 billion under management -- announced an investment in EAB [CITE](https://www.bcpartners.com/news/bc-partners-joins-vista-equity-partners-as-an-investor-in-eab). In June 2021, Moody's Investor Service "assigned B2 ratings" -- a speculative, not of investment grade rating -- to EAB debt "consisting of a $745 million term loan and a
+$125 million revolver," but stated that upon completion of the investment by BC Partners "Moody's expects EAB's existing debt to be repaid and ratings on these instruments to be withdrawn" [CITE MOODY'S]. In August 2021, the "plan by global investors BC Partners and Vista Equity Partners to acquire joint control over U.S. education company EAB Global Inc. received EU antitrust clearance" [CITE](https://today.westlaw.com/Document/I14d8e42af95011ebbea4f0dc9fb69570/View/FullText.html?contextData=(sc.Default)&transitionType=Default&firstPage=true). Terms of the deal were not disclosed because all parties are privately owned. One interpretation is that EAB was highly leveraged and that the investment by BC Partners enables EAB to pay for past acquisitions and perhaps for future acquisitions.
 <!-- 
-FROM VISTA "NEXT FRONTIER OF SOFTWARE INVESTMENTS"
-As a predictable and highly resilient business model, software presents an evergreen opportunity for investors. Software fundamentals also provide a compelling value proposition, including:
-• Mission criticality: Customers rely on enterprise software to run their businesses.
-• Recurring revenue: Sales are generated from licenses, maintenance and subscriptions, with long-term contracts.
-• Customer stickiness: Enterprise software solutions are deeply integrated into customers’ operations and are difficult to remove once implemented.
+ [CITE](https://www.bcpartners.com/news/bc-partners-joins-vista-equity-partners-as-an-investor-in-eab). 
+ 
+ In July 2021, the "European Commission received notification of a proposed
+concentration pursuant to Article 4 of the Merger Regulation by which BC Partners
+(‘BC Partners’, United Kingdom) and Vista Equity Partners Management, LLC
+(‘Vista’, United States of America) intend to acquire, within the meaning of Articles
+3(1)(b) and 3(4) of the Merger Regulation, joint control of the whole of EAB Global,
+Inc. (‘EAB Global’, United States of America),
 -->
-- EAB BEING PARTLY SOLD TO ANOTHER PRIVATE EQUITY FIRM AND -- PRESUMABLY -- GETTING MORE INVESTMENT WHICH PROBABLY MEANS MORE CASH ON HAND FOR ACQUISITIONS
-- ADD A FINAL PARAGRAPH THAT TALKS ABOUT INTEGRATION OF ALL THESE ACQUISITIONS -- AND MAYBE ALSO TALKS ABOUT WISR?
-- QUOTE FROM PRESS RELEASE ANNOUNCING INTERSECT AGREEMENT: “Through YouVisit virtual tours, college research site Cappex, and now Intersect, we offer our partners unparalleled opportunities to engage prospective students—on platforms that facilitate more than 8 million connections each year,” said EAB Enrollment Services President Chris Marett. 
-  - CAN ADD TEXT FROM WEBSITE THAT TALKS ABOUT INTEGRATED APPROACH; SEE NOTES FROM EAB GOOGLE DOC
-- MAYBE, DRAWING FROM QUOTE ABOUT CROSS-SELLING, SUGGEST THAT EAB BUSINESS MODEL IS TO GET PEOPLE ONE ONE PRODUCT AND THEN SELL THEM OTHERS
-- You could just verbatim quote text from EAB Enroll360, which basically writes this lead for you
-  - https://eab.com/insights/blogs/enrollment/introducing-enroll360-recruitment-ecosystem/ 
+
+Analyzing the EAB business model is difficult because privately owned companies have neither the requirement nor the incentive to disclose information. The IPO prospectus of PowerSchool, formerly a Vista subsidiary, may provide insight about EAB. PowerSchool [CITE IPO] states that,
+
+> Many of our customers begin their journey with us by using only two of our 15 products on average\ldots As customers begin to appreciate the benefits of an integrated software platform across student data, classroom learning, office functions and talent management, they increase the number of solutions they buy from us over time, with over 1,000 customers owning 5+ products and over 3,000 customers owning 3+ products\ldots. Our future revenue growth is dependent upon our ability to expand our customers’ use of our platform, and our go-to-market efforts are designed to drive cross-sell growth. 
+
+The PowerSchool quote is consistent with the assessment -- made by enrollment management vice presidents and consultants speaking on background -- that EAB is constantly trying to "upsell" clients to add new products to their consulting agreement. The PowerSchool quote is also consistent with how EAB frames their _Enroll360_ "recruiting ecosystem" as realizing the synergy between YouVisit, Cappex, Naviance/Intersect, Wisr (a peer-to-peer engagement platform acquired in 2021), and the EAB Enrollment Marketing Platform, as depicted in Figure Figure \@ref(fig:eab-enroll360) [[CITE](https://eab.com/insights/blogs/enrollment/introducing-enroll360-recruitment-ecosystem/)]:
+
+```{r eab-enroll360, echo = FALSE, fig.align = 'center', fig.cap = "EAB Enroll360", out.width = "60%"}
+knitr::include_graphics('./../assets/images/Illustration-EMS-Enroll360-Final-V3.png')
+#![The enrollment funnel](assets/images/enrollment_funnel.png)
+```
+
+> Imagine a high school student today. Let’s call her ‘Emma.’\ldots Fast forward to Emma’s junior year. She has begun to think more seriously about college and like many of her peers, she turns to Google to explore options. Emma quickly comes across [Cappex](https://eab.com/cappex/), where she’s prompted to fill out her ideal college location—close to her hometown in Rhode Island—and her intended major—computer engineering
+
+> \ldots After connecting with her counselor during her senior year, Emma has narrowed down her list of schools to five and enters her shortlist in [Naviance](https://eab.com/intersect/). From there, she explores your university’s website, she comes across a link to your [virtual tour](https://eab.com/products/virtual-tours/)\ldots After the tour, she starts to see Instagram ads for your school depicting students in that same lab. And after receiving an email from your school with an invite to apply via a personalized application, she applies. 
+
+> Emma is admitted to four of her five top schools, including yours. But to help her decide where to enroll, she wants to hear what student life is actually like. Through [Wisr](https://eab.com/wisr/), Emma connects one-on-one with Kayleigh, a current junior and student ambassador at your institution studying computer engineering. Kayleigh talks about her favorite classes, professors, and places to eat off-campus, and Emma begins to see just what her life could be like as a student there, too.
+
+
+
 
 
 <!-- 
