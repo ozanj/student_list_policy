@@ -49,6 +49,14 @@ knitr::knit_hooks$set(inline = function(x) {   if(!is.numeric(x)){     x   }else
 
 TEXT TEXT
 
+<!-- 
+TEXT TO INCLUDE SOMEWHERE
+What should the student list business look like, from an equality of opportunity perspective? All talented, hard-working students should have the opportunity to attend a high-quality college or university, regardless of where they live and which school they attend. 
+
+Unfortunately, the actual student list business strays from ideal because it is a lucrative business run by an oligopoly and oriented towards the enrollment goals of universities rather than equality of opportunity for students.
+-->
+
+
 
 # Introduction
 <!-- diana comment test-->
@@ -554,44 +562,55 @@ Policymakers should care about student lists because research suggests that part
 
 What should the student list business look like, from an equality of opportunity perspective? All talented, hard-working students should have the opportunity to attend a high-quality college or university, regardless of where they live and which school they attend. Student lists should provide eligible Title IV institutions with free access to the contact information of prospective students who consent to being contacted. Student list product filters should enable universities to target prospects with a reasonable chance of admission, but should avoid achievement criteria that systematically exclude students because of the curricular offerings of their school (e.g., AP exams). Student list filters should not allow geographic micro-targeting (e.g., at the zip-code level) and should not allow universities to target prospects based on the aggregate characteristics of their school or neighborhood.
 
-Why does the actual student list business stray from this equality of opportunity ideal? Several reasons are a function of student list vendors and products. First, underlying databases exclude many prospective students. Students who do not take College Board or ACT assessments are largely excluded from the lists these organizations sell. As more universities adopt test optional admissions policies, the number of test takers may decline in ways that are correlated with race/ethnicity, income, and geography. Considering the large relationship between inclusion in student list databases and college access outcomes [CITE], declines in the number of test-takers could negatively affect college access because universities cannot easily recruit prospects without knowing their contact information.
+Why does the actual student list business stray so far from this equality of opportunity ideal? Several important reasons are a function of student list vendors and the products they create. 
 
-Second, student list product filters systematically exclude prospective students in ways that run contrary to the equality of opportunity ideal. Universities should find high-achieving students wherever they are, but geographic micro-targeting filters encourage universities to look only in particular localities and geodemographic filters encourage universities to target prospects based on the aggregate behavior of their peers. College Board and ACT student list filters have become more elaborate over time so that universities can make "efficient" name buys that target "right-fit" prospects. Many talented prospects are excluded in the name of efficiency, but universities care about efficient name buys only because the price of names is so high. 
+First, underlying databases owned by College Board and ACT exclude many prospective students. Students who do not take College Board or ACT assessments are largely excluded from the lists these organizations sell. As more universities adopt test optional admissions policies, the number of test takers may decline in ways that are correlated with race/ethnicity, income, and geography. Considering the large relationship between inclusion in student list databases and college access outcomes [CITE], declines in the number of test-takers could negatively affect college access because universities cannot easily recruit prospects without knowing their contact information.
 
-Third, the proprietary ownership of names and the oligopoly of name vendors undermine equality of opportunity. The price of names is so high only because College Board and ACT effectively operate a cartel. If names were free, the way voter records are, universities would de-prioritize efficiency. The test-optional movement threatens this cartel, with corporations and private equity firms poised to fill the void. The partnership betweeen PowerSchool and EAB gives EAB exclusive control prospects who use Naviance software. In turn, EAB funnels Naviance users towards its client universities. 
+Second, the filters on student list products facilitate the exclusion of prospective students. For example, geographic micro-targeting filters and geodemographic filters conflict with the equality of opportunity ideal that universities should find high-achieving students wherever they are. College Board and ACT student list filters have become more elaborate over time. The rationale for new filters is to help universities can make "efficient" name buys that target "right-fit" prospects. Many talented prospects are excluded in the name of efficiency, but the only reason universities care about efficient name buys is because the price of names is so high.
+<!-- 
+CUT TEXT
 
-START HERE WEDNESDAY 11/17; 
-
-In addition to concerns about student list products and vendors, the enrollment priorities of universities may undermine equality of opportunity. A university that prioritizes tuition revenue will focus recruiting expenditure on affluent students regardless of whether names are pricey or free. The issue of university enrollment priorities raises the question of whether student list policy should regulate the student list vendors and the products they create or regulate student list customers. WE FEEL THAT POLICYMAKERS CANNOT CONTROL UNIVERSITY ENROLLMENT PRIORITIES. REGARDLESS OF UNIVERSITY ENROLLMENT PRIORITIES, PROBLEMATIC STUDENT LIST PURCHASES BY UNIVERSITIES ARE A FUNCTION OF WHAT STUDENT LIST PRODUCTS ALLOW THEM TO DO. BUT PROSPECTS FOR REGULATING STUDENT LIST PRODUCTS ARE DIFFICULT, SO REGULATING STUDENT LIST PURCHASES BY UNIVERSITIES MAY BE THE ONLY VIABLE APPROACH. [NEED TO FIGURE OUT THIS PARAGRAPH. MAY BE TWO PARAGRAPHS.]
-
-THE PROBLEMS IN THE STUDENT LIST BUSINESS ARE SUBSTANTIALLY A FUNCTION OF STUDENT LIST 
-
-PARAGRAPH IS ABOUT TO WHAT EXTENT STUDENT LIST POLICY SHOULD FOCUS 
+but geographic micro-targeting filters encourage universities to look only in particular localities and geodemographic filters encourage universities to target prospects based on the aggregate behavior of their peers. 
+-->
+Third, the proprietary ownership of names and the oligopoly of name vendors undermine equality of opportunity. The price of names is so high only because College Board and ACT effectively operate a cartel. The test-optional movement threatens this cartel. Unfortunately, the organizations poised to fill this void are corporations and private equity firms that view names as a source of profit. Over X.X million high school students use Naviance to plan for college. Intersect enables universities to connect with high school students and guidance counselors who use Naviance. The PowerSchool-EAB partnership makes EAB the exclusive provider of Intersect. The arrangement raises concerns about whether Naviance users are being funneled towards universities that pay EAB for enrollment management consulting and funneled away from opportunities at universities that are not EAB clients.
 
 
+<!-- 
+CUT TEXT
 
-OVERVIEW OF WHAT ARE THE BIG PROBLEMS
+If names were free, the way voter records are, universities would de-prioritize efficiency. 
+-->
+Fourth, in addition to concerns about student list products and vendors, the enrollment priorities of universities may undermine equality of opportunity. Consider a public university that receives little state funding and views tuition revenue as the top enrollment priority. The name buys of this university likely focus on wealthy households. However, even if names were free, the university would likely focus recruiting expenditure on wealthy households. 
 
-- IS THIS REALLY OUR SYSTEM!? THE CASH BUSINESS OF TWO PRIVATE TESTING COMPANIES AND CORPORATIONS/PRIVATE EQUITY FIRMS WAITING IN THE WINGS
-- FILTERS CONTRIBUTE TO RACIAL AND SOCIOECONOMIC INEQUITY
-- EXCLUSIVE OWNERSHIP OF NAMES OF HIGH SCHOOL STUDENTS
+## Regulating the Student List Business
 
-## Regulating Student Lists
+Having laid out the problems, how should policymakers think about regulating the student list business? To what extent should regulations focus on student list products and the vendors that create these products, or on the customers (universities) that buy student list? Focusing regulations on products and vendors rather than customers is conceptually attractive because lists purchased by universities are limited by what the product features allow. However, the Higher Education Act gives the US Department of Education regulatory authority over Title IV institutions, not over "third party servicers" with the exception of student loan services. The Federal Trade Comission (FTC) has authority over commercial products. The FTC and the Department of Justice Antitrust Division has authority of antitrust issues. An alternative approach is to regulate universities. At present, neither federal nor state policy regulate student list purchases by universities. However, there may be scope for requiring universities to disclose information about student list purchases.
+<!-- 
+CUT TEXT
 
-TALK ABOUT THE REGULATORY AGENCIES AND ACTS THAT COULD POTENTIALLY REGULATE STUDENT LIST BUSINESS
+Federal and state policy can influence university enrollment priorities only indirectly, through funding policy. 
+-->
 
-- EXPLAIN WHY US DEPARTMENT OF EDUCATION, HIGHER EDUCATION ACT DOESN'T APPLY
-  - RACIAL DISCRIMINATION CLAUSE
-- FTC?
-- CONSUMER FINANCE PROTECTION BUREAU?
+### Regulating Student List Filters, FTC
 
-### Regulating Student List Filters
+THIS WOULD BE FTC AND MAYBE CONSUMER FINANCE PROTECTION BUREAU
 
-### Antitrust Regulations
+
+### Regulating Anti-competitive Behavior, FTC \& DOJ
+
+- introduce FTC competition bureau and relevant concepts/regulations
+- apply to student list vendors
+
+
+### Regulating Universities, Department of Education
+
+- Introduce relevant regulations/rules from HEA
+- apply them to student list business
+
 
 ## Replacing the Student List Business
 
-Is this the best we can do???? a cartel dominated by racially problematic tests/ap curriculum and looming takeover by a private equity firm 
+Is this the best we can do???? an oligopoly dominated by racially problematic tests/ap curriculum and looming takeover by a private equity firm 
 
 # Recommendations for Universities and Admissions Professionals
 
