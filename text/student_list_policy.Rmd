@@ -1,5 +1,5 @@
 ---
-title: "Student List Policy"
+title: "The Student List Business"
   # "Deconstructing the student list business in higher education"
 author: 
   - Ozan Jaquette
