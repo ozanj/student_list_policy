@@ -612,20 +612,20 @@ Federal and state policy can influence university enrollment priorities only ind
 
 Based on equality of opportunity concerns described above, student list products should be regulated to prohibit filters that allow geographic micro-targeting and to prohibit geodemographic filters, which target prospects based on the historical behavior of nearby peers. We believe that these filters increase the risk of intentional and unintentional racial redlining, particularly when they are employed alongside other filters (e.g., AP test scores). The viability of actually implementing these regulations depends on which statutes and agencies have regulatory authority over student list products, whether the filters on student list products run afoul current regulations, and whether regulations can be changed to prohibit these filters.
 
-The Federal Trade Commission (FTC) regulates commerce at the federal level. Within the FTC, the Bureau of Consumer Protection "stops unfair, deceptive and fraudulent business practices by collecting reports from consumers and conducting investigations, suing companies and people that break the law, developing rules to maintain a fair marketplace" [CITE](https://www.ftc.gov/about-ftc/bureaus-offices/bureau-consumer-protection). In general, the FTC does not prohibit businesses from targeting particular localities, from targeting particular racial/ethnic groups, or from utilizing geodemographic methodologies when looking for customers for consumer products [CITE; IS THIS TRUE?]. 
+<!-- 
+CUT TEXT
 
-However, the FTC has recently become interested in products that utilize artificial intelligence, algorithms, and predictive analytics, citing research which finds that "apparently 'neutral' technology can produce troubling outcomes – including discrimination by race or other legally protected classes" [CITE](https://www.ftc.gov/news-events/blogs/business-blog/2021/04/aiming-truth-fairness-equity-your-companys-use-ai). We believe that student list products fall into this class of products and, thus, should be subject to FTC srutiny.
+In general, the FTC does not prohibit businesses from targeting particular localities, from targeting particular racial/ethnic groups, or from utilizing geodemographic methodologies when looking for customers for consumer products [CITE; IS THIS TRUE?]. 
+-->
+The Federal Trade Commission (FTC) regulates commerce at the federal level. Within the FTC, the Bureau of Consumer Protection "stops unfair, deceptive and fraudulent business practices by collecting reports from consumers and conducting investigations, suing companies and people that break the law, developing rules to maintain a fair marketplace" [CITE](https://www.ftc.gov/about-ftc/bureaus-offices/bureau-consumer-protection). 
+
+However, the FTC has recently become interested in products that utilize artificial intelligence, algorithms, and predictive analytics, citing research which finds that "apparently 'neutral' technology can produce troubling outcomes – including discrimination by race or other legally protected classes" [CITE](https://www.ftc.gov/news-events/blogs/business-blog/2021/04/aiming-truth-fairness-equity-your-companys-use-ai). 
+
+PARAGRAPH ON HOW FTC IS DEFINING AI
+We believe that student list products fall into this class of products and, thus, should be subject to FTC srutiny.
 
 The 2021 FTC blog "Aiming for truth, fairness, and equity in your company’s use of AI" [CITE](https://www.ftc.gov/news-events/blogs/business-blog/2021/04/aiming-truth-fairness-equity-your-companys-use-ai) provides useful information. Section 5 of the FTC Act "prohibits unfair or deceptive practices. That would include the sale or use of – for example – racially biased algorithms" ). In simple terms, the FTC Act considers a practice unfair "if it causes more harm than good." Importantly, this definition is concrned with "discriminatory outcomes" as opposed to whether the algorithm explicitly considered protected classes like race and gender. For example, the blog post stated that "If a data set is missing information from particular populations, using that data to build an AI model may yield results that are unfair or inequitable to legally protected groups." Applying this logic, College Board student list products include students who took the SAT, PSAT, or an AP exam. These products likely exhibit systemic racial bias in which students are excluded from the database, making them subject to FTC scrutiny. Moreover, considering racial inequality in the availability of AP coursework, allowing student list products to filter based on AP score, or based on taking an AP exam, may raise FTC scrutiny.
 
-PASTED TEXT FROM BLOG POST
-
-- https://www.ftc.gov/news-events/blogs/business-blog/2021/04/aiming-truth-fairness-equity-your-companys-use-ai
-
-Fair Credit Reporting Act. The FCRA comes into play in certain circumstances where an algorithm is used to deny people employment, housing, credit, insurance, or other benefits.
-Equal Credit Opportunity Act. The ECOA makes it illegal for a company to use a biased algorithm that results in credit discrimination on the basis of race, color, religion, national origin, sex, marital status, age, or because a person receives public assistance.
-
-Do more good than harm. To put it in the simplest terms, under the FTC Act, a practice is unfair if it causes more harm than good. Let’s say your algorithm will allow a company to target consumers most interested in buying their product. Seems like a straightforward benefit, right? But let’s say the model pinpoints those consumers by considering race, color, religion, and sex – and the result is digital redlining (similar to the Department of Housing and Urban Development’s case against Facebook in 2019). If your model causes more harm than good – that is, in Section 5 parlance, if it causes or is likely to cause substantial injury to consumers that is not reasonably avoidable by consumers and not outweighed by countervailing benefits to consumers or to competition – the FTC can challenge the use of that model as unfair.
 
 ### Regulating Anti-competitive Behavior, FTC \& DOJ
 
