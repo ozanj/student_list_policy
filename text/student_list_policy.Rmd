@@ -682,10 +682,32 @@ Having defined the relevant market and established market power, we analyze whet
 Although not formally part of the relevant market, the agreement may also harm high school students who use Naviance in that these students will be funneled to EAB client universities. EAB charges higher prices than other EM consultancies, a cost that universities finance by charging higher tuition price. Therefore, Naviance users who are funnelled to EAB clients may experience higher prices than they would in the absence of the exclusive reseller agreement. 
 
 
-### Higher Education Act: Regulating Title IV Institutions and Third-Party Servicers.
+### Regulating Universities
 
-- Introduce relevant regulations/rules from HEA
-- apply them to student list business
+We discuss the regulation of universities that buy student lists, including the contracts universities enter with enrollment management consulting firms and student list vendors. As a policy goal, the names purchased each year by a university -- across all lists purchased -- should not systematically exclude members of a protected class, rural students, or low-income students. This policy goal includes redlining by selective universities and reverse redlining by for-profit colleges. Relevant laws include the Higher Education Act (HEA), equal opportunities laws -- including the Equal Credit Opportunity Act (ECOA), Title VII of the Civil Rights Act -- and the Consumer Financial Protection Act (CFPA).
+
+#### Higher Education Act
+
+The Higher Education Act (HEA) regulates federal higher education programs and is enforced by the Department of Education. Title IV of the HEA concerns federal financial aid to students. Postsecondary institutions authorized to enroll students that receive federal financial aid are called Title IV institutions. HEA Section 111 prohibits discrimination by institutions of higher education that receive direct or indirect funding from the federal government.^["Institutions of higher education receiving Federal financial assistance may not use such financial assistance, directly or indirectly, to undertake any study or project or fulfill the terms of any contract containing an express or implied provision that any person or persons of a particular race, religion, sex, or national origin be barred from performing such study, project, or contract" [20 U.S.C. \S 1011](https://www.law.cornell.edu/uscode/text/20/1011).]
+
+HEA section 487 states that institutions must sign a "program participation agreement" which defines the requirements for "initial and continuing eligibility" to participate in the Title IV financial aid program [20 U.S.C. \S 1094](https://www.law.cornell.edu/uscode/text/20/1094). 
+
+One conditon of the program participation agreement states that Title IV institutions "will complete surveys conducted as a part of the Integrated Postsecondary Education Data System (IPEDS) or any other Federal postsecondary institution data collection effort, as designated by the Secretary" [HEA section 487(a)(17)](https://www.law.cornell.edu/uscode/text/20/1094). This reporting requirement empowers the Department of Education request that Title IV institutions provide annual data about student list vendors. Providing such data need not be onerous for universities, even when they outsourced student list purchases to a consulting firm. We created a document that explains how to obtain prior student list purchases from the College Board and ACT online portals and how to remove personal information from these data. Moving forward, we hope to develop a tool that reads the data provided by a university, describes the characteristics of ppurchased prospects, and compares the characteristics of purchased prospects to other populations of interest (e.g., high school graduates in the county, metropolitan area, or state). To minimize burden, universities should not be required to provide information about student lists purchased from small student list vendors (e.g., Parchment). 
+
+In 1992, Congress banned Title IV institutions from providing incentive compensation for student recruitment [CITE](https://www.gao.gov/assets/gao-10-370r.pdf). Specifically, program participation agreements state that "the institution will not provide any commission, bonus, or other incentive payment based directly or indirectly on success in securing enrollments or financial aid to any persons or entities engaged in any student recruiting" [HEA section 487(a)(20)](https://www.law.cornell.edu/uscode/text/20/1094). In 2002, the Department of Education issued "safe harbor" regulations which defined 12 payment arrangements institutions could engage in without violating the incentive compensation ban [CITE](https://www.gao.gov/assets/gao-10-370r.pdf).
+
+LINKS TO SAFE HARBOR text
+
+- https://www2.ed.gov/policy/highered/reg/hearulemaking/2009/integrity-session3-issues.pdf
+- https://www.federalregister.gov/documents/2013/03/22/2013-06656/program-integrity-issues 
+- https://www.law.cornell.edu/cfr/text/34/668.14
+
+
+that established 
+
+
+
+
 
 
 ## Replacing the Student List Business
