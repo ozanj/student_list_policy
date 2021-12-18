@@ -163,7 +163,7 @@ The student list business is based on the direct mail business model. Therefore,
 
 The market described by @singer1988 is similar to "Chegg Cloud" student list business promoted in 2015:
 
-> Chegg has partnered with 18 of the top college search websites and mobile apps to aggregate student data and requests for information, and connect those students to the institutions they request information from"[pg 5; CHEGG 2015 SOCIAL ADMISSIONS REPORT]. 
+> Chegg has partnered with 18 of the top college search websites and mobile apps to aggregate student data and requests for information, and connect those students to the institutions they request information from"[@chegg2015, p.5]. 
 
 In this business model, college search engines produce student list data when prospects voluntarily enter the data in exchange for information about best-match universities and scholarships. Chegg plays the roles of list-wholesaler -- buying names from list produces -- and the role of list broker -- selling lists to individual universities looking for customers. By contrast, the student list businesses of College Board and ACT contain fewer intermediaries. The testing agencies produce list data as a byproduct of their assessment products and sell lists directly to universities looking for customers.
 
@@ -243,18 +243,14 @@ How do universities use student lists? Enrollment management consulting firms an
 
 ## The Cost of Efficiency
 
-As of 2021, College Board changes \$0.XX per name and ACT charges \$0.XX per name. The cost of student lists creates an incentive for "efficient" name buys, whereby universities only purchase the names of desirable prospects that are likely to apply and enroll.  For example, the consultancy Ruffalo Noel Levitz states the "[RNL Student Search and Engagement](https://www.ruffalonl.com/enrollment-management-solutions/building-demand/student-search-and-engagement/)" product enables universities to "Target the right students in the right markets" by making "the most efficient name purchases using predictive modeling"[cite]
+As of 2021, College Board changes \$0.XX per name and ACT charges \$0.XX per name. The cost of student lists creates an incentive for "efficient" name buys, whereby universities only purchase the names of desirable prospects that are likely to apply and enroll.  For example, the consultancy Ruffalo Noel Levitz states the "[RNL Student Search and Engagement](https://www.ruffalonl.com/enrollment-management-solutions/building-demand/student-search-and-engagement/)" product enables universities to "Target the right students in the right markets" by making "the most efficient name purchases using predictive modeling"[@ruffalo_noel_levitz_2021]
 the consulting firm Fire Engine Red states that their "[student search modeling](https://www.fire-engine-red.com/data-services/)" product "can save your school money, by helping you purchase only the names of students who are most likely to apply and enroll" [@fire_engine_red_2021, para.3]. Student list vendors develop student list products that cater to this desire for efficiency. For example, College Board states that their "[Search](https://cbsearch.collegeboard.org/solutions)" product suite "allows you to filter your queries on the characteristics that matter most to you. New filters are coming soon to help you connect with students based on attributes about their hometown or high school, like the rates of AP engagement and student [geographic] mobility" [CITE; PDF SAVED]. 
 <!-- 
 C:\Users\ozanj\Google Drive\student_list_brief\literature\industry\other_em\Data Services _ Search Modeling _ Fire Engine RED.pdf
 
 C:\Users\ozanj\Google Drive\student_list_brief\literature\industry\ruffalo_noel_levitz\College Student Search and Engagement _ RNL.pdf
 
-COULD NOT FIND THIS PDF IN THE DRIVE ^^^ -Diana
-
 C:\Users\ozanj\Google Drive\student_list_brief\literature\industry\college_board\Solutions _ CB Search.pdf
-
-COULD NOT FIND THIS PDF IN THE DRIVE^^^ -Diana
 -->
 
 The emphasis student list products place on efficiency has important implications for college access because purchases that attempt to maximize efficiency (e.g., based on neighborhood characteristics) may systematically exclude talented students from low-income rural communities and communities of color. For example, a prospective student with a 4.0 high school GPA from a poor, rural community is likely to be purchased by fewer universities than a 4.0 prospect from an affluent suburb because many universities view rural communities with low college-going rates as inefficient name buys. This systematic exclusion is a function of student names costing money. By contrast, while political campaigns have an incentive to be choosy about who receives expensive interventions (e.g., a glossy brochure targeting donors), they have no incentive to exclude people from their database -- or from inexpensive interventions like email -- because voter names are free.
