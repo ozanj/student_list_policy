@@ -665,7 +665,7 @@ To what extent are student list vendors and student list products beholden to FT
 
 The Fair Credit Reporting Act (FRCA) defines "consumer reporting agencies" as any entity
 
-> which, for monetary fees, dues, or on a cooperative nonprofit basis, regularly engages in whole or in part in the practice of assembling or evaluating consumer credit information or other information on consumers for the purpose of furnishing consumer reports to third parties [@1681a](https://www.law.cornell.edu/uscode/text/15/1681a)
+> which, for monetary fees, dues, or on a cooperative nonprofit basis, regularly engages in whole or in part in the practice of assembling or evaluating consumer credit information or other information on consumers for the purpose of furnishing consumer reports to third parties [15 U.S.C \S 1681a ](https://www.law.cornell.edu/uscode/text/15/1681a)
 
 
 @RN4744 defines "data brokers" as companies that collect and sell consumers' personal information, a definition that clearly includes organizations that sell student list products. Further, @RN4744 defines three categories of data brokers, (1) credit reporting agencies covered by FCRA, (2) entities that sell consumer data for marketing purposes and (3) entities not covered by FCRA that use consumer data for non-marketing purposes, such as fraud detection. Student list vendors would seem to fall under category (2). 
