@@ -37,12 +37,24 @@ library(bookdown)
 # https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_pdf.pdf
 library(kableExtra)
 library(tidyverse)
-#library(gridExtra)
-#library(scales)
+library(gridExtra)
+library(scales)
 
-knitr::opts_chunk$set(echo = F, message = F)
+knitr::opts_chunk$set(echo = F, message = F, warning = F)
 
 knitr::knit_hooks$set(inline = function(x) {   if(!is.numeric(x)){     x   }else{    prettyNum(round(x,2), big.mark=",")    } })
+
+theme_set(
+  theme(
+    text = element_text(size = 7),
+    panel.background = element_blank(),
+    plot.title = element_text(color = '#444444', size = 7, hjust = 0.5, face = 'bold'),
+    axis.ticks = element_blank(),
+    axis.title = element_text(face = 'bold'),
+    legend.title = element_text(face = 'bold'),
+    legend.key.size = unit(0.3, 'cm')
+  )
+)
 ```
 
 # Executive Summary
@@ -70,15 +82,23 @@ In off-the record conversations, enrollment management consultants told us that 
 -->
 On February 21, 2020, represented by counsel, we issued a public records request to a public research university (herein "Stonewall University") seeking information about "student list" purchases. Student lists contain the contact information of prospective students that meet the criteria (e.g., test score range, zip codes) specified in an order. Sometimes referred to as "names," student lists are the fundamental input for recruiting campaigns, which target individual prospects by mail, email, text, and on social media. Our records request sought (A) "order summary" -- which lists the criteria specified -- and (B) de-identified student list data for each student list purchase made by the university over the prior four years.
 
-On April 27, 2020, Stonewall University responded to our request, "The university has a substantial and proprietary interest in maintaining the confidentiality of the documents you have requested. Accordingly, with the exception of the attached slide, the records requested will not be produced." The slide, titled "2016-2020 Name Purchases by Source," indicated that Stonewall University purchased about 816,000 names in 2016, including about 517,000 from College Board and 246,000 from ACT. In 2020 Stonewall University purchased about 1,251,000 names, including about 648,000 from College Board and 220,000.
+On April 27, 2020, Stonewall University responded to our request, "The university has a substantial and proprietary interest in maintaining the confidentiality of the documents you have requested. Accordingly, with the exception of the attached slide, the records requested will not be produced." The slide, titled "2016-2020 Name Purchases by Source," indicated that Stonewall University purchased about 816,000 names in 2016, including about 517,000 from College Board and 246,000 from ACT. In 2020, Stonewall University purchased about 1,251,000 names, including about 648,000 from College Board and 220,000.
 
-Curiously, the footer of the attached slide read "\copyright EAB Global, Inc." We learned that EAB, an education consulting firm known for enrollment management, purchases student lists on behalf of Stonewall University. This became a barrier to our records request. Stonewall University General Counsel stated, on 12/7/2020, that "while [Stonewall University] indeed purchases student lists, the University does not actually have physical possession of such lists" and, on 1/27/2021, that "this is because [Stonewall University] does not receive anything directly from College Board or from ACT or other list sources. Rather, EAB, on [Stonewall's] behalf, places the order, receives the data, and then [Stonewall University] is billed directly for it." Later, we asked Stonewall University to ask EAB to produce the records but we were told on 8/13/2021 that "EAB also doesn’t have or keep these materials." As of December, 2021 -- following X months of emails, conference calls, and officious letters on firm letterhead -- we have not received the requested order summaries or student lists. An interesting aside, the Vice President for Enrollment management came to Stonewall University after working as an enrollment consultant for EAB. 
+Curiously, the footer of the attached slide read "\copyright EAB Global, Inc." We learned that EAB, an education consulting firm known for enrollment management, purchases student lists on behalf of Stonewall University. This became a barrier to our records request. Stonewall University General Counsel stated, on 12/7/2020, that "while [Stonewall University] indeed purchases student lists, the University does not actually have physical possession of such lists" and, on 1/27/2021, that "this is because [Stonewall University] does not receive anything directly from College Board or from ACT or other list sources. Rather, EAB, on [Stonewall's] behalf, places the order, receives the data, and then [Stonewall University] is billed directly for it." Later, we asked Stonewall University to ask EAB to produce the records but we were told on 8/13/2021 that "EAB also doesn't have or keep these materials." As of December 2021 -- following 22 months of emails, conference calls, and officious letters on firm letterhead -- we have not received the requested order summaries or student lists. An interesting aside, the Vice President for Enrollment management came to Stonewall University after working as an enrollment consultant for EAB. 
 
 <!--
 Q: Does this make pseudonym useless if we say VP came to Stonewall U? Maybe people could figure out who they are based on this sentence?
 -->
 
-Our request to Stonewall University is part of a larger project -- funded by the _Joyce Foundation_ and the _Kresge Foundation_ and in partnership with the _Lawyers' Committee for Civil Rights_ and the pro bono offices of four law firms -- that issued public records requests to XX universities in five states in order to collect quantifiable data about student list purchases (and also off-campus recruiting visits). Each request is a protracted negotiation, often involving several negotiations.
+Our request to Stonewall University is part of a larger project -- funded by the _Joyce Foundation_ and the _Kresge Foundation_ and in partnership with the _Lawyers' Committee for Civil Rights_ and the pro bono offices of four law firms -- that issued public records requests to 93 universities in five states in order to collect quantifiable data about student list purchases (and also off-campus recruiting visits). Each request is a protracted negotiation, often involving several negotiations.
+
+<!--
+12 IL
+12 MN
+32 CA
+35 TX
+2 AZ
+-->
 
 We began this project on the heels of a project that used web-scraping and public records requests to collect data about off-recruiting visits made by public research universities [@han2019recruiting]. Most universities in our sample made fewer in-state than out-of-state visits and these out-of-state visits focused on affluent, predominantly white high schools, but a few universities did a "good" job of visiting schools across their state and without evidence of racial or socioeconomic bias. We initially approached the student list data collection with a similar focus on identifying which universities do a "good" vs. "bad" job of reaching out to their surrounding community. However, we made two realizations that helped us see that the focus should be on the student list products themselves and on the organizations that sell student list data.
 
@@ -98,13 +118,79 @@ The EAB origin story begins in 1983, when Bill Royall founded Royall & Company t
 
 ## The Effects of Student Lists
 
-CRYSTAL - RECREATE FIGURES 2 AND 3 FROM THIS ARTICLE AND INSERT IN OUR POLICY REPORT
-
-- https://cbsearch.collegeboard.org/pdf/college-outreach-and-student-outcomes.pdf 
+<!-- https://cbsearch.collegeboard.org/pdf/college-outreach-and-student-outcomes.pdf -->
 
 What is the effect of student lists on college access outcomes for students? @RN4739 analyzed the college access outcomes of SAT test-takers who graduated from high school between 2015-2018. When registering for any College Board exam, students are given the opportunity to opt-in to the College Board Student Search Service, which enables universities to purchase their contact information. @RN4739 merged the database of SAT test-takers to college enrollment data from the National Student Clearinghouse in order to assess whether the college access outcomes of students who opted in to Student Search differed from those who opted out, controlling for covariates such as gender/sex, race/ethnicity, parental education, SAT score, and the high school they attended. 
 
-After controlling for covariates, 58.0\% of students who participated in Search attended any college compared to 50.2\% of students who opted out of Search, representing a 15.5\% relative increase in the probability of college enrollment ((58-50.2)/50.2=15.5). 41.1\% of students who participated in Search attended a 4-year college compared to 32.8\% of students who opted out, representing a 25.3\% relative increase in the probability of attending a 4-year college. Furthermore, change in the relative probability of attending a four-year college associated with opting in to Search out was higher for students who identified as Black (24.5%), Hispanic (34.4%), American Indian or Alaska Native (AI/AN) (23.8%), and Native Hawaiian or Pacific Islander (26.1\%) than it was for students who identified as White (21.6\%) or Asian (15.2\%). Similarly, change in the relative probability of attending a four-year college was higher for students whose parents did not attend college (40.6\%), and students whose parents had some college but no BA (30.1\%), than it was for students whose parents had a BA (18.9\%).
+As seen in Figure \@ref(fig:cb-fig), after controlling for covariates, 58.0\% of students who participated in Search attended any college compared to 50.2\% of students who opted out of Search, representing a 15.5\% relative increase in the probability of college enrollment ((58-50.2)/50.2=15.5). 41.1\% of students who participated in Search attended a 4-year college compared to 32.8\% of students who opted out, representing a 25.3\% relative increase in the probability of attending a 4-year college. Furthermore, change in the relative probability of attending a four-year college associated with opting in to Search out was higher for students who identified as Black (24.5%), Hispanic (34.4%), American Indian or Alaska Native (AI/AN) (23.8%), and Native Hawaiian or Pacific Islander (26.1\%) than it was for students who identified as White (21.6\%) or Asian (15.2\%). Similarly, change in the relative probability of attending a four-year college was higher for students whose parents did not attend college (40.6\%), and students whose parents had some college but no BA (30.1\%), than it was for students whose parents had a BA (18.9\%).
+
+```{r cb-fig, fig.height = 5, out.width = '85%', fig.cap = 'Effects of College Board Student Search Service'}
+create_cb_figure <- function(categories, values, plot_title) {
+  cb_fig_df <- data.frame(
+    category = rep(categories, each = 2),
+    subcategory = rep(c('Not Licensed', 'Gain from being Licensed'), length(categories)), 
+    value = values
+  )
+  
+  cb_fig_df$category <- factor(cb_fig_df$category, levels = categories)
+  
+  cb_fig_df %>%
+    left_join(
+      cb_fig_df %>%
+        pivot_wider(id_cols = category, names_from = subcategory, values_from = value) %>%
+        mutate(
+          total = `Not Licensed` + `Gain from being Licensed`,
+          pct_change = `Gain from being Licensed` / `Not Licensed` * 100
+        ),
+      by = 'category') %>% 
+    ggplot(aes(x = category, y = value, fill = subcategory, width = 0.6)) +
+    geom_bar(position = 'stack', stat = 'identity') +
+    geom_text(aes(y = value, label = if_else(subcategory == 'Not Licensed', str_c(sprintf('%.1f', value), '%'), '')), color = '#444444', size = 2, position = position_stack(vjust = 0.5)) +
+    geom_text(aes(y = total + 3, label = if_else(subcategory == 'Not Licensed', str_c('(', sprintf('%.1f', pct_change), '%)'), '')), color = '#444444', size = 2) +
+    geom_text(aes(y = total + 7, label = if_else(subcategory == 'Not Licensed', str_c(sprintf('%.1f', `Gain from being Licensed`), 'pp'), '')), color = '#444444', size = 2) +
+    ggtitle(plot_title) +
+    xlab('') + ylab('') + 
+    scale_y_continuous(expand = expansion(mult = c(0, 0.05)), limits = c(0, 80)) +
+    scale_fill_manual(values = c('#ba9a88', '#bbcfd7')) +
+    theme(
+        plot.margin = margin(t = 0.6, unit = 'cm'),
+        panel.grid.major.y = element_line(size = 0.1, color = 'gray'),
+        legend.title = element_blank(),
+        legend.position = 'bottom',
+        legend.margin = margin(t = -0.5, unit = 'cm'),
+        legend.text = element_text(margin = margin(r = 0.2, unit = 'cm'))
+      ) +
+      guides(fill = guide_legend(reverse = T))
+}
+
+grid.arrange(
+  create_cb_figure(
+    c('Overall', 'Asian', 'Black', 'Hispanic', 'AI/AN', 'HI/PI', 'White'),
+    c(32.8, 8.3, 37.5, 5.7, 31.8, 7.8, 24.1, 8.3, 26.5, 6.3, 22.2, 5.8, 44.4, 9.6),
+    'Enrollment'
+  ),
+  create_cb_figure(
+    c('Overall', 'Asian', 'Black', 'Hispanic', 'AI/AN', 'White'),
+    c(15.7, 4.9, 17.7, 5.0, 7.2, 2.9, 6.7, 2.9, 8.7, 4.2, 24.0, 6.7),
+    'BA Completion within 4 Years'
+  ),
+  create_cb_figure(
+    c('Overall', 'No College', 'College,\nNo BA', 'College,\nBA or Higher'),
+    c(32.8, 8.3, 24.9, 10.1, 36.5, 11.0, 53.4, 10.1),
+    'Enrollment'
+  ),
+  create_cb_figure(
+    c('Overall', 'No College', 'College,\nNo BA', 'College,\nBA or Higher'),
+    c(15.7, 4.9, 13.6, 6.8, 21.3, 8.5, 39.9, 10.1),
+    'BA Completion within 4 Years'
+  ),
+  ncol = 2
+)
+```
+
+\pagebreak\begingroup\fontsize{8}{12}\selectfont
+_Note: AI/AN = American Indian or Alaska Native. HI/PI = Hawaiian or Pacific Islander. The sample for enrollment outcomes includes all SAT takers in the 2015–2018 high school graduation cohorts. The sample for completion outcomes is restricted to students in the 2015–2016 cohorts. Completion results are not reported for HI/PI students due to very small sample size (N=2,749), which returns imprecise estimates. Results are estimated from regressions that include student-level controls for: sex, race/ethnicity, SAT score, parental education level, last Student Search Service opt-in status, and graduation cohort and high school fixed effects. All differences between students whose names were licensed and those whose names were not licensed are statistically significant at the 1% level._
+\endgroup
 
 @RN4739 also analyzed the four-year BA completion rates of SAT test takers from the 2015 and 2016 high school graduation cohorts. 20.6\% of students who participated in Search obtained a BA compared to 15.7\% of students who opted out, representing a 31.2\% relative increase in the probability of obtaining a BA within four years ((20.6-15.7)/15.7=31.2). Additionally, this relative increase in the probability of obtaining a BA was higher for Black, Hispanic, and Native American/Alaska Native students than it was for White and Asian students and higher for first-generation students than for students whose parents had a BA.
 
@@ -217,13 +303,12 @@ During background conversations, enrollment management consultants indicated tha
 
 Figure \@ref(fig:em-funnel) depicts the "enrollment funnel in order to situate the student list business within higher education enrollment management. The enrollment funnel is a conceptual heuristic that identifies stages in the student recruitment process -- prospects, inquiries, applicants, accepted applicants, and enrolled students -- and is used by the enrollment management industry to inform interventions that target one or more stages. "Prospects" are "all the potential students you would want to attract to your institution" [@RN4322]. We define "leads" as prospects whose contact information has been purchased. "Inquiries" are prospects that contact your institution. Inquiries consist of two types, first, those who respond to an initial solicitation from the university (e.g., email) and, second, "student as first contact" inquiries who reach out to the university on their own, for example, by sending ACT scores to the institution, by filling out an online admissions inquiry form, or by taking a "virtual tour" that records IP addresses. Applicants consist of inquiries who apply plus "stealth applicants" who do not contact the university before applying.
 
-INSERT FIGURE \@ref(fig:em-funnel) ABOUT HERE 
 <!-- 
 - [HOW TO REVISE FIGURE: MAKE PROSPECTS THE UNKNOWN GROUP OF PEOPLE YOU WANT TO APPLY TO YOUR INSTITUTION; LEADS ARE NAMES YOU PURCHASE; INQUIRIES; SPLIT INQUIRIES INTO TWO COLUMNS; INSTITUTION-AS-FIRST-CONTACT AND STUDENT-AS FIRST CONTACT; SPLIT APPLICANTS INTO TWO COLUMNS; INQUIRIES WHO APPLY VS. APPLICATION AS FIRST CONTACT]
 -->
 
 
-```{r em-funnel, echo = FALSE, fig.align = 'center', fig.cap = "The enrollment funnel", out.width = "45%"}
+```{r em-funnel, echo = FALSE, fig.align = 'center', fig.cap = "The enrollment funnel", out.width = "40%"}
 knitr::include_graphics('./../assets/images/enrollment_funnel.png')
 #![The enrollment funnel](assets/images/enrollment_funnel.png)
 ```
@@ -242,7 +327,7 @@ With respect to number of names purchased annually, @RN4741 reported that 34\% o
 
 How do universities purchase student lists from College Board _Student Search Service_ and ACT's Encoura platform? Each purchased list is a subset of prospects from the population of test-takers. The filters available in a student list product enable universities to control which prospects are included in a particular list. For the ACT Encoura student list product, for example, commonly specified prospect search filters include high school graduation year, high school GPA, test score range (ACT or PreACT), gender, ethnicity, intended major, and geography (e.g., state, county, zip code)[@schmidt_2019]. As a hypothetical example, a university could purchase a student list from ACT that consisted of all prospects who scored between 30 and 34 on the ACT, have a GPA higher than 3.5, live in one of the top 10 metropolitan areas, and are in the high school senior class of 2023. The College Board _Student Search Service_ offers similar sets of filters. More recently, College Board Search products enable universities to filter prospects based on the college-going characteristics of the neighborhood a student lives in or the school a student attends (e.g., what percentage of recent graduates from the school attended an out-of-state university).
 
-What data do purchased student lists contain? Each purchased student list is essentially a spreadsheet that contains one row for each prospect that meets all criteria specified in the purchase. The columns of the student list includes detailed contact information (name, address, email, cell phone) and detailed student characteristics derived from the pre-test questionnaire (e.g., ethnicity, race, gender, high school GPA, graduation year, high school code, intended major, first-generation status). The data template for an ACT student list can be found HERE [LINK] and the template for a College Board student list can be found HERE [LINK]. These fields represent a small subset of the information the testing agencies know about prospective students and contain very little data about performance on assessments (e.g., SAT score). As we discuss later, College Board and ACT provide more detailed student list data to universities that pay for their enrollment management consulting services.
+What data do purchased student lists contain? Each purchased student list is essentially a spreadsheet that contains one row for each prospect that meets all criteria specified in the purchase. The columns of the student list includes detailed contact information (name, address, email, cell phone) and detailed student characteristics derived from the pre-test questionnaire (e.g., ethnicity, race, gender, high school GPA, graduation year, high school code, intended major, first-generation status). The data template for an ACT student list can be found [here](https://drive.google.com/file/d/1rsP45OyOsnPYhV8uWYKDAy_spGhjj6aj/view) and the template for a College Board student list can be found [here](https://drive.google.com/file/d/1Qvc_QRi9izEF1W78Lh4nNi5NsXjCZqUE/view). These fields represent a small subset of the information the testing agencies know about prospective students and contain very little data about performance on assessments (e.g., SAT score). As we discuss later, College Board and ACT provide more detailed student list data to universities that pay for their enrollment management consulting services.
 
 How do universities use student lists? Enrollment management consulting firms and sophisticated in-house operations use algorithms to inform recruiting interventions. Both the algorithms and the interventions must be fed data (e.g., cannot send an email without an email address). Because student lists are costly, decisions about student list purchases are also informed by algorithms. Purchased lists are the basic building block for data-informed recruiting. These lists are layered with additional data sources, such as consumer data about prospects from credit companies, records of interactions with prospects (e.g., visiting virtual tour), historical application/enrollment data about students who attended the same high school, etc. These layered data are the input of predictive models that inform decisions about which recruiting interventions to send to which prospects (e.g., who gets a \$0.50 postcard and who gets a \$7 brochure). A key takeaway is that the way enrollment managers utilize student lists is nearly identical to the way political parties utilize public voter files as the basic input to national voter databases. However, voter files are free but student lists are not, which turns out to have important implications for college access.
 
@@ -326,7 +411,7 @@ CUT TEXT; THINK THIS IS SAID ELSEWHERE
 The testing agencies dominate the market for high school student names because they offer unparalleled coverage of prospective students, because they enable universities to target prospective students early in the college search process (e.g., sophomores take the PSAT), and because the data quality is high.
 -->
 
-A second source of student list data consists of survey data students voluntarily submit to websites/applications, along with data these sites collect about the behavior of users on their platform. One subset of platforms (e.g., College Bound Selection Service (CBSS), Cirkled In, Zinch) have the explicit goal of sharing profiles created by students with the universities the student expresses interest in attending. For example, Cirkled In's [website](https://www.cirkledin.com/) says "Go beyond test scores and connect directly to colleges. Cirkled In’s portfolio platform showcases students’ entire educational story." Another subset of platforms have the explicit goal of helping students identify "match" universities and scholarships (e.g., [myOptions](https://myoptions.org/students/), [cappex](https://www.cappex.com/), and [Going Merry](https://www.goingmerry.com/)). These sites are often less clear on whether/how data entered by students will be shared, except for the privacy policy page. For example, Cappex --a recent EAB acquisition-- helps students "find colleges and scholarships that are right for you." The [Privacy Policy](https://www.cappex.com/privacy-policy) statement reads, "services require us to collect detailed personal information from you and in many cases to share your personal information with colleges, universities, counselors, scholarship administrators, EAB, employers, marketing partners and advertisers." 
+A second source of student list data consists of survey data students voluntarily submit to websites/applications, along with data these sites collect about the behavior of users on their platform. One subset of platforms (e.g., College Bound Selection Service (CBSS), Cirkled In, Zinch) have the explicit goal of sharing profiles created by students with the universities the student expresses interest in attending. For example, Cirkled In's [website](https://www.cirkledin.com/) says "Go beyond test scores and connect directly to colleges. Cirkled In's portfolio platform showcases students' entire educational story." Another subset of platforms have the explicit goal of helping students identify "match" universities and scholarships (e.g., [myOptions](https://myoptions.org/students/), [cappex](https://www.cappex.com/), and [Going Merry](https://www.goingmerry.com/)). These sites are often less clear on whether/how data entered by students will be shared, except for the privacy policy page. For example, Cappex --a recent EAB acquisition-- helps students "find colleges and scholarships that are right for you." The [Privacy Policy](https://www.cappex.com/privacy-policy) statement reads, "services require us to collect detailed personal information from you and in many cases to share your personal information with colleges, universities, counselors, scholarship administrators, EAB, employers, marketing partners and advertisers." 
 
 A third set of student list data comes from software used by high schools and high school students. For example, [Naviance](https://www.powerschool.com/solutions/naviance-by-powerschool/) is software purchased by high schools/districts that enables students to plan for college and enables guidance counselors to help students with the college search process. In turn, Naviance user data feeds into [Intersect](https://eab.com/intersect/), a software product that connects prospects to universities looking for students. Another example is Parchment, "the digital credential service," which... [NOT SURE HOW IT WORKS EXACTLY https://www.parchment.com/recruit-self-serve/]
 
@@ -349,21 +434,21 @@ In 2015, the Advisory Board Company -- a publicly traded (NASDAQ:ABCO) technolog
 
 This last sentence contains two nuggets -- "expanding member relationships across the [Advisory Board] portfolio" and "developing new programs\ldots based on joint assets" -- that remain prophetic although the Advisory Board Company no longer exists. In 2017, the Advisory Board sold its healthcare business to a subsidiary of UnitedHealth Group for \$1.3 billion and its education business to Vista Equity Partners for \$1.5 billion [@drew_hansen_2017]. The Royall \& Company division was renamed EAB and operates as a standalone business. Under Vista, the largest private equity firm in the world, EAB pursued acquisitions that increased the value of existing activities and also leveraged relationships with other subsidiaries of Vista, particularly PowerSchool.
 
-__YouVisit and Cappex acquisitions__. In 2019, EAB acquired YouVisit, which EAB [@eab_2019] described as "the leading provider of virtual tour and interactive web content for higher education," stating that the acquisition "further enhances EAB’s ability to help colleges and universities find, engage, and enroll new students"(para.1). EAB CEO David Felsenthal said that "'Integrating EAB’s enrollment platform with YouVisit’s market-leading student-centric content will help to drive even greater success for our partners'"[@eab_2019, para.5]
+__YouVisit and Cappex acquisitions__. In 2019, EAB acquired YouVisit, which EAB [@eab_2019] described as "the leading provider of virtual tour and interactive web content for higher education," stating that the acquisition "further enhances EAB's ability to help colleges and universities find, engage, and enroll new students"(para.1). EAB CEO David Felsenthal said that "'Integrating EAB's enrollment platform with YouVisit's market-leading student-centric content will help to drive even greater success for our partners'"[@eab_2019, para.5]
 <!-- 
 C:\Users\ozanj\Google Drive\student_list_brief\literature\industry\eab\EAB Acquires Leading Interactive Content Provider YouVisit _ EAB.pdf
 
-Education firm EAB has acquired YouVisit, the leading provider of virtual tour and interactive web content for higher education. The addition of YouVisit’s technology platform, together with its expertise in immersive content creation, further enhances EAB’s ability to help colleges and universities find, engage, and enroll new students.
+Education firm EAB has acquired YouVisit, the leading provider of virtual tour and interactive web content for higher education. The addition of YouVisit's technology platform, together with its expertise in immersive content creation, further enhances EAB's ability to help colleges and universities find, engage, and enroll new students.
 
-EAB Chief Executive Officer David Felsenthal. "EAB’s acquisition ofYouVisit gives our partner schools an unparalleled ability to transform their entire
+EAB Chief Executive Officer David Felsenthal. "EAB's acquisition ofYouVisit gives our partner schools an unparalleled ability to transform their entire
 online presence into a competitive differentiator that generates meaningful increases in engagement to drive enrollment success."
 -->
 
-In 2020, EAB acquired Cappex, a college/scholarship search website reportedly used by 1.5 million students each year [@eab_2020]. The @eab_2020 press release cites EAB market research indicating that more prospective students are using college search sites and also notes that test-taking behavior is changing as more universities adopt test-optional admission policies. Chris Marett, President of EAB Enrollment Services, said the Cappex acquisition "'will enable EAB partners to identify and engage prospective students who do not interact with schools through the traditional channels, such as campus visits or standardized tests. By expanding schools’ inquiry pools, we can help institutions grow and diversify their student populations'"[@eab_2020, para.5]. Cappex CEO Alex Stepien, said "'Leveraging EAB’s enrollment data and analytics expertise and experiential marketing services, such as YouVisit virtual tours, we can deliver more personalized and impactful student experiences'"[@eab_2020, para.6].
+In 2020, EAB acquired Cappex, a college/scholarship search website reportedly used by 1.5 million students each year [@eab_2020]. The @eab_2020 press release cites EAB market research indicating that more prospective students are using college search sites and also notes that test-taking behavior is changing as more universities adopt test-optional admission policies. Chris Marett, President of EAB Enrollment Services, said the Cappex acquisition "'will enable EAB partners to identify and engage prospective students who do not interact with schools through the traditional channels, such as campus visits or standardized tests. By expanding schools' inquiry pools, we can help institutions grow and diversify their student populations'"[@eab_2020, para.5]. Cappex CEO Alex Stepien, said "'Leveraging EAB's enrollment data and analytics expertise and experiential marketing services, such as YouVisit virtual tours, we can deliver more personalized and impactful student experiences'"[@eab_2020, para.6].
 
 We analyze these deals using concepts from resource dependence theory. Cappex generates proprietary student list data. To the extent that Cappex users do not take College Board or ACT assessments, Cappex provides names that cannot be purchased from College Board or ACT. Let us conceive of EAB as simultaneously being a vendor of student list data and an enrollment management consulting firm. Focusing on EAB as a student list vendor, the Cappex deal is a vertical acquisition because EAB is acquiring a firm that provides a key input. As a consulting firm, only EAB provides the names of Cappex users to EAB clients, rather than selling names to any university the way College Board and ACT do. Access to Cappex names make EAB clients -- and prospective clients -- more dependent on EAB. Although EAB price schedules are not publicly available, the price universities pay for access to Cappex names may be built into the contract they sign with EAB.
 
-EAB virtual tours are an inquiry engine in that "individual data for each Virtual Tour inquiry based on submitted information and network behavior" [LINK](https://eab.com/products/virtual-tours/), helping clients know "who your visitors are and where their interests lie so that you can effectively recruit them." If we conceptualize inquiries as a university-specific lists, then EAB virtual tours is a product that produces university-specific student lists. The Cappex and YouVisit acquisitions -- now fully integrated within the EAB platform -- are synergistic in that prospects searching for colleges on Cappex are served the virtual tours of EAB clients. Therefore, purchasing Cappex increases the value of the YouVisit virtual tour asset in that Cappex users are fed YouVisit virtual tours, which yield inquiries for clients that pay EAB for virtual tours. 
+[EAB virtual tours](https://eab.com/products/virtual-tours/) are an inquiry engine in that "individual data for each Virtual Tour inquiry based on submitted information and network behavior", helping clients know "who your visitors are and where their interests lie so that you can effectively recruit them." If we conceptualize inquiries as a university-specific lists, then EAB virtual tours is a product that produces university-specific student lists. The Cappex and YouVisit acquisitions -- now fully integrated within the EAB platform -- are synergistic in that prospects searching for colleges on Cappex are served the virtual tours of EAB clients. Therefore, purchasing Cappex increases the value of the YouVisit virtual tour asset in that Cappex users are fed YouVisit virtual tours, which yield inquiries for clients that pay EAB for virtual tours. 
 
 __Naviance/Intersect Partnership with PowerSchool__. EAB's most profound foray into the student list market occurred in 2021, when Hobsons was broken up and split between EAB and PowerSchool, another subsidiaries of Vista Equity Partners. 
 
@@ -392,15 +477,15 @@ $125 million revolver," but stated that upon completion of the investment by BC 
  
  In July 2021, the "European Commission received notification of a proposed
 concentration pursuant to Article 4 of the Merger Regulation by which BC Partners
-(‘BC Partners’, United Kingdom) and Vista Equity Partners Management, LLC
-(‘Vista’, United States of America) intend to acquire, within the meaning of Articles
+(‘BC Partners', United Kingdom) and Vista Equity Partners Management, LLC
+(‘Vista', United States of America) intend to acquire, within the meaning of Articles
 3(1)(b) and 3(4) of the Merger Regulation, joint control of the whole of EAB Global,
-Inc. (‘EAB Global’, United States of America),
+Inc. (‘EAB Global', United States of America),
 -->
 
 Analyzing the EAB business model is difficult because privately owned companies have neither the requirement nor the incentive to disclose information. The IPO prospectus of PowerSchool, formerly a Vista subsidiary, may provide insight about EAB. @powerschool_ipo states that,
 
-> Many of our customers begin their journey with us by using only two of our 15 products on average\ldots As customers begin to appreciate the benefits of an integrated software platform across student data, classroom learning, office functions and talent management, they increase the number of solutions they buy from us over time, with over 1,000 customers owning 5+ products and over 3,000 customers owning 3+ products\ldots. Our future revenue growth is dependent upon our ability to expand our customers’ use of our platform, and our go-to-market efforts are designed to drive cross-sell growth (p.43). 
+> Many of our customers begin their journey with us by using only two of our 15 products on average\ldots As customers begin to appreciate the benefits of an integrated software platform across student data, classroom learning, office functions and talent management, they increase the number of solutions they buy from us over time, with over 1,000 customers owning 5+ products and over 3,000 customers owning 3+ products\ldots. Our future revenue growth is dependent upon our ability to expand our customers' use of our platform, and our go-to-market efforts are designed to drive cross-sell growth (p.43). 
 
 The PowerSchool quote is consistent with the assessment -- made by enrollment management vice presidents and consultants speaking on background -- that EAB is constantly trying to "up sell" clients to add new products to their consulting agreement. The PowerSchool quote is also consistent with how EAB frames their _Enroll360_ "recruiting ecosystem" as realizing the synergy between YouVisit, Cappex, Naviance/Intersect, Wisr (a peer-to-peer engagement platform acquired in 2021), and the EAB Enrollment Marketing Platform, as depicted in Figure Figure \@ref(fig:eab-enroll360) [@koppenheffer_2021]:
 
@@ -409,9 +494,9 @@ knitr::include_graphics('./../assets/images/Illustration-EMS-Enroll360-Final-V3.
 #![The enrollment funnel](assets/images/enrollment_funnel.png)
 ```
 
-> Imagine a high school student today. Let’s call her ‘Emma.’\ldots Fast forward to Emma’s junior year. She has begun to think more seriously about college and like many of her peers, she turns to Google to explore options. Emma quickly comes across [Cappex](https://eab.com/cappex/), where she’s prompted to fill out her ideal college location—close to her hometown in Rhode Island—and her intended major—computer engineering
+> Imagine a high school student today. Let's call her ‘Emma.'\ldots Fast forward to Emma's junior year. She has begun to think more seriously about college and like many of her peers, she turns to Google to explore options. Emma quickly comes across [Cappex](https://eab.com/cappex/), where she's prompted to fill out her ideal college location—close to her hometown in Rhode Island—and her intended major—computer engineering
 
-> \ldots After connecting with her counselor during her senior year, Emma has narrowed down her list of schools to five and enters her shortlist in [Naviance](https://eab.com/intersect/). From there, she explores your university’s website, she comes across a link to your [virtual tour](https://eab.com/products/virtual-tours/)\ldots After the tour, she starts to see Instagram ads for your school depicting students in that same lab. And after receiving an email from your school with an invite to apply via a personalized application, she applies. 
+> \ldots After connecting with her counselor during her senior year, Emma has narrowed down her list of schools to five and enters her shortlist in [Naviance](https://eab.com/intersect/). From there, she explores your university's website, she comes across a link to your [virtual tour](https://eab.com/products/virtual-tours/)\ldots After the tour, she starts to see Instagram ads for your school depicting students in that same lab. And after receiving an email from your school with an invite to apply via a personalized application, she applies. 
 
 > Emma is admitted to four of her five top schools, including yours. But to help her decide where to enroll, she wants to hear what student life is actually like. Through [Wisr](https://eab.com/wisr/), Emma connects one-on-one with Kayleigh, a current junior and student ambassador at your institution studying computer engineering. Kayleigh talks about her favorite classes, professors, and places to eat off-campus, and Emma begins to see just what her life could be like as a student there, too.
 
@@ -423,7 +508,7 @@ knitr::include_graphics('./../assets/images/Illustration-EMS-Enroll360-Final-V3.
 TEXT ANALYZING THE AGREEMENT FROM THE PERSPECTIVE OF POWERSCHOOL; I THINK THIS CAN BE CUT
 The PowerSchool offers K-12 student information systems (SIS), which act as "the backbone of K-12 organizations" upon which PowerSchool builds a suite of solutions "that districts need to manage their operations, staff and instruction" [@powerschool_ipo, p.141]. The PowerSchool business model is to "offer our software platform through a cloud-based, SaaS[software as service] business model under contracts with annual price escalators." In addition to attracting new customers, PowerSchool achieves growth through "cross-sell [of] new solutions to existing customers":
 
-> Many of our customers begin their journey with us by using only two of our 15 products, on average\ldots. As customers begin to appreciate the benefits of an integrated software platform across student data, classroom learning, office functions and talent management, they increase the number of solutions they buy from us over time\ldots Our future revenue growth is dependent upon our ability to expand our customers’ use of our platform, and our go-to-market efforts are designed to drive cross-sell growth [@powerschool_ipo, p.108].
+> Many of our customers begin their journey with us by using only two of our 15 products, on average\ldots. As customers begin to appreciate the benefits of an integrated software platform across student data, classroom learning, office functions and talent management, they increase the number of solutions they buy from us over time\ldots Our future revenue growth is dependent upon our ability to expand our customers' use of our platform, and our go-to-market efforts are designed to drive cross-sell growth [@powerschool_ipo, p.108].
 
 -->
 
@@ -466,7 +551,7 @@ In contrast to EAB and recent acquisitions by ACT, College Board has developed s
 
 Student Search Service is the foundational product. As we described previously, Student Search Service allows universities to purchase the contact information of PSAT, SAT, and AP test-takers, filtering on geographic, demographic, achievement, and college/major preferences criteria. Originally created in 1972 "at the request of school counselors who wanted a wider array of students to have access to information about more colleges" [@belkin2019-studata, para.35]. @cbsearch_2021 describes Student Search Service as
 
-> the largest, richest database of college-bound students, and new students are added each week as they join the program online or through a College Board assessment. With College Board Search, you can reach students long before it’s time to apply, building a relationship with students early enough to create a real pipeline of best-fit prospects (para.1).
+> the largest, richest database of college-bound students, and new students are added each week as they join the program online or through a College Board assessment. With College Board Search, you can reach students long before it's time to apply, building a relationship with students early enough to create a real pipeline of best-fit prospects (para.1).
 
 In Fall 2021, Student Search Service introduced "[Interest in My College](https://www.youtube.com/watch?v=L1DIfObi8w0)," a modest enhancement that utilizes data from the "[BigFuture](https://bigfuture.collegeboard.org/)" college search website owned by College Board. [BigFuture](https://bigfuture.collegeboard.org/) encourages prospective students to create a list of universities they are interested in. "Interest in My College" enables universities to filter prospects who expressed interest in their university when purchasing student lists.
 
@@ -474,7 +559,7 @@ __Segment Analysis Service__. College Board created Segment Analysis Service (he
 
 @RN4565 published a surprisingly transparent explanation of the conceptual and technical underpinnings of Segment. Conceptually, Segment Analysis Service is based on "geodemography," which is a branch of market research -- now often referred to as "spatial big data" – that estimates the behavior of consumers based on where they live. @RN4565 states,
 
-> The basic tenet of geodemography is that people with similar cultural backgrounds, means, and perspectives naturally gravitate toward one another or form relatively homogeneous communities; in other words, birds of a feather flock together. When they are living in a community, people emulate their neighbors, adopt similar social values, tastes, and expectations, and -— most importantly for consumer marketers —- share similar patterns of consumer behavior toward products, services, media, and promotions. The primary appeal of geodemography from the marketer’s perspective is that, with just an address, s/he can begin to craft an image about a particular set of individuals based on the values, tastes, expectations, and behaviors associated with their geographic community (p.1).
+> The basic tenet of geodemography is that people with similar cultural backgrounds, means, and perspectives naturally gravitate toward one another or form relatively homogeneous communities; in other words, birds of a feather flock together. When they are living in a community, people emulate their neighbors, adopt similar social values, tastes, and expectations, and -— most importantly for consumer marketers —- share similar patterns of consumer behavior toward products, services, media, and promotions. The primary appeal of geodemography from the marketer's perspective is that, with just an address, s/he can begin to craft an image about a particular set of individuals based on the values, tastes, expectations, and behaviors associated with their geographic community (p.1).
 
 From a conceptual perspective, application of geodemography to a college access product is problematic in that geodemography assumes that "people with similar cultural backgrounds\ldots naturally gravitate toward one another" [@RN4565, p. 1]. In reality, American communities are racially segregated because of centuries of systematic, discriminatory policies enacted by federal, state, and local governments and the private interests these governments enable [@harris1993whiteness; @rothstein2017color].
 
@@ -540,12 +625,12 @@ These student profiles were sold to "colleges, summer camps, test-prep firms and
 -->
 
 
-In 2018, ACT acquired NRCCUA from the private equity firm Sterling Partners. Sterling Partners had acquired NRCCUA in 2016. Under Sterling, the NRCCUA student surveys completed by students during school were re-launched as an online college search engine named [myOptions](https://myoptions.org/), self-described as "the nation’s largest free college and career planning program." For ACT, the NRCCUA acquisition can be viewed as a horizontal integration in that the second-largest vendor of student list data gained market share by acquiring what had been the third-largest vendor. Additionally, the acquisition diversified the sources of ACT student list data, from a sole reliance on standardized tests towards the inclusion of a player in the college search market. However, the value of this acquisition is unclear because the college search market is competitive, with many players, suggesting that the market position of NRCCUA has eroded over time [CITE?].
+In 2018, ACT acquired NRCCUA from the private equity firm Sterling Partners. Sterling Partners had acquired NRCCUA in 2016. Under Sterling, the NRCCUA student surveys completed by students during school were re-launched as an online college search engine named [myOptions](https://myoptions.org/), self-described as "the nation's largest free college and career planning program." For ACT, the NRCCUA acquisition can be viewed as a horizontal integration in that the second-largest vendor of student list data gained market share by acquiring what had been the third-largest vendor. Additionally, the acquisition diversified the sources of ACT student list data, from a sole reliance on standardized tests towards the inclusion of a player in the college search market. However, the value of this acquisition is unclear because the college search market is competitive, with many players, suggesting that the market position of NRCCUA has eroded over time [CITE?].
 <!-- 
 citation? ^^^ -Diana
 -->
 
-In 20XX ACT developed the Encoura Data Lab, which integrates the ACT and NRCCUA student list businesses and gives users data analysis functionality to inform decisions about student list purchases and broader enrollment strategy. The Encoura [website](https://encoura.org/enroll-smarter-with-encoura/), tagline "Enroll smarter with Encoura," states, "we’ve combined the myCollegeOptions program, Education Opportunity Service (EOS), and ACT College Score Reporting service inside Encoura Data Lab – higher ed’s app-based platform for using data science, analytics, and research to enroll the best-fit students" [@encoura_2021, para. 1].
+In 20XX ACT developed the Encoura Data Lab, which integrates the ACT and NRCCUA student list businesses and gives users data analysis functionality to inform decisions about student list purchases and broader enrollment strategy. The Encoura [website](https://encoura.org/enroll-smarter-with-encoura/), tagline "Enroll smarter with Encoura," states, "we've combined the myCollegeOptions program, Education Opportunity Service (EOS), and ACT College Score Reporting service inside Encoura Data Lab – higher ed's app-based platform for using data science, analytics, and research to enroll the best-fit students" [@encoura_2021, para. 1].
 
 
 Accompanying the Encoura rollout, Eduventures and Omnichannel Enrollment Services provide consulting services that compete with enrollment management consulting firms. Eduventures, acquired by NRCCUA in 2016, was a market research and consulting firm "focused on innovations in higher education" [@bloomberg_2016, para.2]. Under ACT, Eduventures offers "primary research, analysis, and advisory services to support decision-making throughout the student life cycle" -- from recruitment to student success. Eduventures also advises universities in areas such as curriculum, gifts, and investments in technology. Omnichannel Enrollment Services, tagline "send the right message at the right time via the right channel," provides consulting around recruiting campaigns, including the delivery of digital marketing interventions on behalf of universities.
@@ -572,7 +657,7 @@ CUT TEXT
 > Our College Admissions and Scholarship Services currently serve approximately 40% of all college-bound high school seniors in the United States allowing them to highlight their interests, passions and personalities in a way that transcripts and standardized tests do notldots If a student expresses an interest in, or her profile matches the interest of, a college in our network, we offer the student an opportunity to connect with that college. 
 -->
 
-> Using the information from the more than one million college-bound high school students who fill out a profile using our College Admissions and Scholarship Services, we provide colleges with qualified leads to potential candidates\ldots The leads can be based either on students’ expressed preference for a particular college or matching students’ general preferences with college profiles\ldots Colleges pay for these services on a per-lead basis or on a subscription fee basis\ldots Rather than spending hundreds or thousands of dollars per enrollment, colleges that use our enrollment marketing services can realize recruiting costs of generally less than $100 per student enrolled through our enrollment marketing services, and we believe they are better able to shape their incoming class, reducing transfers and drop-outs by using our services [@collegeboard_ipo, p.97].
+> Using the information from the more than one million college-bound high school students who fill out a profile using our College Admissions and Scholarship Services, we provide colleges with qualified leads to potential candidates\ldots The leads can be based either on students' expressed preference for a particular college or matching students' general preferences with college profiles\ldots Colleges pay for these services on a per-lead basis or on a subscription fee basis\ldots Rather than spending hundreds or thousands of dollars per enrollment, colleges that use our enrollment marketing services can realize recruiting costs of generally less than $100 per student enrolled through our enrollment marketing services, and we believe they are better able to shape their incoming class, reducing transfers and drop-outs by using our services [@collegeboard_ipo, p.97].
 
 The IPO reported that one cost of the enrollment marketing services was "leads purchased from third-party suppliers to fulfill leads that we are unable to fulfill through our internal database" [@collegeboard_ipo, p.60]. Chegg's long-term strategy was to increase the number of users by creating the Chegg Student Hub. In turn, more users would enable Chegg to "increase monetization of marketing services":
 
@@ -641,7 +726,7 @@ In general, the FTC does not prohibit businesses from targeting particular local
 
 The Federal Trade Commission has become increasingly concerned about products that utilize "big data," "artificial intelligence," algorithms, and "predictive analytics," citing research findings that "apparently 'neutral' technology can produce troubling outcomes –- including discrimination by race or other legally protected classes" [@RN4749, para.1]. Consumer protection laws enforced by the FTC that are salient to these technologies include the Fair Credit Reporting Act and the Federal Trade Commission Act. 
 
-__Laws enforced by FTC__. The Fair Credit Reporting Act (FCRA), enacted in 1970, regulates "consumer reporting agencies," which "compile consumers’ information and provide it to companies making credit, employment, insurance, housing, and similar decisions" [@RN4744, p. 4]. However, FCRA generally does not cover consumer data sold for marketing purposes [@RN4744]. 
+__Laws enforced by FTC__. The Fair Credit Reporting Act (FCRA), enacted in 1970, regulates "consumer reporting agencies," which "compile consumers' information and provide it to companies making credit, employment, insurance, housing, and similar decisions" [@RN4744, p. 4]. However, FCRA generally does not cover consumer data sold for marketing purposes [@RN4744]. 
 
 Section 5 of The Federal Trade Comission Act (FTC Act) prohibits "unfair" or "deceptive" practices. In contrast to the FCRA, "Section 5 is not confined to particular market sectors but is generally applicable to most companies acting in commerce" [@RN4743, p. 21]. A practice is considered unfair if it satisfies all three of the following criteria: (1) "practice must cause or be likely to cause substantial injury to consumers"; (2) "Consumers must not be reasonably able to avoid the injury"; and (3) "the injury must not be outweight by countervailing benefits to consumers or to competition"[@fdic_2018, p.2]. Importantly, the FTC Act definition of unfair practices is concerned with outcomes rather than intentions.
 
@@ -654,13 +739,13 @@ The life cycle of big data is divided into the four phases of collection, compil
 -->
 
 
-@RN4744 defines "data brokers" as "companies that collect consumers’ personal information and resell or share that information with others" [@RN4744, p. i]. Drawing from @RN4746, @RN4744 distinguished three categories of data brokers: (1) those covered by FCRA; (2) entities that sell consumer data for marketing purposes (which would include student list vendors); and (3) entities not covered by FCRA that use consumer data for non-marketing purposes, such as fraud detection. Marketing data brokers sell consumer data to businesses looking for customers. A common practice is categorizing customers into different segments. For example, "Married Sophisticates" includes "upper-middle class . . . with no children" and "Rural Everlasting" includes single men and women over the age of 66 with "low educational attainment and low net worth" [@RN4744, p.20]. Another practice is assigning scores to customers based on their likelihood of making a purchase or responding to a marketing intervention [@RN4744].
+@RN4744 defines "data brokers" as "companies that collect consumers' personal information and resell or share that information with others" [@RN4744, p. i]. Drawing from @RN4746, @RN4744 distinguished three categories of data brokers: (1) those covered by FCRA; (2) entities that sell consumer data for marketing purposes (which would include student list vendors); and (3) entities not covered by FCRA that use consumer data for non-marketing purposes, such as fraud detection. Marketing data brokers sell consumer data to businesses looking for customers. A common practice is categorizing customers into different segments. For example, "Married Sophisticates" includes "upper-middle class . . . with no children" and "Rural Everlasting" includes single men and women over the age of 66 with "low educational attainment and low net worth" [@RN4744, p.20]. Another practice is assigning scores to customers based on their likelihood of making a purchase or responding to a marketing intervention [@RN4744].
 
 @RN4743 described policy concerns about the usage of marketing products sold by data brokers. Broadly, policymakers are concerned that these technologies may be used to "categorize consumers in ways that can result in exclusion of certain populations" [@RN4743, p.9]. For example, "if big data analytics incorrectly predicts that particular consumers are not likely to respond\ldots [or] are not good candidates for prime credit offers, educational opportunities, or certain lucrative jobs, such educational opportunities, employment, and credit may never be offered to these consumers" [@RN4743, p. 2]. Additionally, @RN4743 raised concerns that these products cause individuals to be denied opportunities based on the actions of others and that these products create new justifications for exclusion (e.g., excluding customers based on data gleaned from social media accounts).
 
-FTC has developed guidelines to businesses about the use of big data, algorithms, and analytics [@RN4743; @RN4748; @RN4749]. First, companies should consider how representative their data are. "If a data set is missing information from particular populations, using that data to build an AI model may yield results that are unfair or inequitable to legally protected groups" [@RN4749]. Second, companies should consider whether the algorithm is biased against protected classes. For example, @doi:10.1126/science.aax2342 found that the algorithm used by a hospital system to predict health care needs was biased against Black patients because the algorithm was based on health care costs rather than illness.
+FTC has developed guidelines to businesses about the use of big data, algorithms, and analytics [@RN4743; @RN4748; @RN4749]. First, companies should consider how representative their data are. "If a data set is missing information from particular populations, using that data to build an AI model may yield results that are unfair or inequitable to legally protected groups" [@RN4749]. Second, companies should consider whether the algorithm is biased against protected classes. For example, @doi1011 found that the algorithm used by a hospital system to predict health care needs was biased against Black patients because the algorithm was based on health care costs rather than illness.
 
-Third, companies should consider discriminatory inputs and discriminatory outcomes. When investigating a product, FTC examines whether the algorithm explicitly considers a protected class -- e.g., race, gender, religion. FTC also investigates whether the algorithm considers inputs that are highly correlated with a protected class. For example, if "a company made credit decisions based on consumers’ Zip Codes, resulting in a “disparate impact” on particular ethnic groups, the FTC could challenge that practice" [@RN4748]. Regardless of algorithm inputs, FTC evaluates whether the product has an "illegal disparate impact on protected classes" [@RN4748].
+Third, companies should consider discriminatory inputs and discriminatory outcomes. When investigating a product, FTC examines whether the algorithm explicitly considers a protected class -- e.g., race, gender, religion. FTC also investigates whether the algorithm considers inputs that are highly correlated with a protected class. For example, if "a company made credit decisions based on consumers' Zip Codes, resulting in a “disparate impact” on particular ethnic groups, the FTC could challenge that practice" [@RN4748]. Regardless of algorithm inputs, FTC evaluates whether the product has an "illegal disparate impact on protected classes" [@RN4748].
 
 #### FTC Jurisdiction over Student List Vendors and Products
 
