@@ -1,0 +1,168 @@
+---
+title: "Student Lists are Consumer Reports"
+  # "Deconstructing the student list business in higher education"
+author: 
+  - Ozan Jaquette
+bibliography: ./../assets/bib/student_list_policy.bib # "./../../../Google Drive/student_list_brief/literature/student_list_policy.bib"
+output: 
+  bookdown::pdf_document2:
+    toc: FALSE
+csl: ./../assets/bib/apa.csl
+  # C:\Users\ozanj\Documents\student_list_policy\assets\bib
+urlcolor: blue
+header-includes:
+      - \usepackage{pdflscape}
+      - \usepackage{geometry}
+      - \usepackage{floatrow}
+      - \usepackage{setspace}
+      #- \doublespacing
+      - \floatsetup{capposition=top}
+fontsize: 12pt
+---
+
+```{r, include = FALSE, eval = FALSE}
+# filepath location of apa.csl file and location of .bib list of references
+getwd()
+list.files(path = file.path('.','..','assets','bib')) # apa.csl file
+list.files(path = file.path('.','..','..','..','Google Drive','student_list_brief','literature')) # .bib reference list on Google Drive
+```
+
+
+```{r setup, include = FALSE}
+library(knitr)
+library(bookdown)
+
+# https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_pdf.pdf
+library(kableExtra)
+library(tidyverse)
+library(gridExtra)
+library(scales)
+
+knitr::opts_chunk$set(echo = F, message = F, warning = F)
+
+knitr::knit_hooks$set(inline = function(x) {   if(!is.numeric(x)){     x   }else{    prettyNum(round(x,2), big.mark=",")    } })
+
+theme_set(
+  theme(
+    text = element_text(size = 7),
+    panel.background = element_blank(),
+    plot.title = element_text(color = '#444444', size = 7, hjust = 0.5, face = 'bold'),
+    axis.ticks = element_blank(),
+    axis.title = element_text(face = 'bold'),
+    legend.title = element_text(face = 'bold'),
+    legend.key.size = unit(0.3, 'cm')
+  )
+)
+```
+
+
+
+
+# Background
+
+## Enrollment Management
+
+Enrollment management (EM) is a profession that integrates techniques from marketing and economics in order to “influence the characteristics and the size of enrolled student bodies” [@RN2771, p. xiv]. Enrollment managers attempt maximize some combination of enrollment goals (e.g., total enrollment, tuition revenue, academic profile, racial diversity, selectivity), subject to constraints imposed by the budget and by external conditions [@RN2772]. 
+
+Enrollment management is also an organizational structure (e.g., “The Office of Enrollment Management”). In previous decades, offices of admissions and financial aid operated relatively autonomosly from one another at most postsecondary institutions [@RN2406]. Today, the majority of colleges and universities have adopted an organizational structure whereby the office of enrollment management controls and integrates activities related to recruitment, admissions, financial aid, and retention with a focus on achieving university enrollment goals. 
+
+Furthermore, a conservative estimate suggests that more than half of all BA-granting institutions hire enrollment management consulting firms to develop and implement strategies around [marketing and recruiting](https://eab.com/colleges-and-universities/enrollment/marketing-and-recruitment/), [financial aid and tuition pricing](https://eab.com/colleges-and-universities/enrollment/financial-aid-and-pricing/), and [retention/student success](https://eab.com/colleges-and-universities/student-success/).^[CREATE ESTIMATE BASED ON NUMBER OF INSTITUTIONS THAT EAB AND RUFFALO NOEL LEVITZ CLAIM TO WORK WITH?]
+
+The broader enrollment management industry consists of professionals working within universities (e.g., vice president for enrollment management, admissions counselors), the associations EM professionals belong to (e.g., National Association for College Admission Counseling), and the marketing and EM consultancies universities hire (e.g., EAB, Ruffalo Noel Levitz).
+
+## The Enrollment Funnel
+
+In the broader marketing industry, the marketing funnel is a
+
+> visualization for understanding the process of turning leads into customers \ldots. The idea is that, like a funnel, marketers cast a broad net to capture as many leads as possible, and then slowly nurture prospective customers through the purchasing decision, narrowing down these candidates in each stage of the funnel [@skyword_funnel].
+
+
+The marketing funnel is the basis for the "enrollment funnel" depicted in Figure \@ref(fig:em-funnel). The enrollment funnel is a conceptual model utilized by the enrollment management industry that identifies stages in the student recruitment process (e.g., prospects, leads, inquiries, applicants, admits, and enrolled students). "Prospects" are "all the potential students you would want to attract to your institution" [@RN4322]. "Leads" are prospects whose contact information has been obtained. "Inquiries" are prospects that contact your institution and consist of two types: first, inquiries who respond to an initial solicitation  (e.g., email) from the university; and second, "student as first contact" inquiries who reach out to the university on their own, for example, by sending ACT scores to the institution or by taking a "[virtual tours](https://eab.com/products/virtual-tours/)" that records IP address. Applicants consist of inquiries who apply plus "stealth applicants" who do not contact the university before applying.
+
+```{r em-funnel, echo = FALSE, fig.align = 'center', fig.cap = "The enrollment funnel", out.width = "40%"}
+knitr::include_graphics('./../assets/images/enrollment_funnel.png')
+#![The enrollment funnel](assets/images/enrollment_funnel.png)
+```
+
+The shape of the enrollment funnel indicates suggests an institution that begins with a large pool of prospects they want to convert into customers, but at each successive stage the funnel narrows in order to convey the assumption of "melt" (e.g., only a subset of inquiries will submit applications). The practical purpose of the enrollment funnel is to inform interventions that target one or more stages. Interventions are designed to increase the probability of "conversion" from one stage to another. For example, emails and brochures encourage leads and inquiries to apply.
+
+## Student Lists
+
+At the top of the enrollment funnel, universities identify "leads" by purchasing "student lists." Sometimes referred to as "names," student lists contain the contact information and selected characteristics of prospective students. The sum of purchased leads and student-as-first-contact inquiries (e.g., filled out an online admissions inquiry form) constitutes the set of all prospects the university has contact information for. Universities cannot target individual prospects without their contact information. Thus, student lists are the fundamental input for recruiting campaigns, which target individual prospects by mail, email, and on social media. 
+
+
+The largest student list vendors are College Board and ACT, which create student list products based on their database of test takers. College Board encourages test takers to opt into the "Student Search Service," which enables "accredited colleges, universities, nonprofit scholarship programs, and nonprofit educational organizations" [@cb_opt_in] to "license" their contact information. Similarly, ACT encourages students registering for the PreACT and ACT test to opt into the "Educational Opportunity Service" [@act_opt_in], which "provides accredited colleges and scholarship agencies with the names and contact information of students who opt in" [@RN4752, p. 1]. In fall 2021, the College Board Search and ACT Encoura student list products both charged \$0.50 per name [@RN0002]GET ACT CITE. 
+
+__Buying student lists__. Each list purchased from College Board and ACT contains a subset of prospects from the population of test-takers and student list products provide filters that enable universities to control which prospects are included in a list. Commonly used filters include high school graduation year, high school GPA, test score range, gender, ethnicity, intended major, and geographic filters (e.g., state, metropolitan area zip code). For example, a list purchased from College Board might consist of all students who scored 4 or higher on at least one AP exam, who have a GPA higher than 3.5, live in one of five specific metropolitan areas, and are in the high school senior class of 2023. Recently, College Board has added "geodemographic" filters that enable universities to filter prospects based on the college-going behavior of prior cohorts from the same high school or neighborhood (e.g., percent who attended an out-of-state university) [@RN0002]. Additionally, ACT Encoura allows universities to filter prospects based on the likelihood they will "enroll at your institution" [@schmidt_2019].
+
+__Contents of student lists__. Purchased lists contain variables for contact information, demographic characteristics, academic achievement, postsecondary preferences (e.g., type of institution, intended major) [@beindorf_2021; @cb_layout_2021]. Although College Board lists contain fewer academic achievement variables than ACT lists, universities can partially infer academic achievement from filter criteria (e.g., test score and GPA range) specified to produce the list.
+
+__Using student lists__. Universities -- and the consultancies they hire -- utilize student in two broad ways. First, lists are a neccessary input to recruiting interventions (e.g., cannot send an email without an email address). Second, lists data are used to inform recruiting decisions. Towards this end, student lists are layered with additional data sources, such as consumer data about prospects from credit companies, records of interactions with prospects (e.g., visiting virtual tour), historical application/enrollment data about students who attended the same high school, etc. These layered data are the input to predictive models that inform decisions about which recruiting interventions to send to which prospects. For example, one subset of prospects may receive a \$0.50 postcard and another subset may receive a \$7 brochure. Additionally, based on the data contained in a purchased list (e.g., intended major, past share of students from the high school to attend an out-of-state college), some purchased prospects may not receive any recruiting interventions.
+
+## Student Lists and Financial Aid
+
+For the majority of Title IV institutions, tuition is the largest revenue source [CITE] and federal financial aid accounts for a substantial share of tuition revenue [CITE]. Unfortunately, student debt on federal and private loans has become a national crisis, increasing from X in XXXX to X in XXXX [CITE].
+
+Student lists are connected to financial aid packages in several ways. First, most Title IV institutions have adopted an orgnanizational structure in which a vice president-level office of enrollment management controls the activities of undergraduate recruiting, admissions, and financial aid. Thus, strategy about student list purchases and financial aid packages are not made autonomously from one another but rather represent the coordinated efforts of different limbs of the same body.
+
+Second, a substantial share of admits that receive financial aid packages are initially identified from student list purchases. Based on information contained in student lists, some purchased prospects are not recruited while others are targeted with recruiting interventions designed to "convert" prospects from one stage of the enrollment funnel to the next. Financial aid is the primary intervention universities utilize to convert admits to enrolled students. Financial aid interventions include institutional grant aid, guidance about how much students should borrow and guidance about how to apply for federal and/or private loans [CITE]. Some institutions even originate their own loans [CITE].
+
+Third, given that the majority of colleges and universities are non-selective, we suggest that many institutions have a strong sense of whether an applicant would be admitted based purely on characteristics gleaned from student list purchase (including inclusion within a purchased list). Because most admits receive a financial aid package, it is reasonable to state that student lists are a factor that influences decisions about the extension of credit.
+
+
+
+Purchased prospects are funneled towards enrollment via recruiting interventions 
+
+
+admits that receive financial aid packages are a 
+
+Second, purchased prospects are funneled towards becoming customers via recruiting interventions that attempt to convert prospects from one stage of the enrollment funnel to the next, culminating in a financial aid package
+Based in part on student lists, the university decides whether to a recruit a prospect and, if so, which interventions they will receive.
+Offering financial aid packages/guidance is the primary the intervention utilized to convert admits to enrolled students
+Types of things financial aid offices provide to admits
+Institutional grant aid
+Calculations about expected family contribution, cost of attendance, and amount of loans students will need to take out to pay COA
+Guidance on securing federal and private loans
+Some institutions originate their own loans
+
+organizational strategies about student list purchases and financial aid offers 
+
+
+the organizational structure of most Title IV institutions 
+
+
+
+First, In the dominant organizational structure, an office of EM coordinates the activities of recruiting, admissions, and financial aid
+Thuse decisions about student list purchases and financial aid packages are not being made by separate bodies but by separate limbs of the same body.
+
+
+
+Tuition is the largest revenue source for the majority of postsecondary institutions eligible to enroll students receiving Title IV federal financial aid.
+
+# Legal Arguments
+
+## Universities are creditors
+
+
+## Student Lists are Consumer Reports
+
+
+<!--
+TODO:
+
+PUBLIC UNIVERSITIES HAVE A RESPONSIBILITY TO EQUALITY OF OPPORTUNITY; THAT ISN'T THE SAME THING AS MEETING ENROLLMENT GOALS AND IT SHOULDN'T BE APPROACHED WITH THE SAME MINDSET OF "EFFICIENCY"
+
+UNIVERSITIES
+
+- LONG-TERM INVESTMENT IN THE IN-HOUSE CAPACITY OF YOUR ENROLLMENT OFFICE AND ADMISSIONS PROFESSIONALS
+-->
+
+
+# References
+
+\begingroup
+\setlength{\parindent}{-1in}
+\setlength{\leftskip}{0in}
+
+<div id="refs" custom-style="Bibliography"></div>
+\endgroup
