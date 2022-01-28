@@ -80,17 +80,24 @@ WHERE DOES THIS TEXT GO? USED TO GO IN THE "EFFICIENCY" PART AT THE END OF THE S
 
 In off-the record conversations, enrollment management consultants told us that at the name-buying stage, a university cannot afford to purchase all names, but very little is known about which prospects will be interested in the institution. Therefore, the institution makes purchase decisions based on crude criteria, such as the characteristics of their neighborhood or school.
 -->
-On February 21, 2020, represented by counsel, we issued a public records request to a public research university (herein "Stonewall University") seeking information about "student list" purchases. Student lists contain the contact information of prospective students that meet the criteria (e.g., test score range, zip codes) specified in an order. Sometimes referred to as "names," student lists are the fundamental input for recruiting campaigns, which target individual prospects by mail, email, and on social media. Our records request sought (A) "order summary" -- which lists the criteria specified -- and (B) de-identified student list data for each student list purchase made by the university over the prior four years.
+On February 21, 2020, represented by counsel, we issued a public records request to a public research university (herein "Stonewall University") seeking information about "student list" purchases. Student lists contain the contact information of prospective students that meet the criteria (e.g., test score range, zip codes) specified in an order. Sometimes referred to as "names," student lists are the fundamental input for recruiting campaigns, which target individual prospects by mail, email, and on social media.
+
+Our request to Stonewall University was part of a larger project -- funded by the _Joyce Foundation_ and the _Kresge Foundation_ and in partnership with the _Lawyers' Committee for Civil Rights_ and the pro bono offices of four law firms -- that issued public records requests to 93 universities in five states in order to collect quantifiable data about student list purchases. For each student list purchased by the university over the prior four years, we requested (A) the de-identified student list data and (B) the "order summary," which shows the criteria specified to determine which prospects are included in the list. Our requests focused on lists purchased from College Board, ACT, and National Research Center for College and University Admissions (NRCCUA), the three largest student list vendors at the time.
+
+<!-- CUT TEXT
+and also off-campus recruiting visits. 
+Each request is a protracted negotiation, often involving several negotiations.
+-->
 
 On April 27, 2020, Stonewall University responded to our request, "The university has a substantial and proprietary interest in maintaining the confidentiality of the documents you have requested. Accordingly, with the exception of the attached slide, the records requested will not be produced." The slide, titled "2016-2020 Name Purchases by Source," indicated that Stonewall University purchased about 816,000 names in 2016, including about 517,000 from College Board and 246,000 from ACT. In 2020, Stonewall University purchased about 1,251,000 names, including about 648,000 from College Board and 220,000 from ACT.
 
 Curiously, the footer of the attached slide read "\copyright EAB Global, Inc." We learned that EAB, an education consulting firm known for enrollment management, purchases student lists on behalf of Stonewall University. This became a barrier to our records request. Stonewall University General Counsel stated, on 12/7/2020, that "while [Stonewall University] indeed purchases student lists, the University does not actually have physical possession of such lists" and, on 1/27/2021, that "this is because [Stonewall University] does not receive anything directly from College Board or from ACT or other list sources. Rather, EAB, on [Stonewall's] behalf, places the order, receives the data, and then [Stonewall University] is billed directly for it." Later, we asked Stonewall University to ask EAB to produce the records but we were told on 8/13/2021 that "EAB also doesn't have or keep these materials." As of December 2021 -- following 22 months of emails, conference calls, and officious letters on firm letterhead -- we have not received the requested order summaries or student lists. An interesting aside, the Vice President for Enrollment Management came to Stonewall University after working as an enrollment consultant for EAB. 
 
 <!--
-Q: Does this make pseudonym useless if we say VP came to Stonewall U? Maybe people could figure out who they are based on this sentence?
+Q: Does this make pseudonym useless if we say VP came to Stonewall U? Maybe people could figure out who they are based on this sentence? A: fuck em
 -->
 
-Our request to Stonewall University is part of a larger project -- funded by the _Joyce Foundation_ and the _Kresge Foundation_ and in partnership with the _Lawyers' Committee for Civil Rights_ and the pro bono offices of four law firms -- that issued public records requests to 93 universities in five states in order to collect quantifiable data about student list purchases (and also off-campus recruiting visits). Each request is a protracted negotiation, often involving several negotiations.
+
 
 <!--
 12 IL
@@ -100,40 +107,23 @@ Our request to Stonewall University is part of a larger project -- funded by the
 2 AZ
 -->
 
-We began this project on the heels of a project that used web-scraping and public records requests to collect data about off-campus recruiting visits made by public research universities [@han2019recruiting]. Most universities in our sample made fewer in-state than out-of-state visits and these out-of-state visits focused on affluent, predominantly White high schools, but a few universities did a "good" job of visiting schools across their state and without evidence of racial or socioeconomic bias. We initially approached the student list data collection with a similar focus on identifying which universities do a "good" vs. "bad" job of reaching out to their surrounding community. However, we made two realizations that helped us see that the focus should be on the student list products themselves and on the organizations that sell student list data.
-
-First, while universities choose which names to purchase, these choices are structured by what the product allows. Moving beyond choices by individual universities, systematic inequality in purchased versus excluded names is a function of (A) which prospective students are included in the underlying database and (B) the set of filters that customers (universities) can utilize to select prospects. The dominant vendors of student list data are the testing organizations, College Board and ACT. Prospective students who do not take College Board or ACT assessments are excluded from the underlying student list databases. Filters on College Board and ACT student list products encourage customers to purchase prospects based on their score range in a particular assessment. Our data collection yielded many student list purchases that filtered prospects based on achieving some score on some set of AP exams. But which students attend high schools with widespread access to AP classes? Geographic filters additionally enable customers to filter prospects based on state, county, metropolitan area, zip code. A more recent creation is filters that enable customers to select prospects based on the characteristics of their high school or their neighborhood (e.g., how many students from this school attended an out-of-state university).
-<!-- 
-First, once we started analyzing the data, we observed that inequality in purchased vs. excluded names is a function of (A) who is included in the underlying database the student list product pulls from and (B) the set of filters that customers (universities) can utilize to select prospects. 
-
-Yes, universities can choose which filters to apply, but these choices are structured by what the product allows.
-
-Consider the concerns about racial and socioeconomic bias in these assessments and in who takes these assessments. 
--->
-
-<!-- 
-TODO: 
-
-[NEED A TOPIC SENTENCE THAT SAYS WHAT THIS REALIZATION IS; RIGHT NOW IT IS SORT OF TWO DIFFERENT OBSERVATIONS; IS IT SOMETHING LIKE FOR-PROFIT ENTITIES HAVE BECOME BIG PLAYERS IN THE STUDENT LIST BUSINESS?] 
--->
-Second, over the course of the data collection we noticed that many universities outsourced student list purchases to an enrollment management consulting firm. Our records requests tended to be less successful in these cases. Following our experience with Stonewall University, we initially suspected that universities were using consulting firms as a wedge to withhold data. Over time, we realized that many universities simply did not understand what we were asking for because they had not purchased the lists themselves. EAB, an organization previously unknown to us, was the name that popped up most often, so we decided to learn more. 
-
-<!-- 
-TODO:  
-
-Royall & Company did not sign its first university client until 19XX, but by 1995 universities became the primary focus.
--->
-The EAB origin story begins in 1983, when Bill Royall founded Royall & Company to provide direct marketing and fundraising for political campaigns. Royall & Company did not sign its first university client until years later, but by 1995 universities became the primary focus. In 2015, the Advisory Board Company acquired Royall & Company for \$850 million [@AdvisoryBoardCo2014]. In 2017, Vista Equity Partners acquired the Royall & Company business for \$1.5 billion and renamed it EAB. Under Vista Equity Partners, EAB has utilized acquisitions (e.g., Cappex college search engines) and alliances (e.g., Naviance software used by high school students) to become a substantial supplier of student list data. Like College Board and ACT, EAB controls proprietary student list data. But whereas any university can buy names from College Board and ACT, only EAB clients have access to the names controlled by EAB.
-
-## The Effects of Student Lists
+## Why Care About Student Lists?
 
 <!-- https://cbsearch.collegeboard.org/pdf/college-outreach-and-student-outcomes.pdf -->
 
-What is the effect of student lists on college access outcomes for students? @RN4739 analyzed the college access outcomes of SAT test-takers who graduated from high school between 2015-2018. When registering for any College Board exam, students are given the opportunity to opt-in to the College Board Student Search Service, which enables universities to purchase their contact information. @RN4739 merged the database of SAT test-takers to college enrollment data from the National Student Clearinghouse in order to assess whether the college access outcomes of students who opted in to Student Search differed from those who opted out, controlling for covariates such as gender/sex, race/ethnicity, parental education, SAT score, and the high school they attended, among other factors. 
+<!-- 
+The ACCEPT vision to "lead the college admissions profession in creating an equitable, just, and anti-racist path to post-secondary education"
+mision "empowers college admissions professionals who seek to center anti-racism, equity and justice in our work"
+-->
 
-As seen in Figure \@ref(fig:cb-fig-1), after controlling for covariates, 58.0\% of students who participated in Search attended any college compared to 50.2\% of students who opted out of Search, representing a 15.5\% relative increase in the probability of college enrollment ((58.0-50.2)/50.2=15.5). Figure \@ref(fig:cb-fig-2-3) shows that 41.1\% of students who participated in Search attended a 4-year college compared to 32.8\% of students who opted out, representing a 25.3\% relative increase in the probability of attending a 4-year college. Furthermore, change in the relative probability of attending a four-year college associated with opting in to Search was higher for students who identified as Black (24.5%), Hispanic (34.4%), American Indian or Alaska Native (AI/AN) (23.8%), and Native Hawaiian or Pacific Islander (26.1\%) than it was for students who identified as White (21.6\%) or Asian (15.2\%). Similarly, change in the relative probability of attending a four-year college was higher for students whose parents did not attend college (40.6\%), and students whose parents had some college but no BA (30.1\%), than it was for students whose parents had a BA (18.9\%).
+The ACCEPT [vision](https://www.acceptgroup.org/) is to "lead the college admissions profession in creating an equitable, just, and anti-racist path" to college with a focus on amplifying "the voices of communities marginalized in secondary and postsecondary education." Why should admissions professionals who share this vision care about student lists? Research indicates that student lists have a dramatic effect on college access and -- in turn -- degree completion of millions of students each year, particularly for communities that have been historically excluded from higher education.
 
-```{r cb-fig-1, fig.height = 2.8, fig.width = 4, out.width = '85%', fig.cap = 'Student Search Service and college enrollment and degree completion'}
+@RN4739 compared the college access and degree completion outcomes of SAT test-takers who opted into the College Board Student Search Service -- thereby allowing accredited institutions to "licence" their contact information -- to those of students who opted out. Figure \@ref(fig:cb-fig) reproduces results from @RN4739. Although the results cannot be considered causal, they are based on regression models that controlled for covariates like race/ethnicity, parental education, SAT score, and high school. For SAT test-takers who graduated from high school between 2015-2018, 41.1\% of students who participated in Search attended a 4-year college compared to 32.8\% of students who opted out, representing a 25.3\% (`(41.1-32.8)/32.8=25.3`) relative increase in the probability of attending a 4-year college.
+
+\pagebreak
+
+```{r cb-fig, fig.height = 5, out.width = '85%', fig.cap = 'Student Search Service and four-year college enrollment/completion'}
+
 create_cb_figure <- function(categories, values, plot_title) {
   cb_fig_df <- data.frame(
     category = rep(categories, each = 2),
@@ -172,26 +162,6 @@ create_cb_figure <- function(categories, values, plot_title) {
       guides(fill = guide_legend(reverse = T))
 }
 
-create_cb_figure(
-    c('Any College\nEnrollment', '4-Year\nEnrollment', 'Any College\nDegree\nw/in 4yrs', '4-Year\nDegree\nw/in 4yrs', 'Any College\nDegree\nw/in 5yrs', '4-Year\nDegree\nw/in 5yrs'),
-    c(50.2, 7.8, 32.8, 8.3, 21.0, 5.0, 15.7, 4.9, 29.5, 3.7, 23.9, 3.8),
-    ''
-  )
-```
-
-\pagebreak\begingroup\fontsize{8}{12}\selectfont
-_Note: The sample for enrollment outcomes includes all SAT takers in the 2015–2018 high school graduation cohorts. The sample for four-year completion outcomes is restricted to students in the 2015–2016 cohorts. The sample for five-year completion outcomes is restricted to students in the 2015 cohort only. Results are estimated from regressions that include student-level controls for: sex, race/ethnicity, SAT score, parental education level, last Student Search Service opt-in status, and graduation cohort and high school fixed effects. All differences between students whose names were licensed and those whose names were not licensed are statistically significant at the 0.1% level._
-\endgroup
-
-@RN4739 also analyzed the four-year BA completion rates of SAT test-takers from the 2015 and 2016 high school graduation cohorts. 20.6\% of students who participated in Search obtained a BA compared to 15.7\% of students who opted out, representing a 31.2\% relative increase in the probability of obtaining a BA within four years ((20.6-15.7)/15.7=31.2). Additionally, this relative increase in the probability of obtaining a BA was higher for Black, Hispanic, and Native American/Alaska Native students than it was for White and Asian students and higher for first-generation students than for students whose parents had a BA.
-
-<!-- 
-In a separate study, @RN4740 employ a clever natural experiment strategy to estimate the causal effect of a university buying a particular name on the probability the student will attend that university. The design strategy is based on the fact that when universities make a student list purchase, they can set an upper limit on the number of names they buy. When the number of prospects that satisfy the filter criteria -- let's say 15,000 names -- exceeds  this upper limit -- let's say 10,000 names, the university would receive a random subset of 10,000 names from the 15,000 names that satisfied the filter criteria. These conditions create a natural experiment. @RN4740 found that students were significantly more likely to apply to a college that licensed their name and to enroll in a college that licensed their name compared to a college that did not license their name. The effect sizes are large in terms of relative change (e.g., 23\% for "apply") but they are tiny in terms of percentage point change (e.g., 0.1 percentage point for "apply"), perhaps because a given name may be purchased by dozens of universities. The effect sizes are also larger for first-generation students, low-income students, and students who identify with a historically underserved racial/ethnic group. 
--->
-
-
-
-```{r cb-fig-2-3, fig.height = 5, out.width = '85%', fig.cap = 'Student Search Service and four-year college enrollment/completion'}
 grid.arrange(
   create_cb_figure(
     c('Overall', 'Asian', 'Black', 'Hispanic', 'AI/AN', 'HI/PI', 'White'),
@@ -217,37 +187,106 @@ grid.arrange(
 )
 ```
 
-\pagebreak\begingroup\fontsize{8}{12}\selectfont
+\begingroup\fontsize{8}{12}\selectfont
 _Note: AI/AN = American Indian or Alaska Native. HI/PI = Hawaiian or Pacific Islander. The sample for enrollment outcomes includes all SAT takers in the 2015–2018 high school graduation cohorts. The sample for completion outcomes is restricted to students in the 2015–2016 cohorts. Completion results are not reported for HI/PI students due to very small sample size (N=2,749), which returns imprecise estimates. Results are estimated from regressions that include student-level controls for: sex, race/ethnicity, SAT score, parental education level, last Student Search Service opt-in status, and graduation cohort and high school fixed effects. All differences between students whose names were licensed and those whose names were not licensed are statistically significant at the 1% level._
 \endgroup
 
+
+Furthermore, change in the relative probability of attending a four-year college associated with opting in to Search out was higher for students who identified as Black (24.5%), Hispanic (34.4%), American Indian or Alaska Native (AI/AN) (23.8%), and Native Hawaiian or Pacific Islander (26.1\%) than it was for students who identified as White (21.6\%) or Asian (15.2\%). Similarly, change in the relative probability of attending a four-year college was higher for students whose parents did not attend college (40.6\%) than it was for students whose parents had a BA (18.9\%). 
+
+@RN4739 also analyzed the four-year BA degree completion rates of SAT test-takers from the 2015 and 2016 high school graduation cohorts. 20.6\% of students who participated in Search obtained a BA in four years compared to 15.7\% of students who opted out, representing a 31.2\% increase in the relative probability (`(20.6-15.7)/15.7=31.2`). Furthermore, the relative increase in the probability of obtaining a BA was higher for Black (40.3\%), Hispanic (43.3\%), and Native American/Alaska Native students (48.3\%) than it was for White (27.9\%) and Asian (28.2\%) students. The relative increase was also higher for students whose parents did not attend college (50.0\%) than it was for students whose parents had a BA (25.3\%).
+
+A similar study by @RN4752 analyzed college access outcomes of students who opted into and opted out of ACT's Educational Opportunity Service (EOS), which allows accredited institutions to license the contact information of ACT test-takers. After controlling for covariates -- including ACT score, number of colleges the student sent scores to, family income, parental education, degree aspirations, race/ethnicity -- students who opted into EOS had a 3.7 times higher likelihood (odds ratio = $3.7$) of attending college than students who opted out [@RN4752]. Additionally, a model that restricted the sample to students who attended college found that students who opted into EOS had 8.7\% (odds ratio = $1.087$)) higher odds of attending a four-year college rather than a two-year college.
+
+
+<!-- NOTE FROM BRAD ON CALCULATING MARGINAL EFFECTS
+I don’t have a very good answer for you. Marginal effects always have to be calculated for particular values of the other variables, and you just don’t have that information. You could back into a calculation of change, I imagine.
+
+The unadjusted odds-ration for the college enrollment model is (EOS yes – 71%) (EOS no – 58%):
+
+OR = (.71/.29)/(.58/.42) = 1.77 (which really surprises me that the adjusted OR is 3.7 – I would expect adjusted to be lower)
+
+So, you could take the 58% as a baseline, and solve for the new probability of college given EOS based on the odds ratio calculated
+
+3.686 = (x/(1-x))/(.58/.42)
+
+X= 83%
+
+So, the calculated odds ratio would imply that a person that had a 58% chance of college going without EOS would have a 83% chance of college going with the program. 
+
+Seems a bit far fetched to me, but that is one way to place the odds ratio into context (I think).  Based on a back of the envelope calculation and not necessarily a true marginal effect.
+-->
+
+
+<!--  RESULTS FOR ANY ENROLLMENT - CUT FROM REPORT
+As seen in Figure \@ref(fig:cb-fig-1), after controlling for covariates, 58.0\% of students who participated in Search attended any college compared to 50.2\% of students who opted out of Search, representing a 15.5\% relative increase in the probability of college enrollment ((58.0-50.2)/50.2=15.5).
+
+```{r cb-fig-1, fig.height = 2.8, fig.width = 4, out.width = '85%', fig.cap = 'Student Search Service and college enrollment and degree completion'}
+
+
+create_cb_figure(
+    c('Any College\nEnrollment', '4-Year\nEnrollment', 'Any College\nDegree\nw/in 4yrs', '4-Year\nDegree\nw/in 4yrs', 'Any College\nDegree\nw/in 5yrs', '4-Year\nDegree\nw/in 5yrs'),
+    c(50.2, 7.8, 32.8, 8.3, 21.0, 5.0, 15.7, 4.9, 29.5, 3.7, 23.9, 3.8),
+    ''
+  )
+```
+
+\pagebreak\begingroup\fontsize{8}{12}\selectfont
+_Note: The sample for enrollment outcomes includes all SAT takers in the 2015–2018 high school graduation cohorts. The sample for four-year completion outcomes is restricted to students in the 2015–2016 cohorts. The sample for five-year completion outcomes is restricted to students in the 2015 cohort only. Results are estimated from regressions that include student-level controls for: sex, race/ethnicity, SAT score, parental education level, last Student Search Service opt-in status, and graduation cohort and high school fixed effects. All differences between students whose names were licensed and those whose names were not licensed are statistically significant at the 0.1% level._
+\endgroup
+-->
+
 <!-- 
-Although the authors are current or former College Board employees, the Research division of College Board has a long track record of high quality empirical research. Therefore, we believe the findings from these studies are credible.
+In a separate study, @RN4740 employ a clever natural experiment strategy to estimate the causal effect of a university buying a particular name on the probability the student will attend that university. The design strategy is based on the fact that when universities make a student list purchase, they can set an upper limit on the number of names they buy. When the number of prospects that satisfy the filter criteria -- let's say 15,000 names -- exceeds  this upper limit -- let's say 10,000 names, the university would receive a random subset of 10,000 names from the 15,000 names that satisfied the filter criteria. These conditions create a natural experiment. @RN4740 found that students were significantly more likely to apply to a college that licensed their name and to enroll in a college that licensed their name compared to a college that did not license their name. The effect sizes are large in terms of relative change (e.g., 23\% for "apply") but they are tiny in terms of percentage point change (e.g., 0.1 percentage point for "apply"), perhaps because a given name may be purchased by dozens of universities. The effect sizes are also larger for first-generation students, low-income students, and students who identify with a historically underserved racial/ethnic group. 
+-->
+
+
+
+
+<!-- 
 
 What should we make of the results from these studies? Although @RN4739 control for relevant characteristics, the authors stress that the results are not causal. Nevertheless, the main take away is that the college access and degree completion outcomes of students who opt in to Search are much higher than those who do not. Focusing on the university perspective, @RN4740 find that buying names has a positive causal affect -- albeit small in magnitude -- in which university a student applies to and which university a student enrolls in. In both studies, the findings are stronger for traditionally undeserved student groups. We believe that the results from these studies are highly credible. We are not concerned that the authors are current or former employees of College Board because the Research division of College Board has a long record of high quality empirical research.
 -->
 
 
-## Why Should Policymakers [change to admissions community] Care About Student Lists?
+## Student List Products and Market Dynamics
 
-[CHANGE THIS TO EQUITY CONCERNS ANTI-RACISM, EQUITY, AND JUSTICE FOR THE ADMISSIONS COMMUNITY; THE ACCEPT MISSION]] Why should policymakers care about the student list business? Universities expend a substantial portion of their recruiting budget on student lists each year because buying names is the primary way universities identify the set of prospective students who will receive subsequent targeted recruiting interventions [@RN4664; @RN4741]. With the exception of prospects who contact universities on their own, names that a university does not purchase will not be recruited by the university. Drawing from research by @RN4739 and @RN4740, student lists affect college access outcomes and degree completion outcomes of millions of students. Furthermore, findings indicate that the effects are larger for low-income students, first-generation students, and students from racial and ethnic groups that have been historically underserved by higher education.
-
-However, our analysis of the student list industry suggests that students from underrepresented populations are the ones most likely to be excluded from student list purchases. Furthermore, this systematic exclusion is not merely a function of individual university preferences. Rather, it is substantially a function of the student list products themselves, particularly who is included in the underlying databases and how the products enable the filtering of prospective students based on criteria that are highly correlated with race and income.
-
-We believe that the student list business is an equality of opportunity issue because the processes that determine which names are purchased by which universities have consequences for student enrollment opportunities. Many universities hire enrollment management consulting firms to develop and implement recruiting campaigns, including student list purchases. Consulting firms are not primarily motivated by equality of opportunity; rather, they are charged with meeting university enrollment goals. University enrollment goals are often concerned about the racial and socioeconomic composition of the student body, but these concerns are different from the idea that every talented, hard-working student should have equal opportunity to attend a high-quality university.
-
-The student list business is an opaque and increasingly dynamic market that is understood by a small number of insiders. As outsiders, a definitive analysis is beyond our capabilities. Our task is the initial analysis that begins the conversation.
-
-<!--
-In contrast to enrollment management consulting firms and individual universities, policymakers have a clear responsibility to the goal of equality of opportunity. Therefore, we believe that the policy community and the research community must take an interest in the student list business. 
+<!-- 
+We began the student list project on the heels of a project that analyzed off-campus recruiting visits by public research universities [@RN4721]. In hindsight, the off-campus recruiting project was too focused on which universities did a "good" versus "bad" job of visiting schools and communities in their state. We initially adopted a similar focus for the student list project, analyzing the student list purchases of individual universities to assess which public universities do a "good" job of reaching out to their surrounding community. Over the course of data collection, however, we realized the project should look beyond the behavior of customers (universities) who buy student lists, focusing instead on student list products and on organizational dynamics in the marketplace for student list data.
 -->
-[REVISE] This report is divided into four substantive sections. First, "Student List Basics," gives an overview of the student list business and how universities buy and use lists. Second, "Student List Market Dynamics," discusses recent dynamics in the marketplace for student data, focusing on data generation processes and associated student list vendors, the growing role of acquisitions, and the blurring of boundaries between student list vendors and enrollment management consulting. Third, "Regulating the Student List Business," explores ways to control the problematic aspects of the business, with a focus on regulating product attributes that contribute to systematic inequality in who is targeted and on the trend towards exclusive ownership of data about prospects. Fourth, "Replacing the Student List Business," develops the contours for a "public option" student list product that would be free to universities and would overcome equality of opportunity concerns of the current system.
+
+
+<!-- PX: moving from focus on university behavior to focus on products -->
+While student lists are particularly important to college access for historically excluded race/ethnicity groups, low-income students, and first-generation students [@RN4739; @RN4740], our data collection suggested that these populations were disproportionately excluded from student list purchases. We began the student list project with a focus on understanding which universities did a "good" job of reaching out to their surrounding community. Thus, we initially assumed that inequity in student list purchases was a function of the enrollment preferences of individual universities. Over time, we realized that this systematic exclusion is a function of student list products themselves, including search filters that enable universities to target prospective students based on criteria that are highly correlated with race and income. Therefore, the project focus shifted towards student list products rather than the behavior of customers (universities) who buy student lists.
+
+<!-- PX: systematic inequity in student lists is substantially a function of student list products -->
+__Student list product.__ The choices universities make about which names to purchase are structured by the architecture of student list products, which defines the set of allowed behaviors and creates incentives for certain behaviors. Beyond the enrollment preferences of individual universities, systematic inequality in purchased versus excluded names is a function of (A) which prospective students are included in the underlying database and (B) the set of filters that customers can utilize to select prospects. The dominant vendors of student list data are College Board and ACT. Prospective students who do not take College Board or ACT assessments are excluded from the underlying student list databases. Filters on College Board and ACT student list products encourage customers to target prospects based on their score range in a particular assessment. We observed many student list that filtered prospects based on AP exam score, but who attends high schools with widespread access to AP classes? Geographic filters enable customers to filter prospects based on zip code, which is correlated with race and income. Recent product enhancements include the ability to filter prospects based on the college enrollment behavior of prior students from the same high school [CITE CB] or based on the predicted probability the prospect will enroll [CITE ACT].
+
+<!-- 
+While student lists are particularly important to college access for historically excluded race/ethnicity groups, low-income students, and first-generation students [@RN4739; @RN4740], our data collection suggests that students from these populations are the ones most likely to be excluded from student list purchases. Furthermore, this systematic exclusion is not merely a function of individual university preferences. Rather, it is substantially a function of the student list products themselves, particularly who is included in the underlying databases and how the products enable the filtering of prospective students based on criteria that are highly correlated with race and income.
+-->
+
+<!-- PX: transition to organizational dynamics in market for student list data; many firms hire EM consultancies to purchase student lists -->
+__The changing marketplace for student list data__ Over the course of data collection we began to appreciate the importance of organizational dynamics in the market for student list data, representing a second major shift in project focus. Many universities in our data collection sample outsourced student list purchases to an enrollment management consulting firm. Our records requests tended to be less successful in these cases. We initially suspected universities of using consultancies as a wedge to withhold data, but we learned that many universities simply did not understand what we were asking for because their lists had been purchased by a third-party vendor. EAB -- an organization previously unknown to us -- was the name that popped up most often, so we decided to learn more.
+
+<!-- PX: EAB enters the student list business -->
+EAB and Ruffalo Noel Levitz are the two largest firms -- claiming to serve 1,100 [CITE](https://www.vistaequitypartners.com/spotlight/eab-school-communication-covid19/) and 1,900 [CITE](https://www.ruffalonl.com/about-ruffalo-noel-levitz/) higher education institutions, respectively -- in an increasingly concentrated market for enrollment management consulting. Formerly named Royall \& Company, EAB was purchased by the private equity firm Vista Equity Partners in 2017 for \$1.5 billion. Under Vista, EAB has aggressively pursued acquisitions (e.g., the college search engine Cappex) and alliances (e.g., Naviance software used by high school students) to become a substantial supplier of student list data. Like College Board and ACT, EAB controls proprietary student list data. However, whereas any university can buy names from College Board and ACT, only EAB clients have access to the names controlled by EAB. 
+
+<!-- PX: CB/ACT enter EM consulting business, but test-optional and technology advances create opportunities for other firms entering the market -->
+As EAB enters the market for student list data, both College Board and ACT leveraged their position in the student list business to enter the market for enrollment management consulting services [CITE]. However, the test-optional/test-blind movement is an existential threat to the SAT and ACT tests, reducing the number of prospects included in College Board and ACT student list products. At the same time, advances in information technology create new sources of student list data. Thus, as the competitive advantage of College Board and ACT erodes, EAB and other for-profit entities are poised to enter the market for student list data.
+
+<!-- PX: organizations operating in the student list market are oriented to university enrollment goals rather than equality of opportunity for students -->
+For most organizations operating in the market for student list data -- College Board, ACT, for profit student list vendors, and enrollment management consulting firms -- the primary customers are universities rather than students. Therefore, the student list business is primarily oriented towards the enrollment priorities of universities rather than equality of opportunity for students. A university that wants to increase racial diversity may hire an enrollment management consulting firm to implement a recruiting campaign -- including student list purchases -- to achieve this goal. However, student lists purchased for the goal of increasing racial diversity may nevertheless undermine equality of opportunity for communities of color if these efforts primarily target nonwhite students from predominantly white schools and communities.
+
+<!-- PX: goal of report is to begin conversation about policy solutions and best practices -->
+The student list business is an increasingly dynamic market that is understood by a small number of insiders and turns out to be surprisingly important for college access. Before we can develop recommendations for policymakers, university administrators, and admissions professionals, we must understand how the student list business works and how it is changing. As outsiders, a definitive analysis is beyond our capabilities. We hope this report begins the conversation.
+
+<!-- PX: report outline -->
+This report is divided into four substantive sections. First, "Student List Basics," gives an overview of the student list business and how universities buy and use lists. Second, the "Theoretical Framework" introduces relevant theories from organizational theory and critical legal studies. Third, "Student List Market Dynamics" applies these theories to analyze recent changes in the marketplace for student list data, focusing on moves by College Board, ACT, and the entry of EAB. Finally, develop practical recommendations for university leaders and admissions professionals who are committed to the ACCEPT vision of creating an equitable, just, and anti-racist path to college.
 
 <!-- 
 
 __Market Research__. Another source of information about the the effects of student lists -- particularly from the perspective of universities -- is market research by enrollment management consultancies. The enrollment management consultancy Ruffalo Noel Levitz publishes a series of reports about recruiting practices based on survey responses from Ruffalo Noel Levitz clients, which tend to be public and private non-profit universities of mid-level size and mid-level status. 
-
-
 
 @RN4402 asked universities to rate different "first contact" interventions (e.g., purchased names, off-campus recruiting visit, website form) as sources of "inquiries" -- an inquiry is when a prospect contacts the university -- and enrolled students. For the median private 4-yr institution, student list purchases were the highest source of inquiries, accounting for 32\% of inquiries and were tied with off-campus recruiting visits as the highest source of enrolled stduents, accounting for 18\% of enrolled students. For the median public university, student list purchases were the highest source of inquiries, accounting for 26% of inquiries, and accounted for 14\% of enrolled students, which ranked fourth after "application as first contact" (19\%), campus visit (17\%), and off-campus visit (16\%).
 
@@ -260,14 +299,11 @@ With respect to number of names purchased annually, @RN4741 reported that 34% of
 
 # Student List Basics
 
+This section describes how the student list business works, focusing on the College Board and ACT student list products that have dominated the market for decades. First, we situate student lists within the "enrollment funnel," which identifies stages in the process of recruiting students. Second, we situate student lists vis-a-vis the concepts "list-based leads" versus "behavioral-based" leads, which are the two broad approaches that other industries use to find customers. Finally, we describe how student lists are purchased, what data they contain, and how they are utilized in recruiting campaigns. 
 
-The student list business is a match-making intermediary that connects universities to prospective students. What problem does the student list business solve and for who? 
+## Situating Student Lists within the Enrollment Funnel
 
-Universities must enroll students in order to survive. Beyond survival, universities want to maximize some set of enrollment goals (e.g., tuition revenue, academic profile, racial diversity, selectivity), while also meeting the needs of various campus constituencies (e.g., the college of engineering needs majors and the marching band needs players) [@RN3519]. Universities cannot realize these goals solely from prospects who find the university on their own, so they must find desirable prospects who can be convinced to enroll. The problem is, universities don't know who these prospects are, where they are, or how to contact them. The student list business overcomes this problem faced by universities, providing the contact information (e.g., mailing address, email address, cell phone number) of prospects who satisfy criteria specified by the university. From the perspective of students who want to attend a university, students face the problems of not knowing all their options and not knowing which universities are interested in them. The student list business can help overcome this problem by enabling interested universities to contact prospective students. In practice, however, the student list business is responsive to the problems faced by universities because universities purchase student lists.
-
-This section describes how the student list business works, focusing on the basic College Board and ACT student list products that have dominated the market for decades. First, we situate the student list business by comparing how other industries use lists to identify customers and by differentiating list-based leads from behavioral-based leads (e.g., ads that appear on a Google search results page). Next, we situate student lists within the broader process of recruiting students in the higher education industry. Finally, we describe how student lists are purchased, what data they contain, and how student lists are utilized. 
-
-## The Enrollment Funnel
+What problem does the student list business solve and for who? The student list business is a match-making intermediary that connects universities to prospective students. Universities must enroll students in order to survive. Beyond survival, universities want to maximize some set of enrollment goals (e.g., tuition revenue, academic profile, racial diversity, selectivity), while also meeting the needs of various campus constituencies (e.g., College of Engineering needs majors, marching band needs players) [@RN3519]. Universities cannot realize these goals solely from prospects who find the university on their own, so they must find desirable prospects who can be convinced to enroll. The problem is, universities don't know who these prospects are, where they are, or how to contact them. The student list business overcomes the problem faced by universities, providing the contact information of prospects who satisfy criteria specified by the university. From the perspective of students who want to attend a university, students face the problems of not knowing all their options and not knowing which universities are interested in them. The student list business can help overcome this problem by enabling interested universities to contact prospective students. In practice, however, the student list business is responsive to the problems faced by universities because universities purchase student lists.
 
 Figure \@ref(fig:em-funnel) depicts the "enrollment funnel" in order to situate the student list business within higher education enrollment management. The enrollment funnel is a conceptual heuristic that identifies stages in the student recruitment process -- prospects, inquiries, applicants, accepted applicants, and enrolled students -- and is used by the enrollment management industry to inform interventions that target one or more stages. "Prospects" are "all the potential students you would want to attract to your institution" [@RN4322]. We define "leads" as prospects whose contact information has been purchased. "Inquiries" are prospects that contact your institution. Inquiries consist of two types: first, those who respond to an initial solicitation from the university (e.g., email) and second, "student as first contact" inquiries who reach out to the university on their own, for example, by sending ACT scores to the institution, by filling out an online admissions inquiry form, or by taking a "virtual tour" that records IP addresses. Applicants consist of inquiries who apply plus "stealth applicants" who do not contact the university before applying.
 
