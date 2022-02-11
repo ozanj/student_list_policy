@@ -1,0 +1,224 @@
+---
+title: "Student List Policy"
+  # "Deconstructing the student list business in higher education"
+author: 
+  - Ozan Jaquette
+  - Karina Salazar
+bibliography: ./../assets/bib/student_list_policy.bib # "./../../../Google Drive/student_list_brief/literature/student_list_policy.bib"
+output: 
+  bookdown::pdf_document2:
+    toc: FALSE
+csl: ./../assets/bib/apa.csl
+  # C:\Users\ozanj\Documents\student_list_policy\assets\bib
+urlcolor: blue
+header-includes:
+      - \usepackage{pdflscape}
+      - \usepackage{geometry}
+      - \usepackage{floatrow}
+      - \usepackage{setspace}
+      #- \doublespacing
+      - \floatsetup{capposition=top}
+fontsize: 12pt
+---
+
+```{r setup, include = FALSE}
+library(knitr)
+library(bookdown)
+
+# https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_pdf.pdf
+library(kableExtra)
+library(tidyverse)
+library(gridExtra)
+library(scales)
+
+knitr::opts_chunk$set(echo = F, message = F, warning = F)
+
+knitr::knit_hooks$set(inline = function(x) {   if(!is.numeric(x)){     x   }else{    prettyNum(round(x,2), big.mark=",")    } })
+
+theme_set(
+  theme(
+    text = element_text(size = 7),
+    panel.background = element_blank(),
+    plot.title = element_text(color = '#444444', size = 7, hjust = 0.5, face = 'bold'),
+    axis.ticks = element_blank(),
+    axis.title = element_text(face = 'bold'),
+    legend.title = element_text(face = 'bold'),
+    legend.key.size = unit(0.3, 'cm')
+  )
+)
+```
+
+<!-- approaches to cross-reference sections
+The first substantive section, [Student List Basics]; this works
+The first substantive section, [Student List Basics][Student List Basics] works if we want to control link text
+The first substantive section, \@ref(basics); this one gives section number only
+https://bookdown.org/yihui/bookdown/cross-references.html
+-->
+
+# Executive Summary
+
+TEXT
+
+# Introduction
+
+SOMEWHERE PROMINANT: researchers and policymakers have ignored student lists
+
+Colleges and universities identify prospective students by purchasing "student lists" from College Board, ACT, and other vendors. Student lists contain the contact information of prospective students that meet the criteria (e.g., test score range, high school GPA, zip codes) specified in a student list purchase. Sometimes referred to as "names," student lists are a fundamental input for undergraduate recruiting "campaigns," which target individual prospects by mail, email, and on social media. 
+
+__Student lists and student outcomes__. Recent research suggests that student lists have surprisingly large effects on college access outcomes and also on degree completion [@RN4739;@RN4752]. Figure \@ref(fig:cb-fig) reproduces results from @RN4739, which compared outcomes between SAT test-takers who opted into the College Board Student Search Service -- allowing accredited institutions to "licence" their contact information -- and test-takers who opted out, controlling for covariates like race/ethnicity, parental education, SAT score, and high school. 41.1\% of students who participated in Search attended a 4-year college compared to 32.8\% of students who opted out, representing an 8.3 percentage point difference (`(41.1-32.8=8.3`) and a 25.3 percent change (`(41.1-32.8)/32.8=25.3`) in the probability of attending a 4-year college. 
+
+Furthermore, Figure \@ref(fig:cb-fig) shows that the change in the relative probability of attending a 4-year institution -- defined as percent change -- associated with participating in Search was higher for students who identified as Black (24.5%), Hispanic (34.4%), American Indian or Alaska Native (AI/AN) (23.8%), and Native Hawaiian or Pacific Islander (26.1\%) than it was for students who identified as White (21.6\%) or Asian (15.2\%). Similarly, change in the relative probability of attending a four-year college was higher for students whose parents did not attend college (40.6\%) than it was for students whose parents had a BA (18.9\%). A similar study by @RN4752 found a strong positive relationship between participating in ACT's Educational Opportunity Service (EOS) and college access outcomes, event after controlling for covariates.
+
+\pagebreak
+
+```{r cb-fig, fig.height = 5, out.width = '85%', fig.cap = 'Student Search Service and four-year college enrollment/completion'}
+
+create_cb_figure <- function(categories, values, plot_title) {
+  cb_fig_df <- data.frame(
+    category = rep(categories, each = 2),
+    subcategory = rep(c('Not Licensed', 'Gain from being Licensed'), length(categories)), 
+    value = values
+  )
+  
+  cb_fig_df$category <- factor(cb_fig_df$category, levels = categories)
+  
+  cb_fig_df %>%
+    left_join(
+      cb_fig_df %>%
+        pivot_wider(id_cols = category, names_from = subcategory, values_from = value) %>%
+        mutate(
+          total = `Not Licensed` + `Gain from being Licensed`,
+          pct_change = `Gain from being Licensed` / `Not Licensed` * 100
+        ),
+      by = 'category') %>% 
+    ggplot(aes(x = category, y = value, fill = subcategory, width = 0.6)) +
+    geom_bar(position = 'stack', stat = 'identity') +
+    geom_text(aes(y = value, label = if_else(subcategory == 'Not Licensed', str_c(sprintf('%.1f', value), '%'), '')), color = '#444444', size = 2, position = position_stack(vjust = 0.5)) +
+    geom_text(aes(y = total + 3, label = if_else(subcategory == 'Not Licensed', str_c('(', sprintf('%.1f', pct_change), '%)'), '')), color = '#444444', size = 2) +
+    geom_text(aes(y = total + 7, label = if_else(subcategory == 'Not Licensed', str_c(sprintf('%.1f', `Gain from being Licensed`), 'pp'), '')), color = '#444444', size = 2) +
+    ggtitle(plot_title) +
+    xlab('') + ylab('') + 
+    scale_y_continuous(expand = expansion(mult = c(0, 0.05)), limits = c(0, 80)) +
+    scale_fill_manual(values = c('#ba9a88', '#bbcfd7')) +
+    theme(
+        plot.margin = margin(t = 0.6, unit = 'cm'),
+        panel.grid.major.y = element_line(size = 0.1, color = 'gray'),
+        legend.title = element_blank(),
+        legend.position = 'bottom',
+        legend.margin = margin(t = -0.5, unit = 'cm'),
+        legend.text = element_text(margin = margin(r = 0.2, unit = 'cm'))
+      ) +
+      guides(fill = guide_legend(reverse = T))
+}
+
+grid.arrange(
+  create_cb_figure(
+    c('Overall', 'Asian', 'Black', 'Hispanic', 'AI/AN', 'HI/PI', 'White'),
+    c(32.8, 8.3, 37.5, 5.7, 31.8, 7.8, 24.1, 8.3, 26.5, 6.3, 22.2, 5.8, 44.4, 9.6),
+    'Enrollment'
+  ),
+  create_cb_figure(
+    c('Overall', 'Asian', 'Black', 'Hispanic', 'AI/AN', 'White'),
+    c(15.7, 4.9, 17.7, 5.0, 7.2, 2.9, 6.7, 2.9, 8.7, 4.2, 24.0, 6.7),
+    'BA Completion within 4 Years'
+  ),
+  create_cb_figure(
+    c('Overall', 'No College', 'College,\nNo BA', 'College,\nBA or Higher'),
+    c(32.8, 8.3, 24.9, 10.1, 36.5, 11.0, 53.4, 10.1),
+    'Enrollment'
+  ),
+  create_cb_figure(
+    c('Overall', 'No College', 'College,\nNo BA', 'College,\nBA or Higher'),
+    c(15.7, 4.9, 13.6, 6.8, 21.3, 8.5, 39.9, 10.1),
+    'BA Completion within 4 Years'
+  ),
+  ncol = 2
+)
+```
+
+\begingroup\fontsize{8}{12}\selectfont
+_Note: AI/AN = American Indian or Alaska Native. HI/PI = Hawaiian or Pacific Islander. The sample for enrollment outcomes includes all SAT takers in the 2015–2018 high school graduation cohorts. The sample for completion outcomes is restricted to students in the 2015–2016 cohorts. Completion results are not reported for HI/PI students due to very small sample size (N=2,749), which returns imprecise estimates. Results are estimated from regressions that include student-level controls for: sex, race/ethnicity, SAT score, parental education level, last Student Search Service opt-in status, and graduation cohort and high school fixed effects. All differences between students whose names were licensed and those whose names were not licensed are statistically significant at the 1% level._
+\endgroup
+
+Given that the probability of graduating is affected by which institution a student attends [CITE; ONE CC STUDY], student lists may also affect degree completion through their effect on initial postsecondary institution. @RN4739 analyzed the four-year BA degree completion rates of SAT test-takers from the 2015 and 2016 high school graduation cohorts. Figure \@ref(fig:cb-fig) shows that 20.6\% of students who participated in Search obtained a BA in four years compared to 15.7\% of students who opted out, representing a 31.2\% increase in the relative probability (`(20.6-15.7)/15.7=31.2`). Furthermore, the relative increase in the probability of obtaining a BA was higher for Black (40.3\%), Hispanic (43.3\%), and Native American/Alaska Native students (48.3\%) than it was for White (27.9\%) and Asian (28.2\%) students. The relative increase was also higher for students whose parents did not attend college (50.0\%) than it was for students whose parents had a BA (25.3\%).
+
+__Student lists and the U.S. higher education market__. Although not causal, the magnitude of the findings above are huge even after controlling for a strong set of covariates. How could student lists -- which have been ignored by policymakers and researchers for decades -- be so important for college access in the U.S.? 
+
+The answer begins with understanding the market for higher education and the role played by federal financial aid. U.S higher education is a market-based system consisting of a mix of providers -- public, private non-profit, for-profit -- in which the federal government takes a "steer don't row" approach, using subsidies and regulations to encourage providers to achieve government goals around college access and degree completion. Aside from research funding, the federal government subsidizes higher education primarily by providing Title IV grants and loans to students. These funds follow students to whichever Title IV postsecondary institutions they attend, thereby creating a national voucher system. The largest revenue source for most Title IV institutions is tuition, which is composed of household savings and grants and loans, including federal financial aid. Thus, postsecondary institutions have an incentive to enroll students who can afford the cost of attendance and the Title IV financial aid system creates an incentive to enroll students who are eligible for federal grants and loans.
+
+What is the role of student lists in the US higher education market? Student lists are a match-making intermediary that connects institutions -- which must enroll students to survive -- to prospective students -- who want to acquire human capital. From the university perspective, beyond the basic requirement of survival, universities pursue some set of broad enrollment goals (e.g., academic profile, racial diversity, tuition revenue), while also meeting the needs of various campus constituencies (e.g., College of Engineering needs majors, marching band needs players) [@RN3519]. Universities cannot realize these goals solely from prospects who find the university on their own; they must find desirable prospects who can be convinced to enroll. However, universities don't know who these prospects are, where they are, or how to contact them. Student lists overcome the problem faced by universities, providing the contact information of prospects who satisfy criteria specified by the university. 
+
+From the perspective of students looking for a a university, students are unaware of all college options they do not know which universities are interested in them. Student lists can help overcome this problem by enabling interested universities to contact prospective students. In practice, however, student list products are oriented around the goals of universities rather than the goals of students because student lists are purchased by universities, not students.
+
+__De-institutionalization of the college entrance exam__. For better or worse, college access in the U.S. over the past half century has substantially depended on the SAT and ACT college entrance exams being strong, taken-for-granted institutions. After leading public and private universities adopted the SAT/ACT exam as an admissions requirement, other universities followed suit because this is what legitimate universities do. In turn, institutionalization of the college entrance exam compelled college-going high school students to take either the SAT or the ACT.
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAA OLD TEXT
+
+
+
+Following the adoption of the SAT or ACT as an admissions requirement by leading public and private universities, other universities followed suit because this is what legitimate universities do. In turn, the institutionalization of standardized college entrance exam complled college-going high school students to take either the SAT or the ACT, creating databases of test-takers that formed the basis of competitive advantange for College Board and ACT in the student list business.
+
+
+College Board began selling students lists in 1972 [@belkin2019-studata]. 
+
+Third, the testing agencies College Board and ACT have dominated the the student list business from 1972 -- when College Board began selling student lists [@belkin2019-studata] -- to present. 
+
+
+The diffusion of the SAT and ACT exams is a textbook case for the first wave of scholarship on onstitutional theory, which focused on the effects of institutions. Scholarship finds that whereas early adoption of an innovation is motivated by substantive rationale, later adoption is motivated by legitimacy considerations [e.g., @RN1311]. Following the adoption of the SAT or ACT as an admissions requirement by leading public and private universities, other universities followed suit because this is what legitimate universities do. In turn, the institutionalization of standardized college entrance exam complled college-going high school students to take either the SAT or the ACT, creating databases of test-takers that formed the basis of competitive advantange for College Board and ACT in the student list business.
+
+Both social movements and technological change have contributed to the deinstitutionalization of the SAT/ACT, with well-organized coalitions attacking the legitimacy of standardized testing and encouraging universities to remove the test as an admissions requirement, coupled with technological advances in data processing that make standardized tests less critical for evaluating applicants from different high schools.
+
+### The Test-Optional Movement
+
+The diffusion of test-optional and test-blind admissions policies threatens the coverage competitive advantage. If fewer universities require the SAT/ACT for admissions, fewer students will take the tests. If fewer students take the tests, College Board and ACT databases will contain a shrinking share of prospective college students, lowering their value in the eyes of universities and encouraging market entry by other vendors of student list data. 
+
+According FairTest, the number of baccalaureate granting universities with test-optional or test-blind admissions policies increased from 1,071 "immediately before the COVID-19 pandemic" to 1,815 for the Fall 2022 admissions cycle [CITE](https://www.fairtest.org/more-1815-schools-do-not-require-actsat-scores-cur). 
+
+The number of students taking the SAT changed from about 1.72 million for the high class of 2017 [CITE](https://reports.collegeboard.org/pdf/2017-total-group-sat-suite-assessments-annual-report.pdf), 2.14 million for the class of 2018 [CITE](https://reports.collegeboard.org/pdf/2018-total-group-sat-suite-assessments-annual-report.pdf), to 2.22 million for the class of 2019, 2.20 million for the class of 2020 [CITE](https://reports.collegeboard.org/pdf/2019-total-group-sat-suite-assessments-annual-report.pdf), and 1.51 million for the class of 2021 [CITE](https://reports.collegeboard.org/pdf/2021-total-group-sat-suite-assessments-annual-report.pdf). The number of ACT test-takers declined from about 2.03 million in 2017, to 1.91 million in 2018, to 1.78 million in 2019 to 1.67 million in 2020 to 1.3 million in 2021 [GET NON WIKIPEDIA CITE](https://en.wikipedia.org/wiki/ACT_(test)). How have College Board and ACT responded to the test optional movement? A fundamental strategy seems to be convincing states to adopt the SAT/ACT as a statewide requirement for high school graduation [@kate_2021]. 
+
+
+While College Board and ACT argue that recent declines in the number of test-takers were primarily driven by the Covid pandemic, growth in the adoption of test-optional and test-blind admissions policies also contributes to this decline. FairTest reports that as of December 2021, at least 1,400 institutions have extended test-optional and test-blind policies through the fall 2023 admissions cycle [CITE](https://www.fairtest.org/more-1815-schools-do-not-require-actsat-scores-cur), which suggests that the diffusion of these policies is not a short-term blip driven by Covid.
+
+Reflecting on three decades of scholarship analyzing the process of deinstitutionalization in many different industries, we reason that the SAT/ACT admissions requirement has become deinstitutionalized as a requirement that colleges and universities adhere to for the purpose of legitimacy. Public opinion and a growing number of stakeholders question the legitimacy of standardized tests. Empirical scholarship finds that institutions cannot persist without support from society and that institutions are sensitive to opposition from social movements. Accross several industries -- the conglomerate firm, lifetime employment, pensions -- once an institution begins to show visible cracks, deinstitutionalization is inevitable. Therefore, we argue that the number of universities requiring the SAT/ACT will continue to decline, causing the number of test-takers to decline, eroding the utility of College Board and ACT student list products. College access has substantially depended on SAT/ACT as an institution, particularly as the means by which universities reach prospective students. Unless viable alternatives to College Board and ACT student lists are developed, the deinstitutionalization of SAT/ACT will cause a crissis in college access.
+
+
+# Background {#background}
+
+## The Enrollment Funnel
+
+## Buying Names from College Board and ACT
+
+### buying lists; what's in a list; using lists
+
+### summary of empirical results
+
+## The Changing Market for Student List Data
+
+what it do
+
+- lays out organizational field;
+  - customers; consultancies; sources of student list data
+  - big shifts over last 10 years
+- 
+
+# Policy Concerns {#concerns}
+
+TEXT
+
+# Regulating the Student List Business {#regulation}
+
+TEXT
+
+# Public Option {#public}
+
+TEXT
+
+
+# References
+
+\begingroup
+\setlength{\parindent}{-1in}
+\setlength{\leftskip}{0in}
+
+<div id="refs" custom-style="Bibliography"></div>
+\endgroup
