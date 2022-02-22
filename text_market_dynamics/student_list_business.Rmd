@@ -9,6 +9,8 @@ bibliography: ./../assets/bib/student_list_policy.bib # "./../../../Google Drive
 output: 
   bookdown::pdf_document2:
     toc: FALSE
+  #bookdown::word_document2:    
+  #  toc: FALSE
 csl: ./../assets/bib/apa.csl
   # C:\Users\ozanj\Documents\student_list_policy\assets\bib
 urlcolor: blue
