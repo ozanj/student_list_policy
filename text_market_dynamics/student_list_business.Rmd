@@ -858,8 +858,6 @@ IPO
 We provide a comprehensive suite of cloud solutions that deliver a broad range of mission-critical capabilities to K-12 organizations in over 90 countries globally (our "Unified Platform"). Foundational to our cloud applications is our market-leading SIS. Our SIS acts as the backbone of K-12 organizations and centralizes student information and processes that power the core operations of our customers. In addition to the SIS, we offer a full suite of mission-critical, cloud solutions that districts need to manage their operations, staff and instruction: PowerSchool Unified Administration, PowerSchool Unified Talent, PowerSchool Unified Classroom, PowerSchool Unified Home and PowerSchool Unified Communities. We also provide a rich set of analytic capabilities through PowerSchool Unified Insights, consolidating and enabling visualization of data across our own platform and third-party solutions. Our Unified Platform is a comprehensive solution that connects the office, classroom and home while bringing together students, parents, teachers and administrators providing the following key benefits:
 -->
 
-<!-- 
-
 
 ## Failed Market Entry by Chegg
 
@@ -868,7 +866,7 @@ In preparation for a discussion of policy alternatives, it is instructive to ana
 Zinch, created by Princeton University students in 2006, was a company that matched students to colleges and to scholarships. Zinch users created a profile "similar to a college application, which could be browsed by colleges in which they were interested, providing a forum for a connection between college and Zinch user" [@enwiki, para.1].
 
 Chegg, a company known for online textbook rentals, purchased Zinch in 2011 for \$27.2 million [@collegeboard_ipo]. The press release headline reads, "Chegg plans to expand into \$7 Billion college recruiting market and increase student base by over 3.5 Million" [@swisher_2011]. Following the acquisition of Zinch, Chegg began offering College Admissions and Scholarship Services to students, which generated names for enrollment marketing services to universities. In 2013, Chegg became a publicly traded company (raising \$187 million and valuation of \$1.1 billion) [@emson_2013]. The IPO prospectus, which claimed that Chegg enrollment marketing services delivered "approximately 2.6 million paid leads for interested students" to 750 colleges in 2012, provides insight about Chegg's strategy to enter the student list business:
--->
+
 <!-- 
 Chegg IPO prospectus: https://www.sec.gov/Archives/edgar/data/1364954/000119312513334290/d528213ds1.htm 
 
@@ -876,7 +874,7 @@ CUT TEXT
 > Our College Admissions and Scholarship Services currently serve approximately 40% of all college-bound high school seniors in the United States allowing them to highlight their interests, passions and personalities in a way that transcripts and standardized tests do notldots If a student expresses an interest in, or her profile matches the interest of, a college in our network, we offer the student an opportunity to connect with that college. 
 -->
 
-<!-- 
+
 
 > Using the information from the more than one million college-bound high school students who fill out a profile using our College Admissions and Scholarship Services, we provide colleges with qualified leads to potential candidates\ldots The leads can be based either on students' expressed preference for a particular college or matching students' general preferences with college profiles\ldots Colleges pay for these services on a per-lead basis or on a subscription fee basis\ldots Rather than spending hundreds or thousands of dollars per enrollment, colleges that use our enrollment marketing services can realize recruiting costs of generally less than $100 per student enrolled through our enrollment marketing services, and we believe they are better able to shape their incoming class, reducing transfers and drop-outs by using our services [@collegeboard_ipo, p.97].
 
@@ -889,7 +887,7 @@ However, by 2014, Chegg began promoting the "Chegg Cloud" as a broker/reseller w
 To this day, Chegg remains a successful company -- recording revenue of \$644 million in 2020 [@chegg2020] compared to \$255 million in 2013 [@chegg2013], raising the question, why did Chegg's foray into the student list business fail? 
 
 In the absence of a published autopsy, we relied on background conversations with enrollment management consultants who purchased names on behalf of universities. The consultants we spoke with had little respect for names provided by Chegg and similar providers. A principal concern was coverage; universities are often trying to target particular subsets of prospective students but the names contained by these lists were a sparse, scattered subset of all prospects. Second, consultants criticized the low quality of these data (e.g., many missing fields), a function of names being generated from voluntary online survey responses. Another concern was timeliness. College Board and ACT generate student list data early in the college search process (e.g., PSAT, PreACT). By contrast, names cannot be derived from college search websites until students start searching for college. Finally, we reason that it is difficult to create a foothold in the student list business based on user data from a competitive market -- college search engines -- that has no barriers to entry.
--->
+
 
 
 # Recommendations for Practitioners
