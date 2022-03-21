@@ -10,3 +10,5 @@ text/student_list_policy.tex
 
 *.doc
 *.docx
+
+*.DS_Store
