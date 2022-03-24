@@ -7,10 +7,10 @@ author:
   - Patricia Martín
 bibliography: ./../assets/bib/student_list_policy.bib # "./../../../Google Drive/student_list_brief/literature/student_list_policy.bib"
 output: 
-  bookdown::pdf_document2:
-    toc: FALSE
-  #bookdown::word_document2:    
+  #bookdown::pdf_document2:
   #  toc: FALSE
+  bookdown::word_document2:    
+    toc: FALSE
 csl: ./../assets/bib/apa.csl
   # C:\Users\ozanj\Documents\student_list_policy\assets\bib
 urlcolor: blue
@@ -652,7 +652,7 @@ __Develop internal capacity__. To the extent that university leadership provides
 
 If your office works with a consulting firm, this is a principal-agent relationship [@RN2762]. As a university employee, you are the principal and the consultant is the agent responsible for achieving goals established by the agent. In our experience, consultants are knowledgeable and genuinely dedicated to helping universities achieve their enrollment goals. That said, consulting firms also have their own interests. In any principal-agent relationship, the principal should monitor the agent [@RN320]. The more you learn about the technologies and the methods your agent uses, the more you can hold them accountable and help them do a better job serving the university. Instead of "I'll take your word for it," adopt a "trust but verify" approach. If something doesn't make sense to you, ask the consultant to explain it to you and share this explanation with someone you trust.
 
-__Re-assess search criteria__. Re-assess the search criteria the university specifies when buying names. In our data collection, the majority of purchases filtered by test score (e.g., SAT, PSAT, ACT, PreACT) but most of these purchases were made prior to Covid. If your university no longer requires the SAT/ACT for admissions, consider removing test score filters from your student list purchases. If you filter by AP score or by small geographic areas like zip code, think about who is being excluded.
+__Reassess search criteria__. Reassess the search criteria the university specifies when buying names. In our data collection, the majority of purchases filtered by test score (e.g., SAT, PSAT, ACT, PreACT) but most of these purchases were made prior to Covid. If your university no longer requires the SAT/ACT for admissions, consider removing test score filters from your student list purchases. If you filter by AP score or by small geographic areas like zip code, think about who is being excluded.
 
 Be wary of filters that target students based on the behavior of their peers, including ACT's predicted probability of enrollment filter and College Board's geodemographic filters, including [Segment Analysis Service](https://collegeboardsearch.collegeboard.org/pastudentsrch/support/licensing/college-board-search-services/segment-analysis-service) and [Environmental Attributes](https://www.youtube.com/watch?v=VmTU9sb4ZiY). Segment Analysis Service is particularly dangerous because it filters prospects at the census tract level and the high school level but it is not obvious which particular census tracts and schools are being excluded.
 
