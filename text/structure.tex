@@ -1,0 +1,207 @@
+% Fonts + Colors ~~~~
+
+\usepackage{lipsum}
+\usepackage{fontspec}
+\usepackage{CormorantGaramond}
+
+\newfontfamily\Compagnon[
+    Path = ../assets/fonts/compagnon/,
+    Extension = .otf,
+    UprightFont = *-Light,
+    ItalicFont = *-LightItalic,
+    BoldFont = *-Medium,
+]{Compagnon}
+
+\newfontfamily\GillSans[
+    Path = ../assets/fonts/gillsans/,
+    Extension = .otf,
+    UprightFont = *-Light,
+    ItalicFont = *-MediumItalic,
+    BoldFont = *-Medium,
+]{GillSans}
+
+
+% Formatting ~~~~
+
+\usepackage{geometry}
+
+\geometry{
+    letterpaper,
+    top=0.5in,
+    bottom=0.67in,
+    inner=0.83in,
+    outer=0.83in,
+    headsep=1in,
+    headheight=0.5in,
+    footskip=0.7cm,
+    % showframe
+}
+
+\usepackage{multicol}
+\usepackage[document]{ragged2e}
+
+\parskip=6pt
+\parindent=0pt
+\linespread{1}
+\setlength{\columnsep}{0.17in}
+
+
+% Headers + Footers ~~~~
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhead{} % clear all header fields
+\fancyfoot{} % clear all footer fields
+\fancyfoot[L]{\Compagnon\fontsize{10pt}{12pt}\selectfont\bfseries The Student List Business}
+\fancyfoot[R]{\Compagnon\fontsize{10pt}{12pt}\selectfont\bfseries page \thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancypagestyle{intro-style}{
+    \fancyhead{}
+    \fancyfoot{}
+    \fancyfoot[L]{\Compagnon\fontsize{10pt}{12pt}\selectfont\bfseries The Student List Business}
+    \fancyfoot[R]{\Compagnon\fontsize{10pt}{12pt}\selectfont\bfseries page A\thepage}
+}
+
+% https://latex.org/forum/viewtopic.php?t=5640
+\makeatletter
+\renewcommand\@makefntext[1]{%
+  \noindent\fontsize{10pt}{14pt}\selectfont\makebox[30pt][r]{\textbf{\@thefnmark} \hspace{0.8cm}}#1}
+\makeatother
+
+\let\svfootnoterule\footnoterule
+\renewcommand\footnoterule{\svfootnoterule\vspace{4pt}}
+
+
+% Headings ~~~~
+
+\usepackage[most]{tcolorbox}
+\usepackage[explicit]{titlesec}
+
+\tcbset{
+  headingonebg/.style={
+  freelance,
+  frame code={}
+  center title,
+  left=10pt,
+  right=10pt,
+  top=20pt,
+  bottom=20pt,
+  before skip=-5mm,
+  coltext=white,
+  colback=black,
+  colframe=white,
+  width=\dimexpr\textwidth\relax,
+  enlarge left by=0mm,
+  boxsep=0pt,
+  arc=0pt,
+  outer arc=0pt}
+}
+
+% https://tex.stackexchange.com/questions/128425/symbol-or-image-behind-heading
+\tcbset{
+  headingtwobg/.style={
+  freelance,
+  frame code={}
+  center title,
+  right skip=0.8cm,
+  left=-5pt,
+  right=0pt,
+  top=-3pt,
+  bottom=8pt,
+  watermark graphics=../assets/images/blue-banner.png,
+  watermark stretch=1.19,
+  watermark opacity=1.00,
+  opacityfill=0,
+  arc=0pt,
+  outer arc=0pt,
+  nobeforeafter}
+}
+
+\tcbset{
+  headingthreebg/.style={
+  freelance,
+  frame code={}
+  center title,
+  leftrule=0pt,
+  rightrule=0pt,
+  left=0pt,
+  right=0pt,
+  top=-3pt,
+  bottom=-3pt,
+  colback=gray!20,
+  colframe=white,
+  width=\dimexpr\textwidth\relax,
+  enlarge left by=0mm,
+  boxsep=0pt,
+  arc=0pt,
+  outer arc=0pt}
+}
+
+\newcommand\headingonesize{\fontsize{33pt}{0pt}\selectfont}
+\newcommand\headingtwosize{\fontsize{16pt}{19.2pt}\selectfont}
+\newcommand\headingthreesize{\fontsize{16pt}{19.2pt}\selectfont}
+
+\titleformat{name=\section,numberless}
+  {\Compagnon\headingonesize\bfseries}{}{0em}
+  {%
+    \begin{tcolorbox}[headingonebg,halign=flush center]
+      \strut#1\strut
+    \end{tcolorbox}%
+  }
+\titlespacing*{\section}{0pt}{-2.5cm}{-3mm}
+
+\titleformat{name=\subsection,numberless}
+  {\Compagnon\headingtwosize\bfseries}{}{0em}
+  {%
+    \begin{tcolorbox}[headingtwobg]
+      \strut#1\strut
+    \end{tcolorbox}%
+  }
+\titlespacing*{\subsection}{0pt}{-3mm}{-6mm}
+
+\titleformat{name=\subsubsection,numberless}
+  {\Compagnon\headingthreesize\bfseries}{}{0em}
+  {%
+    \begin{tcolorbox}[headingthreebg]
+      \strut#1\strut
+    \end{tcolorbox}%
+  }
+\titlespacing*{\subsubsection}{0pt}{-6mm}{-6mm}
+
+
+% Environments ~~~~
+
+\newtcolorbox{takeawaybox}[1][]{
+  enhanced,
+  frame hidden,
+  opacityfill=0,
+  boxsep=0pt,
+  right=0cm,
+  left*=7mm,
+  top=-8mm,
+  bottom=-3mm,
+  before skip=6mm,
+  borderline west={0.5pt}{0pt}{teal,dashed},
+  #1
+}
+
+\newtcolorbox{quotebox}[1][]{
+  enhanced,
+  frame hidden,
+  opacityfill=0,
+  boxsep=0pt,
+  right=0cm,
+  left*=7mm,
+  top=0mm,
+  bottom=0mm,
+  before skip=12mm,
+  after skip=8mm,
+  borderline west={0.5pt}{0pt}{teal,dashed},
+  #1
+}
+
+\newenvironment{captionenv}{\GillSans\fontsize{10pt}{12pt}\selectfont\itshape\vspace{2mm}}{\vspace{2mm}}
+\newenvironment{highlightenv}{\GillSans\fontsize{12pt}{12pt}\selectfont\bfseries}{}
+\newenvironment{quoteenv}{\GillSans\fontsize{14pt}{16.8pt}\selectfont\linespread{1.2}}{\par}
