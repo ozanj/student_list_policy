@@ -12,3 +12,5 @@ text/student_list_policy.tex
 *.docx
 
 *.DS_Store
+
+*.cache/

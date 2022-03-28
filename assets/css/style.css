@@ -1,0 +1,384 @@
+/* Title + Section Slides */
+
+.reveal #title,
+.reveal .section {
+  text-align: center;
+}
+
+.reveal #title hr,
+.reveal .section hr {
+  display: none;
+}
+
+.reveal #title h1,
+.reveal .section h1 {
+  z-index: 5;
+  position: relative;
+  transform: translateY(70px);
+  color: white;
+  background: black;
+  display: table;
+  margin: 0px auto;
+  padding: 10px 20px 20px;
+}
+
+.reveal #title h2 {
+  font-size: 25px;
+  z-index: 5;
+  position: relative;
+  transform: translateY(45px);
+  text-shadow: 2px 2px 10px #ffffff;
+  font-style: italic;
+  color: #000;
+}
+
+.reveal #title .logo {
+  float: none;
+  position: absolute;
+  transform: translate(-50%, 565px);
+  z-index: 5;
+}
+
+.reveal .section .logo {
+  display: none;
+}
+
+/* Deep-Dive Slides */
+
+.reveal .vertical h1 {
+  margin: 10px 0 20px;
+  display: inline-block;
+}
+
+.reveal .vertical h2 {
+  margin: -15px 0 20px;
+}
+
+#toc .btn-toc {
+  display: none;
+}
+
+/* Figures */
+
+.reveal iframe,
+.graphs-set {
+  height: 500px;
+}
+
+.graphs-set-all {
+  height: 480px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.graphs-row {
+  display: flex;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+}
+
+.reveal .graphs-set-all .graphs-row {
+  height: 33%;
+}
+
+.reveal .graphs-set img {
+  border: silver 1px solid;
+  background-color: white;
+  height: 90%;
+  transition: all 0.3s ease-in-out;
+}
+
+.reveal .graphs-set-wide img {
+  height: 75%;
+}
+
+.reveal .graphs-set-all img {
+  height: 85%;
+}
+
+.reveal .graphs-set img:hover {
+  opacity: 0.7;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* Modals */
+
+.reveal div.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding: 20px;
+  left: 50%;
+  top: 48%;
+  background-color: white;
+  border: solid 1px gray;
+  transform: translate(-50%, -50%);
+}
+
+.modal h3 {
+  text-align: center;
+  font-size: 26px;
+  margin: 0 30px 35px 20px;
+  line-height: 1em;
+  letter-spacing: -1px;
+}
+
+.modal p {
+  margin: 0;
+  color: gray;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.5em;
+  font-weight: 300;
+}
+
+.modal img {
+  width: 600px;
+}
+
+.horizontal .modal h3,
+.horizontal .modal p {
+  display: none;
+}
+
+.modal .close {
+  float: right;
+  margin-top: -5px;
+  opacity: 0.6;
+}
+
+.modal .close:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+/* Metro Tables */
+
+#table-metro-count {
+  font-size: 18px;
+  text-align: right;
+  line-height: 1em;
+}
+
+#table-metro-count tbody {
+  font-size: 17px;
+}
+
+#table-metro-count thead td {
+  text-decoration: underline;
+  padding-bottom: 20px;
+  vertical-align: middle;
+  border-bottom: none;
+}
+
+#table-metro-count tr td:nth-of-type(2) {
+  text-align: left;
+}
+
+#table-metro-count td {
+  padding: 6px 0;
+}
+
+#table-metro-count td:nth-of-type(4) {
+  width: 12%;
+}
+
+#table-metro-count td:nth-of-type(4) ~ td {
+  width: 10%;
+}
+
+#table-metro-count tbody td:nth-of-type(3) {
+  font-weight: 600;
+}
+
+#table-metro-count tbody td:nth-of-type(3) ~ td {
+  color: gray;
+}
+
+#table-metro-count thead td:nth-of-type(4) {
+  text-decoration-color: #42a9c6;
+}
+
+#table-metro-count thead td:nth-of-type(5) {
+  text-decoration-color: #d16822;
+}
+
+#table-metro-count thead td:nth-of-type(6) {
+  text-decoration-color: #30af37;
+}
+
+#table-metro-count thead td:nth-of-type(7) {
+  text-decoration-color: #8030d1;
+}
+
+#table-metro-count tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Scroll Tables */
+
+.scroll-wrapper {
+  max-width: 1000px;
+  max-height: 500px;
+  overflow: scroll;
+  position: relative;
+}
+
+.scroll-wrapper-x {
+  overflow-y: hidden;
+}
+
+.scroll-wrapper-y {
+  overflow-x: hidden;
+}
+
+.scroll-wrapper .desc-table td.col-width {
+  padding: 0 25px;
+}
+
+.scroll-wrapper .appendix-table td.col-width {
+  padding: 0 45px;
+}
+
+.scroll-wrapper tr:nth-child(1) th {
+  position: sticky;
+  top: 0;
+  white-space: nowrap;
+}
+
+.scroll-wrapper .desc-table tr:nth-child(2) th {
+  position: sticky;
+  top: 20.5px;
+}
+
+.scroll-wrapper tr td:nth-child(1) {
+  position: sticky;
+  left: 0;
+  border-right: 1px solid #444;
+  white-space: nowrap;
+}
+
+.scroll-wrapper tr th:nth-of-type(1) {
+  left: 0;
+  z-index: 1;
+  border-right: 1px solid #444;
+}
+
+.scroll-wrapper .regression-table tr:nth-last-child(1) td {
+  position: sticky;
+  bottom: 0;
+}
+
+.scroll-wrapper .regression-table tr:nth-last-child(2) td {
+  position: sticky;
+  bottom: 22.2px;
+  border-top: 1px solid #444;
+}
+
+.scroll-wrapper .regression-table tr:nth-last-child(2) td:first-child,
+.scroll-wrapper .regression-table tr:nth-last-child(1) td:first-child {
+  left: 0;
+  z-index: 1;
+}
+
+.scroll-wrapper .regression-table td:nth-of-type(1) ~ td {
+  padding: 4px 20px;
+  line-height: 1.2em;
+}
+
+.scroll-wrapper table tr.active-row td,
+.scroll-wrapper table .active-col {
+  background-color: palegoldenrod;
+}
+
+.reveal p.footnote {
+  font-size: 11px;
+  line-height: 1.5;
+  padding: 5px 0;
+  font-weight: 300;
+}
+
+.reveal p.footnote strong {
+  font-weight: 600;
+}
+
+/* References */
+
+#references {
+  font-size: 17px;
+}
+
+#references p {
+  padding-left: 25px;
+  text-indent: -22px;
+  line-height: 1.5em;
+  padding-bottom: 6px;
+  font-weight: 300;
+}
+
+#references a[href^='#'] {
+  color: rgb(231, 103, 97);
+  pointer-events: none;
+}
+
+/* Section Controls */
+
+.reveal .section-nav {
+  font-family: 'Compagnon';
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  position: absolute;
+  top: 200px;
+  left: -200px;
+}
+
+.reveal .section-nav h3 {
+  font-family: 'Gill Sans';
+  font-size: 16px;
+  letter-spacing: 4px;
+  color: #00aeef;
+  text-decoration: line-through;
+  padding-left: 3px;
+}
+
+.reveal .section-nav a {
+  text-decoration: none;
+  color: #444;
+}
+
+.reveal .section-nav div {
+  width: fit-content;
+  background-color: #c1c1c1;
+  padding: 3px 4px 6px;
+  margin: 20px 0;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.4s ease, padding 0.4s ease;
+}
+
+.reveal .section-nav div:hover {
+  background-color: #6fccdc;
+  padding-right: 15px;
+}
+
+.reveal #title .section-nav,
+.reveal .section .section-nav,
+.reveal #references .section-nav {
+  display: none;
+}
+
+/* Arrow Controls */
+
+.slide-vertical .reveal .controls .navigate-left,
+.slide-vertical .reveal .controls .navigate-right {
+  display: none;
+}

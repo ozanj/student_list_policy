@@ -1,0 +1,152 @@
+---
+title: 'Student List Business'
+mode: selfcontained
+ext_widgets : {rCharts: [libraries/shiny]}
+framework: revealjs
+revealjs:
+  theme: 'custom'
+  transition: 'slide'
+  center: 'false'
+bibliography: '../assets/bib/student_list_policy.bib'
+csl: '../assets/bib/apa.csl'
+
+--- #title
+
+```{r, include=FALSE}
+library(slidify)
+library(slidifyLibraries)
+# slidify('slides/student_list_dognpony.Rmd')
+
+library(servr)
+# Start server: servr::httd()
+# Check if server(s) running: daemon_list()
+# Stop server(s): daemon_stop(which = daemon_list())
+
+library(knitcitations)
+
+cleanbib()
+bib <- read.bibtex('../assets/bib/student_list_policy.bib')
+
+# Function for parenthetical citation needing `e.g.,` or have no year (ie. forthcoming)
+# b: citation(s)
+# eg: T/F - whether or not to include `e.g.,` in citation
+cite <- function(b, eg = TRUE) {
+  c <- ifelse(eg, '(e.g., ', '(')
+  for (i in seq_along(b)) {
+    if (i != 1) {
+      c <- paste0(c, '; ')
+    }
+    a <- paste(b[[i]]$author$family, collapse = ', ')
+    y <- ifelse(is.null(b[[i]]$year), 'forthcoming', b[[i]]$year)
+    entry <- paste(a, y, sep = ', ')
+    c <- paste0(c, entry)
+    record_as_cited(b[[i]])
+  }
+  paste0(c, ')')
+}
+```
+
+
+# The Student List Business
+
+
+---
+
+# Title
+## Subtitle
+
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula. `r citep(bib['RN4324'])`
+- Vivamus fringilla orci vel varius hendrerit. 
+- `r citet(bib['RN2771'])` Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
+- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
+
+
+--- &twocol
+
+# Two-column layout
+## w/ image
+
+*** =left
+
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula. 
+- Vivamus fringilla orci vel varius hendrerit. 
+- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
+- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
+
+*** =right
+
+<img src="../assets/images/enrollment_funnel.png" alt="Enrollment Funnel" style="width:65%;margin:0 auto;">
+
+
+---
+
+# Embed interactive components
+## Maps
+
+<iframe src="https://cyouh95.github.io/third-way-report/assets/maps/map_income.html" width="100%" style="margin-top: 10px;" allowtransparency="true"></iframe>
+
+
+---
+
+# Embed interactive components
+## Shiny apps
+
+<iframe src="https://jkcf.shinyapps.io/dashboard/" width="100%" style="margin-top: 10px;" allowtransparency="true"></iframe>
+
+
+--- .section
+
+# Student List Business/Market Dynamics
+
+
+---
+
+# Title
+## Subtitle
+
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
+- Vivamus fringilla orci vel varius hendrerit. 
+- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
+- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
+
+
+--- .section
+
+# Empirical Analyses
+
+
+---
+
+# Title
+## Subtitle
+
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
+- Vivamus fringilla orci vel varius hendrerit. 
+- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
+- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
+
+
+--- .section
+
+# Policy
+
+
+---
+
+# Title
+## Subtitle
+
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
+- Vivamus fringilla orci vel varius hendrerit. 
+- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
+- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
+
+
+--- #references
+
+# References
+## &nbsp;
+
+```{r results='asis', echo=FALSE}
+bibliography('html')
+````
