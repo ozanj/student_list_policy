@@ -263,7 +263,7 @@ Figure \@ref(fig:cb-fig) shows that participating in Search was associated with 
 @RN4739 also analyzed the four-year BA degree completion rates of SAT test-takers from the 2015 and 2016 high school graduation cohorts. Figure \@ref(fig:cb-fig) shows that 20.6\% of students who participated in Search obtained a BA in four years compared to 15.7\% of students who opted out, representing a 31.2\% (`=(20.6-15.7)/15.7`) increase in the relative probability of graduation. Furthermore, the relative increase in the probability of obtaining a BA was higher for Black (40.3\%), Hispanic (43.3\%), and Native American/Alaska Native students (48.3\%) than it was for White (27.9\%) and Asian (28.2\%) students. The relative increase was also higher for students whose parents did not attend college (50.0\%) than it was for students whose parents had a BA (25.3\%).
 
 
-```{r cb-fig, fig.height = 5, out.width = '85%', fig.cap = 'Student Search Service and four-year college enrollment/completion'}
+```{r cb-fig, fig.height = 5, out.width = '85%', fig.cap = 'Student Search Service and four-year college enrollment/completion', message = FALSE, echo=FALSE}
 
 create_cb_figure <- function(categories, values, plot_title) {
   cb_fig_df <- data.frame(

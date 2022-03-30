@@ -27,6 +27,10 @@ library(knitcitations)
 cleanbib()
 bib <- read.bibtex('../assets/bib/student_list_policy.bib')
 
+library(gridExtra) # for creating howell table
+library(tidyverse)
+
+
 # Function for parenthetical citation needing `e.g.,` or have no year (ie. forthcoming)
 # b: citation(s)
 # eg: T/F - whether or not to include `e.g.,` in citation
@@ -50,15 +54,128 @@ cite <- function(b, eg = TRUE) {
 # The Student List Business
 
 
+
+
 ---
 
 # Title
 ## Subtitle
 
+- Here is some SLIDE TEXT
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula. `r citep(bib['RN4324'])`
 - Vivamus fringilla orci vel varius hendrerit. 
 - `r citet(bib['RN2771'])` Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
 - Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
+
+--- .section
+
+# Introduction
+
+
+---
+
+# CB Search and student outcomes
+## `r citet(bib['RN4739'])`
+
+
+
+```{r cb-fig, fig.height = 5, out.width = '85%', fig.cap = 'Student Search Service and four-year college enrollment/completion', message=FALSE, echo=FALSE}
+
+create_cb_figure <- function(categories, values, plot_title) {
+  cb_fig_df <- data.frame(
+    category = rep(categories, each = 2),
+    subcategory = rep(c('Not Licensed', 'Gain from being Licensed'), length(categories)), 
+    value = values
+  )
+  
+  cb_fig_df$category <- factor(cb_fig_df$category, levels = categories)
+  
+  cb_fig_df %>%
+    left_join(
+      cb_fig_df %>%
+        pivot_wider(id_cols = category, names_from = subcategory, values_from = value) %>%
+        mutate(
+          total = `Not Licensed` + `Gain from being Licensed`,
+          pct_change = `Gain from being Licensed` / `Not Licensed` * 100
+        ),
+      by = 'category') %>% 
+    ggplot(aes(x = category, y = value, fill = subcategory, width = 0.6)) +
+    geom_bar(position = 'stack', stat = 'identity') +
+    geom_text(aes(y = value, label = if_else(subcategory == 'Not Licensed', str_c(sprintf('%.1f', value), '%'), '')), color = '#444444', size = 2, position = position_stack(vjust = 0.5)) +
+    geom_text(aes(y = total + 3, label = if_else(subcategory == 'Not Licensed', str_c('(', sprintf('%.1f', pct_change), '%)'), '')), color = '#444444', size = 2) +
+    geom_text(aes(y = total + 7, label = if_else(subcategory == 'Not Licensed', str_c(sprintf('%.1f', `Gain from being Licensed`), 'pp'), '')), color = '#444444', size = 2) +
+    ggtitle(plot_title) +
+    xlab('') + ylab('') + 
+    scale_y_continuous(expand = expansion(mult = c(0, 0.05)), limits = c(0, 80)) +
+    scale_fill_manual(values = c('#ba9a88', '#bbcfd7')) +
+    theme(
+        plot.margin = margin(t = 0.6, unit = 'cm'),
+        panel.grid.major.y = element_line(size = 0.1, color = 'gray'),
+        legend.title = element_blank(),
+        legend.position = 'bottom',
+        legend.margin = margin(t = -0.5, unit = 'cm'),
+        legend.text = element_text(margin = margin(r = 0.2, unit = 'cm')),
+        text = element_text(size = 7),
+        panel.background = element_blank(),
+        plot.title = element_text(color = '#444444', size = 7, hjust = 0.5, face = 'bold'),
+        axis.ticks = element_blank(),
+        axis.title = element_text(face = 'bold'),
+        #legend.title = element_text(face = 'bold'),
+        legend.key.size = unit(0.3, 'cm')
+      ) +
+      guides(fill = guide_legend(reverse = T))
+}
+
+
+grid.arrange(
+  create_cb_figure(
+    c('Overall', 'Asian', 'Black', 'Hispanic', 'AI/AN', 'HI/PI', 'White'),
+    c(32.8, 8.3, 37.5, 5.7, 31.8, 7.8, 24.1, 8.3, 26.5, 6.3, 22.2, 5.8, 44.4, 9.6),
+    'Enrollment'
+  ),
+  create_cb_figure(
+    c('Overall', 'Asian', 'Black', 'Hispanic', 'AI/AN', 'White'),
+    c(15.7, 4.9, 17.7, 5.0, 7.2, 2.9, 6.7, 2.9, 8.7, 4.2, 24.0, 6.7),
+    'BA Completion within 4 Years'
+  ),
+  create_cb_figure(
+    c('Overall', 'No College', 'College,\nNo BA', 'College,\nBA or Higher'),
+    c(32.8, 8.3, 24.9, 10.1, 36.5, 11.0, 53.4, 10.1),
+    'Enrollment'
+  ),
+  create_cb_figure(
+    c('Overall', 'No College', 'College,\nNo BA', 'College,\nBA or Higher'),
+    c(15.7, 4.9, 13.6, 6.8, 21.3, 8.5, 39.9, 10.1),
+    'BA Completion within 4 Years'
+  ),
+  ncol = 2
+)
+
+
+```
+
+---
+
+# How could student lists be so important for college access?
+
+<br>
+
+The US market for higher education
+- National voucher system
+  - Federal/state student aid, household savings, follow students to institutions
+  - T4 institutions have incentive to provide access
+- Title IV institutions
+  - Allowed to enroll students that receive federal financial aid
+  - Tuition is largest revenue sources, including T4 aid
+  - Institutions have financial incentive to enroll students who receive T4 aid
+
+<br>
+
+Student lists
+- A matchmaking intermediary that connects institutions to prospects
+- Institutions need students to survive and meet enrollment goals
+  - Problem: don't know who these prospects are or how to contact them
+  - Student list business overcomes this problem
 
 
 --- &twocol

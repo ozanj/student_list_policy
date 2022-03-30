@@ -1,6 +1,5 @@
 ---
 title: 'Student List Business'
-# lib_cdn: 'https://cdn.rawgit.com/ramnathv/slidifyLibraries/master/inst/libraries'
 mode: selfcontained
 ext_widgets : {rCharts: [libraries/shiny]}
 framework: revealjs
@@ -19,15 +18,55 @@ csl: '../assets/bib/apa.csl'
 # The Student List Business
 
 
+
+
 ---
 
 # Title
 ## Subtitle
 
+- Here is some SLIDE TEXT
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula. (Holland, 2019)
 - Vivamus fringilla orci vel varius hendrerit. 
 - Hossler and Bean (1990) Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
 - Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
+
+--- .section
+
+# Introduction
+
+
+---
+
+# CB Search and student outcomes
+## Howell, Hurwitz, Mabel, et al. (2021)
+
+
+
+<img src="assets/fig/cb-fig-1.png" title="Student Search Service and four-year college enrollment/completion" alt="Student Search Service and four-year college enrollment/completion" width="85%" />
+
+---
+
+# How could student lists be so important for college access?
+
+<br>
+
+The US market for higher education
+- National voucher system
+  - Federal/state student aid, household savings, follow students to institutions
+  - T4 institutions have incentive to provide access
+- Title IV institutions
+  - Allowed to enroll students that receive federal financial aid
+  - Tuition is largest revenue sources, including T4 aid
+  - Institutions have financial incentive to enroll students who receive T4 aid
+
+<br>
+
+Student lists
+- A matchmaking intermediary that connects institutions to prospects
+- Institutions need students to survive and meet enrollment goals
+  - Problem: don't know who these prospects are or how to contact them
+  - Student list business overcomes this problem
 
 
 --- &twocol
