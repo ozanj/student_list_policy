@@ -47,26 +47,196 @@ csl: '../assets/bib/apa.csl'
 
 ---
 
-# How could student lists be so important for college access?
+# How could lists be so important?
+## The US market for higher education
+
+
+Title IV institutions
+- Allowed to enroll students that receive federal financial aid
 
 <br>
 
-The US market for higher education
-- National voucher system
-  - Federal/state student aid, household savings, follow students to institutions
-  - T4 institutions have incentive to provide access
-- Title IV institutions
-  - Allowed to enroll students that receive federal financial aid
-  - Tuition is largest revenue sources, including T4 aid
-  - Institutions have financial incentive to enroll students who receive T4 aid
+A national voucher system
+- Federal/state student aid, household savings follow students to institutions
+
+<br>
+
+Tuition is largest revenue source
+- Title IV institutions have incentive to enroll students who receive federal student aid
+
+<br>
+
+Problems
+- Students don't know all their options, don't know which institutions interested in them
+- Institutions don't know who the prospects are or how to contact them
 
 <br>
 
 Student lists
 - A matchmaking intermediary that connects institutions to prospects
-- Institutions need students to survive and meet enrollment goals
-  - Problem: don't know who these prospects are or how to contact them
-  - Student list business overcomes this problem
+
+
+---
+
+# The student list project
+## Project overview
+
+Data collection
+
+- Issued public records requests to all public universities in four states (CA, IL, MN, TX)
+- Target student list vendors
+  - College Board, ACT
+- Data collection began February 2020  
+  - Seeking student lists purchased from 2016-2020
+
+<br>
+For each purchased list, sought two pieces of data
+
+1. "Order summary" specifying search filter criteria [LINK]
+1. De-identified prospect-level student list [LINK]
+
+<br>
+Empirical research questions
+
+1. Which filter criteria were selected in student lists purchases?
+1. What are the characteristics of prospects included in student lists purchases?
+1. What is the relationship between student list filter criteria and the characteristics of
+purchased prospects?
+
+<br>
+Partners
+
+- Funded by Joyce Foundation, Kresge Foundation
+- Pro bono partnership with a civil rights legal organization and four multinational law firms
+- Our first report to be published by [ACCEPT](https://www.acceptgroup.org/)
+
+
+---
+
+# The student list project
+## What we learned
+
+Began the project with a focus on university behavior
+
+- Which universities doing a "good" vs. "bad" job of reaching out to the community?
+- This was the wrong focus!
+
+<br>
+What we learned
+- The student list products themselves are problematic
+- Often, name buys outsourced to consultancy and university employees lacked knowledge
+- Radical transformation in market for student list data happening right now
+
+<br>
+Revised focus
+- Student list products
+- Key players in the market for student list data
+
+
+---
+
+# How industries find customers
+## List-based and behavioral-based leads
+
+"Lead generation" 
+
+- Connect consumers interested in products (leads) to merchants who sell those products (Federal Trade Commission, 2016)
+
+<br>
+__List-based leads__, based on the direct mail model
+
+- "Publisher" obtains information about customers >>
+  - Often, publisher sells data to "aggregator" >>
+  - Publisher/aggregator sells data to merchant >>
+  - Merchant serves marketing material to consumers via purchased contact info
+- Student lists are example of list-based lead generation
+
+<br>
+__Behavioral-based leads__ (e.g., Google Search)
+
+- Target (*verb*) users of a platform (e.g., Twitter)
+- Identify targets (*noun*) based on user profile, simultaneously serve ads while they are on platform
+  - Also, serve ads when they visit website that partners with the platform (e.g., Google Display Network)
+
+
+<br>
+Finding customers in higher education
+
+- Buy lists from College Board and ACT to identify college-bound high school students (EAB, 2018)
+- Behavioral based marketing to target markets where reliable student lists are unavailable
+  - e.g., programs offered by community colleges and for-profits, online program managers (OPMs) recruiting adults
+  - Additionally, behavioral based marketing for brand awareness
+
+
+--- &twocol
+
+# Situating student lists
+## The marketing funnel and the enrollment funnel
+
+*** =left
+
+<center>**The marketing funnel**</center>
+
+
+<br>
+
+<img src="../assets/images/marketing-funnel-diagram.png" alt="Enrollment Funnel" style="width:90%;margin:0 auto;">
+
+Source: [skyword.com](https://www.skyword.com/contentstandard/how-the-marketing-funnel-works-from-top-to-bottom/)
+
+*** =right
+
+<center>**The enrollment funnel**</center>
+
+<br>
+
+<img src="../assets/images/enrollment_funnel.png" alt="Enrollment Funnel" style="width:80%;margin:0 auto;">
+
+<right>Source: [pngwing.com](https://www.pngwing.com/en/free-png-krrpy)</right>
+
+
+--- &twocol
+
+# Situating student lists
+## The enrollment funnel
+
+*** =left
+
+<br>
+
+Prospects
+
+- Population of desirable potential students
+
+Leads
+
+- Prospects whose contact info has been obtained
+
+Inquiries
+
+- Prospects who have contacted the institution
+  - Institution as first contact (leads)
+  - Student as first contact
+
+<br>
+Interventions along the funnel
+
+- Convert prospects to leads
+  - purchase student lists
+- Convert leads/inquiries to applicants
+  - Email, mail, targeted social media
+- Convert admits to enrolles
+  - Financial aid packages
+
+*** =right
+
+<center>**The enrollment funnel**</center>
+
+<br>
+
+<img src="../assets/images/enrollment_funnel.png" alt="Enrollment Funnel" style="width:80%;margin:0 auto;">
+
+Source: [pngwing.com](https://www.pngwing.com/en/free-png-krrpy)
 
 
 --- &twocol
