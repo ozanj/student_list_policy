@@ -192,7 +192,7 @@ Source: [skyword.com](https://www.skyword.com/contentstandard/how-the-marketing-
 
 <img src="../assets/images/enrollment_funnel.png" alt="Enrollment Funnel" style="width:80%;margin:0 auto;">
 
-<right>Source: [pngwing.com](https://www.pngwing.com/en/free-png-krrpy)</right>
+Source: [pngwing.com](https://www.pngwing.com/en/free-png-krrpy)
 
 
 --- &twocol
@@ -238,6 +238,125 @@ Interventions along the funnel
 
 Source: [pngwing.com](https://www.pngwing.com/en/free-png-krrpy)
 
+---
+
+# College Board and ACT lists
+## sub-title
+
+College Board and ACT have been largest student list vendors for several decades
+
+- College Board "Student Search Service" created in 1972 (Belkin, 2019)
+- ACT "Educational Opportunity Service"
+  - ACT acquired National Research Center for College and University (NRCCUA) in 2018
+  - Student list products part of new "Encoura Data Lab"
+
+<br>
+Source of student list data
+
+- Create student list data from database of test takers (e.g., PSAT, SAT, AP, PreACT, ACT)
+  - Pre-test questionnaire (e.g., demographic, preferences about college)
+- Students have opportunity to opt in or opt out of student list products
+
+<br>
+What information does a list contain
+- Contact, demographic, college preferences, limited academic achievement
+- College Board template [HERE](https://drive.google.com/file/d/1Qvc_QRi9izEF1W78Lh4nNi5NsXjCZqUE/view)
+- ACT template [HERE](https://drive.google.com/file/d/1rsP45OyOsnPYhV8uWYKDAy_spGhjj6aj/view)
+
+
+---
+
+# College Board and ACT lists
+## Sources of exclusion
+
+College Board and ACT student lists exclude students in two broad ways
+
+1. Generally, only test-takers are included in student list products
+  - Test-taking rates differ by race, socioeconomic status, geography
+1. "Search filters" allow universities to control which prospects included/excluded from a purchase
+
+<br>
+Test-optional
+
+- Test-optional movement threatens "coverage" of College Board/ACT student list products
+- Number of test-takers will likely decline in future
+
+
+---
+
+# College Board and ACT lists
+## Buying student lists
+
+"Search filters" allow universities to control which prospects included/excluded from a purchase
+
+<br>
+Commonly used search filters ([Link to ACT filters](https://helpcenter.encoura.org/hc/en-us/articles/360035260452-Prospect-Search-Filters-))
+
+- Graduation year, HS GPA, test score range, gender, race/ethnicity, geography (e.g., state, zip-code, "geomarket"), intended major
+
+<br>
+
+Recent trend towards search filters based on predictive analytics
+
+- College Board "geodemographic" filters
+  - Target prospects based on historical college-going behavior of students at the school/neighborhood
+- ACT "enrollment predictor"
+  - Target prospects based on their predicted probability of enrolling at your institution
+
+<br>
+
+Policy concerns
+
+- Some search filters disproportionately exclude underrepresented students, especially when used in combination
+- Filtering prospects based on the behavior of others (e.g., geodemographic filters)
+
+---
+
+# BEGIN MARKET DYNAMICS SECTION
+## TEXT
+
+
+---
+
+# Market dynamics
+## Five dynamics shaping the market for student list data
+
+1. Universities and enrollment management (EM) consulting firms
+  - Universities are primary customers of student lists, but EM consultancies play central role in process
+1. New data sources, new vendors
+  - Advances in technology created new sources of student list data, leading to market entry by new vendors
+1. Acquisitions and concentration
+  - Trend towards competition reversed by rise in acquisitions; EAB enters the student list business
+1. Incumbents College Board and ACT seek to retain competitive advantage
+  - Add product features that aid micro-targeting
+  - Enter the market for enrollment management consulting
+1. The test-optional movement
+  - For-profit firms poised to acquire market share ceded by CB/ACT, and maximize profit by restricting access to names
+
+
+--- .subsubsection
+
+# Universities and consulting firms
+## TEXT
+
+Universities need students
+
+- Universities are the primary customers of student list products
+- As recruiting became more complex and competitive, universities hire EM consultancies to develop/implement recruiting campaigns
+
+<br>
+Enrollment management (EM) consulting firms
+- Universities are the primary customers of EM consultancies
+- EM firms depend on student list suppliers for two reasons:
+  1. Advice/execution of name buys is a core service offered by firms
+  1. Names are essential input to predictive models and recruiting interventions firms provide
+
+<br>
+Competition in the enrollment management consulting industry
+
+- A mix of large full-service providers (e.g., RNL) and small/medium boutique firms
+- Anecdotally, market entry in the 2000s
+- Over last decade, increase in market concentration due to acquisitions (Rogers, 2014; Wan, 2021)
 
 --- &twocol
 

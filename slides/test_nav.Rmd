@@ -55,7 +55,7 @@ cite <- function(b, eg = TRUE) {
 
 --- .section
 
-# Student List Business/Market Dynamics
+# Student List Business
 
 
 --- .subsection

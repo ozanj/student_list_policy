@@ -19,7 +19,7 @@ csl: '../assets/bib/apa.csl'
 
 --- .section
 
-# Student List Business/Market Dynamics
+# Student List Business
 
 
 --- .subsection
