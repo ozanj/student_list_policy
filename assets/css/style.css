@@ -337,8 +337,15 @@
   text-transform: uppercase;
   letter-spacing: -2px;
   position: absolute;
-  top: 200px;
+  top: 120px;
   left: -200px;
+  width: 200px;
+}
+
+.reveal #title .section-nav,
+.reveal .section .section-nav,
+.reveal #references .section-nav {
+  display: none;
 }
 
 .reveal .section-nav h3 {
@@ -347,7 +354,23 @@
   letter-spacing: 4px;
   color: #00aeef;
   text-decoration: line-through;
-  padding-left: 3px;
+}
+
+.reveal .section-nav ul li:before {
+  all: initial;
+}
+
+.reveal .section-nav ul {
+  margin-left: 1em;
+}
+
+.reveal .section-nav > ul {
+  margin-left: 0;
+}
+
+.reveal .section-nav li {
+  line-height: 1;
+  margin-bottom: 0.5em;
 }
 
 .reveal .section-nav a {
@@ -355,24 +378,24 @@
   color: #444;
 }
 
-.reveal .section-nav div {
-  width: fit-content;
-  background-color: #c1c1c1;
-  padding: 3px 4px 6px;
-  margin: 20px 0;
-  line-height: 1;
-  cursor: pointer;
-  transition: background-color 0.4s ease, padding 0.4s ease;
+.reveal .section-nav li a {
+  color: #808080;
 }
 
-.reveal .section-nav div:hover {
-  background-color: #6fccdc;
-  padding-right: 15px;
+.reveal .section-nav li a:hover {
+  color: #00aeef;
 }
 
-.reveal #title .section-nav,
-.reveal .section .section-nav,
-.reveal #references .section-nav {
+.reveal .section-nav > ul > li a {
+  color: #444444;
+}
+
+.reveal .section-nav li.active a {
+  color: #6fccdc;
+  pointer-events: none;
+}
+
+.reveal .section-nav > ul > ul:not(.active) {
   display: none;
 }
 

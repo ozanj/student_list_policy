@@ -23,6 +23,7 @@ body {
 
 .reveal .slides {
   text-align: left;
+  width: 850px !important;
 }
 
 .reveal strong {
