@@ -60,36 +60,20 @@ cite <- function(b, eg = TRUE) {
 </div>
 
 
----
-
-# Title
-## Subtitle
-
-- Here is some SLIDE TEXT
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula. `r citep(bib['RN4324'])`
-- Vivamus fringilla orci vel varius hendrerit. 
-- `r citet(bib['RN2771'])` Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
-- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
-
 --- .section
 
 # Introduction
 
 
---- .subsection
-
-# Vignette
-
-
---- .subsubsection
+---
 
 # CB Search and student outcomes
 ## `r citet(bib['RN4739'])`
 
-<img src="../assets/images/cb_fig_1.png" alt="Student Search Service" style="width:80%;margin:0 auto;">
+<img src="../assets/images/cb_fig_1.png" alt="Student Search Service" style="width:90%;margin:0 auto;">
 
 
---- .subsubsection
+---
 
 # How could lists be so important?
 ## The US market for higher education
@@ -125,10 +109,10 @@ Student lists
 # The student list project
 
 
---- .subsubsection
+--- 
 
-# Project overview 
-## &nbsp;
+# The student list project
+## Project overview
 
 Data collection
 
@@ -160,10 +144,11 @@ Partners
 - Our first report to be published by [ACCEPT](https://www.acceptgroup.org/)
 
 
---- .subsubsection
+---
 
-# What we learned
-## &nbsp;
+# The student list project
+## What we learned
+
 
 Began the project with a focus on university behavior
 
@@ -175,30 +160,34 @@ What we learned
 - The student list products themselves are problematic
 - Often, name buys outsourced to consultancy and university employees lacked knowledge
 - Radical transformation in market for student list data happening right now
+  - For-profit suppliers entered the market
+  - Distinction between consulting firms and student list vendor has blurred
+  - Test-optional
 
 <br>
 Revised focus
 - Student list products
-- Key players in the market for student list data
+- Dynamics and key players in the market for student list data
 
 
 
 --- .section
 
-# Student List Business/Market Dynamics
+# The Student List Business
 
 
 --- .subsection
 
-# Situating the student list business
+# Student list basics
 
 
 --- .subsubsection
 
-# How industries find customers
-## List-based and behavioral-based leads
+# Situating the student list business
+## How industries find customers
 
-"Lead generation" 
+
+**Lead generation**
 
 - Connect consumers interested in products (leads) to merchants who sell those products `r citep(bib['ftc2016'])`
 
@@ -224,14 +213,14 @@ Finding customers in higher education
 
 - Buy lists from College Board and ACT to identify college-bound high school students `r citep(bib['RN4728'])`
 - Behavioral based marketing to target markets where reliable student lists are unavailable
-  - e.g., programs offered by community colleges and for-profits, online program managers (OPMs) recruiting adults
+  - e.g., community college and for-profit credentials, online program managers (OPMs) recruiting adults
   - Additionally, behavioral based marketing for brand awareness
 
 
 --- &twocol .subsubsection
 
-# Marketing and enrollment funnel
-## &nbsp;
+# Situating the student list business
+## The enrollment funnel
 
 *** =left
 
@@ -257,8 +246,8 @@ Source: [pngwing.com](https://www.pngwing.com/en/free-png-krrpy)
 
 --- &twocol .subsubsection
 
-# The enrollment funnel
-## &nbsp;
+# Situating the student list business
+## The enrollment funnel
 
 *** =left
 
@@ -297,14 +286,12 @@ Interventions along the funnel
 Source: [pngwing.com](https://www.pngwing.com/en/free-png-krrpy)
 
 
---- .subsection
 
-# College Board and ACT lists
 
 --- .subsubsection
 
-# Standardized testing
-## &nbsp;
+# College Board and ACT lists
+## Data sources and list contents
 
 College Board and ACT have been largest student list vendors for several decades
 
@@ -321,6 +308,13 @@ Source of student list data
 - Students have opportunity to opt in or opt out of student list products
 
 <br>
+Pricing
+
+- Historically, a price-per-prospect model
+- ACT moved to subscription pricing with [creation of Encoura](https://encoura.org/combined-data-set/)
+- College Board currently charges \$0.50 per name, but [moving to subscription pricing](https://cbsearch.collegeboard.org/pdf/2022-23-subscription-plan-pricing.pdf) too
+
+<br>
 What information does a list contain
 - Contact, demographic, college preferences, limited academic achievement
 - College Board template [HERE](https://drive.google.com/file/d/1Qvc_QRi9izEF1W78Lh4nNi5NsXjCZqUE/view)
@@ -329,14 +323,17 @@ What information does a list contain
 
 --- .subsubsection
 
-# Sources of exclusion
-## &nbsp;
+# College Board and ACT lists
+## Sources of exclusion
+
+<br>
 
 College Board and ACT student lists exclude students in two broad ways
 
 1. Generally, only test-takers are included in student list products
   - Test-taking rates differ by race, socioeconomic status, geography
 1. "Search filters" allow universities to control which prospects included/excluded from a purchase
+  - Relationship between search filters and prospect characteristics is focus of our empirical analyses (report 2)
 
 <br>
 Test-optional
@@ -347,8 +344,8 @@ Test-optional
 
 --- .subsubsection
 
-# Buying student lists
-## &nbsp;
+# College Board and ACT lists
+## Buying student lists
 
 "Search filters" allow universities to control which prospects included/excluded from a purchase
 
@@ -359,7 +356,7 @@ Commonly used search filters ([Link to ACT filters](https://helpcenter.encoura.o
 
 <br>
 
-Recent trend towards search filters based on predictive analytics
+New filters based on predictive analytics to facilitate micro-targeting ("efficient" name buys of "right fit" students)
 
 - College Board "geodemographic" filters
   - Target prospects based on historical college-going behavior of students at the school/neighborhood
@@ -372,34 +369,39 @@ Policy concerns
 
 - Some search filters disproportionately exclude underrepresented students, especially when used in combination
 - Filtering prospects based on the behavior of others (e.g., geodemographic filters)
+- More broadly, demand for filters that aid "efficient" name buys is a consequence of names costing so much
 
 --- .subsection
 
 # Market dynamics
 
 
---- .subsubsection
+--- 
 
 # Five dynamics shaping the market for student list data
 ## &nbsp;
 
-1. Universities and enrollment management (EM) consulting firms
-  - Universities are primary customers of student lists, but EM consultancies play central role in process
-1. New data sources, new vendors
+1. **Universities and enrollment management consulting firms**
+  - Universities are primary customers of student lists, but EM consultancies play central role in buying and using names
+<br>    
+1. **New data sources, new vendors**
   - Advances in technology created new sources of student list data, leading to market entry by new vendors
-1. Acquisitions and concentration
+<br>    
+1. **Acquisitions and concentration**
   - Trend towards competition reversed by rise in acquisitions; EAB enters the student list business
-1. Incumbents College Board and ACT seek to retain competitive advantage
+<br>    
+1. **Incumbents College Board and ACT seek to retain competitive advantage**
   - Add product features that aid micro-targeting
   - Enter the market for enrollment management consulting
-1. The test-optional movement
+<br>    
+1. **The test-optional movement**
   - For-profit firms poised to acquire market share ceded by CB/ACT, and maximize profit by restricting access to names
 
 
 --- .subsubsection
 
 # Universities and consulting firms
-## TEXT
+## &nbsp;
 
 Universities need students
 
@@ -416,9 +418,93 @@ Enrollment management (EM) consulting firms
 <br>
 Competition in the enrollment management consulting industry
 
-- A mix of large full-service providers (e.g., RNL) and small/medium boutique firms
+- A mix of large full-service providers (e.g., [Ruffalo Noel Levitz](https://www.ruffalonl.com/)) and small/medium boutique firms (e.g., [Fire Engine Red](https://www.fire-engine-red.com/))
 - Anecdotally, market entry in the 2000s
 - Over last decade, increase in market concentration due to acquisitions `r citep(bib[c('rogers_2014','wan_2021')])`
+
+--- .subsubsection
+
+# New data sources, new vendors
+## &nbsp;
+
+Sources of student list data by late 20th Century
+
+- Standardized assessments
+- High school students complete paper survey at school (e.g., College Bound Selection Service (CBSS))
+
+<br>
+
+Advances in technology yield new sources of student list data in the 21st Century
+
+- Data students voluntarily submit online
+  - Free college/scholarship search engines (e.g., [scholarships.com](https://www.scholarships.com/), [Niche](https://www.niche.com/colleges/search/best-colleges/), [parchment](https://www.parchment.com/c/college/search/browse/), [Cappex](https://www.cappex.com/))
+  - Social network platforms with explicit goal of sharing student profiles with universities they are interested in (e.g., Zinch, [Cirkled In](https://www.cirkledin.com/))
+- Software purchased by high schools to help students plan for college
+  - e.g., [Naviance](https://www.powerschool.com/solutions/naviance-by-powerschool/), [Scoir](https://www.scoir.com/?hsLang=en-us)
+  
+<br>
+
+New data sources create opportunities for market entry by new vendors
+
+- Vendors associated with college search engines (e.g., [Cappex](https://www.cappex.com/))
+  - Failed market entry by Chegg
+- Vendors associated with software used by high schools/students
+  - Hobsons acquired Naviance >> PowerSchool acquired Naviance
+
+--- .subsubsection
+
+# Acquisitions and concentration
+## Trends in broader EdTech sector
+
+The 2000s were a time of investment and market entry in EdTech, including:
+
+- Entry in enrollment management consulting industry
+- Entry by new student list vendors
+
+<br>
+In last five years, increase in both investment and acquisitions `r citep(bib['bradley_2021'])`
+
+- Broader EdTech sector becomes more concentrated
+- Student list vendors get acquired (e.g., NRCCUA by ACT, Cappex by EAB)
+- Enrollment management consulting firms get acquired (e.g., Noel Levitz by Ruffalo, ) `r citep(bib['rogers_2014'])`
+
+<br>
+Emergence of large organizations that are simultaneously consultants, software providers, and suppliers of names
+
+- [EAB](https://eab.com/) is an enrollment management consulting firm
+  - EAB does not sell lists the way College Board and ACT do
+  - By end of 2021, EAB arguably became one of most important suppliers of names
+
+
+--- .subsubsection
+
+# Acquisitions and concentration
+## EAB enters the student list business
+
+Origins of EAB
+
+- In 1983, Bill Royall founded Royall \& Company to provide direct marketing and fundraising for political campaigns
+- By 1995, enrollment management consulting for higher ed became main focus
+- In 2015, Royall \& Company was acquired for \$850 million by the the Advisory Board Company (NASDAQ:ABCO)
+- In 2017, purchased by Vista Equity partners for \$1.5 billion
+
+
+
+
+
+--- .subsubsection
+
+# Incumbents seek advantage
+## &nbsp;
+
+TEXT
+
+--- .subsubsection
+
+# Test-optional
+## &nbsp;
+
+TEXT
 
 
 
