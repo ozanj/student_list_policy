@@ -1,17 +1,20 @@
 /* Title + Section Slides */
 
 .reveal #title,
-.reveal .section {
+.reveal .section,
+.reveal .subsection {
   text-align: center;
 }
 
 .reveal #title hr,
-.reveal .section hr {
+.reveal .section hr,
+.reveal .subsection hr {
   display: none;
 }
 
 .reveal #title h1,
-.reveal .section h1 {
+.reveal .section h1,
+.reveal .subsection h1 {
   z-index: 5;
   position: relative;
   transform: translateY(70px);
@@ -20,6 +23,10 @@
   display: table;
   margin: 0px auto;
   padding: 10px 20px 20px;
+}
+
+.reveal .subsection h1 {
+  transform: translateY(150px);
 }
 
 .reveal #title h2 {
@@ -37,9 +44,10 @@
   position: absolute;
   transform: translate(-50%, 565px);
   z-index: 5;
+  display: none;
 }
 
-.reveal .section .logo {
+.reveal .logo {
   display: none;
 }
 
@@ -334,43 +342,57 @@
   font-family: 'Compagnon';
   font-weight: 500;
   font-size: 16px;
-  text-transform: uppercase;
   letter-spacing: -2px;
   position: absolute;
-  top: 120px;
-  left: -200px;
-  width: 200px;
+  top: 140px;
+  left: -210px;
+  width: 190px;
 }
 
-.reveal #title .section-nav,
-.reveal .section .section-nav,
-.reveal #references .section-nav {
+.reveal #title .section-nav {
+  font-size: 20px;
+  width: 400px;
+  margin: 140px 0 0 -200px;
+  left: 50%;
+}
+
+.reveal .subsection h2 {
+  font-family: 'Compagnon';
+  color: black;
+  font-weight: 500;
+  letter-spacing: -2px;
+  font-size: 37px;
+  margin: 10px 0 30px;
+}
+
+.reveal #references .section-nav,
+.reveal #title  .section-nav > ul > ul {
   display: none;
 }
 
-.reveal .section-nav h3 {
-  font-family: 'Gill Sans';
-  font-size: 16px;
-  letter-spacing: 4px;
-  color: #00aeef;
-  text-decoration: line-through;
+.reveal .section .section-nav,
+.reveal .subsection .section-nav {
+  text-align: left;
 }
 
 .reveal .section-nav ul li:before {
   all: initial;
 }
 
-.reveal .section-nav ul {
+.reveal .section-nav ul,
+.reveal .section-nav ol {
   margin-left: 1em;
 }
 
-.reveal .section-nav > ul {
+.reveal .section-nav > ul,
+.reveal .section-nav > ol {
   margin-left: 0;
 }
 
 .reveal .section-nav li {
   line-height: 1;
   margin-bottom: 0.5em;
+  list-style-type: none;
 }
 
 .reveal .section-nav a {

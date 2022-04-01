@@ -51,10 +51,10 @@ body {
 
 .reveal .slide h1 {
   font-family: 'Compagnon';
-  color: 'black';
+  color: black;
   font-weight: 500;
   letter-spacing: -2px;
-  font-size: 40px;
+  font-size: 37px;
   margin: 10px 0 30px;
 }
 
@@ -81,19 +81,17 @@ body {
 
 .reveal ul, .reveal ol {
   padding: 0;
-  margin-left: 3em;
+  margin-left: 2em;
   font-weight: 400;
+  list-style-position: outside;
 }
 
 .reveal ul li {
   list-style-type: none;
 }
 
-.reveal ul li:before {
-  content: '\25B9';
-  margin-left: -1em;
-  position: absolute;
-  color: #808080;
+.reveal section > ul > li {
+  list-style-type: circle;
 }
 
 .reveal ol li {

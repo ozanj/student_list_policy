@@ -19,23 +19,29 @@ csl: '../assets/bib/apa.csl'
 
 --- .section
 
-# Student List Business
+# Student List Business/Market Dynamics
 
 
 --- .subsection
 
-# Section 1.1
+# Section A
+
+
+--- .subsubsection
+
+# Section A1
 ## Slide 1
 
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
-- Vivamus fringilla orci vel varius hendrerit. 
+  - Vivamus fringilla orci vel varius hendrerit.
+     - Blah blah blah
 - Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
 - Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
 
 
---- .subsection
+--- .subsubsection
 
-# Section 1.1
+# Section A1
 ## Slide 2
 
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
@@ -46,40 +52,7 @@ csl: '../assets/bib/apa.csl'
 
 --- .subsubsection
 
-# Section 1.1.1
-## Slide 1
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
-- Vivamus fringilla orci vel varius hendrerit. 
-- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
-- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
-
-
---- .subsection
-
-# Section 1.2
-## Slide 1
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
-- Vivamus fringilla orci vel varius hendrerit. 
-- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
-- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
-
-
---- .subsection
-
-# Section 1.2
-## Slide 2
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
-- Vivamus fringilla orci vel varius hendrerit. 
-- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
-- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
-
-
---- .subsection
-
-# Section 1.2
+# Section A1
 ## Slide 3
 
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
@@ -88,15 +61,48 @@ csl: '../assets/bib/apa.csl'
 - Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
 
 
---- .subsection
+--- .subsubsubsection
 
-# Section 1.3
+# Section A1.1
 ## Slide 1
 
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
 - Vivamus fringilla orci vel varius hendrerit. 
 - Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
 - Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
+
+
+--- .subsection
+
+# Section B
+
+
+--- .subsubsection
+
+# Section B1
+## Slide 1
+
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
+- Vivamus fringilla orci vel varius hendrerit. 
+- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
+- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
+
+
+--- .subsection
+
+# Section C
+
+
+--- .subsubsection
+
+# Section C1
+## Slide 1
+
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
+- Vivamus fringilla orci vel varius hendrerit. 
+- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
+- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
+
 
 
 --- .section
@@ -106,19 +112,13 @@ csl: '../assets/bib/apa.csl'
 
 --- .subsection
 
-# Section 2.1
+# Section A
+
+
+--- .subsubsection
+
+# Section A1
 ## Slide 1
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
-- Vivamus fringilla orci vel varius hendrerit. 
-- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
-- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
-
-
---- .subsection
-
-# Section 2.1
-## Slide 2
 
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
 - Vivamus fringilla orci vel varius hendrerit. 
@@ -128,29 +128,7 @@ csl: '../assets/bib/apa.csl'
 
 --- .subsubsection
 
-# Section 2.1.1
-## Slide 1
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
-- Vivamus fringilla orci vel varius hendrerit. 
-- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
-- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
-
-
---- .subsection
-
-# Section 2.2
-## Slide 1
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
-- Vivamus fringilla orci vel varius hendrerit. 
-- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
-- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
-
-
---- .subsection
-
-# Section 2.2
+# Section A1
 ## Slide 2
 
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
@@ -159,10 +137,10 @@ csl: '../assets/bib/apa.csl'
 - Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
 
 
---- .subsection
+--- .subsubsubsection
 
-# Section 2.2
-## Slide 3
+# Section A1.1
+## Slide 1
 
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
 - Vivamus fringilla orci vel varius hendrerit. 
@@ -172,7 +150,28 @@ csl: '../assets/bib/apa.csl'
 
 --- .subsection
 
-# Section 2.3
+# Section B
+
+
+--- .subsubsection
+
+# Section B1
+## Slide 1
+
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
+- Vivamus fringilla orci vel varius hendrerit. 
+- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
+- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
+
+
+--- .subsection
+
+# Section C
+
+
+--- .subsubsection
+
+# Section C1
 ## Slide 1
 
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
@@ -188,19 +187,13 @@ csl: '../assets/bib/apa.csl'
 
 --- .subsection
 
-# Section 3.1
+# Section A
+
+
+--- .subsubsection
+
+# Section A1
 ## Slide 1
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
-- Vivamus fringilla orci vel varius hendrerit. 
-- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
-- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
-
-
---- .subsection
-
-# Section 3.1
-## Slide 2
 
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
 - Vivamus fringilla orci vel varius hendrerit. 
@@ -210,29 +203,7 @@ csl: '../assets/bib/apa.csl'
 
 --- .subsubsection
 
-# Section 3.1.1
-## Slide 1
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
-- Vivamus fringilla orci vel varius hendrerit. 
-- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
-- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
-
-
---- .subsection
-
-# Section 3.2
-## Slide 1
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
-- Vivamus fringilla orci vel varius hendrerit. 
-- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
-- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
-
-
---- .subsection
-
-# Section 3.2
+# Section A1
 ## Slide 2
 
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
@@ -241,10 +212,10 @@ csl: '../assets/bib/apa.csl'
 - Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
 
 
---- .subsection
+--- .subsubsubsection
 
-# Section 3.2
-## Slide 3
+# Section A1.1
+## Slide 1
 
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
 - Vivamus fringilla orci vel varius hendrerit. 
@@ -254,7 +225,28 @@ csl: '../assets/bib/apa.csl'
 
 --- .subsection
 
-# Section 3.3
+# Section B
+
+
+--- .subsubsection
+
+# Section B1
+## Slide 1
+
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
+- Vivamus fringilla orci vel varius hendrerit. 
+- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
+- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
+
+
+--- .subsection
+
+# Section C
+
+
+--- .subsubsection
+
+# Section C1
 ## Slide 1
 
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
