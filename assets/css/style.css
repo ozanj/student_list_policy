@@ -1,5 +1,12 @@
 /* Title + Section Slides */
 
+.backgrounds > div:first-child {
+  background-image: url(../images/list-pattern.png);
+  background-repeat: repeat-x;
+  background-position: center center;
+  height: inherit;
+}
+
 .reveal #title,
 .reveal .section,
 .reveal .subsection {
@@ -367,8 +374,8 @@
   letter-spacing: -2px;
   position: absolute;
   top: 140px;
-  left: -210px;
-  width: 190px;
+  left: -250px;
+  width: 200px;
 }
 
 .reveal #title .section-nav {
@@ -388,7 +395,8 @@
 }
 
 .reveal #references .section-nav,
-.reveal #title  .section-nav > ul > ul {
+.reveal #title .section-nav,
+.reveal #title .section-nav > ul > ul {
   display: none;
 }
 
@@ -440,6 +448,10 @@
 }
 
 .reveal .section-nav > ul > ul:not(.active) {
+  display: none;
+}
+
+.reveal .section-nav > ul > ul > ul {
   display: none;
 }
 
