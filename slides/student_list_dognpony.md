@@ -226,8 +226,6 @@ Source: [pngwing.com](https://www.pngwing.com/en/free-png-krrpy)
 
 *** =left
 
-<br>
-
 Prospects
 
 - Population of desirable potential students

@@ -90,14 +90,17 @@ body {
   list-style-type: none;
 }
 
-.reveal section > ul > li {
+.reveal section > ul > li,
+.reveal .left > ul > li, 
+.reveal .right > ul > li {
   list-style-type: circle;
 }
 
-.reveal ol li {
+.reveal ol > li {
   list-style-type: decimal;
 }
 
+.reveal ol ul li:before,
 .reveal ul ul li:before {
   content: '-';
   font-weight: 400;
