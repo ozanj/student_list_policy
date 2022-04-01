@@ -96,6 +96,10 @@ $(function() {
     }
   }));
   
+  var subsubsectionSlides = Array.from($('.reveal .slides .subsubsection').map(function() {
+    return parseInt(this.id.match(/\d+/g));
+  }));
+  
   function hideNav(currSlide) {
     var currSlide = parseInt(currSlide.match(/\d+/g));
     
@@ -103,6 +107,10 @@ $(function() {
       if (currSlide >= sectionSlides[idx].id && (sectionSlides[idx + 1] === undefined || currSlide < sectionSlides[idx + 1].id)) {
         $('.section-nav li[data-section="slide-' + sectionSlides[idx].id + '"]').addClass('active-parent');
         $('.section-nav li[data-section="slide-' + sectionSlides[idx].id + '"]').next().addClass('active');
+        
+        if (subsubsectionSlides.indexOf(currSlide) !== -1) {
+          $('.section-nav li[data-section="slide-' + currSlide + '"]').parent().prev().addClass('active');
+        }
       }
     }
   }
