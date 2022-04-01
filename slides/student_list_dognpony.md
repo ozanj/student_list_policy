@@ -17,7 +17,11 @@ csl: '../assets/bib/apa.csl'
 
 # The Student List Business
 
-
+<div id='authors'>
+  <div><p>Ozan Jaquette</p><span class='affiliation'>UCLA</span></div>
+  <div><p>Karina Salazar</p><span class='affiliation'>University of Arizona</span></div>
+  <div><p>Patrica Martín</p><span class='affiliation'>UCLA</span></div>
+</div>
 
 
 ---
@@ -36,16 +40,20 @@ csl: '../assets/bib/apa.csl'
 # Introduction
 
 
----
+--- .subsection
+
+# Vignette
+
+
+--- .subsubsection
 
 # CB Search and student outcomes
 ## Howell, Hurwitz, Mabel, et al. (2021)
 
+<img src="../assets/images/cb_fig_1.png" alt="Student Search Service" style="width:80%;margin:0 auto;">
 
 
-<img src="assets/fig/cb-fig-1.png" title="Student Search Service and four-year college enrollment/completion" alt="Student Search Service and four-year college enrollment/completion" width="85%" />
-
----
+--- .subsubsection
 
 # How could lists be so important?
 ## The US market for higher education
@@ -76,10 +84,15 @@ Student lists
 - A matchmaking intermediary that connects institutions to prospects
 
 
----
+--- .subsection
 
 # The student list project
-## Project overview
+
+
+--- .subsubsection
+
+# Project overview 
+## &nbsp;
 
 Data collection
 
@@ -92,8 +105,8 @@ Data collection
 <br>
 For each purchased list, sought two pieces of data
 
-1. "Order summary" specifying search filter criteria [LINK]
-1. De-identified prospect-level student list [LINK]
+1. "Order summary" specifying search filter criteria ([LINK](https://drive.google.com/file/d/1gPZ-WWw0gdFT7VtzBN3hKLnj2DzoaqnY/view))
+1. De-identified prospect-level student list ([LINK](https://drive.google.com/file/d/1Qvc_QRi9izEF1W78Lh4nNi5NsXjCZqUE/view))
 
 <br>
 Empirical research questions
@@ -111,10 +124,10 @@ Partners
 - Our first report to be published by [ACCEPT](https://www.acceptgroup.org/)
 
 
----
+--- .subsubsection
 
-# The student list project
-## What we learned
+# What we learned
+## &nbsp;
 
 Began the project with a focus on university behavior
 
@@ -133,7 +146,18 @@ Revised focus
 - Key players in the market for student list data
 
 
----
+
+--- .section
+
+# Student List Business/Market Dynamics
+
+
+--- .subsection
+
+# Situating the student list business
+
+
+--- .subsubsection
 
 # How industries find customers
 ## List-based and behavioral-based leads
@@ -168,10 +192,10 @@ Finding customers in higher education
   - Additionally, behavioral based marketing for brand awareness
 
 
---- &twocol
+--- &twocol .subsubsection
 
-# Situating student lists
-## The marketing funnel and the enrollment funnel
+# Marketing and enrollment funnel
+## &nbsp;
 
 *** =left
 
@@ -195,10 +219,10 @@ Source: [skyword.com](https://www.skyword.com/contentstandard/how-the-marketing-
 Source: [pngwing.com](https://www.pngwing.com/en/free-png-krrpy)
 
 
---- &twocol
+--- &twocol .subsubsection
 
-# Situating student lists
-## The enrollment funnel
+# The enrollment funnel
+## &nbsp;
 
 *** =left
 
@@ -238,10 +262,15 @@ Interventions along the funnel
 
 Source: [pngwing.com](https://www.pngwing.com/en/free-png-krrpy)
 
----
+
+--- .subsection
 
 # College Board and ACT lists
-## sub-title
+
+--- .subsubsection
+
+# Standardized testing
+## &nbsp;
 
 College Board and ACT have been largest student list vendors for several decades
 
@@ -264,10 +293,10 @@ What information does a list contain
 - ACT template [HERE](https://drive.google.com/file/d/1rsP45OyOsnPYhV8uWYKDAy_spGhjj6aj/view)
 
 
----
+--- .subsubsection
 
-# College Board and ACT lists
-## Sources of exclusion
+# Sources of exclusion
+## &nbsp;
 
 College Board and ACT student lists exclude students in two broad ways
 
@@ -282,10 +311,10 @@ Test-optional
 - Number of test-takers will likely decline in future
 
 
----
+--- .subsubsection
 
-# College Board and ACT lists
-## Buying student lists
+# Buying student lists
+## &nbsp;
 
 "Search filters" allow universities to control which prospects included/excluded from a purchase
 
@@ -310,16 +339,15 @@ Policy concerns
 - Some search filters disproportionately exclude underrepresented students, especially when used in combination
 - Filtering prospects based on the behavior of others (e.g., geodemographic filters)
 
----
-
-# BEGIN MARKET DYNAMICS SECTION
-## TEXT
-
-
----
+--- .subsection
 
 # Market dynamics
-## Five dynamics shaping the market for student list data
+
+
+--- .subsubsection
+
+# Five dynamics shaping the market for student list data
+## &nbsp;
 
 1. Universities and enrollment management (EM) consulting firms
   - Universities are primary customers of student lists, but EM consultancies play central role in process
@@ -358,53 +386,6 @@ Competition in the enrollment management consulting industry
 - Anecdotally, market entry in the 2000s
 - Over last decade, increase in market concentration due to acquisitions (Rogers, 2014; Wan, 2021)
 
---- &twocol
-
-# Two-column layout
-## w/ image
-
-*** =left
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula. 
-- Vivamus fringilla orci vel varius hendrerit. 
-- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
-- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
-
-*** =right
-
-<img src="../assets/images/enrollment_funnel.png" alt="Enrollment Funnel" style="width:65%;margin:0 auto;">
-
-
----
-
-# Embed interactive components
-## Maps
-
-<iframe src="https://cyouh95.github.io/third-way-report/assets/maps/map_income.html" width="100%" style="margin-top: 10px;" allowtransparency="true"></iframe>
-
-
----
-
-# Embed interactive components
-## Shiny apps
-
-<iframe src="https://jkcf.shinyapps.io/dashboard/" width="100%" style="margin-top: 10px;" allowtransparency="true"></iframe>
-
-
---- .section
-
-# Student List Business/Market Dynamics
-
-
----
-
-# Title
-## Subtitle
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
-- Vivamus fringilla orci vel varius hendrerit. 
-- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
-- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
 
 
 --- .section
@@ -412,7 +393,7 @@ Competition in the enrollment management consulting industry
 # Empirical Analyses
 
 
----
+--- .subsubsection
 
 # Title
 ## Subtitle
@@ -428,7 +409,7 @@ Competition in the enrollment management consulting industry
 # Policy
 
 
----
+--- .subsubsection
 
 # Title
 ## Subtitle
@@ -444,15 +425,52 @@ Competition in the enrollment management consulting industry
 # References
 ## &nbsp;
 
-<p><a id='bib-RN4324'></a><a href="#cite-RN4324">[1]</a><cite>
+<p><a id='bib-belkin2019-studata'></a><a href="#cite-belkin2019-studata">[1]</a><cite>
+D. Belkin.
+&ldquo;For sale: SAT-Takers' names. Colleges buy student data and boost exclusivity&rdquo;.
+In: <em>The Wall Street Journal</em> (Nov. 2019).
+URL: <a href="https://www.wsj.com/articles/for-sale-sat-takers-names-colleges-buy-student-data-and-boost-exclusivity-11572976621">https://www.wsj.com/articles/for-sale-sat-takers-names-colleges-buy-student-data-and-boost-exclusivity-11572976621</a>.</cite></p>
+
+<p><a id='bib-RN4728'></a><a href="#cite-RN4728">[2]</a><cite>
+EAB.
+<em>Making your digital ads count: 15 lessons on new and emerging techniques in undergraduate recruitment marketing</em>.
+Tech. rep.
+EAB, 2018.</cite></p>
+
+<p><a id='bib-ftc2016'></a><a href="#cite-ftc2016">[3]</a><cite>
+Federal Trade Commission.
+<em>Follow the lead workshop</em>.
+Tech. rep.
+Federal Trade Commission, Dec. 2016.</cite></p>
+
+<p><a id='bib-RN4324'></a><a href="#cite-RN4324">[4]</a><cite>
 M. M. Holland.
 <em>Divergent paths to college: Race, class, and inequality in high schools</em>.
 Rutgers University Press, 2019.
 DOI: <a href="https://doi.org/10.36019/9780813590288">10.36019/9780813590288</a>.</cite></p>
 
-<p><a id='bib-RN2771'></a><a href="#cite-RN2771">[2]</a><cite>
+<p><a id='bib-RN2771'></a><a href="#cite-RN2771">[5]</a><cite>
 D. Hossler and J. P. Bean.
 <em>The strategic management of college enrollments</em>.
 Jossey-Bass higher education series.
 Jossey-Bass, 1990, p. xxii, 330 p.
 ISBN: 1555422926.</cite></p>
+
+<p><a id='bib-RN4739'></a><a href="#cite-RN4739">[6]</a><cite>
+J. Howell, M. H. Hurwitz, Z. Mabel, et al.
+<em>Participation in student search service is associated with higher college enrollment and completion</em>.
+Tech. rep.
+College Board, 2021.
+URL: <a href="https://cbsearch.collegeboard.org/pdf/college-outreach-and-student-outcomes.pdf">https://cbsearch.collegeboard.org/pdf/college-outreach-and-student-outcomes.pdf</a>.</cite></p>
+
+<p><a id='bib-rogers_2014'></a><a href="#cite-rogers_2014">[7]</a><cite>
+G. Rogers.
+<em>Are we seeing an edu &quot;vendor shakeout&quot;?</em>
+Dec. 2014.
+URL: <a href="https://www.linkedin.com/pulse/we-seeking-edu-vendor-shakeout-gil-rogers?trk=mp-reader-card">https://www.linkedin.com/pulse/we-seeking-edu-vendor-shakeout-gil-rogers?trk=mp-reader-card</a>.</cite></p>
+
+<p><a id='bib-wan_2021'></a><a href="#cite-wan_2021">[8]</a><cite>
+T. Wan.
+<em>Hobsons' higher ed business split and sold in separate deals totaling $410m </em>.
+Feb. 2021.
+URL: <a href="https://www.edsurge.com/news/2021-02-20-hobsons-higher-ed-business-split-and-sold-in-separate-deals-totaling-410m">https://www.edsurge.com/news/2021-02-20-hobsons-higher-ed-business-split-and-sold-in-separate-deals-totaling-410m</a>.</cite></p>

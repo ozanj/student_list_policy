@@ -18,7 +18,11 @@ $(function() {
       for (var i = level; i < levels.length; i++) {
         levels[i] = 0;
       }
-    } 
+    } else if (level - currLevel > 1) {
+      for (var i = currLevel; i < level - 1; i++) {
+        levels[i] += 1;
+      }
+    }
     
     if (curr.outerText !== currTitle) {
       levels[level - 1] += 1;

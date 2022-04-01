@@ -39,6 +39,28 @@
   color: #000;
 }
 
+.reveal #title #authors {
+  transform: translateY(450px);
+  font-family: 'Compagnon';
+  letter-spacing: -1px;
+  font-weight: 500;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.reveal #title #authors p {
+  color: white;
+  background: black;
+  display: table;
+  margin: 0px auto;
+  padding: 0px 10px 5px;
+}
+
+.reveal #title #authors span {
+  display: block;
+}
+
 .reveal #title .logo {
   float: none;
   position: absolute;

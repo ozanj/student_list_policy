@@ -53,7 +53,11 @@ cite <- function(b, eg = TRUE) {
 
 # The Student List Business
 
-
+<div id='authors'>
+  <div><p>Ozan Jaquette</p><span class='affiliation'>UCLA</span></div>
+  <div><p>Karina Salazar</p><span class='affiliation'>University of Arizona</span></div>
+  <div><p>Patrica Martín</p><span class='affiliation'>UCLA</span></div>
+</div>
 
 
 ---
@@ -72,89 +76,20 @@ cite <- function(b, eg = TRUE) {
 # Introduction
 
 
----
+--- .subsection
+
+# Vignette
+
+
+--- .subsubsection
 
 # CB Search and student outcomes
 ## `r citet(bib['RN4739'])`
 
+<img src="../assets/images/cb_fig_1.png" alt="Student Search Service" style="width:80%;margin:0 auto;">
 
 
-```{r cb-fig, fig.height = 5, out.width = '85%', fig.cap = 'Student Search Service and four-year college enrollment/completion', message=FALSE, echo=FALSE}
-
-create_cb_figure <- function(categories, values, plot_title) {
-  cb_fig_df <- data.frame(
-    category = rep(categories, each = 2),
-    subcategory = rep(c('Not Licensed', 'Gain from being Licensed'), length(categories)), 
-    value = values
-  )
-  
-  cb_fig_df$category <- factor(cb_fig_df$category, levels = categories)
-  
-  cb_fig_df %>%
-    left_join(
-      cb_fig_df %>%
-        pivot_wider(id_cols = category, names_from = subcategory, values_from = value) %>%
-        mutate(
-          total = `Not Licensed` + `Gain from being Licensed`,
-          pct_change = `Gain from being Licensed` / `Not Licensed` * 100
-        ),
-      by = 'category') %>% 
-    ggplot(aes(x = category, y = value, fill = subcategory, width = 0.6)) +
-    geom_bar(position = 'stack', stat = 'identity') +
-    geom_text(aes(y = value, label = if_else(subcategory == 'Not Licensed', str_c(sprintf('%.1f', value), '%'), '')), color = '#444444', size = 2, position = position_stack(vjust = 0.5)) +
-    geom_text(aes(y = total + 3, label = if_else(subcategory == 'Not Licensed', str_c('(', sprintf('%.1f', pct_change), '%)'), '')), color = '#444444', size = 2) +
-    geom_text(aes(y = total + 7, label = if_else(subcategory == 'Not Licensed', str_c(sprintf('%.1f', `Gain from being Licensed`), 'pp'), '')), color = '#444444', size = 2) +
-    ggtitle(plot_title) +
-    xlab('') + ylab('') + 
-    scale_y_continuous(expand = expansion(mult = c(0, 0.05)), limits = c(0, 80)) +
-    scale_fill_manual(values = c('#ba9a88', '#bbcfd7')) +
-    theme(
-        plot.margin = margin(t = 0.6, unit = 'cm'),
-        panel.grid.major.y = element_line(size = 0.1, color = 'gray'),
-        legend.title = element_blank(),
-        legend.position = 'bottom',
-        legend.margin = margin(t = -0.5, unit = 'cm'),
-        legend.text = element_text(margin = margin(r = 0.2, unit = 'cm')),
-        text = element_text(size = 7),
-        panel.background = element_blank(),
-        plot.title = element_text(color = '#444444', size = 7, hjust = 0.5, face = 'bold'),
-        axis.ticks = element_blank(),
-        axis.title = element_text(face = 'bold'),
-        #legend.title = element_text(face = 'bold'),
-        legend.key.size = unit(0.3, 'cm')
-      ) +
-      guides(fill = guide_legend(reverse = T))
-}
-
-
-grid.arrange(
-  create_cb_figure(
-    c('Overall', 'Asian', 'Black', 'Hispanic', 'AI/AN', 'HI/PI', 'White'),
-    c(32.8, 8.3, 37.5, 5.7, 31.8, 7.8, 24.1, 8.3, 26.5, 6.3, 22.2, 5.8, 44.4, 9.6),
-    'Enrollment'
-  ),
-  create_cb_figure(
-    c('Overall', 'Asian', 'Black', 'Hispanic', 'AI/AN', 'White'),
-    c(15.7, 4.9, 17.7, 5.0, 7.2, 2.9, 6.7, 2.9, 8.7, 4.2, 24.0, 6.7),
-    'BA Completion within 4 Years'
-  ),
-  create_cb_figure(
-    c('Overall', 'No College', 'College,\nNo BA', 'College,\nBA or Higher'),
-    c(32.8, 8.3, 24.9, 10.1, 36.5, 11.0, 53.4, 10.1),
-    'Enrollment'
-  ),
-  create_cb_figure(
-    c('Overall', 'No College', 'College,\nNo BA', 'College,\nBA or Higher'),
-    c(15.7, 4.9, 13.6, 6.8, 21.3, 8.5, 39.9, 10.1),
-    'BA Completion within 4 Years'
-  ),
-  ncol = 2
-)
-
-
-```
-
----
+--- .subsubsection
 
 # How could lists be so important?
 ## The US market for higher education
@@ -185,10 +120,15 @@ Student lists
 - A matchmaking intermediary that connects institutions to prospects
 
 
----
+--- .subsection
 
 # The student list project
-## Project overview
+
+
+--- .subsubsection
+
+# Project overview 
+## &nbsp;
 
 Data collection
 
@@ -201,8 +141,8 @@ Data collection
 <br>
 For each purchased list, sought two pieces of data
 
-1. "Order summary" specifying search filter criteria [LINK]
-1. De-identified prospect-level student list [LINK]
+1. "Order summary" specifying search filter criteria ([LINK](https://drive.google.com/file/d/1gPZ-WWw0gdFT7VtzBN3hKLnj2DzoaqnY/view))
+1. De-identified prospect-level student list ([LINK](https://drive.google.com/file/d/1Qvc_QRi9izEF1W78Lh4nNi5NsXjCZqUE/view))
 
 <br>
 Empirical research questions
@@ -220,10 +160,10 @@ Partners
 - Our first report to be published by [ACCEPT](https://www.acceptgroup.org/)
 
 
----
+--- .subsubsection
 
-# The student list project
-## What we learned
+# What we learned
+## &nbsp;
 
 Began the project with a focus on university behavior
 
@@ -242,7 +182,18 @@ Revised focus
 - Key players in the market for student list data
 
 
----
+
+--- .section
+
+# Student List Business/Market Dynamics
+
+
+--- .subsection
+
+# Situating the student list business
+
+
+--- .subsubsection
 
 # How industries find customers
 ## List-based and behavioral-based leads
@@ -277,10 +228,10 @@ Finding customers in higher education
   - Additionally, behavioral based marketing for brand awareness
 
 
---- &twocol
+--- &twocol .subsubsection
 
-# Situating student lists
-## The marketing funnel and the enrollment funnel
+# Marketing and enrollment funnel
+## &nbsp;
 
 *** =left
 
@@ -304,10 +255,10 @@ Source: [skyword.com](https://www.skyword.com/contentstandard/how-the-marketing-
 Source: [pngwing.com](https://www.pngwing.com/en/free-png-krrpy)
 
 
---- &twocol
+--- &twocol .subsubsection
 
-# Situating student lists
-## The enrollment funnel
+# The enrollment funnel
+## &nbsp;
 
 *** =left
 
@@ -347,10 +298,15 @@ Interventions along the funnel
 
 Source: [pngwing.com](https://www.pngwing.com/en/free-png-krrpy)
 
----
+
+--- .subsection
 
 # College Board and ACT lists
-## sub-title
+
+--- .subsubsection
+
+# Standardized testing
+## &nbsp;
 
 College Board and ACT have been largest student list vendors for several decades
 
@@ -373,10 +329,10 @@ What information does a list contain
 - ACT template [HERE](https://drive.google.com/file/d/1rsP45OyOsnPYhV8uWYKDAy_spGhjj6aj/view)
 
 
----
+--- .subsubsection
 
-# College Board and ACT lists
-## Sources of exclusion
+# Sources of exclusion
+## &nbsp;
 
 College Board and ACT student lists exclude students in two broad ways
 
@@ -391,10 +347,10 @@ Test-optional
 - Number of test-takers will likely decline in future
 
 
----
+--- .subsubsection
 
-# College Board and ACT lists
-## Buying student lists
+# Buying student lists
+## &nbsp;
 
 "Search filters" allow universities to control which prospects included/excluded from a purchase
 
@@ -419,16 +375,15 @@ Policy concerns
 - Some search filters disproportionately exclude underrepresented students, especially when used in combination
 - Filtering prospects based on the behavior of others (e.g., geodemographic filters)
 
----
-
-# BEGIN MARKET DYNAMICS SECTION
-## TEXT
-
-
----
+--- .subsection
 
 # Market dynamics
-## Five dynamics shaping the market for student list data
+
+
+--- .subsubsection
+
+# Five dynamics shaping the market for student list data
+## &nbsp;
 
 1. Universities and enrollment management (EM) consulting firms
   - Universities are primary customers of student lists, but EM consultancies play central role in process
@@ -467,53 +422,6 @@ Competition in the enrollment management consulting industry
 - Anecdotally, market entry in the 2000s
 - Over last decade, increase in market concentration due to acquisitions `r citep(bib[c('rogers_2014','wan_2021')])`
 
---- &twocol
-
-# Two-column layout
-## w/ image
-
-*** =left
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula. 
-- Vivamus fringilla orci vel varius hendrerit. 
-- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
-- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
-
-*** =right
-
-<img src="../assets/images/enrollment_funnel.png" alt="Enrollment Funnel" style="width:65%;margin:0 auto;">
-
-
----
-
-# Embed interactive components
-## Maps
-
-<iframe src="https://cyouh95.github.io/third-way-report/assets/maps/map_income.html" width="100%" style="margin-top: 10px;" allowtransparency="true"></iframe>
-
-
----
-
-# Embed interactive components
-## Shiny apps
-
-<iframe src="https://jkcf.shinyapps.io/dashboard/" width="100%" style="margin-top: 10px;" allowtransparency="true"></iframe>
-
-
---- .section
-
-# Student List Business/Market Dynamics
-
-
----
-
-# Title
-## Subtitle
-
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, ex nec aliquet interdum, lorem enim volutpat nisl, at tempus metus mauris ac lectus. Donec in condimentum ligula.
-- Vivamus fringilla orci vel varius hendrerit. 
-- Cras vehicula pellentesque porttitor. Nulla eros dui, hendrerit at facilisis eu, finibus eget sem. Proin at tristique sapien. 
-- Curabitur at nulla et leo pretium vestibulum. Cras ac leo pharetra, faucibus dui et, laoreet neque.
 
 
 --- .section
@@ -521,7 +429,7 @@ Competition in the enrollment management consulting industry
 # Empirical Analyses
 
 
----
+--- .subsubsection
 
 # Title
 ## Subtitle
@@ -537,7 +445,7 @@ Competition in the enrollment management consulting industry
 # Policy
 
 
----
+--- .subsubsection
 
 # Title
 ## Subtitle
@@ -553,6 +461,6 @@ Competition in the enrollment management consulting industry
 # References
 ## &nbsp;
 
-```{r results='asis', echo=FALSE}
+```{r results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 bibliography('html')
 ````
