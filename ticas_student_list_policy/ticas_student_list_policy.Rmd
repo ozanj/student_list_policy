@@ -6,10 +6,10 @@ author:
   - Karina Salazar
 bibliography: ./../assets/bib/student_list_policy.bib # "./../../../Google Drive/student_list_brief/literature/student_list_policy.bib"
 output: 
-  bookdown::pdf_document2:
-    toc: FALSE
-  #bookdown::word_document2:    
-  #  toc: TRUE
+  #bookdown::pdf_document2:
+  #  toc: FALSE
+  bookdown::word_document2:    
+    toc: TRUE
     
 csl: ./../assets/bib/apa.csl
   # C:\Users\ozanj\Documents\student_list_policy\assets\bib
@@ -58,19 +58,26 @@ The first substantive section, \@ref(basics); this one gives section number only
 https://bookdown.org/yihui/bookdown/cross-references.html
 -->
 
-<!-- 
+ 
 # Executive Summary
 
-TEXT
+Colleges and universities identify prospective students by purchasing "student lists" from College Board, ACT, and other vendors. Student lists contain the contact information of prospective students that meet the criteria (e.g., test score range, high school GPA, zip codes) specified in a student list purchase. Sometimes referred to as "names," student lists are a fundamental input for undergraduate recruiting campaigns, which target individual prospects by mail, email, and on social media.
 
--->
+Recent research suggests that student lists have surprisingly large effects on college access for millions of students each year. @RN4739 compared SAT test-takers who opted into the College Board Student Search Service -- allowing accredited institutions to "licence" their contact information -- and test-takers who opted out. For students with the same SAT score, parental education, race/ethnicity, sex, and high school, 41.1\% of students who participated in Search attended a 4-year college compared to 32.8\% of students who opted out, an 8.3 (`=41.1-32.8`) percentage point difference and a 25.3 (`=(41.1-32.8)/32.8`) percent change. Furthermore, this percent change was higher for students from populations that have historically been excluded from higher education.
+
+Given the structure of the U.S. market for higher education, student lists serve as an important match-making intermediary that connects students and institutions. Students want to attend college but do not know all their options, where they would be admitted, and how much it will cost. Universities have a financial incentive to provide access because student aid and household savings follow students to whichever Title IV institution they enroll in. However, universities do not now who the prospects are, where they are, or how to contact them. Student lists overcome the problem faced by universities, providing the contact information of prospects who satisfy their criteria.
+
+Ever since College Board launched the Student Search Service in 1972, policymakers have ignored student lists. Now, the student list business is undergoing a radical transformation that threatens to cause a college access crisis. CITE describes dynamics in the market for student list data. CITE analyzed student lists purchased by public universities. This report discusses policy concerns and policy solutions.
+
+PARAGRAPH INTRODUCES POLICY CONCERNS [WORK IN STUDENT LIST BASICS AS NECESSARY]
+
 
 
 # Introduction
 
 <!-- SOMEWHERE PROMINANT: researchers and policymakers have ignored student lists -->
 
-Colleges and universities identify prospective students by purchasing "student lists" from College Board, ACT, and other vendors. Student lists contain the contact information of prospective students that meet the criteria (e.g., test score range, high school GPA, zip codes) specified in a student list purchase. Sometimes referred to as "names," student lists are a fundamental input for undergraduate recruiting "campaigns," which target individual prospects by mail, email, and on social media. 
+Colleges and universities identify prospective students by purchasing "student lists" from College Board, ACT, and other vendors. Student lists contain the contact information of prospective students that meet the criteria (e.g., test score range, high school GPA, zip codes) specified in a student list purchase. Sometimes referred to as "names," student lists are a fundamental input for undergraduate recruiting "campaigns," which target individual prospects by mail, email, and on social media.
 
 __Student outcomes__. Recent research suggests that student lists have surprisingly large effects on college access -- and in turn degree completion -- for millions of students each year. @RN4739 compared SAT test-takers who opted into the College Board Student Search Service -- allowing accredited institutions to "licence" their contact information -- and test-takers who opted out, after controlling for covariates. Figure \@ref(fig:cb-fig) reproduces the main results. For students with the same values of SAT score, parental education, race/ethnicity, sex, high school graduation year, and who attended the same high school, 41.1\% of students who participated in Search attended a 4-year college compared to 32.8\% of students who opted out, representing an 8.3 (`=41.1-32.8`) percentage point difference and a 25.3 (`=(41.1-32.8)/32.8`) percent change in the relative probability of attending a 4-year college (for a similar analysis of ACT's Educational Opportunity Service (EOS) see @RN4752). 
 
