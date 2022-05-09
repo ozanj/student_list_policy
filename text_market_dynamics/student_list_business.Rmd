@@ -166,8 +166,8 @@ Our request to Stonewall University was part of a larger project -- funded by th
 
 On April 27, 2020, Stonewall University responded to our request, "The university has a substantial and proprietary interest in maintaining the confidentiality of the documents you have requested. Accordingly, with the exception of the attached slide, the records requested will not be produced." This slide, titled "2016-2020 Name Purchases by Source", is presented in Figure \@ref(fig:stonewall-slide). It indicates that Stonewall purchased about 816,000 names in 2016, including about 517,000 from College Board and 246,000 from ACT. In 2020, Stonewall purchased about 1,251,000 names, including about 648,000 from College Board and 220,000 from ACT.
 
-```{r stonewall-slide, echo = FALSE, fig.align = 'center', fig.cap = "Stonewall University: 2016-2020 name purchases by source", out.width = "85%"}
-knitr::include_graphics('./../assets/images/stonewall-u-slide-1.pdf')
+```{r stonewall-slide, echo = FALSE, fig.align = 'center', fig.cap = "Stonewall University 2016-2020 name purchases by source", out.width = "85%"}
+knitr::include_graphics('./../assets/images/stonewall-u-slide-1-redacted.pdf')
 #![The enrollment funnel](assets/images/enrollment_funnel.png)
 ```
 
