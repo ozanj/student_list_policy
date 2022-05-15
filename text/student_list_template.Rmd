@@ -2,16 +2,50 @@
 title: ''
 output:
   pdf_document:
+    number_sections: yes
     latex_engine: xelatex
     includes:
       in_header: 'structure.tex'
 ---
 
+```{r setup, include = FALSE}
+library(knitr)
+library(bookdown)
+
+# https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_pdf.pdf
+library(kableExtra)
+library(tidyverse)
+library(gridExtra)
+library(scales)
+
+knitr::opts_chunk$set(echo = F, message = F, warning = F)
+
+knitr::knit_hooks$set(inline = function(x) {
+  if(!is.numeric(x)){
+    x   
+  } else {    
+    prettyNum(round(x, 2), big.mark = ',')    
+  } 
+})
+
+theme_set(
+  theme(
+    text = element_text(size = 7),
+    panel.background = element_blank(),
+    plot.title = element_text(color = '#444444', size = 7, hjust = 0.5, face = 'bold'),
+    axis.ticks = element_blank(),
+    axis.title = element_text(face = 'bold'),
+    legend.title = element_text(face = 'bold'),
+    legend.key.size = unit(0.3, 'cm')
+  )
+)
+```
+
 \fontsize{12pt}{14.4pt}\selectfont
 
 \thispagestyle{intro-style}
 
-# Executive Summary
+\section*{Executive Summary}
 
 \begin{multicols}{2}
 
@@ -21,7 +55,7 @@ Over the past two decades, the student list business has grown in scale, sophist
 
 \end{multicols}
 
-## FOUR TAKEAWAYS
+\subsection*{FOUR TAKEAWAYS}
 
 \begin{multicols}{2}
 
@@ -81,7 +115,7 @@ More on page 6 of the full report.
 
 \thispagestyle{intro-style}
 
-## SUBSTANCE IN BRIEF
+\subsection*{SUBSTANCE IN BRIEF}
 
 \begin{multicols}{2}
 
@@ -104,9 +138,9 @@ The consultancy EAB provides a lens into several forces reshaping the student li
 
 The market has also been reshaped by new sources of student list data, which create opportunities for new student list vendors. By the end of the 20th century the two sources of student list data consisted of assessments by College Board and ACT and surveys distributed in high schools by organizations like the National Research Center for College and University Admissions (NRCCUA). New sources of student list data include free college search engines (Cappex), social network platforms that focus on college search (e.g., Zinch), and college planning software purchased by high schools (e.g., Naviance, Scoir). In 2020 EAB acquired Cappex, one of the largest college search websites. In 2021, PowerSchool, a subsidiary of Vista Equity Partners, purchased Naviance – college planning software – and Intersect – a recruiting platform that connects universities to Naviance users – from Hobsons. Next, Powerschool and EAB signed an agreement making EAB the exclusive reseller of Intersect. Although EAB does not sell student lists, these deals give EAB control over unique pools of prospective students to be funneled to EAB clients.
 
-\thispagestyle{intro-style}
-
 In response to these market forces, College Board and ACT adopted similar changes but took different routes, with ACT relying more on acquisitions and College Board tending to build in-house. Both organizations incorporated new student list filters based on statistical models, with ACT allowing universities to filter prospects based on their predicted probability of enrolling and College Board adding ``geodemographic'' filters that target prospects based on the characteristics/behavior of their high school and their neighborhood (measured at the Census level). We argue that geodemographic filters are efficient tools of exclusion that can – knowingly or unknowingly – result in racial redlining. As EAB becomes a supplier of names to increase demand for enrollment management consulting, College Board and ACT leveraged their oligopoly position in the student list business to sell enrollment management consulting, offering clients information about prospects that is not included in purchased lists.
+
+\thispagestyle{intro-style}
 
 We argue that future prospects for College Board and ACT are bleak. Their competitive advantage in the student list business had depended primarily on unparalleled coverage of college-going high school students. The test-optional movement has deinstitutionalized the college entrance exam, leading to fewer test-takers and eroding coverage. For-profit firms are eager to acquire market share ceded by College Board and ACT. While some firms will follow the College Board model of charging a per-prospect price to any accredited institution, other firms have learned to maximize profit by controlling a unique database of prospects and restricting access to institutions that pay for consulting services.
 
@@ -117,8 +151,213 @@ Admissions and enrollment professionals....
 \end{multicols}
 
 \newpage
+\tocloftpagestyle{fancy}
+
+\vspace*{-1cm}
 \setcounter{page}{1}
 
-# Introduction
+\styledsection{Introduction}
 
-\lipsum
+On February 21, 2020, represented by counsel, we issued a public records request to a public research university (herein "Stonewall University") seeking information about "student list" purchases. Student lists contain the contact information of prospective students that meet the criteria (e.g., test score range, zip codes) specified in an order. Sometimes referred to as "names," student lists are the fundamental input for recruiting campaigns, which target individual prospects by mail, email, and on social media.
+
+Our request to Stonewall University was part of a larger project – funded by the Joyce Foundation and the Kresge Foundation and in partnership with the Lawyers' Committee for Civil Rights and the pro bono offices of four law firms – that issued public records requests to 93 universities in five states in order to collect quantifiable data about student list purchases. For each student list purchased by the university over the prior four years, we requested (A) the de-identified student list data and (B) the "order summary," which shows the criteria specified to determine which prospects are included in the list. Our requests focused on lists purchased from College Board, ACT, and National Research Center for College and University Admissions (NRCCUA), the three largest student list vendors at the time.
+
+On April 27, 2020, Stonewall University responded to our request, "The university has a substantial and proprietary interest in maintaining the confidentiality of the documents you have requested. Accordingly, with the exception of the attached slide, the records requested will not be produced." The slide, titled "2016-2020 Name Purchases by Source," indicated that Stonewall University purchased about 816,000 names in 2016, including about 517,000 from College Board and 246,000 from ACT. In 2020, Stonewall University purchased about 1,251,000 names, including about 648,000 from College Board and 220,000 from ACT.
+
+\begin{wrapfigure}{r}{0.3\textwidth}
+  \begin{tocbox}\tableofcontents\end{tocbox}
+\end{wrapfigure}
+
+Curiously, the footer of the attached slide read "©EAB Global, Inc." We learned that EAB, an education consulting  rm known for enrollment management, purchases student lists on behalf of Stonewall University. This became a barrier to our records request. Stonewall University General Counsel stated, on 12/7/2020, that "while [Stonewall University] indeed purchases student lists, the University does not actually have physical possession of such lists" and, on 1/27/2021, that "this is because [Stonewall University] does not receive anything directly from College Board or from ACT or other list sources. Rather, EAB, on [Stonewall's] behalf, places the order, receives the data, and then [Stonewall University] is billed directly for it." Later, we asked Stonewall University to ask EAB to produce the records but we were told on 8/13/2021 that "EAB also doesn't have or keep these materials." As of December 2021 – following 22 months of emails, conference calls, and officious letters on firm letterhead – we have not received the requested order summaries or student lists. An interesting aside, the Vice President for Enrollment Management came to Stonewall University after working as an enrollment consultant for EAB.
+
+# Student List Basics
+
+\lipsum[2-7]
+
+## WHY CARE ABOUT STUDENT LISTS?
+
+The ACCEPT vision is to "lead the college admissions profession in creating an equitable, just, and anti- racist path" to college with a focus on amplifying "the voices of communities marginalized in secondary and postsecondary education." Why should admissions professionals who share this vision care about student lists? Research indicates that student lists have a dramatic effect on college access and – in turn – degree completion of millions of students each year, particularly for communities that have been historically excluded from higher education.
+
+Howell, Hurwitz, Mabel, & Smith (2021) compared the college access and degree completion outcomes of SAT test-takers who opted into the College Board Student Search Service – thereby allowing accredited institutions to "license" their contact information – to those of students who opted out. Figure 1 reproduces results from Howell, Hurwitz, Mabel, & Smith (2021). Although the results cannot be considered causal, they are based on regression models that controlled for covariates like race/ ethnicity, parental education, SAT score, and high school. For SAT test-takers who graduated from high school between 2015-2018, 41.1% of students who participated in Search attended a 4-year college compared to 32.8% of students who opted out, representing a 25.3% ((41.1-32.8)/32.8=25.3) relative increase in the probability of attending a 4-year college.
+
+\begin{figureenv}
+Figure 1: Student Search Service and four-year college enrollment/completion
+\end{figureenv}
+
+```{r cb-fig-2-3, fig.height = 4, out.width = '100%', fig.align = 'left'}
+create_cb_figure <- function(categories, values, plot_title) {
+  cb_fig_df <- data.frame(
+    category = rep(categories, each = 2),
+    subcategory = rep(c('Not Licensed', 'Gain from being Licensed'), length(categories)), 
+    value = values
+  )
+  
+  cb_fig_df$category <- factor(cb_fig_df$category, levels = categories)
+  
+  cb_fig_df %>%
+    left_join(
+      cb_fig_df %>%
+        pivot_wider(id_cols = category, names_from = subcategory, values_from = value) %>%
+        mutate(
+          total = `Not Licensed` + `Gain from being Licensed`,
+          pct_change = `Gain from being Licensed` / `Not Licensed` * 100
+        ),
+      by = 'category') %>% 
+    ggplot(aes(x = category, y = value, fill = subcategory, width = 0.6)) +
+    geom_bar(position = 'stack', stat = 'identity') +
+    geom_text(aes(y = value, label = if_else(subcategory == 'Not Licensed', str_c(sprintf('%.1f', value), '%'), '')), color = '#444444', size = 2, position = position_stack(vjust = 0.5)) +
+    geom_text(aes(y = total + 3, label = if_else(subcategory == 'Not Licensed', str_c('(', sprintf('%.1f', pct_change), '%)'), '')), color = '#444444', size = 2) +
+    geom_text(aes(y = total + 7, label = if_else(subcategory == 'Not Licensed', str_c(sprintf('%.1f', `Gain from being Licensed`), 'pp'), '')), color = '#444444', size = 2) +
+    ggtitle(plot_title) +
+    xlab('') + ylab('') + 
+    scale_y_continuous(expand = expansion(mult = c(0, 0.05)), limits = c(0, 80)) +
+    scale_fill_manual(values = c('#ba9a88', '#bbcfd7')) +
+    theme(
+        plot.margin = margin(t = 0.6, unit = 'cm'),
+        panel.grid.major.y = element_line(size = 0.1, color = 'gray'),
+        legend.title = element_blank(),
+        legend.position = 'bottom',
+        legend.margin = margin(t = -0.5, unit = 'cm'),
+        legend.text = element_text(margin = margin(r = 0.2, unit = 'cm'))
+      ) +
+      guides(fill = guide_legend(reverse = T))
+}
+
+grid.arrange(
+  create_cb_figure(
+    c('Overall', 'Asian', 'Black', 'Hispanic', 'AI/AN', 'HI/PI', 'White'),
+    c(32.8, 8.3, 37.5, 5.7, 31.8, 7.8, 24.1, 8.3, 26.5, 6.3, 22.2, 5.8, 44.4, 9.6),
+    'Enrollment'
+  ),
+  create_cb_figure(
+    c('Overall', 'Asian', 'Black', 'Hispanic', 'AI/AN', 'White'),
+    c(15.7, 4.9, 17.7, 5.0, 7.2, 2.9, 6.7, 2.9, 8.7, 4.2, 24.0, 6.7),
+    'BA Completion within 4 Years'
+  ),
+  create_cb_figure(
+    c('Overall', 'No College', 'College,\nNo BA', 'College,\nBA or Higher'),
+    c(32.8, 8.3, 24.9, 10.1, 36.5, 11.0, 53.4, 10.1),
+    'Enrollment'
+  ),
+  create_cb_figure(
+    c('Overall', 'No College', 'College,\nNo BA', 'College,\nBA or Higher'),
+    c(15.7, 4.9, 13.6, 6.8, 21.3, 8.5, 39.9, 10.1),
+    'BA Completion within 4 Years'
+  ),
+  ncol = 2
+)
+```
+
+\begin{captionenv}
+Note: AI/AN = American Indian or Alaska Native. HI/PI = Hawaiian or Pacific Islander. The sample for enrollment outcomes includes all SAT takers in the 2015–2018 high school graduation cohorts. The sample for completion outcomes is restricted to students in the 2015–2016 cohorts. Completion results are not reported for HI/PI students due to very small sample size (N=2,749), which returns imprecise estimates. Results are estimated from regressions that include student-level controls for: sex, race/ethnicity, SAT score, parental education level, last Student Search Service opt-in status, and graduation cohort and high school fixed effects. All differences between students whose names were licensed and those whose names were not licensed are statistically significant at the 1\% level.
+\end{captionenv}
+
+\vspace*{-1cm}
+# Theoretical Framework
+
+\lipsum[2-7]
+
+\newpage
+
+College Board and ACT student list products enable universities to target prospects who identify with particular ethnic and racial groups. In our data collection, these filters were of- ten used to target students who identified as Black, Latinx, American Indian/Alaska Native, or Native Hawaiian and other Pacific Islander. On the surface, race/ethnicity on student list products may promote racial diversity in college access, particularly given the trend away from race-conscious admissions policies.
+
+Drawing from the theory of racial (Leong, 2013), we argue that race/ethnicity filters tend to privilege whiteness, even when they are used to target non-white prospects. Leong (2013) builds on Cheryl I. Harris (1993a). Whereas "nonwhiteness" was historically "used as a basis for withholding value by denying nonwhite people legal rights and privileges" (Leong, 2013, p. 21555), nonwhiteness now confers social and legal value as a function with society's preoccupation with diversity. The commodification of nonwhiteness – a "commodity to be pursued, captured, possessed, and used" (p. 2155) – encourages organizations to prioritize representational diversity, which Cheryl I. Harris (1993a) argues is exemplified by universities enrolling and marketing a diverse student body as a marker of status and prestige. However, selective universities pursue representational diversity while simultaneously privileging characteristics associated with whiteness (e.g., a "good" high school, "interesting" extracurricular activities) (Jack, 2019; Stevens, 2007; Thornhill, 2019). By combining race/ethnicity filters with academic achievement (e.g., test score range), geographic, and/or geodemographic filters, universities are able to screen for Students of Color who have characteristics associated with whiteness, often as a function of attending a predominantly white high school.
+
+# Student List Market Dynamics
+
+A decade ago, EdTech firms invested in college search engines and social network platforms in an attempt to compete with College Board and ACT in the market for student list data, but many of these efforts failed and others were acquired [CITE]. Today, the market for student list data remains highly concentrated, but several for-profit entities have established themselves as the test optional movement threatens the oligopolgy enjoyed by College Board and ACT.
+
+This section analyzes changes in the market for student list data over the past decade, applying theoretical concepts introduced above. First, we sketch "organizational field" in broad contours – who are the players in the student list market and what do they want. Second, we provide an in-depth analysis of College Board and ACT. Third, we discuss moves by EAB to enter the student list market.
+
+## CONSTRUCTING THE ORGANIZATIONAL FIELD
+
+Scholarship on organizational behavior has moved away from "paradigm-driven" work oriented around a single grand theory (e.g., resource dependence theory) and towards "problem- driven" work, which is oriented around a real-world problem and proceeds opportunistically, applying bits of theory relevant to a particular facet of the problem, towards the goal of understanding how events played out as the result of interactions between key actors (Davis & Marquis, 2005). The  rst step in problem-driven work is
+to sketch the "organizational field" (DiMaggio & Powell, 1983), which "identifies an arena —- a system of actors [e.g., customers, suppliers, competitors], actions, and relations —- whose participants take one another into account as they carry out interrelated activities" (McAdam & Scott, 2005, p. 10). Therefore...
+
+\newpage
+
+## COLLEGE BOARD \& ACT
+
+College Board and ACT are non-profit, mission-driven organizations. The College Board mission is "to connect students to college success and opportunity" and the ACT mission is "helping people achieve education and workplace success" (ACT, n.d., para. 1; College Board, n.d., para. 1). The core activity of both organizations is developing and delivering standardized assessments. College Board revenues were \$1.049 billion in 2019, with \$490 million coming from "AP and Instruction" and \$404 million from "Assessments." ACT total revenue was \$302 million in the fiscal year ending August 2019, with \$262 million coming from "educational assessment."
+
+The student list business of College Board and ACT are byproducts of their core assessment businesses. Student lists sold by College Board are generated from the SAT, PSAT, SAT subject test, and AP assessments. Lists sold by ACT are generated from the ACT and PreACT assessments and, more recently, from the "myOptions" college and career planning program. Data about the annual revenue College Board and ACT generate from selling names is not publicly available. However, College Board recorded $130 million in revenue from "College Opportunities & Enrollment" in 2019 – the business that includes selling names – compared to \$100 million in 2017 and \$63 million in 2010.
+
+This section describes the sources of competitive advantage of College Board and ACT student lists, and then analyzes moves made by each organization over the last decade.
+
+\highlightbox{Competitive advantage.} What are the competitive advantages of College Board and ACT student lists compared to other vendors? The first answer is unparalleled coverage. Until recently, the vast majority of college-going high school students took the SAT or ACT. Most states can be categorized either as "SAT states" – meaning that the majority of college-going high school students take the SAT – or "ACT states" (Wignall, 2020). Contributing to this either-or dichotomy, a growing number of states have adopted either the ACT or the SAT as a requirement for high school graduation (Kate, 2021). Depending on the geographic markets a university recruits from, they buy names from College Board, ACT, or both. However, the test-optional/test-blind movement threatens the coverage competitive advantage, which discuss below.
+
+A second source of competitive advantage is data quality. Compared to student lists generated from college search engines, list data from College Board and ACT possess more-reliable indicators of academic achievement and less missing data with respect to contact information, student characteristics, and preferences. Higher data quality enables universities to filter more precisely when deciding which names to purchase and also makes the lists universities receive more useful for recruiting purposes.
+
+A third competitive advantage is timeliness. Names generated from the PSAT and PreACT assessments enable universities to begin recruiting high school students early in their high school career, which is viewed as important for successful recruiting campaigns. By contrast, lists generated from college search engines can only target prospects who have already begun their college search process. In Fall 2021, College Board introduced the new "Prospect Notifications" feature, which improves on the timeliness competitive advantage by enabling universities to obtain the contact information of prospects who meet the criteria of recent student list purchases "as soon as they join the [Student Search Service] program".
+
+### College Board
+
+In contrast to EAB and recent acquisitions by ACT, College Board has developed student list products more gradually and built them internally. As of 2021, "College Board Search" is an interrelated product suite – tagline "the best way to reach and recruit high school students" – consisting of three primary products, "Student Search Service," "Segment Analysis Service," and "Enrollment Planning Service" (College Board, 2021b, paras. 1–2).
+
+Student Search Service is the foundational product. As we described previously, Student Search Service allows universities to purchase the contact information of PSAT, SAT, and AP test-takers, filtering on geographic, demographic, achievement, and college/major preferences criteria. Originally created in 1972 "at the request of school counselors who wanted a wider array of students to have access to information about more colleges" (Belkin, 2019, para. 35), College Board (2021d) describes Student Search Service as: the largest, richest database of college-bound students, and new students are added each week as they join the program online or through a College Board assessment. With College Board Search, you can reach students long before it's time to apply, building a relationship with students early enough to create a real pipeline of best-fit prospects (para. 1).
+
+In Fall 2021, Student Search Service introduced "Interest in My College," a modest enhancement that utilizes data from the "BigFuture" college search website owned by College Board. BigFuture encourages prospective students to create a list of universities they are interested in. "Interest in My College" enables universities to filter prospects who expressed interest in their university when purchasing student lists.
+
+\highlightbox{Segment Analysis Service.} College Board created Segment Analysis Service (herein Segment) in 2XXX, which is built directly on top of the Student Search Service. Essentially, Segment enables universities to additionally filter prospects based on the college-going characteristics of the high schools prospects attend and on the neighborhoods prospects live in. We believe Segment is a particularly problematic product from an equality of opportunity perspective because prospects are filtered based on aggregate characteristics of neighborhoods/schools that are highly correlated with race/ethnicity, income, and geography.
+
+College Board (2011) published a surprisingly transparent explanation of the conceptual and technical underpinnings of Segment. Conceptually, Segment Analysis Service is based on "geodemography," which is a branch of market research – now often referred to as "spatial big data" – that estimates the behavior of consumers based on where they live. College Board (2011) states:
+
+The basic tenet of geodemography is that people with similar cultural back- grounds, means, and perspectives naturally gravitate toward one another or form relatively homogeneous communities; in other words, birds of a feather flock together. When they are living in a community, people emulate their neighbors, adopt similar social values, tastes, and expectations, and -— most importantly for consumer marketers —- share similar patterns of consumer behavior toward products, services, media, and promotions. The primary appeal of geodemography from the marketer's perspective is that, with just an address, s/he can begin to craft an image about a particular set of individuals based on the values, tastes, expectations, and behaviors associated with their geographic community (p. 1).
+
+From a conceptual perspective, application of geodemography to a college access product is problematic in that geodemography assumes that "people with similar cultural back- grounds. . . naturally gravitate toward one another" (College Board, 2011, p. 1). In reality, American communities are racially segregated because of centuries of systematic, discriminatory policies enacted by federal, state, and local governments and the private interests these governments enable (Cheryl I. Harris, 1993b; Rothstein, 2017).
+
+\highlightbox{Building Segment Analysis Service.} The technical underpinnings of Segment are based on applications of geodemography to traditional consumer industries, which proceed by: mapping small bounded geographical regions, typically at a nine-digit zip-code level, against data from credit card agencies, U.S. Census data, and other consumer databases that track consumer characteristics, attitudes, and behaviors. The result is a series of geodemographic "clusters" that represent types of individuals based on a unique set of characteristics, attitudes, and behaviors (College Board, 2011, p. 1).
+
+In contrast to "standard consumer-focused neighborhoods that are thinly populated with college-bound students," Segment Analysis Service incorporates publicly available data and proprietary College Board data to create "educational neighborhoods," which are "a new set of geodemographic communities
+
+\vspace*{-1cm}
+# Recommendations for Practitioners
+
+\lipsum[1-5]
+
+\newpage
+\newgeometry{
+    letterpaper,
+    top=0.5in,
+    bottom=0.67in,
+    left=1.25in,
+    right=1.25in,
+    headsep=1in,
+    headheight=0.5in,
+    footskip=0.7cm
+}
+\fancyheadoffset{0.42in}
+
+\begin{tikzpicture}[remember picture,overlay]
+
+\foreach \x in {-3.88, 0.82, ..., 20} 
+\foreach \y in {1.53, 0.68, ..., -30} 
+{%
+  \draw [color=white,fill=lightgray,anchor=right] (\x,\y-.185) rectangle (\x+4.2,\y+0.095);
+  \node [color=white,anchor=center] at (\x+2.1,\y) {\Compagnon\bfseries\fontsize{11pt}{0pt}\selectfont Section 6};
+}
+
+\draw [draw=none,fill=white,anchor=right] ($(current page.north west)+(2,-2.2)$) rectangle ($(current page.south east)-(2,0)$);
+
+\end{tikzpicture}
+
+\vspace*{-1cm}
+# References
+
+\lipsum[1-6]
+
+\newpage
+\begin{tikzpicture}[remember picture,overlay]
+
+\foreach \x in {-3.88, 0.82, ..., 20} 
+\foreach \y in {4.93, 4.08, ..., -30} 
+{%
+  \draw [color=white,fill=lightgray,anchor=right] (\x,\y-.185) rectangle (\x+4.2,\y+0.095);
+  \node [color=white,anchor=center] at (\x+2.1,\y) {\Compagnon\bfseries\fontsize{11pt}{0pt}\selectfont Section 6};
+}
+
+\draw [draw=none,fill=white,anchor=right] ($(current page.north west)+(2,0)$) rectangle ($(current page.south east)-(2,0)$);
+
+\end{tikzpicture}
+
+\lipsum[1-6]

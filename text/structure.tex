@@ -20,6 +20,13 @@
     BoldFont = *-Medium,
 ]{GillSans}
 
+\newfontfamily\GillSansBold[
+    Path = ../assets/fonts/gillsans/,
+    Extension = .otf,
+    UprightFont = *-Bold,
+    BoldFont = *-Heavy,
+]{GillSans}
+
 
 % Formatting ~~~~
 
@@ -29,11 +36,11 @@
     letterpaper,
     top=0.5in,
     bottom=0.67in,
-    inner=0.83in,
-    outer=0.83in,
+    left=0.83in,
+    right=0.83in,
     headsep=1in,
     headheight=0.5in,
-    footskip=0.7cm,
+    footskip=0.7cm
     % showframe
 }
 
@@ -44,6 +51,9 @@
 \parindent=0pt
 \linespread{1}
 \setlength{\columnsep}{0.17in}
+
+\usepackage{float}
+\floatplacement{figure}{H}
 
 
 % Headers + Footers ~~~~
@@ -64,7 +74,7 @@
     \fancyfoot[R]{\Compagnon\fontsize{10pt}{12pt}\selectfont\bfseries page A\thepage}
 }
 
-% https://latex.org/forum/viewtopic.php?t=5640
+% Footnotes: https://latex.org/forum/viewtopic.php?t=5640
 \makeatletter
 \renewcommand\@makefntext[1]{%
   \noindent\fontsize{10pt}{14pt}\selectfont\makebox[30pt][r]{\textbf{\@thefnmark} \hspace{0.8cm}}#1}
@@ -73,11 +83,57 @@
 \let\svfootnoterule\footnoterule
 \renewcommand\footnoterule{\svfootnoterule\vspace{4pt}}
 
+% Table of Contents
+\usepackage{tocloft}
+
+\makeatletter
+\renewcommand{\cftsecpresnum}{\begin{lrbox}{\@tempboxa}}
+\renewcommand{\cftsecaftersnum}{\end{lrbox}}
+\makeatother
+\setlength{\cftsecnumwidth}{0pt}
+
+\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\cfttoctitlefont}{\bfseries\GillSans\fontsize{13pt}{16.8pt}\selectfont}
+\renewcommand{\cftbeforetoctitleskip}{0in}
+\renewcommand{\cftaftertoctitleskip}{0in}
+\renewcommand{\cftsecfont}{\GillSans\fontsize{14pt}{16.8pt}\selectfont}
+\renewcommand{\cftsecpagefont}{\GillSans\fontsize{14pt}{16.8pt}\selectfont}
+\renewcommand{\cftbeforesecskip}{8pt}
+
+\newcommand{\tocfontstyle}{\GillSansBold\fontsize{12pt}{16.8pt}\selectfont}
+    
+\newcommand{\styledsection}[1]{%
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}% suppress this section in ToC     
+\section{#1}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}% allow and add the styled entry of section in ToC 
+\addtocontents{toc}{\protect\contentsline{section}{\protect\tocfontstyle#1}{\protect\tocfontstyle\the\value{page}}{section.\thepage}}
+}
+
 
 % Headings ~~~~
 
 \usepackage[most]{tcolorbox}
 \usepackage[explicit]{titlesec}
+
+\tcbset{
+  headingonebgtitle/.style={
+  freelance,
+  frame code={}
+  center title,
+  left=10pt,
+  right=10pt,
+  top=20pt,
+  bottom=22pt,
+  before skip=-5mm,
+  coltext=white,
+  colback=black,
+  colframe=white,
+  width=\dimexpr\textwidth\relax,
+  enlarge left by=0mm,
+  boxsep=0pt,
+  arc=0pt,
+  outer arc=0pt}
+}
 
 \tcbset{
   headingonebg/.style={
@@ -87,12 +143,12 @@
   left=10pt,
   right=10pt,
   top=20pt,
-  bottom=20pt,
+  bottom=22pt,
   before skip=-5mm,
   coltext=white,
   colback=black,
   colframe=white,
-  width=\dimexpr\textwidth\relax,
+  width=5.5in,
   enlarge left by=0mm,
   boxsep=0pt,
   arc=0pt,
@@ -120,6 +176,26 @@
 }
 
 \tcbset{
+  highlightbg/.style={
+  freelance,
+  frame code={}
+  center title,
+  leftrule=0pt,
+  rightrule=0pt,
+  left=0pt,
+  right=0pt,
+  top=0pt,
+  bottom=-3pt,
+  colback=gray!20,
+  colframe=white,
+  % width=\dimexpr\textwidth\relax,
+  enlarge left by=0mm,
+  boxsep=0pt,
+  arc=0pt,
+  outer arc=0pt}
+}
+
+\tcbset{
   headingthreebg/.style={
   freelance,
   frame code={}
@@ -139,18 +215,73 @@
   outer arc=0pt}
 }
 
-\newcommand\headingonesize{\fontsize{33pt}{0pt}\selectfont}
+\newtcbox{\highlightbox}[1][lightgray]{
+  on line,
+  fontupper=\bfseries,
+  arc=0pt,
+  outer arc=0pt,
+  colback=#1!50!white,
+  colframe=white,
+  boxsep=0pt,
+  left=0pt,
+  right=0pt,
+  top=3pt,
+  bottom=-3pt,
+  boxrule=0pt,
+  bottomrule=0pt,
+  toprule=0pt
+}
+
+\newcommand\headingonesize{\fontsize{33pt}{28pt}\selectfont}
 \newcommand\headingtwosize{\fontsize{16pt}{19.2pt}\selectfont}
 \newcommand\headingthreesize{\fontsize{16pt}{19.2pt}\selectfont}
 
-\titleformat{name=\section,numberless}
-  {\Compagnon\headingonesize\bfseries}{}{0em}
+\usepackage{ifthen}
+\usetikzlibrary{calc}
+
+% https://tex.stackexchange.com/questions/448164/add-text-within-tikz-rectangle-node
+\titleformat{\section}
+  {\Compagnon\headingonesize\bfseries\centering}{}{0em}
   {%
-    \begin{tcolorbox}[headingonebg,halign=flush center]
+    \begin{tcolorbox}[headingonebg,halign=flush center, underlay={
+      \ifthenelse{\equal{#1}{Introduction}}{%
+        \newcommand{\seq}{2.49, 1.64, 0.79}%
+      }{\ifthenelse{\equal{#1}{Theoretical Framework}}{%
+        \newcommand{\seq}{3.47, 2.62, 1.77, 0.92}%
+      }{%
+        \newcommand{\seq}{3.59, 2.74, 1.89, 1.04}%
+      }};
+      \ifthenelse{\equal{#1}{References}}{}{%
+      \foreach \y in \seq
+      {%
+        \draw [color=lightgray,fill=lightgray,anchor=right] (-4.53,\y-.185) rectangle (-0.33,\y+.095);
+        \node [color=white,anchor=center] at (-2.43,\y) {\fontsize{11pt}{0pt}\selectfont Section \thesection};
+        \draw [color=lightgray,fill=lightgray,anchor=right] (14.3,\y-.185) rectangle (18.5,\y+.095);
+        \node [color=white,anchor=center] at (16.4,\y) {\fontsize{11pt}{0pt}\selectfont Section \thesection};
+      }}
+    }]
       \strut#1\strut
     \end{tcolorbox}%
   }
-\titlespacing*{\section}{0pt}{-2.5cm}{-3mm}
+
+\titleformat{name=\section,numberless}
+  {\Compagnon\headingonesize\bfseries\vspace*{-1.4cm}}{}{0em}
+  {%
+    \begin{tcolorbox}[headingonebgtitle,halign=flush center]
+      \strut#1\strut
+    \end{tcolorbox}%
+  }
+\titlespacing*{name=\section}{0pt}{-0.4cm}{-1.4cm}
+% \titlespacing*{name=\section,numberless}{0pt}{-2.5cm}{-1.3cm}
+
+\titleformat{name=\subsection}
+  {\Compagnon\headingtwosize\bfseries}{}{0em}
+  {%
+    \begin{tcolorbox}[headingtwobg]
+      \strut\thesubsection~#1\strut
+    \end{tcolorbox}%
+  }
+\titlespacing*{name=\subsection}{0pt}{2mm}{-5mm}
 
 \titleformat{name=\subsection,numberless}
   {\Compagnon\headingtwosize\bfseries}{}{0em}
@@ -159,7 +290,14 @@
       \strut#1\strut
     \end{tcolorbox}%
   }
-\titlespacing*{\subsection}{0pt}{-3mm}{-6mm}
+\titlespacing*{name=\subsection,numberless}{0pt}{-3mm}{-7mm}
+
+\titleformat{name=\subsubsection}
+  {\GillSansBold\fontsize{12pt}{12pt}\selectfont}{}{0em}
+  {%
+    \strut\thesubsubsection~#1\strut
+  }
+\titlespacing*{name=\subsubsection}{0pt}{1mm}{1mm}
 
 \titleformat{name=\subsubsection,numberless}
   {\Compagnon\headingthreesize\bfseries}{}{0em}
@@ -168,10 +306,28 @@
       \strut#1\strut
     \end{tcolorbox}%
   }
-\titlespacing*{\subsubsection}{0pt}{-6mm}{-6mm}
+\titlespacing*{name=\subsubsection,numberless}{0pt}{-6mm}{-6mm}
 
 
 % Environments ~~~~
+
+\usepackage{wrapfig}
+
+\newtcolorbox{tocbox}[1][]{
+  enhanced,
+  frame hidden,
+  opacityfill=0,
+  boxsep=0pt,
+  right=0cm,
+  left*=4mm,
+  top=0mm,
+  bottom=0mm,
+  before skip=1in,
+  after skip=1in,
+  width=2.3in,
+  borderline west={0.5pt}{0pt}{teal,dashed},
+  #1
+}
 
 \newtcolorbox{takeawaybox}[1][]{
   enhanced,
@@ -203,5 +359,6 @@
 }
 
 \newenvironment{captionenv}{\GillSans\fontsize{10pt}{12pt}\selectfont\itshape\vspace{2mm}}{\vspace{2mm}}
+\newenvironment{figureenv}{\GillSansBold\fontsize{12pt}{12pt}\selectfont}{}
 \newenvironment{highlightenv}{\GillSans\fontsize{12pt}{12pt}\selectfont\bfseries}{}
 \newenvironment{quoteenv}{\GillSans\fontsize{14pt}{16.8pt}\selectfont\linespread{1.2}}{\par}
