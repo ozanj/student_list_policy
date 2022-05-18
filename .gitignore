@@ -8,8 +8,8 @@ text/student_list_policy.tex
 # ignore pdf
 #*.pdf
 
-*.doc
-*.docx
+#*.doc
+#*.docx
 
 *.DS_Store
 

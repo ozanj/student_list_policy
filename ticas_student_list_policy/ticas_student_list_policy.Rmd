@@ -6,10 +6,10 @@ author:
   - Karina Salazar
 bibliography: ./../assets/bib/student_list_policy.bib # "./../../../Google Drive/student_list_brief/literature/student_list_policy.bib"
 output: 
-  bookdown::pdf_document2:
-    toc: FALSE
-  #bookdown::word_document2:    
+  #bookdown::pdf_document2:
   #  toc: FALSE
+  bookdown::word_document2:    
+    toc: FALSE
     
 csl: ./../assets/bib/apa.csl
   # C:\Users\ozanj\Documents\student_list_policy\assets\bib
@@ -581,7 +581,7 @@ knitr::include_graphics('./../assets/images/reuters_voter_database.png')
 #![The enrollment funnel](assets/images/enrollment_funnel.png)
 ```
 
-The way political campaign managers use voter data to inform political campaigns is strikingly similar to the way enrollment managers utilize student lists to inform "recruiting campaigns." However, voter files -- the basic input to national voter databases -- are free, public records. By contrast, the basic inputs for student lists (e.g., contact information, academic achievement, college preferences) are propietary, with College Board and charging \$0.50 per name in 2021 [CITE]. 
+The way political campaign managers use voter data to inform political campaigns is strikingly similar to the way enrollment managers utilize student lists to inform "recruiting campaigns." However, voter files -- the basic input to national voter databases -- are free, public records. By contrast, the basic inputs for student lists (e.g., contact information, academic achievement, college preferences) are propietary, with College Board charging \$0.50 per name in 2021 [@RN0002]. 
 
 
 __The public option__. Administrative data already collected by U.S. high school/districts (e.g., contact information, GPA, course-taking by subject) provides the basis for a viable student list product. Increasingly, states have incorporated high school administrative data into statewide longitudinal data systems. The Arizona Department of Education provides the contact information and high school rank of all AZ high school graduates for free to Arizona [PUBLIC?] postsecondary institutions [CITE].
