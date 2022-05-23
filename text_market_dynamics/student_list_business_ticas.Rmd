@@ -47,6 +47,8 @@ theme_set(
 )
 ```
 
+\includepdf[pages={1}]{../text/title.pdf}
+
 \fontsize{12pt}{14.4pt}\selectfont
 
 \thispagestyle{intro-style}
