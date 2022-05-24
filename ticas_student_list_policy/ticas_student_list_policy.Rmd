@@ -4,9 +4,10 @@ title: "Student List Policy"
 author: 
   - Ozan Jaquette
   - Karina Salazar
+  - Crystal Han
 bibliography: ./../assets/bib/student_list_policy.bib # "./../../../Google Drive/student_list_brief/literature/student_list_policy.bib"
 output: 
-  #bookdown::pdf_document2:
+  #bookdown::word_document2:
   #  toc: FALSE
   bookdown::pdf_document2:    
     toc: FALSE
@@ -584,7 +585,7 @@ knitr::include_graphics('./../assets/images/reuters_voter_database.png')
 The way political campaign managers use voter data to inform political campaigns is strikingly similar to the way enrollment managers utilize student lists to inform "recruiting campaigns." However, voter files -- the basic input to national voter databases -- are free, public records. By contrast, the basic inputs for student lists (e.g., contact information, academic achievement, college preferences) are propietary, with College Board charging \$0.50 per name in 2021 [@RN0002]. 
 
 
-__The public option__. Administrative data already collected by U.S. high school/districts (e.g., contact information, GPA, course-taking by subject) provides the basis for a viable student list product. Increasingly, states have incorporated high school administrative data into statewide longitudinal data systems. The Arizona Department of Education provides the contact information and high school rank of all AZ high school graduates for free to Arizona [PUBLIC?] postsecondary institutions [CITE].
+__The public option__. Administrative data already collected by U.S. high school/districts (e.g., contact information, GPA, course-taking by subject) provides the basis for a viable student list product. Increasingly, states have incorporated high school administrative data into statewide longitudinal data systems. Although not based on state administrative data, we learned that the Arizona Board of Regents works with high schools to provide the contact information of current high school students to Arizona public universities (personal communication).
 
 We propose a public, national student-list product developed by a consortium of states, based on data from statewide longitudinal data systems. Students and parents would have the opportunity to opt in or opt out. The system might allow participants to control which institutions can obtain their contact information (e.g., in-state vs. out-of-state, institutional control). The "names" of students who opt in would be provided to eligible postsecondary institutions for free. The public-option student lists would include information like, contact information, high school code, expected graduation year, high school academic achievement (e.g., high school GPA, math course-taking, science course-taking), demographic information, and limited set of survey responses about college preferences (e.g., intended major).
 
