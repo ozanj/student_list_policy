@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  22 MAY 2022 19:26
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  24 MAY 2022 09:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**student_list_business_ticas.tex
-(./student_list_business_ticas.tex
+**student_list_business_ticas_template.tex
+(./student_list_business_ticas_template.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
@@ -1788,8 +1788,8 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 )
 \cslhangindent=\skip126
 \csllabelwidth=\skip127
-(./student_list_business_ticas.aux)
-\openout1 = `student_list_business_ticas.aux'.
+(./student_list_business_ticas_template.aux)
+\openout1 = `student_list_business_ticas_template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 482.
 LaTeX Font Info:    ... okay on input line 482.
@@ -2996,7 +2996,7 @@ Requested font "[../assets/fonts/compagnon/Compagnon-Medium.otf]/OT" at 11.0pt
 Requested font "[../assets/fonts/gillsans/GillSans-Medium.otf]/OT:script=latn;l
 anguage=DFLT;" at 13.0pt
  -> ../assets/fonts/gillsans/GillSans-Medium.otf
-(./student_list_business_ticas.toc
+(./student_list_business_ticas_template.toc
 Requested font "[../assets/fonts/gillsans/GillSans-Light.otf]/OT:script=latn;la
 nguage=DFLT;" at 14.0pt
  -> ../assets/fonts/gillsans/GillSans-Light.otf
@@ -3008,7 +3008,7 @@ guage=DFLT;" at 12.0pt
  -> ../assets/fonts/gillsans/GillSans-Bold.otf
 )
 \tf@toc=\write6
-\openout6 = `student_list_business_ticas.toc'.
+\openout6 = `student_list_business_ticas_template.toc'.
 
 
 Overfull \hbox (17.92174pt too wide) in paragraph at lines 607--607
@@ -3089,9 +3089,11 @@ File: ../assets/images/blue-banner.png Graphic file (type QTm)
 Overfull \vbox (0.70735pt too high) has occurred while \output is active []
 
 [6]
-File: student_list_business_ticas_files/figure-latex/cb-fig-1.pdf Graphic file 
-(type QTm)
-<use  "student_list_business_ticas_files/figure-latex/cb-fig-1.pdf" > [7]
+File: student_list_business_ticas_template_files/figure-latex/cb-fig-1.pdf Grap
+hic file (type QTm)
+
+<use  "student_list_business_ticas_template_files/figure-latex/cb-fig-1.pdf" > 
+[7]
 Missing character: There is no c in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
@@ -3337,18 +3339,18 @@ aramond(0)/m/n/12 [press re-
 [29] [30] [31]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1314.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1314.
-(./student_list_business_ticas.aux)
+(./student_list_business_ticas_template.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1314.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1314.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1314.
  ) 
 Here is how much of TeX's memory you used:
  43486 strings out of 493005
- 852906 string characters out of 6134596
- 1372042 words of memory out of 5000000
+ 853023 string characters out of 6134596
+ 1372078 words of memory out of 5000000
  46751 multiletter control sequences out of 15000+600000
  12235 words of font info for 104 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 66i,18n,108p,10422b,1451s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 66i,18n,108p,10431b,1451s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on student_list_business_ticas.pdf (35 pages).
+Output written on student_list_business_ticas_template.pdf (35 pages).
