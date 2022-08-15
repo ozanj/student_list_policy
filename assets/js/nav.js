@@ -57,8 +57,6 @@ $(function() {
   var currSectionIdx = 0;
   
   for (var idx = sections[0].id; idx <= parseInt($('#references')[0].previousElementSibling.id.match(/\d+/g)); idx++) {
-    console.log(idx);
-    console.log($('#slide-' + idx + ' h1')[0]);
     
     var currSlideHeading = $('#slide-' + idx + ' h1')[0];
     
