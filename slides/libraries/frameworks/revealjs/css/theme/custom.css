@@ -62,7 +62,7 @@ body {
   font-family: 'Gill Sans';
   color: #6fccdc;
   font-size: 30px;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   margin: -28px 0 28px;
   font-weight: 300;
 }
@@ -120,12 +120,13 @@ body {
 
 .reveal table {
   width: 100%;
-  text-align: center;
+  /*text-align: center;*/
   line-height: 1.6em;
   font-size: 13px;
   border-spacing: 0;
 }
 
+/*
 .reveal th, .reveal td {
   background-color: rgb(247, 254, 255);
 }
@@ -147,9 +148,9 @@ body {
   font-weight: 700;
 }
 
-/* .reveal table .blank {
+.reveal table .blank {
   pointer-events: none;
-} */
+}
 
 .reveal table .indent {
   padding-left: 6px;
@@ -158,6 +159,7 @@ body {
 .reveal table td:empty:after{
   content: "\00a0";
 }
+*/
 
 /* Links */
 
