@@ -26,14 +26,14 @@
   position: relative;
   transform: translateY(70px);
   color: white;
-  background: black;
+  background: #73c0af;
   display: table;
   margin: 0px auto;
-  padding: 10px 20px 20px;
+  padding: 15px 20px;
 }
 
 .reveal .subsection h1 {
-  transform: translateY(150px);
+  transform: translateY(130px);
 }
 
 .reveal #title h2 {
@@ -48,8 +48,8 @@
 
 .reveal #title #authors {
   transform: translateY(450px);
-  font-family: 'Compagnon';
-  letter-spacing: -1px;
+  font-family: 'Franklin Gothic Medium', 'Compagnon';
+  letter-spacing: 0px;
   font-weight: 500;
   font-size: 18px;
   display: flex;
@@ -58,10 +58,10 @@
 
 .reveal #title #authors p {
   color: white;
-  background: black;
+  background: #73c0af;
   display: table;
   margin: 0px auto;
-  padding: 0px 10px 5px;
+  padding: 0px 10px;
 }
 
 .reveal #title #authors span {
@@ -361,17 +361,17 @@
 }
 
 #references a[href^='#'] {
-  color: rgb(231, 103, 97);
+  color: #46a69e;
   pointer-events: none;
 }
 
 /* Section Controls */
 
 .reveal .section-nav {
-  font-family: 'Compagnon';
+  font-family: 'Georgia', 'Compagnon';
   font-weight: 500;
-  font-size: 16px;
-  letter-spacing: -2px;
+  font-size: 13px;
+  letter-spacing: 0px;
   position: absolute;
   top: 140px;
   left: -210px;
@@ -393,10 +393,11 @@
 }
 
 .reveal .subsection h2 {
-  font-family: 'Compagnon';
-  color: black;
+  font-family: 'Franklin Gothic Medium', 'Compagnon';
+  font-style: normal;
+  color: #73c0af;
   font-weight: 500;
-  letter-spacing: -2px;
+  letter-spacing: 0px;
   font-size: 37px;
   margin: 10px 0 30px;
 }
@@ -427,7 +428,7 @@
 
 .reveal .section-nav li {
   line-height: 1;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.8em;
   list-style-type: none;
 }
 
@@ -441,7 +442,7 @@
 }
 
 .reveal .section-nav li a:hover {
-  color: #00aeef;
+  color: #46a69e;
 }
 
 .reveal .section-nav > ul > li a {
@@ -449,7 +450,7 @@
 }
 
 .reveal .section-nav li.active a {
-  color: #6fccdc;
+  color: #73c0af;
   pointer-events: none;
 }
 
@@ -486,7 +487,7 @@
 #cluster-hs tr:nth-child(24),
 #cluster-hs tr:nth-child(26),
 #cluster-hs tr:nth-child(30) {
-  background-color: lightblue;
+  background-color: #b9efe6;
 }
 
 #cluster-en tr:last-child,

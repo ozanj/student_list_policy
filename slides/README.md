@@ -43,3 +43,12 @@ These only need to be specified on first slide, if a section consists of multipl
 ## Subtitle  // If omitted, "Section A" will be the h1 for this slide
 
 ```
+
+## Additional notes
+
+If changes to figures aren't being updated, may need to clear cache/delete currently saved images:
+
+```
+rm slides/.cache/*
+rm slides/assets/fig/*
+```

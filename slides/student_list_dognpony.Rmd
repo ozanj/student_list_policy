@@ -81,10 +81,9 @@ theme_set(
   )
 )
 
-color_palette <- c('#bbcfd7', '#d2c8bc', '#ba9a88')
-color_gradient <- brewer.pal(9, 'BrBG')
-color_text <- 'black'
-alpha_bar <- 0.4
+color_palette <- c('#46a69e', '#7ec7b8', '#b9efe6', '#bf7bb2', '#9e508a', '#537ec4', '#344273', '#fdc3bb', '#fa634b')
+extra_colors <- c('#b5b5b5', '#767676')
+color_text <- 'white'
 
 num_orders <- nrow(orders_df)
 num_orders_w_list <- sum(orders_df$order_num %in% lists_df_summary$ord_num)
@@ -422,7 +421,7 @@ create_cb_figure <- function(categories, values, plot_title, fill_values = rev(c
       by = 'category') %>% 
     ggplot(aes(x = category, y = value, fill = subcategory, width = 0.6)) +
     geom_bar(position = 'stack', stat = 'identity') +
-    geom_text(aes(y = value, label = if_else(subcategory == 'Not Licensed', str_c(sprintf('%.1f', value), '%'), '')), color = '#444444', size = 2, position = position_stack(vjust = 0.5)) +
+    geom_text(aes(y = value, label = if_else(subcategory == 'Not Licensed', str_c(sprintf('%.1f', value), '%'), '')), color = color_text, size = 2, position = position_stack(vjust = 0.5)) +
     geom_text(aes(y = total + 3, label = if_else(subcategory == 'Not Licensed', str_c('(', sprintf('%.1f', pct_change), '%)'), '')), color = '#444444', size = 2) +
     geom_text(aes(y = total + 7, label = if_else(subcategory == 'Not Licensed', str_c(sprintf('%.1f', `Gain from being Licensed`), 'pp'), '')), color = '#444444', size = 2) +
     ggtitle(plot_title) +
@@ -914,7 +913,7 @@ ucsd_income_figure <- ucsd_all_income %>%
     )
   ) %>% 
   ggplot(aes(y = count_type, x = income_2564)) + 
-  geom_bar(stat = 'identity', fill = color_palette[[1]], width = 0.8) + 
+  geom_bar(stat = 'identity', fill = extra_colors[[1]], width = 0.8) + 
   geom_text(mapping = aes(label = str_c('$', round(income_2564 / 1000), 'K')), size = 2, hjust = -0.1) +
   scale_x_continuous(expand = expansion(mult = c(0, 0.04)), limits = c(0, 130000)) +
   # scale_y_discrete(expand = expansion(mult = c(0.01, 0.1))) +
@@ -966,11 +965,11 @@ ucsd_race_figure_totals <- ucsd_all_race_full %>%
 ucsd_race_figure <- ucsd_race_figure_data %>% 
   filter(!race %in% c('No response', 'Missing')) %>% 
   ggplot(aes(y = count_type, x = pct, fill = race)) + 
-  geom_bar(position = 'stack', stat = 'identity', alpha = alpha_bar, width = 0.8) + 
+  geom_bar(position = 'stack', stat = 'identity', width = 0.8) + 
   geom_text(mapping = aes(label = if_else(pct > 0.02, as.character(round(pct * 100)), '')), size = 2, position = position_stack(vjust = 0.5), color = color_text) +
   geom_text(data = ucsd_race_figure_totals, mapping = aes(x = 1, fill = NULL, label = if_else(count_type == 'Prospects', str_c('N=', prettyNum(count, big.mark = ',')), '')), size = 2, hjust = -0.1) +
   # scale_fill_brewer(palette = 'BrBG', direction = -1, name = 'Race') +
-  scale_fill_manual(values = rev(color_gradient[1:7]), name = 'Race') +
+  scale_fill_manual(values = rev(color_palette[1:7]), name = 'Race') +
   scale_x_continuous(expand = expansion(mult = c(0, 0.04)), limits = c(0, 1.14)) +
   # scale_y_discrete(expand = expansion(mult = c(0.01, 0.1))) +
   xlab('') + ylab('') +
@@ -1045,7 +1044,7 @@ data.frame(
   prospects_with_order = prettyNum(num_prospects_w_order, ',')
 ) %>% 
   xtable(align = rep('c', 5), display = rep('d', 5)) %>% 
-  print(add.to.row = list(pos = list(0), command = c('<tr style="text-align:center;"><th>RQ1</th><th>RQ3</th><th>RQ2</th><th>RQ3</th></tr><tr style="text-align:center;"><th># orders total</th><th># orders with list</th><th># prospects total</th><th># prospects with order</th></tr>')), include.colnames = F)
+  print(add.to.row = list(pos = list(0), command = c('<tr style="text-align:center;"><th style="border-bottom:none;">RQ1</th><th style="border-bottom:none;">RQ3</th><th style="border-bottom:none;">RQ2</th><th style="border-bottom:none;">RQ3</th></tr><tr style="text-align:center;"><th># orders total</th><th># orders with list</th><th># prospects total</th><th># prospects with order</th></tr>')), include.colnames = F)
 ```
 
 
@@ -1060,7 +1059,7 @@ orders_prospects_purchased %>%
   geom_text(aes(label = str_c(total_orders, if_else(total_orders == 1, ' order', ' orders'))), hjust = -0.1, size = 2) +
   scale_x_continuous(labels = function(n) if_else(n < 1000000, str_c(n / 1000, 'K'), str_c(n / 1000000, 'M')), breaks = seq(0, 2.6e6, 2e5), expand = expansion(mult = c(0.01, 0.1)), limits = c(0, 2.7e6)) +
   scale_x_break(c(5e5, 2.2e6)) +
-  scale_fill_manual(values = color_palette, name = 'University type') +
+  scale_fill_manual(values = color_palette[1:2], name = 'University type') +
   xlab('Number of prospects') + ylab('') +
   theme(
     axis.ticks.y = element_blank(),
@@ -1274,7 +1273,7 @@ plot_usmap(
   scale_fill_gradient2(
     low = 'white',
     mid = '#ededed',
-    high = 'cyan', 
+    high = color_palette[[1]], 
     midpoint = 35,
     name = 'Number of orders',
     label = label_number(accuracy = 1),
@@ -1305,7 +1304,7 @@ plot_usmap(
 ) +
   scale_fill_continuous(
     low = '#ededed',
-    high = 'cyan', 
+    high = color_palette[[1]], 
     name = 'Number of orders',
     label = label_number(accuracy = 1),
     limits = c(0, 10)
@@ -1437,10 +1436,10 @@ rq2_race %>%
   ) %>% 
   filter(race != 'Missing') %>% 
   ggplot(aes(y = count_type, x = pct, fill = race)) + 
-  geom_bar(position = 'stack', stat = 'identity', alpha = alpha_bar) + 
+  geom_bar(position = 'stack', stat = 'identity') + 
   geom_text(mapping = aes(label = if_else(pct > 0.02, as.character(round(pct * 100)), '')), size = 2, position = position_stack(vjust = 0.5), color = color_text) +
   # scale_fill_brewer(palette = 'BrBG', direction = -1, name = 'Race') +
-  scale_fill_manual(values = rev(color_gradient), name = 'Race') +
+  scale_fill_manual(values = rev(color_palette), name = 'Race') +
   scale_x_continuous(expand = expansion(mult = c(0, 0.04))) +
   scale_y_discrete(expand = expansion(mult = c(0.01, 0.1))) +
   xlab('Percent of prospects') + ylab('') +
@@ -1497,10 +1496,10 @@ rq2_locale %>%
     )
   ) %>% 
   ggplot(aes(y = count_type, x = pct, fill = locale_text)) + 
-  geom_bar(position = 'stack', stat = 'identity', alpha = alpha_bar) + 
+  geom_bar(position = 'stack', stat = 'identity') + 
   geom_text(mapping = aes(label = if_else(pct > 0.02, as.character(round(pct * 100)), '')), size = 2, position = position_stack(vjust = 0.5), color = color_text) +
   # scale_fill_brewer(palette = 'BrBG', direction = -1, name = 'Locale') +
-  scale_fill_manual(values = rev(color_gradient[1:7]), name = 'Locale') +
+  scale_fill_manual(values = rev(color_palette[c(1:5, 7)]), name = 'Locale') +
   scale_x_continuous(expand = expansion(mult = c(0, 0.04))) +
   scale_y_discrete(expand = expansion(mult = c(0.01, 0.1))) +
   xlab('Percent of prospects') + ylab('') +
@@ -1544,10 +1543,10 @@ rq2_race %>%
   ) %>% 
   filter(race != 'Missing') %>% 
   ggplot(aes(y = count_type, x = pct, fill = race)) + 
-  geom_bar(position = 'stack', stat = 'identity', alpha = alpha_bar) + 
+  geom_bar(position = 'stack', stat = 'identity') + 
   geom_text(mapping = aes(label = if_else(pct > 0.02, as.character(round(pct * 100)), '')), size = 2, position = position_stack(vjust = 0.5), color = color_text) +
   # scale_fill_brewer(palette = 'BrBG', direction = -1, name = 'Race') +
-  scale_fill_manual(values = rev(color_gradient), name = 'Race') +
+  scale_fill_manual(values = rev(color_palette), name = 'Race') +
   scale_x_continuous(expand = expansion(mult = c(0, 0.04))) +
   scale_y_discrete(expand = expansion(mult = c(0.01, 0.1))) +
   xlab('Percent of prospects') + ylab('') +
@@ -1604,10 +1603,10 @@ rq2_locale %>%
     )
   ) %>% 
   ggplot(aes(y = count_type, x = pct, fill = locale_text)) + 
-  geom_bar(position = 'stack', stat = 'identity', alpha = alpha_bar) + 
+  geom_bar(position = 'stack', stat = 'identity') + 
   geom_text(mapping = aes(label = if_else(pct > 0.02, as.character(round(pct * 100)), '')), size = 2, position = position_stack(vjust = 0.5), color = color_text) +
   # scale_fill_brewer(palette = 'BrBG', direction = -1, name = 'Locale') +
-  scale_fill_manual(values = rev(color_gradient[1:7]), name = 'Locale') +
+  scale_fill_manual(values = rev(color_palette[c(1:5, 7)]), name = 'Locale') +
   scale_x_continuous(expand = expansion(mult = c(0, 0.04))) +
   scale_y_discrete(expand = expansion(mult = c(0.01, 0.1))) +
   xlab('Percent of prospects') + ylab('') +
@@ -1737,11 +1736,11 @@ asu_la %>%
   ) %>% 
   filter(!race %in% c('Missing', 'No response')) %>% 
   ggplot(aes(y = count_type, x = pct, fill = race)) + 
-  geom_bar(position = 'stack', stat = 'identity', alpha = alpha_bar) + 
+  geom_bar(position = 'stack', stat = 'identity') + 
   geom_text(mapping = aes(label = if_else(pct > 0.02, as.character(round(pct * 100)), '')), size = 2, position = position_stack(vjust = 0.5), color = color_text) +
   geom_text(data = asu_la_figure_totals, mapping = aes(x = 1, fill = NULL, label = str_c('N=', prettyNum(count, ','))), size = 2, hjust = -0.1) +
   # scale_fill_brewer(palette = 'BrBG', direction = -1, name = 'Race') +
-  scale_fill_manual(values = rev(color_gradient[1:7]), name = 'Race') +
+  scale_fill_manual(values = rev(color_palette[1:7]), name = 'Race') +
   scale_x_continuous(expand = expansion(mult = c(0, 0.04)), limits = c(0, 1.15)) +
   scale_y_discrete(expand = expansion(mult = c(0.01, 0.1))) +
   xlab('Percent of prospects') + ylab('') +
@@ -1829,7 +1828,7 @@ uiuc_income_figure <- uiuc_income %>%
     cbsa_name = str_replace(cbsa_name, ' Metro Area', '')
   ) %>% 
   ggplot(aes(y = count_type, x = income_2564)) + 
-  geom_bar(stat = 'identity', fill = color_palette[[1]]) + 
+  geom_bar(stat = 'identity', fill = extra_colors[[1]]) + 
   geom_text(mapping = aes(label = str_c('$', round(income_2564 / 1000), 'K')), size = 2, hjust = -0.1) +
   scale_x_continuous(expand = expansion(mult = c(0, 0.04)), limits = c(0, 250000)) +
   scale_y_discrete(expand = expansion(mult = c(0.01, 0.1))) +
@@ -1884,11 +1883,11 @@ uiuc_race_figure_totals <- uiuc_race_full %>%
 uiuc_race_figure <- uiuc_race_figure_data %>% 
   filter(!race %in% c('Missing', 'No response')) %>% 
   ggplot(aes(y = count_type, x = pct, fill = race)) + 
-  geom_bar(position = 'stack', stat = 'identity', alpha = alpha_bar) + 
+  geom_bar(position = 'stack', stat = 'identity') + 
   geom_text(mapping = aes(label = if_else(pct > 0.02, as.character(round(pct * 100)), '')), size = 2, position = position_stack(vjust = 0.5), color = color_text) +
   geom_text(data = uiuc_race_figure_totals, mapping = aes(x = 1, fill = NULL, label = if_else(count_type != 'Metro', str_c('N=', prettyNum(count, big.mark = ',')), '')), size = 2, hjust = -0.15) +
   # scale_fill_brewer(palette = 'BrBG', direction = -1, name = 'Race') +
-  scale_fill_manual(values = rev(color_gradient[1:7]), name = 'Race') +
+  scale_fill_manual(values = rev(color_palette[1:7]), name = 'Race') +
   scale_x_continuous(expand = expansion(mult = c(0, 0.04)), limits = c(0, 1.14)) +
   scale_y_discrete(expand = expansion(mult = c(0.01, 0.1))) +
   xlab('') + ylab('') +
@@ -1915,7 +1914,7 @@ grid.arrange(
 
 ## Segment filter prospects interactive map
 
-<iframe src="https://mpatricia01.github.io/public_requests_eda/outputs/maps/map_segment.html" id="uiuc-deep-dive-map" width=100% height=100% allowtransparency="true"></iframe>
+<iframe src="https://mpatricia01.github.io/public_requests_eda/outputs/maps/map_segment_green.html" id="uiuc-deep-dive-map" width=100% height=100% allowtransparency="true"></iframe>
 
 
 --- .subsubsection
@@ -1935,7 +1934,7 @@ ucsd_income_figure <- ucsd_income %>%
     cbsa_name = str_replace(str_replace(cbsa_name, 'Roswell', 'Alpharetta'), ' Metro Area', '')
   ) %>% 
   ggplot(aes(y = count_type, x = income_2564)) + 
-  geom_bar(stat = 'identity', fill = color_palette[[1]]) + 
+  geom_bar(stat = 'identity', fill = extra_colors[[1]]) + 
   geom_text(mapping = aes(label = str_c('$', round(income_2564 / 1000), 'K')), size = 2, hjust = -0.1) +
   scale_x_continuous(expand = expansion(mult = c(0, 0.04)), limits = c(0, 163000)) +
   scale_y_discrete(expand = expansion(mult = c(0.01, 0.1))) +
@@ -1992,11 +1991,11 @@ ucsd_race_figure_totals <- ucsd_race_full %>%
 ucsd_race_figure <- ucsd_race_figure_data %>% 
   filter(!race %in% c('Missing', 'No response')) %>% 
   ggplot(aes(y = count_type, x = pct, fill = race)) + 
-  geom_bar(position = 'stack', stat = 'identity', alpha = alpha_bar) + 
+  geom_bar(position = 'stack', stat = 'identity') + 
   geom_text(mapping = aes(label = if_else(pct > 0.02, as.character(round(pct * 100)), '')), size = 2, position = position_stack(vjust = 0.5), color = color_text) +
   geom_text(data = ucsd_race_figure_totals, mapping = aes(x = 1, fill = NULL, label = if_else(count_type != 'Metro', str_c('N=', count), '')), size = 2, hjust = -0.2) +
   # scale_fill_brewer(palette = 'BrBG', direction = -1, name = 'Race') +
-  scale_fill_manual(values = rev(color_gradient[1:7]), name = 'Race') +
+  scale_fill_manual(values = rev(color_palette[1:7]), name = 'Race') +
   scale_x_continuous(expand = expansion(mult = c(0, 0.04)), limits = c(0, 1.14)) +
   scale_y_discrete(expand = expansion(mult = c(0.01, 0.1))) +
   xlab('') + ylab('') +
@@ -2116,7 +2115,7 @@ poc_hs_figure <- poc_hs %>%
   ) %>% 
   filter(control == 'Private HS') %>% 
   ggplot(aes(y = count_type, x = pct, fill = control)) + 
-  geom_bar(stat = 'identity', fill = color_palette[[1]]) + 
+  geom_bar(stat = 'identity', fill = extra_colors[[2]]) + 
   geom_text(mapping = aes(label = str_c(round(pct * 100), '% ', control)), size = 2, hjust = -0.05) +
   scale_x_continuous(expand = expansion(mult = c(0, 0.04)), limits = c(0, 1.5)) +
   # scale_y_discrete(expand = expansion(mult = c(0.01, 0.1))) +
@@ -2156,7 +2155,7 @@ poc_income_figure <- poc_income %>%
   ) %>% 
   filter(str_detect(ord_type, 'private', T)) %>% 
   ggplot(aes(y = count_type, x = income_2564)) + 
-  geom_bar(stat = 'identity', fill = color_palette[[2]]) + 
+  geom_bar(stat = 'identity', fill = extra_colors[[1]]) + 
   geom_text(mapping = aes(label = if_else(income_2564 == 0, '', str_c('$', round(income_2564 / 1000), 'K'))), size = 2, hjust = -0.1) +
   geom_text(aes(label = if_else(income_2564 != 0, '', if_else(count_type == '', 'Public HS', 'Private HS')), x = 0), hjust = 0, vjust = 0.9, size = 2, fontface = 'bold') +
   scale_x_continuous(expand = expansion(mult = c(0, 0.04)), limits = c(0, 350000)) +
@@ -2214,12 +2213,12 @@ poc_race_figure <- poc_race %>%
   ) %>% 
   filter(!race %in% c('Missing', 'No response'), str_detect(ord_type, 'private', T)) %>% 
   ggplot(aes(y = count_type, x = pct, fill = race)) + 
-  geom_bar(position = 'stack', stat = 'identity', alpha = alpha_bar) + 
+  geom_bar(position = 'stack', stat = 'identity') + 
   geom_text(mapping = aes(label = if_else(pct > 0.02, as.character(round(pct * 100)), '')), size = 2, position = position_stack(vjust = 0.5), color = color_text) +
   geom_text(aes(label = if_else(str_detect(count_type, '\\w'), '', if_else(count_type == '', 'Public HS', '')), x = 0), hjust = 0, vjust = 0.9, size = 2, fontface = 'bold') +
   geom_text(aes(x = 1, fill = NULL, label = if_else(str_detect(count_type, '\\w'), str_c(' ', num_hs, ' HS', if_else(num_prospects > 0, str_c('\n ', num_prospects, ' prospects'), '')), '')), size = 1, hjust = 0) +
   # scale_fill_brewer(palette = 'BrBG', direction = -1, name = 'Race') +
-  scale_fill_manual(values = rev(color_gradient[1:7]), name = 'Race') +
+  scale_fill_manual(values = rev(color_palette[1:7]), name = 'Race') +
   scale_x_continuous(expand = expansion(mult = c(0, 0.04)), limits = c(0, 1.14)) +
   scale_y_discrete(expand = expansion(mult = c(0.01, 0.1))) +
   xlab('') + ylab('') +
@@ -2250,7 +2249,7 @@ grid.arrange(
 
 ## Purchased profiles for students of color interactive map
 
-<iframe src="https://mpatricia01.github.io/public_requests_eda/outputs/maps/map_poc.html" id="poc-prospects-deep-dive-map" width=100% height=100% allowtransparency="true"></iframe>
+<iframe src="https://mpatricia01.github.io/public_requests_eda/outputs/maps/map_poc_green.html" id="poc-prospects-deep-dive-map" width=100% height=100% allowtransparency="true"></iframe>
 
 
 --- .section
