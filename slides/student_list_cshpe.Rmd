@@ -8,13 +8,13 @@ revealjs:
   transition: 'slide'
   center: 'false'
 #bibliography: '../assets/bib/student_list_policy.bib'
-bibliography: '../assets/bib/eepa_student_list.bib'
-csl: '../assets/bib/apa.csl'
-#bibliography: '../../public_requests_eda/text/bib/eepa_student_list.bib'
-#csl: '../../public_requests_eda/text/bib/apa.csl'
+#bibliography: '../assets/bib/eepa_student_list.bib'
+#csl: '../assets/bib/apa.csl'
+bibliography: '../../public_requests_eda/text/bib/eepa_student_list.bib'
+csl: '../../public_requests_eda/text/bib/apa.csl'
 --- #title
 
-```{r}
+```{r, include = F}
 #setwd('../public_requests_eda')
 #getwd()
 #list.files('../public_requests_eda/text/bib')
@@ -44,12 +44,20 @@ library(servr)
 # Check if server(s) running: daemon_list()
 # Stop server(s): daemon_stop(which = daemon_list())
 
+#changing slide format font
+  # slides >> libraries >> frameworks >> revealjs >> css >> theme >> custom.css
+    # within custom.css look at code within bracket starting "body {" right below the comment "Main"
+      # see comments there
+  
+# clearing cashe
+  # 
+
 library(knitcitations)
 
 cleanbib()
-#bib <- read.bibtex('../public_requests_eda/text/bib/eepa_student_list.bib')
+bib <- read.bibtex('../../public_requests_eda/text/bib/eepa_student_list.bib')
 #bib <- read.bibtex('../assets/bib/student_list_policy.bib')
-bib <- read.bibtex('../assets/bib/eepa_student_list.bib')
+#bib <- read.bibtex('../assets/bib/eepa_student_list.bib')
 
 library(gridExtra) # for creating howell table
 library(tidyverse)
@@ -625,9 +633,6 @@ Interventions along the funnel
 
 Source: [pngwing.com](https://www.pngwing.com/en/free-png-krrpy)
 
-
-
-
 ---
 
 # College Board and ACT lists
@@ -694,9 +699,8 @@ New filters based on predictive analytics to facilitate micro-targeting ("effici
 ## Dynamics shaping the market for student list data
 
 
-From [The Student List Business: Primer and market dynamics](https://ticas.org/wp-content/uploads/2022/09/The-Student-List-Business_-Primer-and-Market-Dynamics.pdf) `r citep(bib[c('list_biz')])`
+From [The Student List Business: Primer and market dynamics](https://ticas.org/wp-content/uploads/2022/09/The-Student-List-Business_-Primer-and-Market-Dynamics.pdf) `r citep(bib[c('list_biz')])`:
 
-<br>
 
 1. **Centrality of enrollment management (EM) consulting firms**
   - Purchase student lists on behalf of universities
@@ -705,8 +709,7 @@ From [The Student List Business: Primer and market dynamics](https://ticas.org/w
 
 1. **Competition then concentration**
   - Competition in the 2000s
-      - new technology yields new sources of student list data (e.g., college search engines; software used by high schools)
-      - entry by new vendors (e.g., Zinch)
+      - technology >> new sources of student list data (e.g., college search engines; software used by high schools) >> entry by new vendors (e.g., Zinch)
   - Concentration in the 2010s
       - horizontal acquisitions in EM consulting industry (e.g., RuffaloCODY acquires Noel-Levitz)
       - Vertical acquisitions transform market for student list data (e.g., PowerSchool acquires Naviance/Intersect from Hobsons; EAB acquires Cappex)
@@ -718,6 +721,61 @@ From [The Student List Business: Primer and market dynamics](https://ticas.org/w
   - Leverage names database to sell EM consulting
   - Test-optional threatens competitive advantage in coverage
   - Create/buy college search engines
+
+
+
+--- .section
+
+# Literature Review
+
+--- .subsection
+
+# Recruiting
+
+--- 
+
+## Sociological scholarship on recruiting
+
+Enrollment funnel: prospects, leads, inquires, applicants, admits, enrolled
+- Most scholarship from sociology of education focuses on latter stages
+    - which applicants get admitted  `r cite(bib[c('RN3522','RN4131')])`
+- Growing body of research analyzes recruiting "in the wild"
+    
+<br>
+Recruiting from the perspective of high school students `r citep(bib[c('RN4324')])`
+- Underrepresented students sensitive to feeling "wanted" by colleges
+
+<br>
+Connections between colleges and high schools from an organizational perspective
+
+- Off-campus recruiting visits indicate a network tie and enrollment priorities
+- `r citet(bib[c('RN3519')])`: recruiting from perspective of selective private college
+- `r citet(bib[c('RN4407')])`: recruiting from perspective of private HS guidance counselors
+- Recruiting visits by public research universities   `r cite(bib[c('RN4758','RN4759')])`
+    - Prioritize out-of-state visits to wealthy, white schools
+
+<br>
+Recruiting at open-access PSIs for adults  `r cite(bib[c('cottom2017lower','RN4520')])`
+- `r citet(bib[c('cottom2017lower')])`: for-profits have enrollment demand in Black/Latinx communities **because** traditional colleges avoid these communities
+
+--- .subsection
+
+# Soc of race
+
+--- 
+
+## Structural racism
+
+text text
+
+
+--- .section
+
+# Conceptual Framework
+
+--- .section
+
+# Empirics
 
 --- 
 
@@ -749,20 +807,7 @@ purchased prospects?
 Partners
 
 - Funded by Joyce Foundation, Kresge Foundation
-- Pro bono partnership with a civil rights legal organization and four multinational law firms
-- Our first report to be published by [ACCEPT](https://www.acceptgroup.org/)
-
-
-
-# Literature Review
-
---- .section
-
-# Conceptual Framework
-
---- .section
-
-# Empirics
+- Pro bono partnership with four multinational law firms
 
 --- .section
 
@@ -776,4 +821,4 @@ Partners
 
 ```{r results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 bibliography('html')
-````
+```

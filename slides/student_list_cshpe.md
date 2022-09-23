@@ -8,10 +8,10 @@ revealjs:
   transition: 'slide'
   center: 'false'
 #bibliography: '../assets/bib/student_list_policy.bib'
-bibliography: '../assets/bib/eepa_student_list.bib'
-csl: '../assets/bib/apa.csl'
-#bibliography: '../../public_requests_eda/text/bib/eepa_student_list.bib'
-#csl: '../../public_requests_eda/text/bib/apa.csl'
+#bibliography: '../assets/bib/eepa_student_list.bib'
+#csl: '../assets/bib/apa.csl'
+bibliography: '../../public_requests_eda/text/bib/eepa_student_list.bib'
+csl: '../../public_requests_eda/text/bib/apa.csl'
 --- #title
 
 
@@ -40,7 +40,158 @@ csl: '../assets/bib/apa.csl'
 # College Board Search and student outcomes
 ## Howell, Hurwitz, Mabel, et al. (2021)
 
-<img src="assets/fig/cb-fig-1.png" alt="plot of chunk cb-fig" width="90%" />
+
+```r
+create_cb_figure <- function(categories, values, plot_title, fill_values = rev(color_palette[1:2])) {
+  cb_fig_df <- data.frame(
+    category = rep(categories, each = 2),
+    subcategory = rep(c('Not Licensed', 'Gain from being Licensed'), length(categories)), 
+    value = values
+  )
+  
+  cb_fig_df$category <- factor(cb_fig_df$category, levels = categories)
+  
+  cb_fig_df %>%
+    left_join(
+      cb_fig_df %>%
+        pivot_wider(id_cols = category, names_from = subcategory, values_from = value) %>%
+        mutate(
+          total = `Not Licensed` + `Gain from being Licensed`,
+          pct_change = `Gain from being Licensed` / `Not Licensed` * 100
+        ),
+      by = 'category') %>% 
+    ggplot(aes(x = category, y = value, fill = subcategory, width = 0.6)) +
+    geom_bar(position = 'stack', stat = 'identity') +
+    geom_text(aes(y = value, label = if_else(subcategory == 'Not Licensed', str_c(sprintf('%.1f', value), '%'), '')), color = color_text, size = 2, position = position_stack(vjust = 0.5)) +
+    geom_text(aes(y = total + 3, label = if_else(subcategory == 'Not Licensed', str_c('(', sprintf('%.1f', pct_change), '%)'), '')), color = '#444444', size = 2) +
+    geom_text(aes(y = total + 7, label = if_else(subcategory == 'Not Licensed', str_c(sprintf('%.1f', `Gain from being Licensed`), 'pp'), '')), color = '#444444', size = 2) +
+    ggtitle(plot_title) +
+    xlab('') + ylab('') + 
+    scale_y_continuous(expand = expansion(mult = c(0, 0.05)), limits = c(0, 80)) +
+    scale_fill_manual(values = fill_values) +
+    theme(
+        plot.margin = margin(t = 0.6, unit = 'cm'),
+        panel.grid.major.y = element_line(size = 0.1, color = 'gray'),
+        legend.title = element_blank(),
+        legend.position = 'bottom',
+        legend.margin = margin(t = -0.5, unit = 'cm'),
+        legend.text = element_text(margin = margin(r = 0.2, unit = 'cm'))
+      ) +
+      guides(fill = guide_legend(reverse = T))
+}
+
+grid.arrange(
+  create_cb_figure(
+    c('Overall', 'Asian', 'Black', 'Hispanic', 'AI/AN', 'HI/PI', 'White'),
+    c(32.8, 8.3, 37.5, 5.7, 31.8, 7.8, 24.1, 8.3, 26.5, 6.3, 22.2, 5.8, 44.4, 9.6),
+    'Enrollment'
+  ),
+  create_cb_figure(
+    c('Overall', 'Asian', 'Black', 'Hispanic', 'AI/AN', 'White'),
+    c(15.7, 4.9, 17.7, 5.0, 7.2, 2.9, 6.7, 2.9, 8.7, 4.2, 24.0, 6.7),
+    'BA Completion within 4 Years'
+  ),
+  create_cb_figure(
+    c('Overall', 'No College', 'College,\nNo BA', 'College,\nBA or Higher'),
+    c(32.8, 8.3, 24.9, 10.1, 36.5, 11.0, 53.4, 10.1),
+    'Enrollment'
+  ),
+  create_cb_figure(
+    c('Overall', 'No College', 'College,\nNo BA', 'College,\nBA or Higher'),
+    c(15.7, 4.9, 13.6, 6.8, 21.3, 8.5, 39.9, 10.1),
+    'BA Completion within 4 Years'
+  ),
+  ncol = 2
+)
+```
+
+```
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font family not found in Windows font database
+```
+
+![plot of chunk cb-fig](assets/fig/cb-fig-1.png)
 
 
 ---
@@ -183,9 +334,6 @@ Interventions along the funnel
 
 Source: [pngwing.com](https://www.pngwing.com/en/free-png-krrpy)
 
-
-
-
 ---
 
 # College Board and ACT lists
@@ -252,9 +400,8 @@ New filters based on predictive analytics to facilitate micro-targeting ("effici
 ## Dynamics shaping the market for student list data
 
 
-From [The Student List Business: Primer and market dynamics](https://ticas.org/wp-content/uploads/2022/09/The-Student-List-Business_-Primer-and-Market-Dynamics.pdf) (Jaquette, Salazar, and Martin, 2022)
+From [The Student List Business: Primer and market dynamics](https://ticas.org/wp-content/uploads/2022/09/The-Student-List-Business_-Primer-and-Market-Dynamics.pdf) (Jaquette, Salazar, and Martin, 2022):
 
-<br>
 
 1. **Centrality of enrollment management (EM) consulting firms**
   - Purchase student lists on behalf of universities
@@ -263,8 +410,7 @@ From [The Student List Business: Primer and market dynamics](https://ticas.org/w
 
 1. **Competition then concentration**
   - Competition in the 2000s
-      - new technology yields new sources of student list data (e.g., college search engines; software used by high schools)
-      - entry by new vendors (e.g., Zinch)
+      - technology >> new sources of student list data (e.g., college search engines; software used by high schools) >> entry by new vendors (e.g., Zinch)
   - Concentration in the 2010s
       - horizontal acquisitions in EM consulting industry (e.g., RuffaloCODY acquires Noel-Levitz)
       - Vertical acquisitions transform market for student list data (e.g., PowerSchool acquires Naviance/Intersect from Hobsons; EAB acquires Cappex)
@@ -276,6 +422,61 @@ From [The Student List Business: Primer and market dynamics](https://ticas.org/w
   - Leverage names database to sell EM consulting
   - Test-optional threatens competitive advantage in coverage
   - Create/buy college search engines
+
+
+
+--- .section
+
+# Literature Review
+
+--- .subsection
+
+# Recruiting
+
+--- 
+
+## Sociological scholarship on recruiting
+
+Enrollment funnel: prospects, leads, inquires, applicants, admits, enrolled
+- Most scholarship from sociology of education focuses on latter stages
+    - which applicants get admitted  (e.g., Killgore, 2009; Posselt, 2016)
+- Growing body of research analyzes recruiting "in the wild"
+    
+<br>
+Recruiting from the perspective of high school students (Holland, 2019)
+- Underrepresented students sensitive to feeling "wanted" by colleges
+
+<br>
+Connections between colleges and high schools from an organizational perspective
+
+- Off-campus recruiting visits indicate a network tie and enrollment priorities
+- Stevens (2007): recruiting from perspective of selective private college
+- Khan (2011): recruiting from perspective of private HS guidance counselors
+- Recruiting visits by public research universities   (e.g., Salazar, Jaquette, Han, 2021; Salazar, 2022)
+    - Prioritize out-of-state visits to wealthy, white schools
+
+<br>
+Recruiting at open-access PSIs for adults  (e.g., Cottom, 2017; Posecznick, 2017)
+- Cottom (2017): for-profits have enrollment demand in Black/Latinx communities **because** traditional colleges avoid these communities
+
+--- .subsection
+
+# Soc of race
+
+--- 
+
+## Structural racism
+
+text text
+
+
+--- .section
+
+# Conceptual Framework
+
+--- .section
+
+# Empirics
 
 --- 
 
@@ -307,20 +508,7 @@ purchased prospects?
 Partners
 
 - Funded by Joyce Foundation, Kresge Foundation
-- Pro bono partnership with a civil rights legal organization and four multinational law firms
-- Our first report to be published by [ACCEPT](https://www.acceptgroup.org/)
-
-
-
-# Literature Review
-
---- .section
-
-# Conceptual Framework
-
---- .section
-
-# Empirics
+- Pro bono partnership with four multinational law firms
 
 --- .section
 
@@ -338,39 +526,62 @@ D. Belkin.
 In: <em>The Wall Street Journal</em> (Nov. 2019).
 URL: <a href="https://www.wsj.com/articles/for-sale-sat-takers-names-colleges-buy-student-data-and-boost-exclusivity-11572976621">https://www.wsj.com/articles/for-sale-sat-takers-names-colleges-buy-student-data-and-boost-exclusivity-11572976621</a>.</cite></p>
 
-<p><a id='bib-bradley_2021'></a><a href="#cite-bradley_2021">[2]</a><cite>
-B. Bradley.
-&ldquo;Pace of mergers and acquisitions in education market jumps, new analysis finds&rdquo;.
-In: <em>Edweek Market Brief</em> (Jul. 2021).
-URL: <a href="https://marketbrief.edweek.org/marketplace-k-12/pace-mergers-acquisitions-education-market-jumps-new-analysis-finds/">https://marketbrief.edweek.org/marketplace-k-12/pace-mergers-acquisitions-education-market-jumps-new-analysis-finds/</a>.</cite></p>
+<p><a id='bib-RN4775'></a><a href="#cite-RN4775">[2]</a><cite>
+R. Benjamin.
+<em>Race after technology: Abolitionist tools for the new Jim code</em>.
+Medford, MA: Polity, 2019, p. pages cm.
+ISBN: 9781509526390 (hardback)
+9781509526406 (paperback).</cite></p>
 
-<p><a id='bib-RN4728'></a><a href="#cite-RN4728">[3]</a><cite>
-EAB.
-<em>Making your digital ads count: 15 lessons on new and emerging techniques in undergraduate recruitment marketing</em>.
-Tech. rep.
-EAB, 2018.</cite></p>
+<p><a id='bib-RN4774'></a><a href="#cite-RN4774">[3]</a><cite>
+T. M. Cottom.
+&ldquo;Where platform capitalism and racial capitalism meet: The sociology of race and racism in the digital society&rdquo;.
+In: <em>Sociology of Race and Ethnicity</em> 6.4 (2020), pp. 441-449.
+ISSN: 2332-6492.
+DOI: <a href="https://doi.org/10.1177/2332649220949473">10.1177/2332649220949473</a>.
+URL: <a href="https://doi.org/10.1177/2332649220949473">https://doi.org/10.1177/2332649220949473</a>.</cite></p>
 
-<p><a id='bib-ftc2016'></a><a href="#cite-ftc2016">[4]</a><cite>
-Federal Trade Commission.
-<em><em>&quot;Follow the lead&quot; workshop</em></em>.
-Sep. 2016.
-URL: <a href="http://www.ftc.gov/system/files/documents/reports/staff-perspective-follow-lead/staff_perspective_follow_the_lead_workshop.pdf">http://www.ftc.gov/system/files/documents/reports/staff-perspective-follow-lead/staff_perspective_follow_the_lead_workshop.pdf</a>.</cite></p>
-
-<p><a id='bib-RN4739'></a><a href="#cite-RN4739">[5]</a><cite>
+<p><a id='bib-RN4739'></a><a href="#cite-RN4739">[4]</a><cite>
 J. Howell, M. H. Hurwitz, Z. Mabel, et al.
 <em>Participation in student search service is associated with higher college enrollment and completion</em>.
 Tech. rep.
 College Board, 2021.
 URL: <a href="https://cbsearch.collegeboard.org/pdf/college-outreach-and-student-outcomes.pdf">https://cbsearch.collegeboard.org/pdf/college-outreach-and-student-outcomes.pdf</a>.</cite></p>
 
-<p><a id='bib-rogers_2014'></a><a href="#cite-rogers_2014">[6]</a><cite>
-G. Rogers.
-<em><em>Are we seeing an edu &quot;vendor shakeout&quot;?</em></em>.
-Dec. 2014.
-URL: <a href="https://www.linkedin.com/pulse/we-seeking-edu-vendor-shakeout-gil-rogers?trk=mp-reader-card">https://www.linkedin.com/pulse/we-seeking-edu-vendor-shakeout-gil-rogers?trk=mp-reader-card</a>.</cite></p>
+<p><a id='bib-list_biz'></a><a href="#cite-list_biz">[5]</a><cite>
+O. Jaquette, K. Salazar, and P. Martin.
+<em>The student list business: Primer and market dynamics</em>.
+Tech. rep.
+washington, DC: TICAS, 2022.
+URL: <a href="https://ticas.org/wp-content/uploads/2022/09/The-Student-List-Business_-Primer-and-Market-Dynamics.pdf">https://ticas.org/wp-content/uploads/2022/09/The-Student-List-Business_-Primer-and-Market-Dynamics.pdf</a>.</cite></p>
 
-<p><a id='bib-wan_2021'></a><a href="#cite-wan_2021">[7]</a><cite>
-T. Wan.
-<em><em>Hobsons' higher ed business split and sold in separate deals totaling \$410m</em></em>.
-Feb. 2021.
-URL: <a href="https://www.edsurge.com/news/2021-02-20-hobsons-higher-ed-business-split-and-sold-in-separate-deals-totaling-410m">https://www.edsurge.com/news/2021-02-20-hobsons-higher-ed-business-split-and-sold-in-separate-deals-totaling-410m</a>.</cite></p>
+<p><a id='bib-RN4815'></a><a href="#cite-RN4815">[6]</a><cite>
+J. Komljenovic.
+&ldquo;The future of value in digitalised higher education: why data privacy should not be our biggest concern&rdquo;.
+In: <em>Higher Education</em> 83.1 (2022), pp. 119-135.
+ISSN: 1573-174X.
+DOI: <a href="https://doi.org/10.1007/s10734-020-00639-7">10.1007/s10734-020-00639-7</a>.
+URL: <a href="https://doi.org/10.1007/s10734-020-00639-7">https://doi.org/10.1007/s10734-020-00639-7</a>.</cite></p>
+
+<p><a id='bib-RN4793'></a><a href="#cite-RN4793">[7]</a><cite>
+J. Komljenovic.
+&ldquo;The rise of education rentiers: digital platforms, digital data and rents&rdquo;.
+In: <em>Learning Media and Technology</em> 46.3 (2021), pp. 320-332.
+ISSN: 1743-9884.
+DOI: <a href="https://doi.org/10.1080/17439884.2021.1891422">10.1080/17439884.2021.1891422</a>.
+URL: <a href="%3CGo%20to%20ISI%3E://WOS:000620464000001">&lt;Go to ISI&gt;://WOS:000620464000001</a>.</cite></p>
+
+<p><a id='bib-RN4772'></a><a href="#cite-RN4772">[8]</a><cite>
+S. U. Noble.
+<em>Algorithms of oppression: how search engines reinforce racism</em>.
+New York: New York University Press, 2018.
+ISBN: 9781479849949 (cl alk. paper)
+9781479837243 (pb alk. paper).</cite></p>
+
+<p><a id='bib-RN4786'></a><a href="#cite-RN4786">[9]</a><cite>
+D. Norris.
+&ldquo;Embedding rrcism: City government credit ratings and the institutionalization of race in markets&rdquo;.
+In: <em>Social Problems</em> (2021).
+ISSN: 0037-7791.
+DOI: <a href="https://doi.org/10.1093/socpro/spab066">10.1093/socpro/spab066</a>.
+URL: <a href="https://doi.org/10.1093/socpro/spab066">https://doi.org/10.1093/socpro/spab066</a>.</cite></p>

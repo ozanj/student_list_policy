@@ -48,6 +48,8 @@ These only need to be specified on first slide, if a section consists of multipl
 
 If changes to figures aren't being updated, may need to clear cache/delete currently saved images:
 
+in terminal, go to root directory for student_list_policy, then type these commands in terminal
+
 ```
 rm slides/.cache/*
 rm slides/assets/fig/*

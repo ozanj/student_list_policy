@@ -24,9 +24,9 @@
 
 body {
   font-family: 'Georgia', 'EB Garamond', sans-serif;
-  font-size: 15px;
+  font-size: 18px; /* default is: font-size: 15px; */  /* if I want text size that grows/shrinks with size of screen choose em rather than xp, eg: font-size: 1.9em; */ 
   font-weight: 400;
-  line-height: 1.9em;
+  line-height: 1.7em; /* tweak with this too default is line-height: 1.9em; */
   color: #444;
   background-color: #f0f0f0;
 }
