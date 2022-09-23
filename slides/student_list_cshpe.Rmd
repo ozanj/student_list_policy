@@ -1,0 +1,779 @@
+---
+title: 'Student list biz'
+mode: selfcontained
+ext_widgets : {rCharts: [libraries/shiny]}
+framework: revealjs
+revealjs:
+  theme: 'custom'
+  transition: 'slide'
+  center: 'false'
+#bibliography: '../assets/bib/student_list_policy.bib'
+bibliography: '../assets/bib/eepa_student_list.bib'
+csl: '../assets/bib/apa.csl'
+#bibliography: '../../public_requests_eda/text/bib/eepa_student_list.bib'
+#csl: '../../public_requests_eda/text/bib/apa.csl'
+--- #title
+
+```{r}
+#setwd('../public_requests_eda')
+#getwd()
+#list.files('../public_requests_eda/text/bib')
+```
+
+
+```{r, include = F}
+knitr::opts_chunk$set(echo = F, message = F, warning = F, out.width = '90%', dpi = 300)
+
+# font size question about slidify
+  # https://github.com/ramnathv/slidify/issues/456
+
+library(xtable)
+library(RColorBrewer)
+library(patchwork)
+
+options(scipen = 999, xtable.type = 'html', xtable.include.rownames = F)
+
+
+library(slidify)
+library(slidifyLibraries)
+# slidify('slides/student_list_dognpony.Rmd')
+# slidify('slides/student_list_cshpe.Rmd')
+
+library(servr)
+# Start server: servr::httd()
+# Check if server(s) running: daemon_list()
+# Stop server(s): daemon_stop(which = daemon_list())
+
+library(knitcitations)
+
+cleanbib()
+#bib <- read.bibtex('../public_requests_eda/text/bib/eepa_student_list.bib')
+#bib <- read.bibtex('../assets/bib/student_list_policy.bib')
+bib <- read.bibtex('../assets/bib/eepa_student_list.bib')
+
+library(gridExtra) # for creating howell table
+library(tidyverse)
+library(ggbreak)
+library(scales)
+library(usmap)
+
+# Function for parenthetical citation needing `e.g.,` or have no year (ie. forthcoming)
+# b: citation(s)
+# eg: T/F - whether or not to include `e.g.,` in citation
+cite <- function(b, eg = TRUE) {
+  c <- ifelse(eg, '(e.g., ', '(')
+  for (i in seq_along(b)) {
+    if (i != 1) {
+      c <- paste0(c, '; ')
+    }
+    a <- paste(b[[i]]$author$family, collapse = ', ')
+    y <- ifelse(is.null(b[[i]]$year), 'forthcoming', b[[i]]$year)
+    entry <- paste(a, y, sep = ', ')
+    c <- paste0(c, entry)
+    record_as_cited(b[[i]])
+  }
+  paste0(c, ')')
+}
+# examples of how to use the citation functions
+  #citing multiple articles in parentheses: `r citep(bib[c('list_biz','RN4793', 'RN4815')])`
+  #add e.g. at beginning of cite: `r cite(bib[c('RN4775','RN4772')])`
+  # cite in text with author names not in parentheses: `r citet(bib['RN4739'])`
+
+load(url('https://github.com/mpatricia01/public_requests_eda/raw/main/data/tbl_fig_data_final.RData'))
+univ_status <- read_csv(url('https://github.com/mpatricia01/public_requests_eda/raw/main/data/univ_status.csv'))
+
+theme_set(
+  theme(
+    text = element_text(size = 7, family = 'Helvetica'),
+    panel.background = element_rect(fill = '#f0f0f0', color = NA),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    plot.background = element_rect(fill = '#f0f0f0', color = NA),
+    plot.title = element_text(color = '#444444', size = 7, face = 'bold', hjust = 0.5),
+    axis.ticks = element_blank(),
+    axis.title = element_text(face = 'bold'),
+    legend.background = element_rect(fill = '#f0f0f0', color = NA),
+    legend.title = element_text(face = 'bold', hjust = 0),
+    legend.key.size = unit(0.3, 'cm'),
+    strip.text.x = element_text(size = 7, face = 'bold', hjust = 0.5),
+    strip.background = element_rect(fill = NA, color = NA)
+  )
+)
+
+color_palette <- c('#46a69e', '#7ec7b8', '#b9efe6', '#bf7bb2', '#9e508a', '#537ec4', '#344273', '#fdc3bb', '#fa634b')
+extra_colors <- c('#b5b5b5', '#767676')
+color_text <- 'white'
+
+num_orders <- nrow(orders_df)
+num_orders_w_list <- sum(orders_df$order_num %in% lists_df_summary$ord_num)
+num_orders_no_list <- num_orders - num_orders_w_list
+num_univs_orders <- length(unique(orders_df$univ_id))
+
+num_lists <- length(na.omit(lists_df_summary$ord_num))
+num_univs_lists <- length(unique(lists_df_summary$univ_id))
+
+num_prospects <- sum(lists_df_summary$n)
+num_prospects_w_order <- sum((lists_df_summary %>% filter(ord_num %in% orders_df$order_num))$n)
+num_prospects_no_order <- sum((lists_df_summary %>% filter(!ord_num %in% orders_df$order_num))$n)
+
+univs_summary <- orders_df %>% 
+  select(univ_id, univ_name, univ_type) %>% 
+  distinct() %>% mutate(has_order = T) %>% 
+  left_join(
+    lists_df_summary %>% 
+      select(univ_id) %>% 
+      distinct() %>% 
+      mutate(has_list = T)
+    , by = 'univ_id'
+  )
+
+# RQ1
+num_univs_orders_research <- sum(orders_prospects_purchased$univ_type == 'research')
+num_univs_orders_regional <- sum(orders_prospects_purchased$univ_type == 'regional')
+
+num_orders_research <- sum((orders_prospects_purchased %>% filter(univ_type == 'research'))$total_orders)
+num_orders_regional <- sum((orders_prospects_purchased %>% filter(univ_type == 'regional'))$total_orders)
+
+orders_filters_totals <- orders_filters %>% 
+  filter(is_asu == 'all') %>% 
+  mutate(category = str_c(univ_type, filters, sep = '_'), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(category, pct) %>% 
+  deframe()
+
+# RQ2
+rq2_race_research_outofstate <- rq2_race %>% 
+  filter(univ_type == 'research', region == 'domestic', locale == 'outofstate') %>%
+  mutate(race = as_factor(stu_race_cb), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+rq2_race_research_outofstate_full <- rq2_race_full %>% 
+  filter(univ_type == 'research', region == 'domestic', locale == 'outofstate') %>%
+  mutate(race = if_else(is.na(stu_race_cb), 'unknown', as.character(as_factor(stu_race_cb))), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+rq2_race_research_instate <- rq2_race %>% 
+  filter(univ_type == 'research', region == 'domestic', locale == 'instate') %>%
+  mutate(race = as_factor(stu_race_cb), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+rq2_race_research_instate_full <- rq2_race_full %>% 
+  filter(univ_type == 'research', region == 'domestic', locale == 'instate') %>%
+  mutate(race = if_else(is.na(stu_race_cb), 'unknown', as.character(as_factor(stu_race_cb))), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+rq2_race_regional_instate <- rq2_race %>% 
+  filter(univ_type == 'regional', region == 'domestic', locale == 'instate') %>%
+  mutate(race = as_factor(stu_race_cb), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+rq2_race_regional_instate_full <- rq2_race_full %>% 
+  filter(univ_type == 'regional', region == 'domestic', locale == 'instate') %>%
+  mutate(race = if_else(is.na(stu_race_cb), 'unknown', as.character(as_factor(stu_race_cb))), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+rq2_locale_research_outofstate <- rq2_locale %>% 
+  filter(univ_type == 'research', region == 'domestic', locale == 'outofstate') %>%
+  mutate(pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(locale_text, pct) %>% 
+  deframe()
+
+rq2_locale_research_instate <- rq2_locale %>% 
+  filter(univ_type == 'research', region == 'domestic', locale == 'instate') %>%
+  mutate(pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(locale_text, pct) %>% 
+  deframe()
+
+rq2_locale_regional_instate <- rq2_locale %>% 
+  filter(univ_type == 'regional', region == 'domestic', locale == 'instate') %>%
+  mutate(pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(locale_text, pct) %>% 
+  deframe()
+
+# RQ3
+rq3_poc <- round(rq3 %>% filter(row_subj %in% c('pct_black', 'pct_latinx', 'pct_aian')) %>% select(-row_subj) %>% colSums() * 100)
+
+rq3_income <- prettyNum(round(rq3 %>% filter(row_subj == 'med_income') %>% select(-row_subj) / 1e3) * 1e3, ',')
+
+rq3_instate <- round(rq3 %>% filter(row_subj == 'pct_instate') %>% select(-row_subj) * 100)
+rq3_outofstate <- round(rq3 %>% filter(row_subj == 'pct_outofstate') %>% select(-row_subj) * 100)
+
+asu_la_totals <- asu_la_full %>%
+  group_by(ord_type, in_zip_top10pct) %>% 
+  summarise(count = sum(count)) %>% 
+  ungroup() %>% 
+  mutate(category = str_c(ord_type, if_else(in_zip_top10pct == 1, 'top10', 'bottom90'), sep = '_')) %>% 
+  select(category, count) %>% 
+  deframe()
+
+asu_la_psat_high_top10 <- asu_la %>% 
+  filter(ord_type == 'psat_high', in_zip_top10pct == 1) %>%
+  mutate(race = as_factor(stu_race_cb), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+asu_la_psat_high_top10_full <- asu_la_full %>% 
+  filter(ord_type == 'psat_high', in_zip_top10pct == 1) %>%
+  mutate(race = if_else(is.na(stu_race_cb), 'unknown', as.character(as_factor(stu_race_cb))), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+asu_la_psat_high_bottom90 <- asu_la %>% 
+  filter(ord_type == 'psat_high', in_zip_top10pct == 0) %>%
+  mutate(race = as_factor(stu_race_cb), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+asu_la_psat_high_bottom90_full <- asu_la_full %>% 
+  filter(ord_type == 'psat_high', in_zip_top10pct == 0) %>%
+  mutate(race = if_else(is.na(stu_race_cb), 'unknown', as.character(as_factor(stu_race_cb))), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+asu_la_psat_med_top10 <- asu_la %>% 
+  filter(ord_type == 'psat_med', in_zip_top10pct == 1) %>%
+  mutate(race = as_factor(stu_race_cb), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+asu_la_psat_med_top10_full <- asu_la_full %>% 
+  filter(ord_type == 'psat_med', in_zip_top10pct == 1) %>%
+  mutate(race = if_else(is.na(stu_race_cb), 'unknown', as.character(as_factor(stu_race_cb))), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+asu_la_psat_med_bottom90 <- asu_la %>% 
+  filter(ord_type == 'psat_med', in_zip_top10pct == 0) %>%
+  mutate(race = as_factor(stu_race_cb), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+asu_la_psat_med_bottom90_full <- asu_la_full %>% 
+  filter(ord_type == 'psat_med', in_zip_top10pct == 0) %>%
+  mutate(race = if_else(is.na(stu_race_cb), 'unknown', as.character(as_factor(stu_race_cb))), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+asu_la_psat_low_top10 <- asu_la %>% 
+  filter(ord_type == 'psat_low', in_zip_top10pct == 1) %>%
+  mutate(race = as_factor(stu_race_cb), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+asu_la_psat_low_top10_full <- asu_la_full %>% 
+  filter(ord_type == 'psat_low', in_zip_top10pct == 1) %>%
+  mutate(race = if_else(is.na(stu_race_cb), 'unknown', as.character(as_factor(stu_race_cb))), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+asu_la_psat_low_bottom90 <- asu_la %>% 
+  filter(ord_type == 'psat_low', in_zip_top10pct == 0) %>%
+  mutate(race = as_factor(stu_race_cb), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+asu_la_psat_low_bottom90_full <- asu_la_full %>% 
+  filter(ord_type == 'psat_low', in_zip_top10pct == 0) %>%
+  mutate(race = if_else(is.na(stu_race_cb), 'unknown', as.character(as_factor(stu_race_cb))), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+asu_la_sat_med_top10 <- asu_la %>% 
+  filter(ord_type == 'sat_med', in_zip_top10pct == 1) %>%
+  mutate(race = as_factor(stu_race_cb), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+asu_la_sat_med_top10_full <- asu_la_full %>% 
+  filter(ord_type == 'sat_med', in_zip_top10pct == 1) %>%
+  mutate(race = if_else(is.na(stu_race_cb), 'unknown', as.character(as_factor(stu_race_cb))), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  add_row(race = 'unknown', pct = 0) %>%
+  deframe()
+
+asu_la_sat_med_bottom90 <- asu_la %>% 
+  filter(ord_type == 'sat_med', in_zip_top10pct == 0) %>%
+  mutate(race = as_factor(stu_race_cb), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+asu_la_sat_med_bottom90_full <- asu_la_full %>% 
+  filter(ord_type == 'sat_med', in_zip_top10pct == 0) %>%
+  mutate(race = if_else(is.na(stu_race_cb), 'unknown', as.character(as_factor(stu_race_cb))), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(race, pct) %>% 
+  deframe()
+
+uiuc_totals <- uiuc_race_full %>%
+  filter(ord_type == 'prospect') %>% 
+  group_by(cbsa_code, cbsa_name) %>% 
+  summarise(count = sum(count)) %>% 
+  ungroup() %>% 
+  mutate(category = recode(cbsa_code, '31080' = 'la', '35620' = 'ny', '37980' = 'philly', '47900' = 'dc')) %>% 
+  select(category, count) %>% 
+  deframe()
+
+uiuc_race_pct <- uiuc_race %>% 
+  mutate(category = str_c(recode(cbsa_code, '31080' = 'la', '35620' = 'ny', '37980' = 'philly', '47900' = 'dc'), ord_type, race, sep = '_'), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(category, pct) %>% 
+  deframe()
+
+uiuc_race_full_pct <- uiuc_race_full %>% 
+  mutate(category = str_c(recode(cbsa_code, '31080' = 'la', '35620' = 'ny', '37980' = 'philly', '47900' = 'dc'), ord_type, race, sep = '_'), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(category, pct) %>% 
+  deframe()
+
+uiuc_income_2564 <- uiuc_income %>% 
+  mutate(category = str_c(recode(cbsa_code, '31080' = 'la', '35620' = 'ny', '37980' = 'philly', '47900' = 'dc'), ord_type, sep = '_'), income_2564 = prettyNum(round(income_2564 / 1e3) * 1e3, ',')) %>% 
+  select(category, income_2564) %>% 
+  deframe()
+
+ucsd_all_race_pct <- ucsd_all_race %>% 
+  mutate(category = str_c(ord_type, race, sep = '_'), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(category, pct) %>% 
+  deframe()
+
+ucsd_all_race_full_pct <- ucsd_all_race_full %>% 
+  mutate(category = str_c(ord_type, race, sep = '_'), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(category, pct) %>% 
+  deframe()
+
+ucsd_totals <- ucsd_race_full %>%
+  group_by(cbsa_code, cbsa_name, ord_type) %>% 
+  summarise(count = sum(count)) %>% 
+  ungroup() %>% 
+  mutate(category = str_c(recode(cbsa_code, '12060' = 'atl', '16980' = 'chicago', '35620' = 'ny', '42660' = 'seattle'), ord_type, sep = '_')) %>% 
+  select(category, count) %>% 
+  deframe()
+
+ucsd_race_pct <- ucsd_race %>% 
+  mutate(category = str_c(recode(cbsa_code, '12060' = 'atl', '16980' = 'chicago', '35620' = 'ny', '42660' = 'seattle'), ord_type, race, sep = '_'), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(category, pct) %>% 
+  deframe()
+
+ucsd_race_full_pct <- ucsd_race_full %>% 
+  mutate(category = str_c(recode(cbsa_code, '12060' = 'atl', '16980' = 'chicago', '35620' = 'ny', '42660' = 'seattle'), ord_type, race, sep = '_'), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(category, pct) %>% 
+  deframe()
+
+ucsd_income_2564 <- ucsd_income %>% 
+  mutate(category = str_c(recode(cbsa_code, '12060' = 'atl', '16980' = 'chicago', '35620' = 'ny', '42660' = 'seattle'), ord_type, sep = '_'), income_2564 = prettyNum(round(income_2564 / 1e3) * 1e3, ',')) %>% 
+  select(category, income_2564) %>% 
+  deframe()
+
+poc_totals <- poc_cb %>%
+  group_by(cbsa_code, cbsa_name) %>% 
+  summarise(count = sum(count)) %>% 
+  ungroup() %>% 
+  mutate(category = recode(cbsa_code, '26420' = 'houston', '33100' = 'miami', '35620' = 'ny')) %>% 
+  select(category, count) %>% 
+  deframe()
+
+poc_cb_pct <- poc_cb %>% 
+  mutate(category = str_c(recode(cbsa_code, '26420' = 'houston', '33100' = 'miami', '35620' = 'ny'), race, sep = '_'), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(category, pct) %>% 
+  deframe()
+
+poc_common_pct <- poc_common %>% 
+  mutate(category = str_c(recode(cbsa_code, '26420' = 'houston', '33100' = 'miami', '35620' = 'ny'), race, sep = '_'), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(category, pct) %>% 
+  deframe()
+
+poc_hs_pct <- poc_hs %>% 
+  mutate(category = str_c(recode(cbsa_code, '26420' = 'houston', '33100' = 'miami', '35620' = 'ny'), ord_type, control, sep = '_'), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(category, pct) %>% 
+  deframe()
+
+poc_race_pct <- poc_race %>% 
+  mutate(category = str_c(recode(cbsa_code, '26420' = 'houston', '33100' = 'miami', '35620' = 'ny'), ord_type, race, sep = '_'), pct = if_else(pct < 0.01, round(pct * 100, 1), round(pct * 100))) %>% 
+  select(category, pct) %>% 
+  deframe()
+
+poc_income_2564 <- poc_income %>% 
+  mutate(category = str_c(recode(cbsa_code, '26420' = 'houston', '33100' = 'miami', '35620' = 'ny'), ord_type, sep = '_'), income_2564 = prettyNum(round(income_2564 / 1e3) * 1e3, ',')) %>% 
+  select(category, income_2564) %>% 
+  deframe()
+```
+
+
+# A Sociological Analysis of Structural Racism in Student List Products
+
+<div id='authors'>
+  <div><p>Ozan Jaquette</p><span class='affiliation'>UCLA</span></div>
+  <div><p>Karina Salazar</p><span class='affiliation'>University of Arizona</span></div>
+  <div><p>Crystal Han</p><span class='affiliation'>Stanford</span></div>
+  <div><p>Patrica Martín</p><span class='affiliation'>UCLA</span></div>
+</div>
+
+
+--- .section
+
+# Introduction
+
+
+---
+
+# College Board Search and student outcomes
+## `r citet(bib['RN4739'])`
+
+```{r cb-fig, fig.height = 5}
+create_cb_figure <- function(categories, values, plot_title, fill_values = rev(color_palette[1:2])) {
+  cb_fig_df <- data.frame(
+    category = rep(categories, each = 2),
+    subcategory = rep(c('Not Licensed', 'Gain from being Licensed'), length(categories)), 
+    value = values
+  )
+  
+  cb_fig_df$category <- factor(cb_fig_df$category, levels = categories)
+  
+  cb_fig_df %>%
+    left_join(
+      cb_fig_df %>%
+        pivot_wider(id_cols = category, names_from = subcategory, values_from = value) %>%
+        mutate(
+          total = `Not Licensed` + `Gain from being Licensed`,
+          pct_change = `Gain from being Licensed` / `Not Licensed` * 100
+        ),
+      by = 'category') %>% 
+    ggplot(aes(x = category, y = value, fill = subcategory, width = 0.6)) +
+    geom_bar(position = 'stack', stat = 'identity') +
+    geom_text(aes(y = value, label = if_else(subcategory == 'Not Licensed', str_c(sprintf('%.1f', value), '%'), '')), color = color_text, size = 2, position = position_stack(vjust = 0.5)) +
+    geom_text(aes(y = total + 3, label = if_else(subcategory == 'Not Licensed', str_c('(', sprintf('%.1f', pct_change), '%)'), '')), color = '#444444', size = 2) +
+    geom_text(aes(y = total + 7, label = if_else(subcategory == 'Not Licensed', str_c(sprintf('%.1f', `Gain from being Licensed`), 'pp'), '')), color = '#444444', size = 2) +
+    ggtitle(plot_title) +
+    xlab('') + ylab('') + 
+    scale_y_continuous(expand = expansion(mult = c(0, 0.05)), limits = c(0, 80)) +
+    scale_fill_manual(values = fill_values) +
+    theme(
+        plot.margin = margin(t = 0.6, unit = 'cm'),
+        panel.grid.major.y = element_line(size = 0.1, color = 'gray'),
+        legend.title = element_blank(),
+        legend.position = 'bottom',
+        legend.margin = margin(t = -0.5, unit = 'cm'),
+        legend.text = element_text(margin = margin(r = 0.2, unit = 'cm'))
+      ) +
+      guides(fill = guide_legend(reverse = T))
+}
+
+grid.arrange(
+  create_cb_figure(
+    c('Overall', 'Asian', 'Black', 'Hispanic', 'AI/AN', 'HI/PI', 'White'),
+    c(32.8, 8.3, 37.5, 5.7, 31.8, 7.8, 24.1, 8.3, 26.5, 6.3, 22.2, 5.8, 44.4, 9.6),
+    'Enrollment'
+  ),
+  create_cb_figure(
+    c('Overall', 'Asian', 'Black', 'Hispanic', 'AI/AN', 'White'),
+    c(15.7, 4.9, 17.7, 5.0, 7.2, 2.9, 6.7, 2.9, 8.7, 4.2, 24.0, 6.7),
+    'BA Completion within 4 Years'
+  ),
+  create_cb_figure(
+    c('Overall', 'No College', 'College,\nNo BA', 'College,\nBA or Higher'),
+    c(32.8, 8.3, 24.9, 10.1, 36.5, 11.0, 53.4, 10.1),
+    'Enrollment'
+  ),
+  create_cb_figure(
+    c('Overall', 'No College', 'College,\nNo BA', 'College,\nBA or Higher'),
+    c(15.7, 4.9, 13.6, 6.8, 21.3, 8.5, 39.9, 10.1),
+    'BA Completion within 4 Years'
+  ),
+  ncol = 2
+)
+```
+
+
+---
+
+## Scholarship on college access
+
+Extant literatures
+
+- Student behavior
+- Effects of federal, state, and local policies
+- Behavior of schools and postsecondary institutions (PSIs)
+  - Scholarship on enrollment management fits here
+      - Scholarship on admissions fits here
+
+<br>
+
+Third-party providers (the other for-profit industry)
+
+- Schools and PSIs outsource functions to vendors and consultancies `r citep(bib[c('list_biz','RN4793', 'RN4815')])`
+- Scholars have not investigated how third-party produces and services structure college access
+
+<br>
+Developing a literature about algorithmic products
+
+- Literature at the intersections of access, enrollment management, and edtech
+- Analyze products purchased by schools and PSIs
+- Analyze the organizations that sell these products
+
+
+
+<br>
+This study constructs and deconstructs student list products sold by College Board
+
+---
+
+## Structural racism in algorithmic products
+
+Structural racism
+
+- Processes viewed as neutral or common-sense that systematicallyadvantage disadvantage marginalized groups
+
+<br>
+Scholarship from critical data studies `r cite(bib[c('RN4775','RN4772')])` and sociology of race `r cite(bib[c('RN4774','RN4786')])`
+
+- Algorithmic products are not race neutral
+
+<br>
+Algorithmic products reproduce/increase racial inequality by utilizing *structurally racist inputs*
+
+- Seemingly neutral inputs that correlate with race because of historical exclusion from this input (e.g., EXAMPLE)
+
+<br>
+This study
+
+- **RQ**: What is the relationship between student list search filters (e.g., test score range, zip code) and the characteristics of students who are included vs. excluded by student list purchases?
+- Analyze student lists purchased from College Board
+- Focus on race and class inequality in which prospects are included/excluded by student list purchases
+
+
+
+
+
+
+--- .section
+
+# Background: Student Lists
+
+
+--- .subsection
+
+# Lists vis-a-vis recruiting
+
+---
+
+## The US market for higher education
+
+
+A national voucher system
+- Tuition revenue: household savings; grants and loans from federal, state, and private sources
+- Tuition revenue follows students to Title IV institutions
+
+<br>
+Students
+- Goal: want to attend college
+- Problem: don't know all options, where they would be admitted, how much it will cost
+
+<br>
+Universities
+- Goal: enroll students to survive and other enrollment goals
+- Problem: can't rely solely on students who reach out on their own; don't know the prospects or how to contact them
+
+
+<br>
+
+Student lists
+- A matchmaking intermediary that connects institutions to prospects
+- "lead generation"
+  - Student lists are an example of list-based leads, based on direct mail
+  - As opposed to behavioral-based leads (e.g., ads from Google Search)
+
+
+
+--- &twocol
+
+## The enrollment funnel
+
+*** =left
+
+Prospects
+
+- Population of desirable potential students
+
+Leads
+
+- Prospects whose contact info has been obtained
+
+Inquiries
+
+- Prospects who have contacted the institution
+  - Institution as first contact (leads)
+  - Student as first contact
+
+<br>
+Interventions along the funnel
+
+- Convert prospects to leads
+  - purchase student lists
+- Convert leads/inquiries to applicants
+  - Email, mail, targeted social media
+- Convert admits to enrolles
+  - Financial aid packages
+
+*** =right
+
+<center>**The enrollment funnel**</center>
+
+<br>
+
+<img src="../assets/images/enrollment_funnel.png" alt="Enrollment Funnel" style="width:80%;margin:0 auto;">
+
+Source: [pngwing.com](https://www.pngwing.com/en/free-png-krrpy)
+
+
+
+
+---
+
+# College Board and ACT lists
+## Data sources and list contents
+
+College Board and ACT have been largest student list vendors for several decades
+
+- College Board "Student Search Service" created in 1972 `r citep(bib['belkin2019-studata'])`
+- ACT "Educational Opportunity Service"
+  - ACT acquired National Research Center for College and University (NRCCUA) in 2018
+  - Student list products part of new "Encoura Data Lab"
+
+<br>
+Source of student list data
+
+- From database of test takers (e.g., PSAT, SAT, AP, PreACT, ACT)
+  - Pre-test questionnaire (e.g., demographic, preferences about college)
+- More recently, from college search engines (e.g., College Board Big Future)
+- Students have opportunity to opt in or opt out of student list products
+
+<br>
+Pricing
+
+- Historically, a price-per-prospect model
+- ACT moved to subscription pricing with [creation of Encoura](https://encoura.org/combined-data-set/)
+- College Board currently charges \$0.50 per name, but [moving to subscription pricing](https://cbsearch.collegeboard.org/pdf/2022-23-subscription-plan-pricing.pdf) too
+
+<br>
+What information does a list contain
+- Contact, demographic, college preferences, limited academic achievement
+- College Board template [HERE](https://drive.google.com/file/d/1Qvc_QRi9izEF1W78Lh4nNi5NsXjCZqUE/view)
+- ACT template [HERE](https://drive.google.com/file/d/1rsP45OyOsnPYhV8uWYKDAy_spGhjj6aj/view)
+
+
+--- 
+
+## Buying student lists
+
+"Search filters" allow universities to control which prospects included/excluded from a purchase
+
+<br>
+Commonly used search filters ([Link to ACT filters](https://helpcenter.encoura.org/hc/en-us/articles/360035260452-Prospect-Search-Filters-))
+
+- Graduation year, HS GPA, test score range, gender, race/ethnicity, geography (e.g., state, zip-code, "geomarket"), intended major
+
+<br>
+
+New filters based on predictive analytics to facilitate micro-targeting ("efficient" name buys of "right fit" students)
+
+- College Board "geodemographic" filters
+  - Target prospects based on historical college-going behavior of students at the school/neighborhood
+- ACT "enrollment predictor"
+  - Target prospects based on their predicted probability of enrolling at your institution
+
+
+
+--- .subsection
+
+# EM Market dynamics
+
+
+--- 
+
+## Dynamics shaping the market for student list data
+
+
+From [The Student List Business: Primer and market dynamics](https://ticas.org/wp-content/uploads/2022/09/The-Student-List-Business_-Primer-and-Market-Dynamics.pdf) `r citep(bib[c('list_biz')])`
+
+<br>
+
+1. **Centrality of enrollment management (EM) consulting firms**
+  - Purchase student lists on behalf of universities
+  - Names are input to firm predictive models and recruiting interventions
+<br>
+
+1. **Competition then concentration**
+  - Competition in the 2000s
+      - new technology yields new sources of student list data (e.g., college search engines; software used by high schools)
+      - entry by new vendors (e.g., Zinch)
+  - Concentration in the 2010s
+      - horizontal acquisitions in EM consulting industry (e.g., RuffaloCODY acquires Noel-Levitz)
+      - Vertical acquisitions transform market for student list data (e.g., PowerSchool acquires Naviance/Intersect from Hobsons; EAB acquires Cappex)
+          - Leverage control over pool of names to sell software-as-service products
+<br>
+
+1. **Incumbents College Board and ACT evolve amidst threats**
+  - Create new search filters that aid micro-targeting of prospects
+  - Leverage names database to sell EM consulting
+  - Test-optional threatens competitive advantage in coverage
+  - Create/buy college search engines
+
+--- 
+
+## Project overview
+
+Data collection
+
+- Issued public records requests to all public universities in four states (CA, IL, MN, TX)
+- Target student list vendors
+  - College Board, ACT
+- Data collection began February 2020  
+  - Seeking student lists purchased from 2016-2020
+
+<br>
+For each purchased list, sought two pieces of data
+
+1. "Order summary" specifying search filter criteria ([LINK](https://drive.google.com/file/d/1gPZ-WWw0gdFT7VtzBN3hKLnj2DzoaqnY/view))
+1. De-identified prospect-level student list ([LINK](https://drive.google.com/file/d/1Qvc_QRi9izEF1W78Lh4nNi5NsXjCZqUE/view))
+
+<br>
+Empirical research questions
+
+1. Which filter criteria were selected in student lists purchases?
+1. What are the characteristics of prospects included in student lists purchases?
+1. What is the relationship between student list filter criteria and the characteristics of
+purchased prospects?
+
+<br>
+Partners
+
+- Funded by Joyce Foundation, Kresge Foundation
+- Pro bono partnership with a civil rights legal organization and four multinational law firms
+- Our first report to be published by [ACCEPT](https://www.acceptgroup.org/)
+
+
+
+# Literature Review
+
+--- .section
+
+# Conceptual Framework
+
+--- .section
+
+# Empirics
+
+--- .section
+
+# Discussion
+
+
+--- #references
+
+# References
+## &nbsp;
+
+```{r results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+bibliography('html')
+````

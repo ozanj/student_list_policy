@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+  <meta charset="utf-8">
+  <title>Student list biz</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/reveal.min.css">
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/theme/custom.css" id="theme">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" id="theme">
+  
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+    var query_id = window.location.search.match(/univ_id=(\d{6})/);
+    document.write( '<link rel="stylesheet" href="libraries/frameworks/revealjs/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css">' );
+  </script>
+  
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->  
+  <script>var verticalSlide = 4;</script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section class='slide horizontal ' data-state='slide-horizontal' id='title'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h1>A Sociological Analysis of Structural Racism in Student List Products</h1>
+  <hr />
+  <div id='authors'>
+  <div><p>Ozan Jaquette</p><span class='affiliation'>UCLA</span></div>
+  <div><p>Karina Salazar</p><span class='affiliation'>University of Arizona</span></div>
+  <div><p>Crystal Han</p><span class='affiliation'>Stanford</span></div>
+  <div><p>Patrica Martín</p><span class='affiliation'>UCLA</span></div>
+</div>
+
+  
+  
+  <div class="modal">
+    <span class="close">&times;</span>
+    <h3></h3>
+    <img />
+    <p></p>
+  </div>
+</section>
+<section class='slide horizontal section' data-state='slide-horizontal' id='slide-2'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h1>Introduction</h1>
+  <hr />
+  
+  
+  
+  <div class="modal">
+    <span class="close">&times;</span>
+    <h3></h3>
+    <img />
+    <p></p>
+  </div>
+</section>
+<section class='slide horizontal ' data-state='slide-horizontal' id='slide-3'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h1>College Board Search and student outcomes</h1>
+  <hr />
+  <h2>Howell, Hurwitz, Mabel, et al. (2021)</h2>
+
+<p><img src="assets/fig/cb-fig-1.png" alt="plot of chunk cb-fig" width="90%" /></p>
+
+  
+  
+  <div class="modal">
+    <span class="close">&times;</span>
+    <h3></h3>
+    <img />
+    <p></p>
+  </div>
+</section>
+<section class='slide horizontal ' data-state='slide-horizontal' id='slide-4'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h2>Scholarship on college access</h2>
+  <hr />
+  <p>Extant literatures</p>
+
+<ul>
+<li>Student behavior</li>
+<li>Effects of federal, state, and local policies</li>
+<li>Behavior of schools and postsecondary institutions (PSIs)
+
+<ul>
+<li>Scholarship on enrollment management fits here
+
+<ul>
+<li>Scholarship on admissions fits here</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p><br></p>
+
+<p>Third-party providers (the other for-profit industry)</p>
+
+<ul>
+<li>Schools and PSIs outsource functions to vendors and consultancies (Jaquette, Salazar, and Martin, 2022; Komljenovic, 2021; Komljenovic, 2022)</li>
+<li>Scholars have not investigated how third-party produces and services structure college access</li>
+</ul>
+
+<p><br>
+Developing a literature about algorithmic products</p>
+
+<ul>
+<li>Literature at the intersections of access, enrollment management, and edtech</li>
+<li>Analyze products purchased by schools and PSIs</li>
+<li>Analyze the organizations that sell these products</li>
+</ul>
+
+<p><br>
+This study constructs and deconstructs student list products sold by College Board</p>
+
+  
+  
+  <div class="modal">
+    <span class="close">&times;</span>
+    <h3></h3>
+    <img />
+    <p></p>
+  </div>
+</section>
+<section class='slide horizontal ' data-state='slide-horizontal' id='slide-5'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h2>Structural racism in algorithmic products</h2>
+  <hr />
+  <p>Structural racism</p>
+
+<ul>
+<li>Processes viewed as neutral or common-sense that systematicallyadvantage disadvantage marginalized groups</li>
+</ul>
+
+<p><br>
+Scholarship from critical data studies (e.g., Benjamin, 2019; Noble, 2018) and sociology of race (e.g., Cottom, 2020; Norris, 2021)</p>
+
+<ul>
+<li>Algorithmic products are not race neutral</li>
+</ul>
+
+<p><br>
+Algorithmic products reproduce/increase racial inequality by utilizing <em>structurally racist inputs</em></p>
+
+<ul>
+<li>Seemingly neutral inputs that correlate with race because of historical exclusion from this input (e.g., EXAMPLE)</li>
+</ul>
+
+<p><br>
+This study</p>
+
+<ul>
+<li><strong>RQ</strong>: What is the relationship between student list search filters (e.g., test score range, zip code) and the characteristics of students who are included vs. excluded by student list purchases?</li>
+<li>Analyze student lists purchased from College Board</li>
+<li>Focus on race and class inequality in which prospects are included/excluded by student list purchases</li>
+</ul>
+
+  
+  
+  <div class="modal">
+    <span class="close">&times;</span>
+    <h3></h3>
+    <img />
+    <p></p>
+  </div>
+</section>
+<section class='slide horizontal section' data-state='slide-horizontal' id='slide-6'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h1>Background: Student Lists</h1>
+  <hr />
+  
+  
+  
+  <div class="modal">
+    <span class="close">&times;</span>
+    <h3></h3>
+    <img />
+    <p></p>
+  </div>
+</section>
+<section class='slide horizontal subsection' data-state='slide-horizontal' id='slide-7'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h1>Lists vis-a-vis recruiting</h1>
+  <hr />
+  
+  
+  
+  <div class="modal">
+    <span class="close">&times;</span>
+    <h3></h3>
+    <img />
+    <p></p>
+  </div>
+</section>
+<section class='slide horizontal ' data-state='slide-horizontal' id='slide-8'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h2>The US market for higher education</h2>
+  <hr />
+  <p>A national voucher system</p>
+
+<ul>
+<li>Tuition revenue: household savings; grants and loans from federal, state, and private sources</li>
+<li>Tuition revenue follows students to Title IV institutions</li>
+</ul>
+
+<p><br>
+Students</p>
+
+<ul>
+<li>Goal: want to attend college</li>
+<li>Problem: don&#39;t know all options, where they would be admitted, how much it will cost</li>
+</ul>
+
+<p><br>
+Universities</p>
+
+<ul>
+<li>Goal: enroll students to survive and other enrollment goals</li>
+<li>Problem: can&#39;t rely solely on students who reach out on their own; don&#39;t know the prospects or how to contact them</li>
+</ul>
+
+<p><br></p>
+
+<p>Student lists</p>
+
+<ul>
+<li>A matchmaking intermediary that connects institutions to prospects</li>
+<li>&quot;lead generation&quot;
+
+<ul>
+<li>Student lists are an example of list-based leads, based on direct mail</li>
+<li>As opposed to behavioral-based leads (e.g., ads from Google Search)</li>
+</ul></li>
+</ul>
+
+  
+  
+  <div class="modal">
+    <span class="close">&times;</span>
+    <h3></h3>
+    <img />
+    <p></p>
+  </div>
+</section>
+<section class='slide ' data-state='slide-horizontal' id='slide-9'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h2>The enrollment funnel</h2>
+  <hr />
+  
+  <div class='left' style='float:left;width:48%'>
+   <p>Prospects</p>
+
+<ul>
+<li>Population of desirable potential students</li>
+</ul>
+
+<p>Leads</p>
+
+<ul>
+<li>Prospects whose contact info has been obtained</li>
+</ul>
+
+<p>Inquiries</p>
+
+<ul>
+<li>Prospects who have contacted the institution
+
+<ul>
+<li>Institution as first contact (leads)</li>
+<li>Student as first contact</li>
+</ul></li>
+</ul>
+
+<p><br>
+Interventions along the funnel</p>
+
+<ul>
+<li>Convert prospects to leads
+
+<ul>
+<li>purchase student lists</li>
+</ul></li>
+<li>Convert leads/inquiries to applicants
+
+<ul>
+<li>Email, mail, targeted social media</li>
+</ul></li>
+<li>Convert admits to enrolles
+
+<ul>
+<li>Financial aid packages</li>
+</ul></li>
+</ul>
+
+  </div>
+  <div class='right' style='float:right;width:48%'>
+   <p><center><strong>The enrollment funnel</strong></center></p>
+
+<p><br></p>
+
+<p><img src="../assets/images/enrollment_funnel.png" alt="Enrollment Funnel" style="width:80%;margin:0 auto;"></p>
+
+<p>Source: <a href="https://www.pngwing.com/en/free-png-krrpy">pngwing.com</a></p>
+
+  </div>
+</section>
+<section class='slide horizontal ' data-state='slide-horizontal' id='slide-10'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h1>College Board and ACT lists</h1>
+  <hr />
+  <h2>Data sources and list contents</h2>
+
+<p>College Board and ACT have been largest student list vendors for several decades</p>
+
+<ul>
+<li>College Board &quot;Student Search Service&quot; created in 1972 (Belkin, 2019)</li>
+<li>ACT &quot;Educational Opportunity Service&quot;
+
+<ul>
+<li>ACT acquired National Research Center for College and University (NRCCUA) in 2018</li>
+<li>Student list products part of new &quot;Encoura Data Lab&quot;</li>
+</ul></li>
+</ul>
+
+<p><br>
+Source of student list data</p>
+
+<ul>
+<li>From database of test takers (e.g., PSAT, SAT, AP, PreACT, ACT)
+
+<ul>
+<li>Pre-test questionnaire (e.g., demographic, preferences about college)</li>
+</ul></li>
+<li>More recently, from college search engines (e.g., College Board Big Future)</li>
+<li>Students have opportunity to opt in or opt out of student list products</li>
+</ul>
+
+<p><br>
+Pricing</p>
+
+<ul>
+<li>Historically, a price-per-prospect model</li>
+<li>ACT moved to subscription pricing with <a href="https://encoura.org/combined-data-set/">creation of Encoura</a></li>
+<li>College Board currently charges $0.50 per name, but <a href="https://cbsearch.collegeboard.org/pdf/2022-23-subscription-plan-pricing.pdf">moving to subscription pricing</a> too</li>
+</ul>
+
+<p><br>
+What information does a list contain</p>
+
+<ul>
+<li>Contact, demographic, college preferences, limited academic achievement</li>
+<li>College Board template <a href="https://drive.google.com/file/d/1Qvc_QRi9izEF1W78Lh4nNi5NsXjCZqUE/view">HERE</a></li>
+<li>ACT template <a href="https://drive.google.com/file/d/1rsP45OyOsnPYhV8uWYKDAy_spGhjj6aj/view">HERE</a></li>
+</ul>
+
+  
+  
+  <div class="modal">
+    <span class="close">&times;</span>
+    <h3></h3>
+    <img />
+    <p></p>
+  </div>
+</section>
+<section class='slide horizontal ' data-state='slide-horizontal' id='slide-11'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h2>Buying student lists</h2>
+  <hr />
+  <p>&quot;Search filters&quot; allow universities to control which prospects included/excluded from a purchase</p>
+
+<p><br>
+Commonly used search filters (<a href="https://helpcenter.encoura.org/hc/en-us/articles/360035260452-Prospect-Search-Filters-">Link to ACT filters</a>)</p>
+
+<ul>
+<li>Graduation year, HS GPA, test score range, gender, race/ethnicity, geography (e.g., state, zip-code, &quot;geomarket&quot;), intended major</li>
+</ul>
+
+<p><br></p>
+
+<p>New filters based on predictive analytics to facilitate micro-targeting (&quot;efficient&quot; name buys of &quot;right fit&quot; students)</p>
+
+<ul>
+<li>College Board &quot;geodemographic&quot; filters
+
+<ul>
+<li>Target prospects based on historical college-going behavior of students at the school/neighborhood</li>
+</ul></li>
+<li>ACT &quot;enrollment predictor&quot;
+
+<ul>
+<li>Target prospects based on their predicted probability of enrolling at your institution</li>
+</ul></li>
+</ul>
+
+  
+  
+  <div class="modal">
+    <span class="close">&times;</span>
+    <h3></h3>
+    <img />
+    <p></p>
+  </div>
+</section>
+<section class='slide horizontal subsection' data-state='slide-horizontal' id='slide-12'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h1>EM Market dynamics</h1>
+  <hr />
+  
+  
+  
+  <div class="modal">
+    <span class="close">&times;</span>
+    <h3></h3>
+    <img />
+    <p></p>
+  </div>
+</section>
+<section class='slide horizontal ' data-state='slide-horizontal' id='slide-13'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h2>Dynamics shaping the market for student list data</h2>
+  <hr />
+  <p>From <a href="https://ticas.org/wp-content/uploads/2022/09/The-Student-List-Business_-Primer-and-Market-Dynamics.pdf">The Student List Business: Primer and market dynamics</a> (Jaquette, Salazar, and Martin, 2022)</p>
+
+<p><br></p>
+
+<ol>
+<li><p><strong>Centrality of enrollment management (EM) consulting firms</strong></p>
+
+<ul>
+<li>Purchase student lists on behalf of universities</li>
+<li>Names are input to firm predictive models and recruiting interventions
+<br></li>
+</ul></li>
+<li><p><strong>Competition then concentration</strong></p>
+
+<ul>
+<li>Competition in the 2000s
+
+<ul>
+<li>new technology yields new sources of student list data (e.g., college search engines; software used by high schools)</li>
+<li>entry by new vendors (e.g., Zinch)</li>
+</ul></li>
+<li>Concentration in the 2010s
+
+<ul>
+<li>horizontal acquisitions in EM consulting industry (e.g., RuffaloCODY acquires Noel-Levitz)</li>
+<li>Vertical acquisitions transform market for student list data (e.g., PowerSchool acquires Naviance/Intersect from Hobsons; EAB acquires Cappex)
+
+<ul>
+<li>Leverage control over pool of names to sell software-as-service products
+<br></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Incumbents College Board and ACT evolve amidst threats</strong></p>
+
+<ul>
+<li>Create new search filters that aid micro-targeting of prospects</li>
+<li>Leverage names database to sell EM consulting</li>
+<li>Test-optional threatens competitive advantage in coverage</li>
+<li>Create/buy college search engines</li>
+</ul></li>
+</ol>
+
+  
+  
+  <div class="modal">
+    <span class="close">&times;</span>
+    <h3></h3>
+    <img />
+    <p></p>
+  </div>
+</section>
+<section class='slide horizontal ' data-state='slide-horizontal' id='slide-14'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h2>Project overview</h2>
+  <hr />
+  <p>Data collection</p>
+
+<ul>
+<li>Issued public records requests to all public universities in four states (CA, IL, MN, TX)</li>
+<li>Target student list vendors
+
+<ul>
+<li>College Board, ACT</li>
+</ul></li>
+<li>Data collection began February 2020<br>
+
+<ul>
+<li>Seeking student lists purchased from 2016-2020</li>
+</ul></li>
+</ul>
+
+<p><br>
+For each purchased list, sought two pieces of data</p>
+
+<ol>
+<li>&quot;Order summary&quot; specifying search filter criteria (<a href="https://drive.google.com/file/d/1gPZ-WWw0gdFT7VtzBN3hKLnj2DzoaqnY/view">LINK</a>)</li>
+<li>De-identified prospect-level student list (<a href="https://drive.google.com/file/d/1Qvc_QRi9izEF1W78Lh4nNi5NsXjCZqUE/view">LINK</a>)</li>
+</ol>
+
+<p><br>
+Empirical research questions</p>
+
+<ol>
+<li>Which filter criteria were selected in student lists purchases?</li>
+<li>What are the characteristics of prospects included in student lists purchases?</li>
+<li>What is the relationship between student list filter criteria and the characteristics of
+purchased prospects?</li>
+</ol>
+
+<p><br>
+Partners</p>
+
+<ul>
+<li>Funded by Joyce Foundation, Kresge Foundation</li>
+<li>Pro bono partnership with a civil rights legal organization and four multinational law firms</li>
+<li>Our first report to be published by <a href="https://www.acceptgroup.org/">ACCEPT</a></li>
+</ul>
+
+<h1>Literature Review</h1>
+
+  
+  
+  <div class="modal">
+    <span class="close">&times;</span>
+    <h3></h3>
+    <img />
+    <p></p>
+  </div>
+</section>
+<section class='slide horizontal section' data-state='slide-horizontal' id='slide-15'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h1>Conceptual Framework</h1>
+  <hr />
+  
+  
+  
+  <div class="modal">
+    <span class="close">&times;</span>
+    <h3></h3>
+    <img />
+    <p></p>
+  </div>
+</section>
+<section class='slide horizontal section' data-state='slide-horizontal' id='slide-16'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h1>Empirics</h1>
+  <hr />
+  
+  
+  
+  <div class="modal">
+    <span class="close">&times;</span>
+    <h3></h3>
+    <img />
+    <p></p>
+  </div>
+</section>
+<section class='slide horizontal section' data-state='slide-horizontal' id='slide-17'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h1>Discussion</h1>
+  <hr />
+  
+  
+  
+  <div class="modal">
+    <span class="close">&times;</span>
+    <h3></h3>
+    <img />
+    <p></p>
+  </div>
+</section>
+<section class='slide horizontal ' data-state='slide-horizontal' id='references'>
+  <div class='section-nav'>
+    <ul></ul>
+  </div>
+  <a class='logo' href='https://emraresearch.org' target='_blank'>emraresearch.org</a>
+  <h1>References</h1>
+  <hr />
+  <h2>&nbsp;</h2>
+
+<p><a id='bib-belkin2019-studata'></a><a href="#cite-belkin2019-studata">[1]</a><cite>
+D. Belkin.
+&ldquo;For sale: SAT-Takers' names. Colleges buy student data and boost exclusivity&rdquo;.
+In: <em>The Wall Street Journal</em> (Nov. 2019).
+URL: <a href="https://www.wsj.com/articles/for-sale-sat-takers-names-colleges-buy-student-data-and-boost-exclusivity-11572976621">https://www.wsj.com/articles/for-sale-sat-takers-names-colleges-buy-student-data-and-boost-exclusivity-11572976621</a>.</cite></p>
+
+<p><a id='bib-bradley_2021'></a><a href="#cite-bradley_2021">[2]</a><cite>
+B. Bradley.
+&ldquo;Pace of mergers and acquisitions in education market jumps, new analysis finds&rdquo;.
+In: <em>Edweek Market Brief</em> (Jul. 2021).
+URL: <a href="https://marketbrief.edweek.org/marketplace-k-12/pace-mergers-acquisitions-education-market-jumps-new-analysis-finds/">https://marketbrief.edweek.org/marketplace-k-12/pace-mergers-acquisitions-education-market-jumps-new-analysis-finds/</a>.</cite></p>
+
+<p><a id='bib-RN4728'></a><a href="#cite-RN4728">[3]</a><cite>
+EAB.
+<em>Making your digital ads count: 15 lessons on new and emerging techniques in undergraduate recruitment marketing</em>.
+Tech. rep.
+EAB, 2018.</cite></p>
+
+<p><a id='bib-ftc2016'></a><a href="#cite-ftc2016">[4]</a><cite>
+Federal Trade Commission.
+<em><em>&quot;Follow the lead&quot; workshop</em></em>.
+Sep. 2016.
+URL: <a href="http://www.ftc.gov/system/files/documents/reports/staff-perspective-follow-lead/staff_perspective_follow_the_lead_workshop.pdf">http://www.ftc.gov/system/files/documents/reports/staff-perspective-follow-lead/staff_perspective_follow_the_lead_workshop.pdf</a>.</cite></p>
+
+<p><a id='bib-RN4739'></a><a href="#cite-RN4739">[5]</a><cite>
+J. Howell, M. H. Hurwitz, Z. Mabel, et al.
+<em>Participation in student search service is associated with higher college enrollment and completion</em>.
+Tech. rep.
+College Board, 2021.
+URL: <a href="https://cbsearch.collegeboard.org/pdf/college-outreach-and-student-outcomes.pdf">https://cbsearch.collegeboard.org/pdf/college-outreach-and-student-outcomes.pdf</a>.</cite></p>
+
+<p><a id='bib-rogers_2014'></a><a href="#cite-rogers_2014">[6]</a><cite>
+G. Rogers.
+<em><em>Are we seeing an edu &quot;vendor shakeout&quot;?</em></em>.
+Dec. 2014.
+URL: <a href="https://www.linkedin.com/pulse/we-seeking-edu-vendor-shakeout-gil-rogers?trk=mp-reader-card">https://www.linkedin.com/pulse/we-seeking-edu-vendor-shakeout-gil-rogers?trk=mp-reader-card</a>.</cite></p>
+
+<p><a id='bib-wan_2021'></a><a href="#cite-wan_2021">[7]</a><cite>
+T. Wan.
+<em><em>Hobsons' higher ed business split and sold in separate deals totaling \$410m</em></em>.
+Feb. 2021.
+URL: <a href="https://www.edsurge.com/news/2021-02-20-hobsons-higher-ed-business-split-and-sold-in-separate-deals-totaling-410m">https://www.edsurge.com/news/2021-02-20-hobsons-higher-ed-business-split-and-sold-in-separate-deals-totaling-410m</a>.</cite></p>
+
+  
+  
+  <div class="modal">
+    <span class="close">&times;</span>
+    <h3></h3>
+    <img />
+    <p></p>
+  </div>
+</section>
+    </div>
+  </div>
+</body>
+  <script src="libraries/frameworks/revealjs/lib/js/head.min.js"></script>
+  <script src="libraries/frameworks/revealjs/js/reveal.min.js"></script>
+  <script src="../assets/js/jquery-1.8.3.min.js"></script>
+  <script src="../assets/js/nav.js"></script>
+  <script src="../assets/js/script.js"></script>
+  <script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    pdfSeparateFragments: false,
+    viewDistance: 100,
+    center: false,
+    theme: Reveal.getQueryHash().theme || 'custom', 
+    transition: Reveal.getQueryHash().transition || 'slide', 
+    dependencies: [
+    // Cross-browser shim that fully implements classList -
+    // https://github.com/eligrey/classList.js/
+      { src: 'libraries/frameworks/revealjs/lib/js/classList.js', condition: function() { return !document.body.classList;}},
+      // Zoom in and out with Alt+click
+      { src: 'libraries/frameworks/revealjs/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Speaker notes
+      { src: 'libraries/frameworks/revealjs/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: 'libraries/frameworks/revealjs/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+  });
+  </script>  <!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+ 
+
+  
+</html>
