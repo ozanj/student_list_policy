@@ -499,7 +499,7 @@ grid.arrange(
 
 ## Scholarship on college access
 
-Extant literatures (not mutually exclusive)
+Extant literatures, not mutually exclusive
 
 - Student behavior
 - Behavior of schools and postsecondary institutions (PSIs)
@@ -533,7 +533,7 @@ Structural racism
 
 <br>
 Critical turn in higher education research
-- Student experiences provide insight about structural racism
+- Experiences of individual people provide insight about structural racism
 
 <br>
 Critical data studies `r cite(bib[c('RN4775','RN4772')])` and sociology of race `r cite(bib[c('RN4774','RN4786')])` finds algorithmic reproduce/increase racial inequality
@@ -625,6 +625,37 @@ Interventions along the funnel
 
 Source: [pngwing.com](https://www.pngwing.com/en/free-png-krrpy)
 
+--- 
+
+## College Board and ACT student list products
+
+Sources of student list data
+
+- Test takers (e.g., PSAT, SAT, AP), pre-test questionnaire (demographics, preferences)
+- More recently, from college search engines (e.g., College Board Big Future)  
+- Students can opt in or out
+
+<br>
+What information does a list contain ([College Board template](https://drive.google.com/file/d/1Qvc_QRi9izEF1W78Lh4nNi5NsXjCZqUE/view))
+- Contact, demographic, college preferences, limited academic achievement
+
+<br>
+Pricing
+
+- Historically, a price-per-prospect model (e.g., \$0.50 per name)
+- ACT and College Board moving to subscription model
+
+
+<br>
+
+Buying student lists
+
+- "Search filters" control which prospects included/excluded from a purchase
+- Commonly used search filters ([Link to ACT filters](https://helpcenter.encoura.org/hc/en-us/articles/360035260452-Prospect-Search-Filters-))
+  - Graduation year, HS GPA, test score range, gender, race/ethnicity, geography (e.g., zip-code)
+- New filters based on predictive analytics to facilitate micro-targeting
+    - e.g., "geodemographic" filters target prospects based on past behavior of nearby students
+
 
 --- .subsection
 
@@ -644,14 +675,15 @@ From [The Student List Business: Primer and market dynamics](https://ticas.org/w
   - Names are input to firm predictive models and recruiting interventions
 <br>
 
-1. **Competition then concentration**
-  - Competition in the 2000s
-      - Technology >> new sources of student list data (e.g., college search engines; software used by high schools) >> entry by new vendors (e.g., Zinch)
-      - *Note*: all student list data is derived from user-data from students on platforms
-  - Concentration in the 2010s
-      - Horizontal acquisitions in EM consulting industry (e.g., RuffaloCODY acquires Noel-Levitz)
-      - Vertical acquisitions transform market for student list data (e.g., PowerSchool acquires Naviance/Intersect from Hobsons; EAB acquires Cappex)
-          - Leverage control over pool of names to sell software-as-service products
+1. **Competition in the 2000s**
+  - Technology >> new sources of student list data (e.g., college search engines; software used by high schools) >> entry by new vendors (e.g., Zinch)
+  - *Note*: all student list data is derived from user-data from students on platforms
+<br>
+  
+1. **Concentration in the 2010s**
+  - Horizontal acquisitions in EM consulting industry (e.g., RuffaloCODY acquires Noel-Levitz)
+  - Vertical acquisitions transform market for student list data (e.g., PowerSchool acquires Naviance/Intersect from Hobsons; EAB acquires Cappex)
+      - Leverage control over pool of names to sell software-as-service products
 <br>
 
 1. **Incumbents College Board and ACT evolve amidst threat from test-optional**
@@ -773,7 +805,7 @@ Classification situations `r citep(bib[c('RN4810')])`
 Structurally racist inputs
 
 - Actuarial products predict future outcome by modeling determinants using historical data
-    - “Predicting the future on the basis of the past threatens to reify and reproduce existing inequalities of treatment by institutions” `r citet(bib[c('RN4794')])` (p. 224).
+    - “Predicting the future on the basis of the past threatens to reify and reproduce existing inequalities of treatment by institutions” `r citep(bib[c('RN4794')])` (p. 224).
 - Structurally racist input: determinant correlated with race because people of color have been historically excluded `r cite(bib[c('doi1011')])`
 - Structural racism in Moody's credit rating algorithm for city governments `r citep(bib[c('RN4786')])`
   - %Black negatively associated with city rating until control for median household income
@@ -785,10 +817,8 @@ Structurally racist inputs
 
 ## Micro-targeting and market segments
 
-Concepts
-
 - *Micro-targeting*: identify granular segments of society with great precision
-- *Market segmentation*: categorize customers into "market segments" (e.g., "married sophisticates")
+- *Market segmentation*: categorize customers into groups for advertisers (e.g., "married sophisticates")
 
 <br>
 
@@ -855,20 +885,20 @@ Geographic search filters enable universities to target prospects based on where
 
 <br>
 
-Scholarship on critical geography and racial segregation
+Critical geography and whiteness as property `r citet(bib[c('RN4551','RN4759')])` 
 
-- Residential segregation is a function of historic and contemporary structurally racist laws/policies/practicies
-- In turn, geographic filters are built on the back of racial segregation
-- Targeting prospects based on location (space) without considering its history of segregation (place) reinforces race-based inequality
+- Residential segregation a function of historic and contemporary laws/policies/practicies
+- Geographic filters are built on the back of racial segregation
+- Targeting prospects based on location (space) without considering history of segregation (place) reinforces race-based inequality
 
 <br>
 Expected results
 
-- Small geographic filters (e.g., zip code) associated with greater racial disparities because segregation occurs at fine-grained levels
-    - Targeting affluent communities is associated with racial exclusion because people of color historically excluded from these communities
-- Filters that create new geographic borders based on historic education data associated with racial disparities because borders reflect historic disparities in educational opportunities
-    - Filters: geomarket, geodemographic segment
-    - "geographic education market" filters increases the effects of historic place-based inequality
+- Small geographic filters (e.g., zip code vs. metro) >> racial disparities because segregation granular
+    - Targeting affluent communities >> racial exclusion because POC historically excluded
+- Filters that create new borders based on historic education data >> racial disparities because borders reflect historic disparities in educational opportunities
+    - "Geographic education market" filters: geomarket, geodemographic segment
+    - These filters increases the effects of historic place-based inequality
         - Discriminate between prospects based on previously unknown geographic borders
 
 --- .section
@@ -886,31 +916,15 @@ Expected results
 Data collection
 
 - Issued public records requests to all public universities in four states (CA, IL, MN, TX)
-- Target student list vendors
-  - College Board, ACT
-- Data collection began February 2020  
-  - Seeking student lists purchased from 2016-2020
+- Target student list vendors: College Board, ACT
+- Data collection began February 2020, sought purchases from 2016-2020
 
 <br>
 
-Source of student list data
-
-- From database of test takers (e.g., PSAT, SAT, AP, PreACT, ACT)
-  - Pre-test questionnaire (e.g., demographic, preferences about college)
-- More recently, from college search engines (e.g., College Board Big Future)
-- Students have opportunity to opt in or opt out of student list products
-
-<br>
 For each purchased list, sought two pieces of data
 
 1. "Order summary" specifying search filter criteria ([LINK](https://drive.google.com/file/d/1gPZ-WWw0gdFT7VtzBN3hKLnj2DzoaqnY/view))
 1. De-identified prospect-level student list ([LINK](https://drive.google.com/file/d/1Qvc_QRi9izEF1W78Lh4nNi5NsXjCZqUE/view))
-
-<br>
-What information does a list contain
-- Contact, demographic, college preferences, limited academic achievement
-- College Board template [HERE](https://drive.google.com/file/d/1Qvc_QRi9izEF1W78Lh4nNi5NsXjCZqUE/view)
-- ACT template [HERE](https://drive.google.com/file/d/1rsP45OyOsnPYhV8uWYKDAy_spGhjj6aj/view)
 
 <br>
 
@@ -995,20 +1009,15 @@ data.frame(
 ```
 
 <br>
-<br>
 
 Empirical research questions
 
 1. Which filter criteria were selected in student lists purchases?
-  - Unit of analysis: order
-  - Sample size: 830 orders (by 14 universities)
+  - Unit of analysis = order; 830 orders (by 14 universities)
 1. What are the characteristics of prospects included in student lists purchases?
-  - unit of analysis: university-prospect (prospects can be purchased by multiple inivs)
-  - Sample size: 3,663,257 prospects (by 14 universities)
-1. **What is the relationship between student list filter criteria and the characteristics of
-purchased prospects?**
-  - Unit of analysis: order-prospect
-  - Sample size: 414 orders associated with 2,548,085 prospects
+  - unit of analysis = university-prospect; 3,663,257 prospects (by 14 universities)
+1. **What is relationship between filter criteria and characteristics of purchased prospects?**
+  - Unit of analysis = order-prospect; 414 orders associated with 2,548,085 prospects
 
 <br>
 Case study research design because non-random sample
@@ -1019,6 +1028,7 @@ Case study research design because non-random sample
 - RQ3
   - Ixternal validity: set of search criteria yield same prospects regardless of which univ purchases
   - Analyses focus on "deep dives" of conceptually important order combinations
+
 
 --- .section
 
@@ -2208,6 +2218,7 @@ grid.arrange(
 
 
 
+
 --- .section
 
 # Discussion
@@ -2237,9 +2248,9 @@ Obfuscation `r citep(bib['RN4774','RN4842'])`
 Policy
 
 - Policy should regulate products sold to schools, universities, and students
-- Thoughtful regulations depend on a body of research
+- Developing regulations requires on a body of research
 - Education researchers must interrogate third-party products and vendors
-    - Structural inequality embedded in product design
+    - Focus on structural inequality embedded in product design
 
 --- #references
 
