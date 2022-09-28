@@ -1,6 +1,7 @@
 ---
 title: 'Student list business'
 mode: selfcontained
+widgets: [mathjax]
 ext_widgets : {rCharts: [libraries/shiny]}
 framework: revealjs
 revealjs:
@@ -40,7 +41,7 @@ csl: '../../public_requests_eda/text/bib/apa.csl'
 # College Board Search and student outcomes
 ## Howell, Hurwitz, Mabel, et al. (2021)
 
-<img src="assets/fig/cb-fig-1.png" alt="plot of chunk cb-fig" width="90%" />
+<img src="assets/fig/cb-fig-1.png" title="plot of chunk cb-fig" alt="plot of chunk cb-fig" width="90%" />
 
 
 ---
@@ -360,8 +361,7 @@ Student list products
 - Ruffalo Noel Levitz (2021): “target the right students in the right markets” by making “the most efficient name purchases using predictive modeling”
 
 <br>
-Hook
-- Sociology of race has not studied products that help orgs identify customers (I think)
+Hook: Sociology of race has not studied products that help orgs identify customers (I think)
 
 --- .section
 
@@ -475,8 +475,8 @@ purchased prospects?**
 
 ## Summary of data received
 
-<!-- html table generated in R 4.2.1 by xtable 1.8-4 package -->
-<!-- Tue Sep 27 16:04:10 2022 -->
+<!-- html table generated in R 3.6.3 by xtable 1.8-4 package -->
+<!-- Wed Sep 28 00:02:08 2022 -->
 <table border=1>
   <tr style="text-align:center;"><th>State</th><th># received order summary</th><th># no order summary</th><th># received list</th><th># no list</th><th># received both</th><th># did not receive both</th></tr> <tr> <td align="center"> CA </td> <td align="center">   9 </td> <td align="center">  23 </td> <td align="center">  13 </td> <td align="center">  19 </td> <td align="center">   9 </td> <td align="center">  23 </td> </tr>
   <tr> <td align="center"> IL </td> <td align="center">   9 </td> <td align="center">   3 </td> <td align="center">   9 </td> <td align="center">   3 </td> <td align="center">   8 </td> <td align="center">   4 </td> </tr>
@@ -489,7 +489,7 @@ purchased prospects?**
 
 ## Orders and prospects purchased
 
-<img src="assets/fig/orders-prospects-purchased-1.png" alt="plot of chunk orders-prospects-purchased" width="90%" />
+<img src="assets/fig/orders-prospects-purchased-1.png" title="plot of chunk orders-prospects-purchased" alt="plot of chunk orders-prospects-purchased" width="90%" />
 
 --- .subsection
 
@@ -499,8 +499,8 @@ purchased prospects?**
 
 ## Summary of orders and prospects
 
-<!-- html table generated in R 4.2.1 by xtable 1.8-4 package -->
-<!-- Tue Sep 27 16:04:13 2022 -->
+<!-- html table generated in R 3.6.3 by xtable 1.8-4 package -->
+<!-- Wed Sep 28 00:02:10 2022 -->
 <table border=1>
   <tr style="text-align:center;"><th style="border-bottom:none;">RQ1</th><th style="border-bottom:none;">RQ3</th><th style="border-bottom:none;">RQ2</th><th style="border-bottom:none;">RQ3</th></tr><tr style="text-align:center;"><th># orders total</th><th># orders with list</th><th># prospects total</th><th># prospects with order</th></tr> <tr> <td align="center"> 830 </td> <td align="center"> 414 </td> <td align="center"> 3,663,257 </td> <td align="center"> 2,549,085 </td> </tr>
    </table>
@@ -534,6 +534,325 @@ Case study research design because non-random sample
 --- .section
 
 # Results
+
+
+--- .subsection
+
+# RQ1
+
+
+--- .subsubsection
+
+# Broad patterns
+## Filters used in order purchases
+
+<img src="assets/fig/orders-filters-1.png" title="plot of chunk orders-filters" alt="plot of chunk orders-filters" width="90%" />
+
+
+--- .subsubsection
+
+# Academic filters
+## GPA filter used
+
+<img src="assets/fig/orders-gpa-1.png" title="plot of chunk orders-gpa" alt="plot of chunk orders-gpa" width="90%" />
+
+
+---
+
+## SAT filter used
+
+
+<img src="assets/fig/orders-sat-1.png" title="plot of chunk orders-sat" alt="plot of chunk orders-sat" width="90%" />
+
+
+---
+
+## PSAT filter used
+
+<img src="assets/fig/orders-psat-1.png" title="plot of chunk orders-psat" alt="plot of chunk orders-psat" width="90%" />
+
+
+
+--- .subsubsection
+
+#  Geographic filters
+## State filter used by research universities, out-of-state
+
+<img src="assets/fig/orders-state-research-outofstate-1.png" title="plot of chunk orders-state-research-outofstate" alt="plot of chunk orders-state-research-outofstate" width="90%" />
+
+---
+
+## State filter used by research universities, in-state
+
+<img src="assets/fig/orders-state-research-instate-1.png" title="plot of chunk orders-state-research-instate" alt="plot of chunk orders-state-research-instate" width="90%" />
+
+
+--- .subsubsection
+
+# Demographic filters
+## Race filter
+
+<img src="assets/fig/orders-race-1.png" title="plot of chunk orders-race" alt="plot of chunk orders-race" width="90%" />
+
+
+--- .subsubsection
+
+# Combination of filters
+## Filter combos used in order purchases
+
+<!-- html table generated in R 3.6.3 by xtable 1.8-4 package -->
+<!-- Wed Sep 28 00:02:15 2022 -->
+<table border=1>
+  <tr><th colspan="3" style="text-align:center;">Research</th><th colspan="3" style="text-align:center;">MA/doctoral</th></tr><tr><th>Filters</th><th>Count</th><th>Percent</th><th>Filters</th><th>Count</th><th>Percent</th></tr> <tr> <td> HS grad class, GPA, SAT, PSAT, Rank, State, Race </td> <td align="center">  39 </td> <td align="center"> 10% </td> <td> HS grad class, GPA, SAT, Zip code </td> <td align="center"> 206 </td> <td align="center"> 45% </td> </tr>
+  <tr> <td> HS grad class, PSAT, State </td> <td align="center">  27 </td> <td align="center"> 7% </td> <td> HS grad class, GPA, PSAT, Zip code </td> <td align="center"> 145 </td> <td align="center"> 32% </td> </tr>
+  <tr> <td> HS grad class, GPA, PSAT, State, Race </td> <td align="center">  20 </td> <td align="center"> 5% </td> <td> HS grad class, SAT, State </td> <td align="center">  31 </td> <td align="center"> 7% </td> </tr>
+  <tr> <td> HS grad class, PSAT, State, Low SES </td> <td align="center">  20 </td> <td align="center"> 5% </td> <td> HS grad class, GPA, SAT, PSAT, Zip code </td> <td align="center">  28 </td> <td align="center"> 6% </td> </tr>
+  <tr> <td> HS grad class, GPA, PSAT, State </td> <td align="center">  17 </td> <td align="center"> 5% </td> <td> HS grad class, GPA, SAT, State </td> <td align="center">   7 </td> <td align="center"> 2% </td> </tr>
+  <tr> <td> HS grad class, GPA, SAT, State </td> <td align="center">  16 </td> <td align="center"> 4% </td> <td> HS grad class, SAT, Geomarket </td> <td align="center">   6 </td> <td align="center"> 1% </td> </tr>
+  <tr> <td> HS grad class, GPA, AP score, Geomarket </td> <td align="center">  15 </td> <td align="center"> 4% </td> <td> HS grad class, GPA, SAT, County </td> <td align="center">   5 </td> <td align="center"> 1% </td> </tr>
+  <tr> <td> HS grad class, GPA, SAT, PSAT, State, Segment, Gender </td> <td align="center">  13 </td> <td align="center"> 3% </td> <td> HS grad class, GPA, SAT, PSAT, County </td> <td align="center">   4 </td> <td align="center"> 1% </td> </tr>
+  <tr> <td> HS grad class, PSAT, Geomarket </td> <td align="center">  12 </td> <td align="center"> 3% </td> <td> HS grad class, GPA, PSAT, State </td> <td align="center">   2 </td> <td align="center"> 0% </td> </tr>
+  <tr> <td> HS grad class, SAT, State, Low SES, College size </td> <td align="center">  11 </td> <td align="center"> 3% </td> <td> HS grad class, SAT, Geomarket, College type </td> <td align="center">   2 </td> <td align="center"> 0% </td> </tr>
+   </table>
+
+
+--- .subsection
+
+# RQ2
+
+
+---
+
+# Characteristics of Prospects
+## Number of prospects by university type and location
+
+<img src="assets/fig/rq2-counts-1.png" title="plot of chunk rq2-counts" alt="plot of chunk rq2-counts" width="90%" />
+
+
+
+--- .subsubsection
+
+# Public research universities 
+## Racial composition of prospects in lists purchased
+
+<img src="assets/fig/rq2-race-research-1.png" title="plot of chunk rq2-race-research" alt="plot of chunk rq2-race-research" width="90%" />
+
+
+---
+
+## Median household income of prospects in lists purchased
+
+<img src="assets/fig/rq2-income-research-1.png" title="plot of chunk rq2-income-research" alt="plot of chunk rq2-income-research" width="90%" />
+
+
+---
+
+## Locale of prospects in lists purchased
+
+<img src="assets/fig/rq2-locale-research-1.png" title="plot of chunk rq2-locale-research" alt="plot of chunk rq2-locale-research" width="90%" />
+
+
+--- .subsubsection
+
+# Public ma/doctoral universities
+## Racial composition of prospects in lists purchased
+
+<img src="assets/fig/rq2-race-regional-1.png" title="plot of chunk rq2-race-regional" alt="plot of chunk rq2-race-regional" width="90%" />
+
+
+---
+
+## Median household income of prospects purchased
+
+<img src="assets/fig/rq2-income-regional-1.png" title="plot of chunk rq2-income-regional" alt="plot of chunk rq2-income-regional" width="90%" />
+
+
+---
+
+## Locale of prospects in lists purchased
+
+<img src="assets/fig/rq2-locale-regional-1.png" title="plot of chunk rq2-locale-regional" alt="plot of chunk rq2-locale-regional" width="90%" />
+
+
+--- .subsection
+
+# RQ3
+
+
+--- .subsubsection
+
+# Characteristics by filters
+## Prospect characteristics across individual filter criteria
+
+<!-- html table generated in R 3.6.3 by xtable 1.8-4 package -->
+<!-- Wed Sep 28 00:02:19 2022 -->
+<table style="font-size:10px;">
+  <tr style="text-align: center;"><th colspan="3" style="border-bottom: none;"></th><th colspan="5">Academic</th><th style="border-bottom: none;"><th colspan="5">Geographic</th><th style="border-bottom: none;"></th><th colspan="2">Demographic</th></tr><tr style="text-align:center;"><th width="15px;"></th><th></th><th>All domestic</th><th>GPA</th><th>PSAT</th><th>SAT</th><th>HS rank</th><th>AP score</th><th width="5px;"></th><th>Zip code</th><th>State</th><th>Geomarket</th><th>Segment</th><th>CBSA</th><th width="5px;"></th><th>Race</th><th>Gender</th></tr> <tr> <td> Total </td> <td>   </td> <td align="center"> 3,547,620 </td> <td align="center"> 1,101,266 </td> <td align="center"> 1,812,447 </td> <td align="center"> 971,237 </td> <td align="center"> 146,660 </td> <td align="center"> 75,479 </td> <td align="center">   </td> <td align="center"> 165,924 </td> <td align="center"> 1,173,678 </td> <td align="center"> 1,056,951 </td> <td align="center"> 186,519 </td> <td align="center"> 146,313 </td> <td align="center">   </td> <td align="center"> 279,626 </td> <td align="center"> 39,546 </td> </tr>
+   <tr style="font-weight:900"><td colspan="2">Location</td></tr><tr> <td>   </td> <td> % In-state </td> <td align="center"> 38 </td> <td align="center"> 62 </td> <td align="center"> 30 </td> <td align="center"> 54 </td> <td align="center"> 83 </td> <td align="center"> 42 </td> <td align="center">   </td> <td align="center"> 98 </td> <td align="center"> 48 </td> <td align="center"> 17 </td> <td align="center"> 15 </td> <td align="center"> 4 </td> <td align="center">   </td> <td align="center"> 59 </td> <td align="center"> 6 </td> </tr>
+  <tr> <td>   </td> <td> % Out-of-state </td> <td align="center"> 62 </td> <td align="center"> 38 </td> <td align="center"> 70 </td> <td align="center"> 46 </td> <td align="center"> 17 </td> <td align="center"> 58 </td> <td align="center">   </td> <td align="center"> 2 </td> <td align="center"> 52 </td> <td align="center"> 83 </td> <td align="center"> 85 </td> <td align="center"> 96 </td> <td align="center">   </td> <td align="center"> 41 </td> <td align="center"> 94 </td> </tr>
+   <tr style="font-weight:900"><td colspan="2">Race/ethnicity</td></tr><tr> <td>   </td> <td> % White </td> <td align="center"> 48 </td> <td align="center"> 45 </td> <td align="center"> 50 </td> <td align="center"> 47 </td> <td align="center"> 51 </td> <td align="center"> 17 </td> <td align="center">   </td> <td align="center"> 43 </td> <td align="center"> 42 </td> <td align="center"> 57 </td> <td align="center"> 51 </td> <td align="center"> 53 </td> <td align="center">   </td> <td align="center"> 25 </td> <td align="center"> 47 </td> </tr>
+  <tr> <td>   </td> <td> % Asian </td> <td align="center"> 16 </td> <td align="center"> 15 </td> <td align="center"> 17 </td> <td align="center"> 15 </td> <td align="center"> 10 </td> <td align="center"> 7 </td> <td align="center">   </td> <td align="center"> 13 </td> <td align="center"> 18 </td> <td align="center"> 13 </td> <td align="center"> 27 </td> <td align="center"> 28 </td> <td align="center">   </td> <td align="center"> 5 </td> <td align="center"> 38 </td> </tr>
+  <tr> <td>   </td> <td> % Black </td> <td align="center"> 5 </td> <td align="center"> 7 </td> <td align="center"> 4 </td> <td align="center"> 7 </td> <td align="center"> 8 </td> <td align="center"> 17 </td> <td align="center">   </td> <td align="center"> 8 </td> <td align="center"> 5 </td> <td align="center"> 4 </td> <td align="center"> 3 </td> <td align="center"> 2 </td> <td align="center">   </td> <td align="center"> 11 </td> <td align="center"> 1 </td> </tr>
+  <tr> <td>   </td> <td> % Latinx </td> <td align="center"> 21 </td> <td align="center"> 24 </td> <td align="center"> 19 </td> <td align="center"> 22 </td> <td align="center"> 23 </td> <td align="center"> 46 </td> <td align="center">   </td> <td align="center"> 27 </td> <td align="center"> 24 </td> <td align="center"> 16 </td> <td align="center"> 11 </td> <td align="center"> 8 </td> <td align="center">   </td> <td align="center"> 46 </td> <td align="center"> 6 </td> </tr>
+  <tr> <td>   </td> <td> % AI/AN </td> <td align="center"> 1 </td> <td align="center"> 1 </td> <td align="center"> 1 </td> <td align="center"> 0 </td> <td align="center"> 1 </td> <td align="center"> 1 </td> <td align="center">   </td> <td align="center"> 1 </td> <td align="center"> 1 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center">   </td> <td align="center"> 2 </td> <td align="center"> 0 </td> </tr>
+  <tr> <td>   </td> <td> % NH/PI </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 1 </td> <td align="center">   </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center">   </td> <td align="center"> 0 </td> <td align="center"> 0 </td> </tr>
+  <tr> <td>   </td> <td> % Multiracial </td> <td align="center"> 5 </td> <td align="center"> 5 </td> <td align="center"> 5 </td> <td align="center"> 5 </td> <td align="center"> 5 </td> <td align="center"> 10 </td> <td align="center">   </td> <td align="center"> 4 </td> <td align="center"> 6 </td> <td align="center"> 5 </td> <td align="center"> 5 </td> <td align="center"> 5 </td> <td align="center">   </td> <td align="center"> 9 </td> <td align="center"> 5 </td> </tr>
+  <tr> <td>   </td> <td> % Other </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center">   </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center">   </td> <td align="center"> 0 </td> <td align="center"> 0 </td> </tr>
+  <tr> <td>   </td> <td> % No response </td> <td align="center"> 4 </td> <td align="center"> 3 </td> <td align="center"> 3 </td> <td align="center"> 3 </td> <td align="center"> 2 </td> <td align="center"> 1 </td> <td align="center">   </td> <td align="center"> 4 </td> <td align="center"> 3 </td> <td align="center"> 4 </td> <td align="center"> 3 </td> <td align="center"> 3 </td> <td align="center">   </td> <td align="center"> 2 </td> <td align="center"> 3 </td> </tr>
+  <tr> <td>   </td> <td> % Missing </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 1 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center">   </td> <td align="center"> 1 </td> <td align="center"> 1 </td> <td align="center"> 1 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center">   </td> <td align="center"> 0 </td> <td align="center"> 0 </td> </tr>
+   <tr style="font-weight:900"><td colspan="2">Gender</td></tr><tr> <td>   </td> <td> % Male </td> <td align="center"> 34 </td> <td align="center"> 19 </td> <td align="center"> 37 </td> <td align="center"> 18 </td> <td align="center"> 0 </td> <td align="center"> 3 </td> <td align="center">   </td> <td align="center"> 46 </td> <td align="center"> 24 </td> <td align="center"> 48 </td> <td align="center"> 6 </td> <td align="center"> 0 </td> <td align="center">   </td> <td align="center"> 11 </td> <td align="center"> 0 </td> </tr>
+  <tr> <td>   </td> <td> % Female </td> <td align="center"> 36 </td> <td align="center"> 23 </td> <td align="center"> 40 </td> <td align="center"> 20 </td> <td align="center"> 1 </td> <td align="center"> 15 </td> <td align="center">   </td> <td align="center"> 54 </td> <td align="center"> 27 </td> <td align="center"> 52 </td> <td align="center"> 9 </td> <td align="center"> 0 </td> <td align="center">   </td> <td align="center"> 12 </td> <td align="center"> 33 </td> </tr>
+  <tr> <td>   </td> <td> % Other  </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center">   </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center">   </td> <td align="center"> 0 </td> <td align="center"> 0 </td> </tr>
+  <tr> <td>   </td> <td> % Missing  </td> <td align="center"> 30 </td> <td align="center"> 58 </td> <td align="center"> 22 </td> <td align="center"> 63 </td> <td align="center"> 99 </td> <td align="center"> 82 </td> <td align="center">   </td> <td align="center"> 0 </td> <td align="center"> 49 </td> <td align="center"> 0 </td> <td align="center"> 85 </td> <td align="center"> 1 </td> <td align="center">   </td> <td align="center"> 77 </td> <td align="center"> 67 </td> </tr>
+   <tr style="font-weight:900"><td colspan="2">Household income</td></tr><tr> <td>   </td> <td> Median income </td> <td align="center"> $107K </td> <td align="center"> $105K </td> <td align="center"> $108K </td> <td align="center"> $105K </td> <td align="center"> $99K </td> <td align="center"> $90K </td> <td align="center">   </td> <td align="center"> $97K </td> <td align="center"> $105K </td> <td align="center"> $107K </td> <td align="center"> $130K </td> <td align="center"> $135K </td> <td align="center">   </td> <td align="center"> $94K </td> <td align="center"> $127K </td> </tr>
+   <tr style="font-weight:900"><td colspan="2">Locale</td></tr><tr> <td>   </td> <td> % City </td> <td align="center"> 27 </td> <td align="center"> 27 </td> <td align="center"> 27 </td> <td align="center"> 26 </td> <td align="center"> 26 </td> <td align="center"> 31 </td> <td align="center">   </td> <td align="center"> 31 </td> <td align="center"> 30 </td> <td align="center"> 23 </td> <td align="center"> 24 </td> <td align="center"> 22 </td> <td align="center">   </td> <td align="center"> 29 </td> <td align="center"> 26 </td> </tr>
+  <tr> <td>   </td> <td> % Suburban </td> <td align="center"> 44 </td> <td align="center"> 47 </td> <td align="center"> 44 </td> <td align="center"> 48 </td> <td align="center"> 53 </td> <td align="center"> 40 </td> <td align="center">   </td> <td align="center"> 42 </td> <td align="center"> 42 </td> <td align="center"> 46 </td> <td align="center"> 54 </td> <td align="center"> 57 </td> <td align="center">   </td> <td align="center"> 47 </td> <td align="center"> 49 </td> </tr>
+  <tr> <td>   </td> <td> % Rural - Fringe </td> <td align="center"> 22 </td> <td align="center"> 20 </td> <td align="center"> 22 </td> <td align="center"> 20 </td> <td align="center"> 15 </td> <td align="center"> 23 </td> <td align="center">   </td> <td align="center"> 19 </td> <td align="center"> 22 </td> <td align="center"> 23 </td> <td align="center"> 19 </td> <td align="center"> 19 </td> <td align="center">   </td> <td align="center"> 19 </td> <td align="center"> 23 </td> </tr>
+  <tr> <td>   </td> <td> % Rural - Distant </td> <td align="center"> 6 </td> <td align="center"> 6 </td> <td align="center"> 5 </td> <td align="center"> 6 </td> <td align="center"> 6 </td> <td align="center"> 5 </td> <td align="center">   </td> <td align="center"> 7 </td> <td align="center"> 6 </td> <td align="center"> 6 </td> <td align="center"> 2 </td> <td align="center"> 1 </td> <td align="center">   </td> <td align="center"> 6 </td> <td align="center"> 2 </td> </tr>
+  <tr> <td>   </td> <td> % Rural - Remote </td> <td align="center"> 1 </td> <td align="center"> 0 </td> <td align="center"> 1 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center">   </td> <td align="center"> 1 </td> <td align="center"> 1 </td> <td align="center"> 1 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center">   </td> <td align="center"> 0 </td> <td align="center"> 0 </td> </tr>
+  <tr> <td>   </td> <td> % Missing   </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center">   </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center"> 0 </td> <td align="center">   </td> <td align="center"> 0 </td> <td align="center"> 0 </td> </tr>
+   </table>
+
+
+--- .subsubsection
+
+# Zip code & test score filters
+## Los Angeles prospects from top income decile zip codes
+
+<img src="assets/fig/asu-la-deep-dive-1.png" title="plot of chunk asu-la-deep-dive" alt="plot of chunk asu-la-deep-dive" width="90%" />
+
+
+
+--- .subsubsection
+
+# Geodemographic segment filters
+## Filter by neighborhood segments
+
+<!-- html table generated in R 3.6.3 by xtable 1.8-4 package -->
+<!-- Wed Sep 28 00:02:20 2022 -->
+<table style="font-size:10px;" id="cluster-en">
+  <tr style="text-align:center;"><th style="text-align:left;">2011 D+ Cluster</th><th>SAT Math</th><th>SAT CR</th><th>Going Out of State</th><th>Percent NonWhite</th><th>Need Financial Aid</th><th>Med Income</th></tr> <tr> <td> 51 </td> <td align="center"> 546.00 </td> <td align="center"> 533.00 </td> <td align="center"> 32% </td> <td align="center"> 30% </td> <td align="center"> 57% </td> <td align="center"> $95,432 </td> </tr>
+  <tr> <td> 52 </td> <td align="center"> 480.00 </td> <td align="center"> 470.00 </td> <td align="center"> 30% </td> <td align="center"> 58% </td> <td align="center"> 71% </td> <td align="center"> $63,578 </td> </tr>
+  <tr> <td> 53 </td> <td align="center"> 561.00 </td> <td align="center"> 544.00 </td> <td align="center"> 32% </td> <td align="center"> 50% </td> <td align="center"> 55% </td> <td align="center"> $92,581 </td> </tr>
+  <tr> <td> 54 </td> <td align="center"> 458.00 </td> <td align="center"> 443.00 </td> <td align="center"> 25% </td> <td align="center"> 83% </td> <td align="center"> 76% </td> <td align="center"> $38,977 </td> </tr>
+  <tr> <td> 55 </td> <td align="center"> 566.00 </td> <td align="center"> 565.00 </td> <td align="center"> 52% </td> <td align="center"> 24% </td> <td align="center"> 63% </td> <td align="center"> $71,576 </td> </tr>
+  <tr> <td> 56 </td> <td align="center"> 420.00 </td> <td align="center"> 411.00 </td> <td align="center"> 29% </td> <td align="center"> 93% </td> <td align="center"> 66% </td> <td align="center"> $35,308 </td> </tr>
+  <tr> <td> 57 </td> <td align="center"> 541.00 </td> <td align="center"> 519.00 </td> <td align="center"> 52% </td> <td align="center"> 47% </td> <td align="center"> 43% </td> <td align="center"> $67,394 </td> </tr>
+  <tr> <td> 58 </td> <td align="center"> 533.00 </td> <td align="center"> 489.00 </td> <td align="center"> 28% </td> <td align="center"> 87% </td> <td align="center"> 69% </td> <td align="center"> $68,213 </td> </tr>
+  <tr> <td> 59 </td> <td align="center"> 561.00 </td> <td align="center"> 562.00 </td> <td align="center"> 52% </td> <td align="center"> 24% </td> <td align="center"> 74% </td> <td align="center"> $54,750 </td> </tr>
+  <tr> <td> 60 </td> <td align="center"> 589.00 </td> <td align="center"> 590.00 </td> <td align="center"> 63% </td> <td align="center"> 37% </td> <td align="center"> 36% </td> <td align="center"> $104,174 </td> </tr>
+  <tr> <td> 61 </td> <td align="center"> 585.00 </td> <td align="center"> 567.00 </td> <td align="center"> 51% </td> <td align="center"> 30% </td> <td align="center"> 40% </td> <td align="center"> $123,858 </td> </tr>
+  <tr> <td> 62 </td> <td align="center"> 596.00 </td> <td align="center"> 595.00 </td> <td align="center"> 67% </td> <td align="center"> 24% </td> <td align="center"> 72% </td> <td align="center"> $59,824 </td> </tr>
+  <tr> <td> 63 </td> <td align="center"> 548.00 </td> <td align="center"> 541.00 </td> <td align="center"> 39% </td> <td align="center"> 23% </td> <td align="center"> 65% </td> <td align="center"> $69,347 </td> </tr>
+  <tr> <td> 64 </td> <td align="center"> 466.00 </td> <td align="center"> 466.00 </td> <td align="center"> 48% </td> <td align="center"> 34% </td> <td align="center"> 29% </td> <td align="center"> $49,829 </td> </tr>
+  <tr> <td> 65 </td> <td align="center"> 440.00 </td> <td align="center"> 433.00 </td> <td align="center"> 23% </td> <td align="center"> 93% </td> <td align="center"> 78% </td> <td align="center"> $45,081 </td> </tr>
+  <tr> <td> 66 </td> <td align="center"> 499.00 </td> <td align="center"> 492.00 </td> <td align="center"> 20% </td> <td align="center"> 12% </td> <td align="center"> 76% </td> <td align="center"> $50,453 </td> </tr>
+  <tr> <td> 67 </td> <td align="center"> 519.00 </td> <td align="center"> 501.00 </td> <td align="center"> 27% </td> <td align="center"> 53% </td> <td align="center"> 59% </td> <td align="center"> $60,960 </td> </tr>
+  <tr> <td> 68 </td> <td align="center"> 552.00 </td> <td align="center"> 558.00 </td> <td align="center"> 52% </td> <td align="center"> 35% </td> <td align="center"> 65% </td> <td align="center"> $57,902 </td> </tr>
+  <tr> <td> 69 </td> <td align="center"> 534.00 </td> <td align="center"> 521.00 </td> <td align="center"> 37% </td> <td align="center"> 19% </td> <td align="center"> 65% </td> <td align="center"> $88,100 </td> </tr>
+  <tr> <td> 70 </td> <td align="center"> 613.00 </td> <td align="center"> 598.00 </td> <td align="center"> 65% </td> <td align="center"> 29% </td> <td align="center"> 61% </td> <td align="center"> $86,381 </td> </tr>
+  <tr> <td> 71 </td> <td align="center"> 405.00 </td> <td align="center"> 408.00 </td> <td align="center"> 39% </td> <td align="center"> 97% </td> <td align="center"> 68% </td> <td align="center"> $42,661 </td> </tr>
+  <tr> <td> 72 </td> <td align="center"> 399.00 </td> <td align="center"> 397.00 </td> <td align="center"> 31% </td> <td align="center"> 87% </td> <td align="center"> 47% </td> <td align="center"> $32,708 </td> </tr>
+  <tr> <td> 73 </td> <td align="center"> 528.00 </td> <td align="center"> 514.00 </td> <td align="center"> 29% </td> <td align="center"> 42% </td> <td align="center"> 62% </td> <td align="center"> $90,849 </td> </tr>
+  <tr> <td> 74 </td> <td align="center"> 433.00 </td> <td align="center"> 435.00 </td> <td align="center"> 29% </td> <td align="center"> 84% </td> <td align="center"> 79% </td> <td align="center"> $44,065 </td> </tr>
+  <tr> <td> 75 </td> <td align="center"> 459.00 </td> <td align="center"> 457.00 </td> <td align="center"> 28% </td> <td align="center"> 85% </td> <td align="center"> 72% </td> <td align="center"> $50,421 </td> </tr>
+  <tr> <td> 76 </td> <td align="center"> 514.00 </td> <td align="center"> 509.00 </td> <td align="center"> 27% </td> <td align="center"> 38% </td> <td align="center"> 64% </td> <td align="center"> $61,332 </td> </tr>
+  <tr> <td> 77 </td> <td align="center"> 502.00 </td> <td align="center"> 492.00 </td> <td align="center"> 26% </td> <td align="center"> 18% </td> <td align="center"> 75% </td> <td align="center"> $62,372 </td> </tr>
+  <tr> <td> 78 </td> <td align="center"> 594.00 </td> <td align="center"> 578.00 </td> <td align="center"> 56% </td> <td align="center"> 26% </td> <td align="center"> 39% </td> <td align="center"> $134,400 </td> </tr>
+  <tr> <td> 79 </td> <td align="center"> 550.00 </td> <td align="center"> 551.00 </td> <td align="center"> 57% </td> <td align="center"> 32% </td> <td align="center"> 74% </td> <td align="center"> $40,909 </td> </tr>
+  <tr> <td> 80 </td> <td align="center"> 534.00 </td> <td align="center"> 527.00 </td> <td align="center"> 39% </td> <td align="center"> 39% </td> <td align="center"> 65% </td> <td align="center"> $49,877 </td> </tr>
+  <tr> <td> 81 </td> <td align="center"> 491.00 </td> <td align="center"> 483.00 </td> <td align="center"> 27% </td> <td align="center"> 57% </td> <td align="center"> 72% </td> <td align="center"> $63,030 </td> </tr>
+  <tr> <td> 82 </td> <td align="center"> 496.00 </td> <td align="center"> 491.00 </td> <td align="center"> 29% </td> <td align="center"> 21% </td> <td align="center"> 75% </td> <td align="center"> $53,465 </td> </tr>
+  <tr> <td> 83 </td> <td align="center"> 500.00 </td> <td align="center"> 490.00 </td> <td align="center"> 19% </td> <td align="center"> 26% </td> <td align="center"> 71% </td> <td align="center"> $49,335 </td> </tr>
+  <tr> <td> Total </td> <td align="center"> 512.00 </td> <td align="center"> 502.00 </td> <td align="center"> 32% </td> <td align="center"> 43% </td> <td align="center"> 65% </td> <td align="center"> $70,231 </td> </tr>
+   </table>
+
+
+---
+
+## Filter by high school segments
+
+<!-- html table generated in R 3.6.3 by xtable 1.8-4 package -->
+<!-- Wed Sep 28 00:02:20 2022 -->
+<table style="font-size:10px;" id="cluster-hs">
+  <tr style="text-align:center;"><th style="text-align:left;">2011 D+ Cluster</th><th>SAT Math</th><th>SAT CR</th><th>Going Out of State</th><th>Percent NonWhite</th><th>Need Financial Aid</th><th>Med Income</th></tr> <tr> <td> 51 </td> <td align="center"> 462.00 </td> <td align="center"> 457.00 </td> <td align="center"> 14% </td> <td align="center"> 33% </td> <td align="center"> 68% </td> <td align="center"> $40,918 </td> </tr>
+  <tr> <td> 52 </td> <td align="center"> 489.00 </td> <td align="center"> 496.00 </td> <td align="center"> 81% </td> <td align="center"> 99% </td> <td align="center"> 77% </td> <td align="center"> $64,730 </td> </tr>
+  <tr> <td> 53 </td> <td align="center"> 471.00 </td> <td align="center"> 484.00 </td> <td align="center"> 28% </td> <td align="center"> 38% </td> <td align="center"> 62% </td> <td align="center"> $60,833 </td> </tr>
+  <tr> <td> 54 </td> <td align="center"> 376.00 </td> <td align="center"> 371.00 </td> <td align="center"> 33% </td> <td align="center"> 96% </td> <td align="center"> 38% </td> <td align="center"> $38,146 </td> </tr>
+  <tr> <td> 55 </td> <td align="center"> 489.00 </td> <td align="center"> 481.00 </td> <td align="center"> 39% </td> <td align="center"> 46% </td> <td align="center"> 44% </td> <td align="center"> $71,845 </td> </tr>
+  <tr> <td> 56 </td> <td align="center"> 536.00 </td> <td align="center"> 508.00 </td> <td align="center"> 73% </td> <td align="center"> 43% </td> <td align="center"> 49% </td> <td align="center"> $63,967 </td> </tr>
+  <tr> <td> 57 </td> <td align="center"> 434.00 </td> <td align="center"> 435.00 </td> <td align="center"> 29% </td> <td align="center"> 82% </td> <td align="center"> 79% </td> <td align="center"> $48,301 </td> </tr>
+  <tr> <td> 58 </td> <td align="center"> 592.00 </td> <td align="center"> 577.00 </td> <td align="center"> 51% </td> <td align="center"> 27% </td> <td align="center"> 32% </td> <td align="center"> $104,509 </td> </tr>
+  <tr> <td> 59 </td> <td align="center"> 499.00 </td> <td align="center"> 489.00 </td> <td align="center"> 19% </td> <td align="center"> 18% </td> <td align="center"> 74% </td> <td align="center"> $47,685 </td> </tr>
+  <tr> <td> 60 </td> <td align="center"> 523.00 </td> <td align="center"> 549.00 </td> <td align="center"> 23% </td> <td align="center"> 30% </td> <td align="center"> 33% </td> <td align="center"> $70,175 </td> </tr>
+  <tr> <td> 61 </td> <td align="center"> 485.00 </td> <td align="center"> 370.00 </td> <td align="center"> 33% </td> <td align="center"> 89% </td> <td align="center"> 9% </td> <td align="center"> $61,385 </td> </tr>
+  <tr> <td> 62 </td> <td align="center"> 474.00 </td> <td align="center"> 473.00 </td> <td align="center"> 34% </td> <td align="center"> 92% </td> <td align="center"> 67% </td> <td align="center"> $55,515 </td> </tr>
+  <tr> <td> 63 </td> <td align="center"> 440.00 </td> <td align="center"> 427.00 </td> <td align="center"> 28% </td> <td align="center"> 86% </td> <td align="center"> 72% </td> <td align="center"> $49,238 </td> </tr>
+  <tr> <td> 64 </td> <td align="center"> 606.00 </td> <td align="center"> 542.00 </td> <td align="center"> 37% </td> <td align="center"> 89% </td> <td align="center"> 57% </td> <td align="center"> $81,911 </td> </tr>
+  <tr> <td> 65 </td> <td align="center"> 515.00 </td> <td align="center"> 503.00 </td> <td align="center"> 28% </td> <td align="center"> 43% </td> <td align="center"> 65% </td> <td align="center"> $72,692 </td> </tr>
+  <tr> <td> 66 </td> <td align="center"> 498.00 </td> <td align="center"> 515.00 </td> <td align="center"> 37% </td> <td align="center"> 37% </td> <td align="center"> 73% </td> <td align="center"> $60,272 </td> </tr>
+  <tr> <td> 67 </td> <td align="center"> 526.00 </td> <td align="center"> 546.00 </td> <td align="center"> 48% </td> <td align="center"> 41% </td> <td align="center"> 69% </td> <td align="center"> $71,279 </td> </tr>
+  <tr> <td> 68 </td> <td align="center"> 541.00 </td> <td align="center"> 540.00 </td> <td align="center"> 41% </td> <td align="center"> 26% </td> <td align="center"> 62% </td> <td align="center"> $79,260 </td> </tr>
+  <tr> <td> 69 </td> <td align="center"> 390.00 </td> <td align="center"> 395.00 </td> <td align="center"> 36% </td> <td align="center"> 92% </td> <td align="center"> 74% </td> <td align="center"> $43,391 </td> </tr>
+  <tr> <td> 70 </td> <td align="center"> 595.00 </td> <td align="center"> 581.00 </td> <td align="center"> 56% </td> <td align="center"> 33% </td> <td align="center"> 48% </td> <td align="center"> $105,721 </td> </tr>
+  <tr> <td> 71 </td> <td align="center"> 400.00 </td> <td align="center"> 412.00 </td> <td align="center"> 57% </td> <td align="center"> 98% </td> <td align="center"> 80% </td> <td align="center"> $43,137 </td> </tr>
+  <tr> <td> 72 </td> <td align="center"> 528.00 </td> <td align="center"> 544.00 </td> <td align="center"> 35% </td> <td align="center"> 25% </td> <td align="center"> 64% </td> <td align="center"> $70,018 </td> </tr>
+  <tr> <td> 73 </td> <td align="center"> 451.00 </td> <td align="center"> 438.00 </td> <td align="center"> 24% </td> <td align="center"> 89% </td> <td align="center"> 76% </td> <td align="center"> $48,406 </td> </tr>
+  <tr> <td> 74 </td> <td align="center"> 654.00 </td> <td align="center"> 579.00 </td> <td align="center"> 76% </td> <td align="center"> 80% </td> <td align="center"> 46% </td> <td align="center"> $59,089 </td> </tr>
+  <tr> <td> 75 </td> <td align="center"> 514.00 </td> <td align="center"> 502.00 </td> <td align="center"> 31% </td> <td align="center"> 20% </td> <td align="center"> 71% </td> <td align="center"> $72,850 </td> </tr>
+  <tr> <td> 76 </td> <td align="center"> 600.00 </td> <td align="center"> 584.00 </td> <td align="center"> 72% </td> <td align="center"> 50% </td> <td align="center"> 28% </td> <td align="center"> $90,265 </td> </tr>
+  <tr> <td> 77 </td> <td align="center"> 595.00 </td> <td align="center"> 508.00 </td> <td align="center"> 64% </td> <td align="center"> 75% </td> <td align="center"> 39% </td> <td align="center"> $39,490 </td> </tr>
+  <tr> <td> 78 </td> <td align="center"> 473.00 </td> <td align="center"> 468.00 </td> <td align="center"> 48% </td> <td align="center"> 43% </td> <td align="center"> 22% </td> <td align="center"> $56,703 </td> </tr>
+  <tr> <td> 79 </td> <td align="center"> 594.00 </td> <td align="center"> 585.00 </td> <td align="center"> 61% </td> <td align="center"> 26% </td> <td align="center"> 71% </td> <td align="center"> $65,180 </td> </tr>
+  <tr> <td> Total </td> <td align="center"> 514.00 </td> <td align="center"> 502.00 </td> <td align="center"> 32% </td> <td align="center"> 44% </td> <td align="center"> 65% </td> <td align="center"> $70,223 </td> </tr>
+   </table>
+
+
+---
+
+## Segment filter prospects by metro
+
+<img src="assets/fig/uiuc-deep-dive-1.png" title="plot of chunk uiuc-deep-dive" alt="plot of chunk uiuc-deep-dive" width="90%" />
+
+
+---
+
+## Segment filter prospects interactive map
+
+<iframe src="https://mpatricia01.github.io/public_requests_eda/outputs/maps/map_segment_green.html" id="uiuc-deep-dive-map" width=100% height=100% allowtransparency="true"></iframe>
+
+
+--- .subsubsection
+
+# Women in STEM
+## Women in STEM prospects by metro
+
+<img src="assets/fig/ucsd-deep-dive-1.png" title="plot of chunk ucsd-deep-dive" alt="plot of chunk ucsd-deep-dive" width="90%" />
+
+
+--- .subsubsection
+
+# Targeting URM students
+## Race and ethnicity variables, aggregated vs. alone
+
+<img src="assets/fig/poc-race-deep-dive-1.png" title="plot of chunk poc-race-deep-dive" alt="plot of chunk poc-race-deep-dive" width="90%" />
+
+
+---
+
+## Purchased profiles for students of color by metro
+
+<img src="assets/fig/poc-prospects-deep-dive-1.png" title="plot of chunk poc-prospects-deep-dive" alt="plot of chunk poc-prospects-deep-dive" width="90%" />
+
+
+
+---
+
+## Purchased profiles for students of color interactive map
+
+<iframe src="https://mpatricia01.github.io/public_requests_eda/outputs/maps/map_poc_green.html" id="poc-prospects-deep-dive-map" width=100% height=100% allowtransparency="true"></iframe>
+
+
 
 
 --- .section
@@ -574,10 +893,11 @@ Policy
 # References
 ## &nbsp;
 
+<div style="overflow-y: scroll;height: 500px;">
 <p><a id='bib-RN4775'></a><a href="#cite-RN4775">[1]</a><cite>
 R. Benjamin.
 <em>Race after technology: Abolitionist tools for the new Jim code</em>.
-Medford, MA: Polity, 2019, p. pages cm.
+Medford, MA: Polity, 2019.
 ISBN: 9781509526390 (hardback)
 9781509526406 (paperback).</cite></p>
 
@@ -587,7 +907,7 @@ E. Bonilla-Silva.
 In: <em>American Sociological Review</em> 62.3 (1997), pp. 465-480.
 ISSN: 0003-1224.
 DOI: <a href="https://doi.org/10.2307/2657316">10.2307/2657316</a>.
-URL: <a href="%3CGo%20to%20ISI%3E://WOS:A1997XG45300007">&lt;Go to ISI&gt;://WOS:A1997XG45300007</a>.</cite></p>
+URL: <a href="%3CGo to ISI%3E://WOS:A1997XG45300007">&lt;Go to ISI&gt;://WOS:A1997XG45300007</a>.</cite></p>
 
 <p><a id='bib-RN4794'></a><a href="#cite-RN4794">[3]</a><cite>
 J. Burrell and M. Fourcade.
@@ -595,7 +915,7 @@ J. Burrell and M. Fourcade.
 In: <em>Annual Review of Sociology</em> 47 (2021), pp. 213-237.
 ISSN: 978-0-8243-2247-2.
 DOI: <a href="https://doi.org/10.1146/annurev-soc-090820-020800">10.1146/annurev-soc-090820-020800</a>.
-URL: <a href="%3CGo%20to%20ISI%3E://WOS:000684003600012">&lt;Go to ISI&gt;://WOS:000684003600012</a>.</cite></p>
+URL: <a href="%3CGo to ISI%3E://WOS:000684003600012">&lt;Go to ISI&gt;://WOS:000684003600012</a>.</cite></p>
 
 <p><a id='bib-RN4795'></a><a href="#cite-RN4795">[4]</a><cite>
 K. Cotter, M. Medeiros, C. Pak, et al.
@@ -603,7 +923,7 @@ K. Cotter, M. Medeiros, C. Pak, et al.
 In: <em>Big Data &amp; Society</em> 8.1 (2021), p. 16.
 ISSN: 2053-9517.
 DOI: <a href="https://doi.org/10.1177/2053951721996046">10.1177/2053951721996046</a>.
-URL: <a href="%3CGo%20to%20ISI%3E://WOS:000629354000001">&lt;Go to ISI&gt;://WOS:000629354000001</a>.</cite></p>
+URL: <a href="%3CGo to ISI%3E://WOS:000629354000001">&lt;Go to ISI&gt;://WOS:000629354000001</a>.</cite></p>
 
 <p><a id='bib-cottom2017lower'></a><a href="#cite-cottom2017lower">[5]</a><cite>
 T. M. Cottom.
@@ -622,7 +942,7 @@ URL: <a href="https://doi.org/10.1177/2332649220949473">https://doi.org/10.1177/
 W. E. B. Du Bois.
 <em>Black reconstruction: An essay toward a history of the part which black folk played in the attempt to reconstruct democracy in America, 1860-1880</em>.
 1st.
-New York: Russel &amp; Russel, 1935, p. 746 p.</cite></p>
+New York: Russel &amp; Russel, 1935, p. 746.</cite></p>
 
 <p><a id='bib-RN4810'></a><a href="#cite-RN4810">[8]</a><cite>
 M. Fourcade and K. Healy.
@@ -630,7 +950,7 @@ M. Fourcade and K. Healy.
 In: <em>Accounting Organizations and Society</em> 38.8 (2013), pp. 559-572.
 ISSN: 0361-3682.
 DOI: <a href="https://doi.org/10.1016/j.aos.2013.11.002">10.1016/j.aos.2013.11.002</a>.
-URL: <a href="%3CGo%20to%20ISI%3E://WOS:000329013300001">&lt;Go to ISI&gt;://WOS:000329013300001</a>.</cite></p>
+URL: <a href="%3CGo to ISI%3E://WOS:000329013300001">&lt;Go to ISI&gt;://WOS:000329013300001</a>.</cite></p>
 
 <p><a id='bib-RN4778'></a><a href="#cite-RN4778">[9]</a><cite>
 D. Hirschman and E. A. Bosk.
@@ -663,7 +983,7 @@ URL: <a href="https://ticas.org/wp-content/uploads/2022/09/The-Student-List-Busi
 S. R. Khan.
 <em>Privilege: The making of an adolescent elite at St. Paul's School</em>.
 Princeton studies in cultural sociology.
-Princeton, N.J.: Princeton University Press, 2011, p. 232 pages.
+Princeton, N.J.: Princeton University Press, 2011, p. 232.
 ISBN: 9780691145280 (alk. paper)
 0691145288 (alk. paper)
 9780691156231 (pbk.)
@@ -683,7 +1003,7 @@ J. Komljenovic.
 In: <em>Learning Media and Technology</em> 46.3 (2021), pp. 320-332.
 ISSN: 1743-9884.
 DOI: <a href="https://doi.org/10.1080/17439884.2021.1891422">10.1080/17439884.2021.1891422</a>.
-URL: <a href="%3CGo%20to%20ISI%3E://WOS:000620464000001">&lt;Go to ISI&gt;://WOS:000620464000001</a>.</cite></p>
+URL: <a href="%3CGo to ISI%3E://WOS:000620464000001">&lt;Go to ISI&gt;://WOS:000620464000001</a>.</cite></p>
 
 <p><a id='bib-RN1025'></a><a href="#cite-RN1025">[16]</a><cite>
 K. Marx.
@@ -720,7 +1040,7 @@ URL: <a href="https://www.science.org/doi/abs/10.1126/science.aax2342">https://w
 <p><a id='bib-RN4842'></a><a href="#cite-RN4842">[20]</a><cite>
 F. Pasquale.
 <em>The black box society: the secret algorithms that control money and information</em>.
-Cambridge: Harvard University Press, 2015, p. 311 pages.
+Cambridge: Harvard University Press, 2015, p. 311.
 ISBN: 9780674368279.</cite></p>
 
 <p><a id='bib-RN4520'></a><a href="#cite-RN4520">[21]</a><cite>
@@ -734,9 +1054,9 @@ URL: <a href="https://muse.jhu.edu/book/52616">https://muse.jhu.edu/book/52616</
 <p><a id='bib-RN4773'></a><a href="#cite-RN4773">[22]</a><cite>
 C. J. Robinson.
 <em>Black marxism: The making of the Black radical tradition</em>.
-Chapel Hill, N.C.: University of North Carolina Press, 2000, p. xxxiii, 436 p.
+Chapel Hill, N.C.: University of North Carolina Press, 2000, p. xxxiii, 436.
 ISBN: 0807848298 (pbk. alk. paper).
-URL: <a href="Table%20of%20Contents%20http://lcweb.loc.gov/catdir/toc/99030995.html">Table of Contents http://lcweb.loc.gov/catdir/toc/99030995.html</a>.</cite></p>
+URL: <a href="Table of Contents http://lcweb.loc.gov/catdir/toc/99030995.html">Table of Contents http://lcweb.loc.gov/catdir/toc/99030995.html</a>.</cite></p>
 
 <p><a id='bib-ruffalo_noel_levitz_2021'></a><a href="#cite-ruffalo_noel_levitz_2021">[23]</a><cite>
 Ruffalo Noel Levitz.
@@ -750,7 +1070,7 @@ J. Sadowski.
 In: <em>Big Data &amp; Society</em> 6.1 (2019), p. 12.
 ISSN: 2053-9517.
 DOI: <a href="https://doi.org/10.1177/2053951718820549">10.1177/2053951718820549</a>.
-URL: <a href="%3CGo%20to%20ISI%3E://WOS:000455488000001">&lt;Go to ISI&gt;://WOS:000455488000001</a>.</cite></p>
+URL: <a href="%3CGo to ISI%3E://WOS:000455488000001">&lt;Go to ISI&gt;://WOS:000455488000001</a>.</cite></p>
 
 <p><a id='bib-RN4759'></a><a href="#cite-RN4759">[25]</a><cite>
 K. G. Salazar.
@@ -786,17 +1106,17 @@ J. Simon.
 In: <em>Law &amp; Society Review</em> 22.4 (1988), pp. 771-800.
 ISSN: 0023-9216.
 DOI: <a href="https://doi.org/10.2307/3053709">10.2307/3053709</a>.
-URL: <a href="%3CGo%20to%20ISI%3E://WOS:A1988R764700008">&lt;Go to ISI&gt;://WOS:A1988R764700008</a>.</cite></p>
+URL: <a href="%3CGo to ISI%3E://WOS:A1988R764700008">&lt;Go to ISI&gt;://WOS:A1988R764700008</a>.</cite></p>
 
 <p><a id='bib-RN3519'></a><a href="#cite-RN3519">[30]</a><cite>
 M. L. Stevens.
 <em>Creating a class: College admissions and the education of elites</em>.
-Pages: 308 p..
-Cambridge, MA: Harvard University Press, 2007.
+Cambridge, MA: Harvard University Press, 2007, p. 308.
 ISBN: 9780674026735 (alk. paper) 067402673X (alk. paper).</cite></p>
 
 <p><a id='bib-RN4760'></a><a href="#cite-RN4760">[31]</a><cite>
 M. J. N. Tiako, E. South, and V. Ray.
 &ldquo;Medical Schools as Racialized Organizations: A Primer&rdquo;.
 In: <em>Annals of Internal Medicine</em> 174.8 (2021), pp. 1143-1144.
-DOI: <a href="https://doi.org/10.7326/m21-0369%20%25m%2034058105%7D%7B10.7326/m21-0369%20%25m%2034058105%7D."></a></cite></p>
+DOI: <a href="https://doi.org/10.7326/m21-0369 %25m 34058105%7D%7B10.7326/m21-0369 %25m 34058105%7D."></a></cite></p>
+</div>

@@ -201,7 +201,7 @@ $(function() {
 
   // Graph Modal
 
-  $('.reveal .slide .graphs-set img').on('click', function() {
+  $('.reveal .slide img').on('click', function() {
     var src = $(this).attr('src'),
         title = $(this).data('title'),
         caption = $(this).data('caption');
