@@ -72,6 +72,13 @@
   display: block;
 }
 
+.reveal #title .link {
+  /*font-family: 'Franklin Gothic Medium', 'Compagnon';*/
+  position: absolute;
+  transform: translate(-50%, 470px);
+  font-size: 15px;
+}
+
 .reveal #title .logo {
   float: none;
   position: absolute;

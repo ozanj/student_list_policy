@@ -424,6 +424,8 @@ poc_income_2564 <- poc_income %>%
   <div><p>Patrica Martín</p><span class='affiliation'>UCLA</span></div>
 </div>
 
+<a class="link" href="https://ozanj.github.io/student_list_policy/slides/student_list_cshpe.html" target="_blank">ozanj.github.io/student_list_policy/slides/student_list_cshpe.html</a>
+
 
 --- .section
 

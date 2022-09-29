@@ -30,6 +30,8 @@ csl: '../../public_requests_eda/text/bib/apa.csl'
   <div><p>Patrica Martín</p><span class='affiliation'>UCLA</span></div>
 </div>
 
+<a class="link" href="https://ozanj.github.io/student_list_policy/slides/student_list_cshpe.html" target="_blank">ozanj.github.io/student_list_policy/slides/student_list_cshpe.html</a>
+
 
 --- .section
 
@@ -490,7 +492,7 @@ purchased prospects?**
 ## Summary of data received
 
 <!-- html table generated in R 3.6.3 by xtable 1.8-4 package -->
-<!-- Wed Sep 28 21:08:39 2022 -->
+<!-- Thu Sep 29 08:15:34 2022 -->
 <table border=1>
   <tr style="text-align:center;"><th>State</th><th># received order summary</th><th># no order summary</th><th># received list</th><th># no list</th><th># received both</th><th># did not receive both</th></tr> <tr> <td align="center"> CA </td> <td align="center">   9 </td> <td align="center">  23 </td> <td align="center">  13 </td> <td align="center">  19 </td> <td align="center">   9 </td> <td align="center">  23 </td> </tr>
   <tr> <td align="center"> IL </td> <td align="center">   9 </td> <td align="center">   3 </td> <td align="center">   9 </td> <td align="center">   3 </td> <td align="center">   8 </td> <td align="center">   4 </td> </tr>
@@ -514,7 +516,7 @@ purchased prospects?**
 ## Summary of orders and prospects
 
 <!-- html table generated in R 3.6.3 by xtable 1.8-4 package -->
-<!-- Wed Sep 28 21:08:40 2022 -->
+<!-- Thu Sep 29 08:15:36 2022 -->
 <table border=1>
   <tr style="text-align:center;"><th style="border-bottom:none;">RQ1</th><th style="border-bottom:none;">RQ3</th><th style="border-bottom:none;">RQ2</th><th style="border-bottom:none;">RQ3</th></tr><tr style="text-align:center;"><th># orders total</th><th># orders with list</th><th># prospects total</th><th># prospects with order</th></tr> <tr> <td align="center"> 830 </td> <td align="center"> 414 </td> <td align="center"> 3,663,257 </td> <td align="center"> 2,549,085 </td> </tr>
    </table>
@@ -611,7 +613,7 @@ Case study research design because non-random sample
 ## Filter combos used in order purchases
 
 <!-- html table generated in R 3.6.3 by xtable 1.8-4 package -->
-<!-- Wed Sep 28 21:08:45 2022 -->
+<!-- Thu Sep 29 08:15:42 2022 -->
 <table border=1>
   <tr><th colspan="3" style="text-align:center;">Research</th><th colspan="3" style="text-align:center;">MA/doctoral</th></tr><tr><th>Filters</th><th>Count</th><th>Percent</th><th>Filters</th><th>Count</th><th>Percent</th></tr> <tr> <td> HS grad class, GPA, SAT, PSAT, Rank, State, Race </td> <td align="center">  39 </td> <td align="center"> 10% </td> <td> HS grad class, GPA, SAT, Zip code </td> <td align="center"> 206 </td> <td align="center"> 45% </td> </tr>
   <tr> <td> HS grad class, PSAT, State </td> <td align="center">  27 </td> <td align="center"> 7% </td> <td> HS grad class, GPA, PSAT, Zip code </td> <td align="center"> 145 </td> <td align="center"> 32% </td> </tr>
@@ -695,7 +697,7 @@ Case study research design because non-random sample
 ## Prospect characteristics across individual filter criteria
 
 <!-- html table generated in R 3.6.3 by xtable 1.8-4 package -->
-<!-- Wed Sep 28 21:08:50 2022 -->
+<!-- Thu Sep 29 08:15:46 2022 -->
 <table style="font-size:11px;">
   <tr style="text-align: center;"><th colspan="3" style="border-bottom: none;"></th><th colspan="5">Academic</th><th style="border-bottom: none;"><th colspan="5">Geographic</th><th style="border-bottom: none;"></th><th colspan="2">Demographic</th></tr><tr style="text-align:center;"><th width="15px;"></th><th></th><th>All domestic</th><th>GPA</th><th>PSAT</th><th>SAT</th><th>HS rank</th><th>AP score</th><th width="5px;"></th><th>Zip code</th><th>State</th><th>Geomarket</th><th>Segment</th><th>CBSA</th><th width="5px;"></th><th>Race</th><th>Gender</th></tr> <tr> <td> Total </td> <td>   </td> <td align="center"> 3,547,620 </td> <td align="center"> 1,101,266 </td> <td align="center"> 1,812,447 </td> <td align="center"> 971,237 </td> <td align="center"> 146,660 </td> <td align="center"> 75,479 </td> <td align="center">   </td> <td align="center"> 165,924 </td> <td align="center"> 1,173,678 </td> <td align="center"> 1,056,951 </td> <td align="center"> 186,519 </td> <td align="center"> 146,313 </td> <td align="center">   </td> <td align="center"> 279,626 </td> <td align="center"> 39,546 </td> </tr>
    <tr style="font-weight:900"><td colspan="2">Location</td></tr><tr> <td>   </td> <td> % In-state </td> <td align="center"> 38 </td> <td align="center"> 62 </td> <td align="center"> 30 </td> <td align="center"> 54 </td> <td align="center"> 83 </td> <td align="center"> 42 </td> <td align="center">   </td> <td align="center"> 98 </td> <td align="center"> 48 </td> <td align="center"> 17 </td> <td align="center"> 15 </td> <td align="center"> 4 </td> <td align="center">   </td> <td align="center"> 59 </td> <td align="center"> 6 </td> </tr>
@@ -739,7 +741,7 @@ Case study research design because non-random sample
 ## Filter by neighborhood segments
 
 <!-- html table generated in R 3.6.3 by xtable 1.8-4 package -->
-<!-- Wed Sep 28 21:08:51 2022 -->
+<!-- Thu Sep 29 08:15:47 2022 -->
 <table style="font-size:10px;" id="cluster-en">
   <tr style="text-align:center;"><th style="text-align:left;">2011 D+ Cluster</th><th>SAT Math</th><th>SAT CR</th><th>Going Out of State</th><th>Percent NonWhite</th><th>Need Financial Aid</th><th>Med Income</th></tr> <tr> <td> 51 </td> <td align="center"> 546.00 </td> <td align="center"> 533.00 </td> <td align="center"> 32% </td> <td align="center"> 30% </td> <td align="center"> 57% </td> <td align="center"> $95,432 </td> </tr>
   <tr> <td> 52 </td> <td align="center"> 480.00 </td> <td align="center"> 470.00 </td> <td align="center"> 30% </td> <td align="center"> 58% </td> <td align="center"> 71% </td> <td align="center"> $63,578 </td> </tr>
@@ -783,7 +785,7 @@ Case study research design because non-random sample
 ## Filter by high school segments
 
 <!-- html table generated in R 3.6.3 by xtable 1.8-4 package -->
-<!-- Wed Sep 28 21:08:51 2022 -->
+<!-- Thu Sep 29 08:15:47 2022 -->
 <table style="font-size:10px;" id="cluster-hs">
   <tr style="text-align:center;"><th style="text-align:left;">2011 D+ Cluster</th><th>SAT Math</th><th>SAT CR</th><th>Going Out of State</th><th>Percent NonWhite</th><th>Need Financial Aid</th><th>Med Income</th></tr> <tr> <td> 51 </td> <td align="center"> 462.00 </td> <td align="center"> 457.00 </td> <td align="center"> 14% </td> <td align="center"> 33% </td> <td align="center"> 68% </td> <td align="center"> $40,918 </td> </tr>
   <tr> <td> 52 </td> <td align="center"> 489.00 </td> <td align="center"> 496.00 </td> <td align="center"> 81% </td> <td align="center"> 99% </td> <td align="center"> 77% </td> <td align="center"> $64,730 </td> </tr>
