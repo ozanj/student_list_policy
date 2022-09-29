@@ -70,15 +70,20 @@ library(usmap)
 # Function for parenthetical citation needing `e.g.,` or have no year (ie. forthcoming)
 # b: citation(s)
 # eg: T/F - whether or not to include `e.g.,` in citation
-cite <- function(b, eg = TRUE) {
+cite <- function(b, eg = TRUE, suffix = NULL) {
   c <- ifelse(eg, '(e.g., ', '(')
   for (i in seq_along(b)) {
     if (i != 1) {
       c <- paste0(c, '; ')
     }
-    a <- paste(b[[i]]$author$family, collapse = ', ')
+    authors <- b[[i]]$author$family
+    authors[length(authors)] <- paste('and', authors[length(authors)])
+    a <- paste(authors, collapse = ifelse(length(authors) == 2, ' ', ', '))
     y <- ifelse(is.null(b[[i]]$year), 'forthcoming', b[[i]]$year)
     entry <- paste(a, y, sep = ', ')
+    if (!is.null(suffix)) {
+      entry <- paste(entry, suffix, sep = ', ')
+    }
     c <- paste0(c, entry)
     record_as_cited(b[[i]])
   }
@@ -754,7 +759,7 @@ Most social sciences define racism as ideology held by individuals (e.g., explic
 <br>
 Structural racism
 
-- “systematic racial bias embedded in the ‘normal’ functions of laws and social relations” `r citep(bib[c('RN4760')])` p. 1143; processes viewed as neutral systematically advantage dominant groups.
+- “systematic racial bias embedded in the ‘normal’ functions of laws and social relations” `r cite(bib['RN4760'], eg = F, suffix = 'p. 1143')`; processes viewed as neutral systematically advantage dominant groups.
 
 <br>
 Race is fundamental to capitalism (racial capitalism)
@@ -768,7 +773,7 @@ Race is fundamental to capitalism (racial capitalism)
 
 Algorithms
 
-- "sets of instructions written as code and run on computers" `r citep(bib[c('RN4794')])` (p. 215)
+- "sets of instructions written as code and run on computers" `r cite(bib[c('RN4794')], eg = F, suffix = 'p. 215')`
 
 <br>
 Algorithmic products utilize actuarial methods and logic
@@ -805,7 +810,7 @@ Classification situations `r citep(bib[c('RN4810')])`
 Structurally racist inputs
 
 - Actuarial products predict future outcome by modeling determinants using historical data
-    - “Predicting the future on the basis of the past threatens to reify and reproduce existing inequalities of treatment by institutions” `r citep(bib[c('RN4794')])` (p. 224).
+    - “Predicting the future on the basis of the past threatens to reify and reproduce existing inequalities of treatment by institutions” `r cite(bib[c('RN4794')], eg = F, suffix = 'p. 224')`.
 - Structurally racist input: determinant correlated with race because people of color have been historically excluded `r cite(bib[c('doi1011')])`
 - Structural racism in Moody's credit rating algorithm for city governments `r citep(bib[c('RN4786')])`
   - %Black negatively associated with city rating until control for median household income
@@ -831,7 +836,7 @@ Racial exclusion is consequence of micro-targeting, market segmentation `r citep
 
 <br>
 
-Micro-targeting and segmentation by Facebook `r citep(bib[c('RN4795')])` (p. 1)
+Micro-targeting and segmentation by Facebook `r cite(bib[c('RN4795')], eg = F, suffix = 'p. 1')`
 
 - "Driven not by a goal of making all users available to advertisers, but of making the ‘right’ individuals"
 - Tells advertisers choose "‘targeting strategy that focuses on reach and precision and eliminates waste'"
@@ -1632,7 +1637,7 @@ rq3 %>%
   add_column('x3' = ' ', .before = 'filter_race') %>% 
   xtable(align = c('c', 'l', 'l', rep('c', 15))) %>% 
   print(
-    html.table.attributes = 'style="font-size:10px;"',
+    html.table.attributes = 'style="font-size:11px;"',
     add.to.row = list(
       pos = list(0, 1, 3, 13, 17, 18),
       command = c('<tr style="text-align: center;"><th colspan="3" style="border-bottom: none;"></th><th colspan="5">Academic</th><th style="border-bottom: none;"><th colspan="5">Geographic</th><th style="border-bottom: none;"></th><th colspan="2">Demographic</th></tr><tr style="text-align:center;"><th width="15px;"></th><th></th><th>All domestic</th><th>GPA</th><th>PSAT</th><th>SAT</th><th>HS rank</th><th>AP score</th><th width="5px;"></th><th>Zip code</th><th>State</th><th>Geomarket</th><th>Segment</th><th>CBSA</th><th width="5px;"></th><th>Race</th><th>Gender</th></tr>', '<tr style="font-weight:900"><td colspan="2">Location</td></tr>', '<tr style="font-weight:900"><td colspan="2">Race/ethnicity</td></tr>', '<tr style="font-weight:900"><td colspan="2">Gender</td></tr>', '<tr style="font-weight:900"><td colspan="2">Household income</td></tr>', '<tr style="font-weight:900"><td colspan="2">Locale</td></tr>')

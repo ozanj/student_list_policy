@@ -354,6 +354,10 @@
   background-color: palegoldenrod;
 }
 
+.slide table {
+  font-size: 14px;
+}
+
 .reveal p.footnote {
   font-size: 11px;
   line-height: 1.5;
